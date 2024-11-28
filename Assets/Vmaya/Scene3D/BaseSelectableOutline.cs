@@ -49,7 +49,7 @@ namespace Vmaya.Scene3D
                         if (gameObject.activeInHierarchy) StartCoroutine(startDisableOutline(outline));
                         else outline.enabled = SwitchableList.instance[this];
 
-                        outline.color = _color;
+                        //outline.color = _color;
                     }
             }
         }
