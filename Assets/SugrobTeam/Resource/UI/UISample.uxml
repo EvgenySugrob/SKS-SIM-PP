@@ -1,0 +1,66 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/SugrobTeam/Resource/UI/StyleSheets.uss?fileID=7433441132597879392&amp;guid=9b447ecb5bae508418d0de9df75a110c&amp;type=3#StyleSheets" />
+    <ui:VisualElement name="mainMenu" style="flex-grow: 1; background-color: rgb(28, 34, 50); width: 20%; height: 100%;">
+        <ui:VisualElement name="logo" style="flex-grow: 1; background-image: none; max-height: 200px; height: 100%; width: 100%;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/SugrobTeam/Resource/Image/Logo%20full%20white%20-%20red.png?fileID=2800000&amp;guid=01918ca1ab5679942966684524d6ab50&amp;type=3#Logo full white - red&apos;); margin-right: 15px; margin-left: 15px; background-color: rgb(28, 34, 50);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="mainGroupUIElement" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="lines" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-self: stretch; max-width: 65px; padding-left: 0; padding-right: 0; margin-top: -26px; align-items: center; align-content: flex-start;">
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%; width: 11px;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="buttonsAndTitle" style="flex-grow: 1; width: 60%; height: 100%;">
+                <ui:VisualElement style="flex-grow: 0; align-content: auto; align-self: center; align-items: center; width: 85%; flex-shrink: 0; height: 200px; margin-top: 120px; justify-content: center;">
+                    <ui:Label text="Пример названия программы.&#10;Очень большое и очень длинное" class="textStyle" style="font-size: 36px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="buttons" style="flex-grow: 1; width: 85%; align-self: center; justify-content: space-around; margin-top: 45px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 240px;">
+                    <ui:Button text="Начать" name="startBt" class="noramlState normalState" />
+                    <ui:Button text="О программе" name="aboutBt" class="noramlState normalState" />
+                    <ui:Button text="Выход" name="exitBt" class="noramlState normalState" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="aboutWindow" class="aboutWindow" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1; height: 100%; width: 50%; margin-top: 10px; margin-bottom: 10px; margin-left: 26px;">
+            <ui:VisualElement name="lines" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-self: stretch; max-width: 65px; padding-left: 0; padding-right: 0; margin-top: 0; align-items: center; align-content: flex-start; top: 0; overflow: visible; margin-bottom: -30px;">
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%; width: 10px;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/SugrobTeam/Resource/Image/Logo%20full%20white%20-%20redFix.png?fileID=2800000&amp;guid=eafb4f6431728a84eb4caeb59acabf8e&amp;type=3#Logo full white - redFix&apos;); margin-left: 13px; background-size: 71% 100%; background-position-x: left 0; overflow: visible; visibility: visible;" />
+            <ui:VisualElement name="lines" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-self: stretch; max-width: 65px; padding-left: 0; padding-right: 0; margin-top: -33px; align-items: center; align-content: flex-start;">
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%; width: 10px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+                <ui:VisualElement name="red" style="flex-grow: 1; background-color: rgb(181, 0, 44); height: 100%;" />
+                <ui:VisualElement name="blue" style="flex-grow: 1; background-color: rgb(28, 34, 50); height: 100%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; width: 50%; height: 100%; align-self: flex-start; align-content: auto; justify-content: center;">
+            <ui:Label text="Виртуальный тренажер&#10;«Пример названия программы»&#10;Build x.x.x&#10;Unity xxxx.x.xxx&#10;&#10;© DoKiSan Systems&lt;sup&gt;®&lt;/sup&gt;, 2024.&#10;Все права защищены.&#10;www.dokisan.com&#10;&quot;DoKiSan&quot; зарегистрированный товарный знак № 810563" name="aboutText" class="textStyle" style="-unity-text-align: middle-left; font-size: 32px;" />
+        </ui:VisualElement>
+        <ui:Button name="closeWindowBt" class="closeBtState" />
+    </ui:VisualElement>
+    <ui:VisualElement name="loadScreen" class="loadScreen--Defualt" style="display: none;">
+        <ui:VisualElement name="loadIconSpin" class="loadIcon--Default" />
+        <ui:Label text="Загрузка..." style="-unity-font-definition: url(&apos;project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&amp;guid=34d72c68796112f40b6c4efbd664555a&amp;type=2#GOST_A SDF&apos;); font-size: 68px; color: rgb(255, 255, 255); position: absolute; top: auto; left: auto; bottom: 60px; right: 225px; -unity-font: url(&apos;project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&amp;guid=9e81f5db6a1ad6642b22ce784cb98dc7&amp;type=3#GOST_A&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>

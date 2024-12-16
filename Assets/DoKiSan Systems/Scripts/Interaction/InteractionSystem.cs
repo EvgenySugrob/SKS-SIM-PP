@@ -52,7 +52,7 @@ public class InteractionSystem : MonoBehaviour
     {
         IInteractableObject interactable1 = obj1.GetComponent<IInteractableObject>();
         IInteractableObject interactable2 = obj2.GetComponent<IInteractableObject>();
-
+        Debug.Log("TryInteract");
         if (interactable1 != null && interactable2 != null)
         {
             if (interactable1.CanInteractable(obj2) && interactable2.CanInteractable(obj1))

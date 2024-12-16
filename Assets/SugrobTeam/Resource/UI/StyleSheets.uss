@@ -1,0 +1,234 @@
+.normalState:hover {
+    background-color: rgb(241, 88, 22);
+    border-left-color: rgb(241, 88, 22);
+    border-right-color: rgb(241, 88, 22);
+    border-top-color: rgb(241, 88, 22);
+    border-bottom-color: rgb(241, 88, 22);
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&guid=9e81f5db6a1ad6642b22ce784cb98dc7&type=3#GOST_A");
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&guid=34d72c68796112f40b6c4efbd664555a&type=2#GOST_A SDF");
+}
+
+.normalState:active {
+    border-left-color: rgb(255, 114, 69);
+    border-right-color: rgb(255, 114, 69);
+    border-top-color: rgb(255, 114, 69);
+    border-bottom-color: rgb(255, 114, 69);
+    background-color: rgb(255, 114, 69);
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&guid=9e81f5db6a1ad6642b22ce784cb98dc7&type=3#GOST_A");
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&guid=34d72c68796112f40b6c4efbd664555a&type=2#GOST_A SDF");
+}
+
+.normalState {
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&guid=34d72c68796112f40b6c4efbd664555a&type=2#GOST_A SDF");
+    background-color: rgb(28, 34, 50);
+    color: rgb(255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    white-space: normal;
+    font-size: 32px;
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&guid=9e81f5db6a1ad6642b22ce784cb98dc7&type=3#GOST_A");
+}
+
+.closeBtState {
+    position: absolute;
+    top: 29px;
+    left: 976px;
+    background-image: url("project://database/Assets/SugrobTeam/Resource/Image/close.png?fileID=2800000&guid=701e3ea64dc7fbf4aaa84f25a5e14c00&type=3#close");
+    background-color: rgba(255, 255, 255, 0);
+    width: 30px;
+    height: 30px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+}
+
+.textStyle {
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&guid=34d72c68796112f40b6c4efbd664555a&type=2#GOST_A SDF");
+    color: rgb(255, 255, 255);
+    font-size: 44px;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    position: relative;
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&guid=9e81f5db6a1ad6642b22ce784cb98dc7&type=3#GOST_A");
+}
+
+.closeBtState:hover {
+    -unity-background-image-tint-color: rgb(181, 0, 42);
+}
+
+.closeBtState:active {
+    -unity-background-image-tint-color: rgb(142, 0, 34);
+}
+
+.aboutWindow {
+    flex-grow: 1;
+    position: absolute;
+    width: 1055px;
+    height: 700px;
+    right: auto;
+    left: 650px;
+    top: 250px;
+    bottom: auto;
+    align-self: center;
+    align-items: center;
+    background-color: rgb(28, 34, 50);
+    border-left-color: rgb(28, 34, 50);
+    border-right-color: rgb(28, 34, 50);
+    border-top-color: rgb(28, 34, 50);
+    border-bottom-color: rgb(28, 34, 50);
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
+    border-bottom-right-radius: 29px;
+    border-bottom-left-radius: 29px;
+    flex-direction: row;
+    margin-right: 0;
+    padding-right: 5px;
+    display: flex;
+    scale: 0 0;
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+}
+
+.aboutWindow--Open {
+    scale: 1 1;
+}
+
+.loadScreen--Defualt {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    transition-duration: 0.2s;
+}
+
+.loadScreen--Load {
+    opacity: 0.75;
+}
+
+.textStyle {
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A%20SDF.asset?fileID=11400000&guid=34d72c68796112f40b6c4efbd664555a&type=2#GOST_A SDF");
+    color: rgb(255, 255, 255);
+    font-size: 44px;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    position: relative;
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/GOST_A.TTF?fileID=12800000&guid=9e81f5db6a1ad6642b22ce784cb98dc7&type=3#GOST_A");
+}
+
+.loadIcon--Default {
+    flex-grow: 1;
+    position: absolute;
+    left: auto;
+    bottom: 25px;
+    width: 150px;
+    height: 150px;
+    right: 25px;
+    background-image: url("project://database/Assets/SugrobTeam/Resource/Image/loadIcon.png?fileID=2800000&guid=c36ea0bde877dec4d8801b8f1591c44d&type=3#loadIcon");
+    rotate: 0;
+    transition-duration: 0.001s;
+    transition-timing-function: linear;
+}
+
+.loadIcon--Rotate {
+    transition-duration: 2s;
+    rotate: 360deg;
+    transition-timing-function: linear;
+}
+
+.hMenuItem--Default {
+    flex-grow: 1;
+    padding-left: 10px;
+    height: 100%;
+    width: 180px;
+    max-width: 90px;
+}
+
+.hMenuItem--Default:hover {
+    background-color: rgb(20, 21, 32);
+}
+
+.hMenuItem--Select {
+    padding-left: 10px;
+    margin-left: 0;
+    width: 90px;
+    max-width: 90px;
+    background-color: rgb(20, 21, 32);
+}
+
+.hMenuItemText {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/Inter-Regular.otf?fileID=12800000&guid=554a218acbfcf3d43b388c2597531548&type=3#Inter-Regular");
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/Inter-Regular%20SDF.asset?fileID=11400000&guid=a4c2c9a261f65b645b4b24b6a806c416&type=2#Inter-Regular SDF");
+    font-size: 18px;
+    -unity-text-align: middle-left;
+    flex-wrap: wrap;
+    text-overflow: clip;
+    white-space: normal;
+}
+
+.subMenuWindow {
+    flex-grow: 1;
+    position: absolute;
+    translate: 0 50px;
+    font-size: 18px;
+    -unity-text-align: middle-left;
+    background-color: rgba(20, 21, 32, 0);
+    margin-left: -10px;
+}
+
+.subItem--Default {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/SugrobTeam/Resource/UI/Inter-Regular.otf?fileID=12800000&guid=554a218acbfcf3d43b388c2597531548&type=3#Inter-Regular");
+    -unity-font-definition: url("project://database/Assets/SugrobTeam/Resource/UI/Inter-Regular%20SDF.asset?fileID=11400000&guid=a4c2c9a261f65b645b4b24b6a806c416&type=2#Inter-Regular SDF");
+    background-color: rgb(20, 21, 32);
+    -unity-text-align: upper-left;
+}
+
+.subMenuWindow--Hide {
+    background-color: rgb(20, 21, 32);
+    display: none;
+}
+
+.subItem--Default:hover {
+    background-color: rgb(10, 11, 19);
+}
+
+.subItem--Default:active {
+    background-color: rgb(20, 21, 32);
+}

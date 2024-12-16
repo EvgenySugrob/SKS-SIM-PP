@@ -6,7 +6,7 @@ public class InteractObject : MonoBehaviour, IInteractableObject
 {
     public bool CanInteractable(GameObject objectInteract)
     {
-        return false;//////Вставить нужные букавы
+        return true;//////Вставить нужные букавы
     }
 
     public void Interact(GameObject objectInteract)
