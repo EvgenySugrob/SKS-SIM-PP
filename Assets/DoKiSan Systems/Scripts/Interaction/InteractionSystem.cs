@@ -12,13 +12,13 @@ public class InteractionSystem : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            HandleInteraction();
-        }
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    HandleInteraction();
+        //}
     }
 
-    private void HandleInteraction()
+    public void HandleInteraction()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))

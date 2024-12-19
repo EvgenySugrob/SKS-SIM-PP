@@ -8,6 +8,7 @@ namespace DoKiSan.Controls
         [SerializeField] float speedCharacter, runSpeed, jumpForce, rotateSpeed, gravityInScene, minViewRange, maxViewRange;
         [SerializeField] GameObject headPivot;
         [SerializeField] GameObject headModel;
+        [SerializeField] InteractionSystem interactionSystem;
 
         private Controller inputs;
         private Animator animator;
@@ -16,13 +17,15 @@ namespace DoKiSan.Controls
         private void OnEnable()
         {
             inputs.Enable();
-            inputs.Player.Jump.performed += Jump_performed; //Create an event subscription "Jump" to handle pressing
+            //inputs.Player.Jump.performed += Jump_performed; //Create an event subscription "Jump" to handle pressing
+            inputs.Player.TakeThis.performed += TakeThis_performed;
             inputs.Player.Run.performed += Run_performed; //Create an event subscription "Run" to handle pressing
             inputs.Player.Run.canceled += Run_canceled; //Create an event subscription "Jump" release the button
         }
         private void OnDisable()
         {
-            inputs.Player.Jump.performed -= Jump_performed; //Delete an event subscription "Jump" to handle pressing
+            //inputs.Player.Jump.performed -= Jump_performed; //Delete an event subscription "Jump" to handle pressing
+            inputs.Player.TakeThis.performed-= TakeThis_performed;
             inputs.Player.Run.performed -= Run_performed;//Delete an event subscription "Run" to handle pressing
             inputs.Player.Run.canceled -= Run_canceled;//Delete an event subscription "Jump" release the button
             inputs.Disable();
@@ -31,6 +34,11 @@ namespace DoKiSan.Controls
         {
             inputs = new Controller();
             animator = GetComponent<Animator>();
+        }
+
+        private void TakeThis_performed(InputAction.CallbackContext obj)
+        {
+            interactionSystem.HandleInteraction();
         }
 
         private void Run_canceled(InputAction.CallbackContext obj)
