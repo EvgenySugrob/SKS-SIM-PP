@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,27 +6,41 @@ namespace DoKiSan.Controls
 {
     public class FirstPlayerControl : MonoBehaviour
     {
-        [SerializeField] float speedCharacter, runSpeed, jumpForce, rotateSpeed, gravityInScene, minViewRange, maxViewRange;
+        [Header("Character")]
+        [SerializeField] float speedCharacter;
+        [SerializeField] float runSpeed;
+        [SerializeField] float jumpForce;
+        [SerializeField] float rotateSpeed;
+        [SerializeField] float gravityInScene; 
+        [SerializeField] float minViewRange; 
+        [SerializeField] float maxViewRange;
         [SerializeField] GameObject headPivot;
         [SerializeField] GameObject headModel;
         [SerializeField] InteractionSystem interactionSystem;
 
+        [Header("UI")]
+        [SerializeField] UIManipulation uiManipulation;
+
         private Controller inputs;
         private Animator animator;
         private float velocityVertical = 0f, cinemachineTargetPitch = 0, returnSpeed;
+
 
         private void OnEnable()
         {
             inputs.Enable();
             //inputs.Player.Jump.performed += Jump_performed; //Create an event subscription "Jump" to handle pressing
             inputs.Player.TakeThis.performed += TakeThis_performed;
+            inputs.Player.OpenUI.performed += OpenUI_Performed;
             inputs.Player.Run.performed += Run_performed; //Create an event subscription "Run" to handle pressing
             inputs.Player.Run.canceled += Run_canceled; //Create an event subscription "Jump" release the button
         }
+
         private void OnDisable()
         {
             //inputs.Player.Jump.performed -= Jump_performed; //Delete an event subscription "Jump" to handle pressing
             inputs.Player.TakeThis.performed-= TakeThis_performed;
+            inputs.Player.OpenUI.performed-= OpenUI_Performed;
             inputs.Player.Run.performed -= Run_performed;//Delete an event subscription "Run" to handle pressing
             inputs.Player.Run.canceled -= Run_canceled;//Delete an event subscription "Jump" release the button
             inputs.Disable();
@@ -36,9 +51,17 @@ namespace DoKiSan.Controls
             animator = GetComponent<Animator>();
         }
 
+        private void OpenUI_Performed(InputAction.CallbackContext context)
+        {
+            uiManipulation.OpenUIMainGroup(); 
+        }
+
         private void TakeThis_performed(InputAction.CallbackContext obj)
         {
-            interactionSystem.HandleInteraction();
+            if(!uiManipulation.MainUIGroupIsActive())
+            {
+                interactionSystem.HandleInteraction();
+            }
         }
 
         private void Run_canceled(InputAction.CallbackContext obj)
@@ -63,15 +86,26 @@ namespace DoKiSan.Controls
         // Update is called once per frame
         void FixedUpdate()
         {
-            PlayerMove();
+            if (!uiManipulation.MainUIGroupIsActive())
+            {
+                PlayerMove();
+            }
         }
         private void LateUpdate()
         {
-            PlayerRotation();
+            if (!uiManipulation.MainUIGroupIsActive())
+            {
+                PlayerRotation();
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
         private void PlayerRotation()
         {
-            Cursor.lockState = CursorLockMode.Locked; //Lock a cursor for normal rotation
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Vector2 readedRotationHead = inputs.Player.RotateHead.ReadValue<Vector2>(); //Takes Vector2, which appear delta position mouse cursor from new input-system
 

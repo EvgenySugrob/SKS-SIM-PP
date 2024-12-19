@@ -71,6 +71,15 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""67c4ffa9-d176-4965-847d-731ddbba0038"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -170,6 +179,17 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e3f7deb-5f6b-4bdf-a9dc-047d7c39eae1"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -337,6 +357,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_Player_TakeThis = m_Player.FindAction("TakeThis", throwIfNotFound: true);
         m_Player_RotateHead = m_Player.FindAction("RotateHead", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
+        m_Player_OpenUI = m_Player.FindAction("OpenUI", throwIfNotFound: true);
         // Cinemachine
         m_Cinemachine = asset.FindActionMap("Cinemachine", throwIfNotFound: true);
         m_Cinemachine_Move = m_Cinemachine.FindAction("Move", throwIfNotFound: true);
@@ -410,6 +431,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_TakeThis;
     private readonly InputAction m_Player_RotateHead;
     private readonly InputAction m_Player_Run;
+    private readonly InputAction m_Player_OpenUI;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -419,6 +441,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         public InputAction @TakeThis => m_Wrapper.m_Player_TakeThis;
         public InputAction @RotateHead => m_Wrapper.m_Player_RotateHead;
         public InputAction @Run => m_Wrapper.m_Player_Run;
+        public InputAction @OpenUI => m_Wrapper.m_Player_OpenUI;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -443,6 +466,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @OpenUI.started += instance.OnOpenUI;
+            @OpenUI.performed += instance.OnOpenUI;
+            @OpenUI.canceled += instance.OnOpenUI;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -462,6 +488,9 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @OpenUI.started -= instance.OnOpenUI;
+            @OpenUI.performed -= instance.OnOpenUI;
+            @OpenUI.canceled -= instance.OnOpenUI;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -564,6 +593,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         void OnTakeThis(InputAction.CallbackContext context);
         void OnRotateHead(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnOpenUI(InputAction.CallbackContext context);
     }
     public interface ICinemachineActions
     {
