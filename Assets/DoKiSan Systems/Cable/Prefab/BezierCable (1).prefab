@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5983934479210980137}
   - component: {fileID: 6853122256054615325}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: cuttblePlace
   m_TagString: cutPlace
   m_Icon: {fileID: 0}
@@ -471,8 +471,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.05, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.18994, y: 0.07407853, z: 1.1329783}
+  m_Center: {x: 0.0063293558, y: 0.012039312, z: 0.0031627973}
 --- !u!1 &643524824719269260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1026,7 @@ GameObject:
   - component: {fileID: 3205100057676006449}
   - component: {fileID: 546786690054202476}
   - component: {fileID: 503075626941901116}
+  - component: {fileID: 3566494645388308322}
   m_Layer: 7
   m_Name: InteractivePartCable (1)
   m_TagString: Interactable
@@ -1202,6 +1203,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3566494645388308322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004049464428656792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefcd8c00790e6641b5467930015ea7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stripperPoint: {fileID: 4407659452809064127}
 --- !u!1 &1020065827122002708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2803,7 @@ GameObject:
   - component: {fileID: 7500007052653399319}
   - component: {fileID: 8526006060821694753}
   - component: {fileID: 3731741948959768796}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3370,6 +3384,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3115456172426017022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4407659452809064127}
+  m_Layer: 7
+  m_Name: StripperPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4407659452809064127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115456172426017022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.46, z: -9.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5977326560279499688}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &3233635635521974998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4178,6 +4223,7 @@ Transform:
   - {fileID: 207672966227190865}
   - {fileID: 5983934479210980137}
   - {fileID: 3457333355256145705}
+  - {fileID: 4407659452809064127}
   m_Father: {fileID: 497516437204746660}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!1 &3999972472547623581
@@ -6370,7 +6416,7 @@ GameObject:
   - component: {fileID: 310372738745192071}
   - component: {fileID: 8110962966587331407}
   - component: {fileID: 6351201789684860565}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cut
   m_TagString: Untagged
   m_Icon: {fileID: 0}

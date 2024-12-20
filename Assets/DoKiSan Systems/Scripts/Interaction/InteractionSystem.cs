@@ -66,4 +66,9 @@ public class InteractionSystem : MonoBehaviour
         heldObject.transform.SetParent(null);
         heldObject = null;
     }
+
+    public GameObject GetHeldObject()
+    {
+        return heldObject;
+    }
 }

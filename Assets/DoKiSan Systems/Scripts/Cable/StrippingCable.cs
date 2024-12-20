@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class StrippingCable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] InteractionSystem interactionSystem;
+    [SerializeField] StripperInteration stripperInteration;
+    [SerializeField] GameObject stripper;
+    
+    public void StripperStartInteraction()
     {
-        
+        if(!stripperInteration.StateEnableStripper())
+        {
+            DisableEnableNeeds(false);
+            StartProcess();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DisableEnableNeeds(bool isActive)
     {
-        
+        interactionSystem.enabled = isActive;
+        stripper.SetActive(!isActive);
+    }
+
+    private void StartProcess()
+    {
+        GameObject heldObject = interactionSystem.GetHeldObject();
+        Transform point = heldObject.GetComponent<StripperPointInformation>().GetStripperPoint();
+        stripperInteration.MoveToStrippingPoint(point);
     }
 }
