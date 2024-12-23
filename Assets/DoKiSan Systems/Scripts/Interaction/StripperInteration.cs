@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -11,15 +13,24 @@ public class StripperInteration : MonoBehaviour
     [SerializeField] float rayDistance;
     [SerializeField] float offsetZ = 0.15f;
     [SerializeField] Transform stripperPoint;
+    [SerializeField] Transform stripperRotationPivot;
     [SerializeField] LayerMask layerMask;
 
     private Material projectorMaterial;
-    private bool _isEnableStripper=false;
+    [SerializeField]private bool _isEnableStripper=false;
     private string shaderState = "_currentCutPlace";
+    private Transform startParent;
+    private Vector3 startStripperPosition;
 
+    private void OnDisable()
+    {
+        SwitchColor(false);
+    }
     private void Start()
     {
         projectorMaterial = projectorCutLine.material;
+        startParent = transform.parent;
+        startStripperPosition = transform.localPosition;
     }
     private void Update()
     {
@@ -42,6 +53,13 @@ public class StripperInteration : MonoBehaviour
             if (targetObjecet.CompareTag("cutPlace"))
             {
                 SwitchColor(true);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Vector3 pointForRtPivot = targetObjecet.transform.position;
+                    _isEnableStripper = false;
+                    targetObjecet.GetComponent<IDisableColliders>().DisableCollider(false);
+                    StartCoroutine(StartCutProcess(pointForRtPivot));
+                }
             }
             else
             {
@@ -56,18 +74,56 @@ public class StripperInteration : MonoBehaviour
         projectorMaterial.SetInt(shaderState, intValue);
     }
 
+    private IEnumerator StartCutProcess(Vector3 pointForRtPivot)
+    {
+        projectorCutLine.enabled= false;
+        yield return BeginMoveRotateRotationPivot(pointForRtPivot);
+
+        BodyCutOnPart cutPart = transform.parent.GetComponent<BodyCutOnPart>();
+        yield return cutPart.DeletCutPart();
+        cutPart.DisableCutPart();
+
+        yield return ReturnFromStartPosition();
+        gameObject.SetActive(false);
+    }
+
+    private YieldInstruction BeginMoveRotateRotationPivot(Vector3 point)
+    {
+        Vector3 startPoint = stripperRotationPivot.transform.localPosition;
+
+        return DOTween.Sequence()
+            .Append(stripperRotationPivot.DOMove(point,1f))
+            .Append(stripperRotationPivot.DOLocalRotate(Vector3.up*360,0.75f,RotateMode.FastBeyond360))
+            .Append(stripperRotationPivot.DOLocalMove(startPoint,1f))
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction ReturnFromStartPosition()
+    {
+        transform.parent = startParent;
+        return transform
+            .DOLocalMove(startStripperPosition, 1f)
+            .Play()
+            .WaitForCompletion();
+    }
+
     public bool StateEnableStripper()
     {
         return _isEnableStripper;
     }
 
-    public void MoveToStrippingPoint(Transform point)
+    public void SetEnableSripperState(bool state)
+    {
+        _isEnableStripper= state;
+    }
+
+    public YieldInstruction MoveToPoint(Transform point)
     {
         stripperPoint = point;
-        //движение к точке, поворот точки.
-        
-
-
-        _isEnableStripper = true;
+        transform.parent = point.parent;
+        return transform
+            .DOMove(stripperPoint.position, 1f)
+            .Play()
+            .WaitForCompletion();
     }
 }

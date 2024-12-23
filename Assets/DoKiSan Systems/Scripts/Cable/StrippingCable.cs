@@ -7,6 +7,7 @@ public class StrippingCable : MonoBehaviour
     [SerializeField] InteractionSystem interactionSystem;
     [SerializeField] StripperInteration stripperInteration;
     [SerializeField] GameObject stripper;
+    [SerializeField] Transform pointForInteractionCable;
     
     public void StripperStartInteraction()
     {
@@ -27,6 +28,25 @@ public class StrippingCable : MonoBehaviour
     {
         GameObject heldObject = interactionSystem.GetHeldObject();
         Transform point = heldObject.GetComponent<StripperPointInformation>().GetStripperPoint();
-        stripperInteration.MoveToStrippingPoint(point);
+
+        StartCoroutine(BeginProccesCut(heldObject,point));
+        stripperInteration.SetEnableSripperState(true);
     }
+
+    #region MoveToCutPosition
+    private IEnumerator BeginProccesCut(GameObject heldObject, Transform point)
+    {
+        yield return StartCoroutine(ProcessMoveToCutPosition(heldObject));
+        yield return StartCoroutine(ProcessMoveToPoint(point));
+    }
+    private IEnumerator ProcessMoveToCutPosition(GameObject heldObject)
+    {
+        StripperPointInformation cableInteractionPart = heldObject.GetComponent<StripperPointInformation>();
+        yield return cableInteractionPart.SetCutPosition(pointForInteractionCable); 
+    }
+    private IEnumerator ProcessMoveToPoint(Transform point)
+    {
+        yield return stripperInteration.MoveToPoint(point);
+    }
+    #endregion
 }

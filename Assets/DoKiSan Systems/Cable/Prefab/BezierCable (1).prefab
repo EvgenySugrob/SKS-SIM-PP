@@ -430,6 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5983934479210980137}
   - component: {fileID: 6853122256054615325}
+  - component: {fileID: 2391535633953421773}
   m_Layer: 8
   m_Name: cuttblePlace
   m_TagString: cutPlace
@@ -473,6 +474,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.18994, y: 0.07407853, z: 1.1329783}
   m_Center: {x: 0.0063293558, y: 0.012039312, z: 0.0031627973}
+--- !u!114 &2391535633953421773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627936496623772444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f7347bdfa9eb1479619f9e1afb926c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 6622377996191045067}
 --- !u!1 &643524824719269260
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +866,8 @@ MonoBehaviour:
   - {fileID: 7863354135606103329}
   - {fileID: 8639716960753981749}
   - {fileID: 5929618424439905755}
-  curveSegments: 40
+  - {fileID: 0}
+  curveSegments: 60
   radialSegments: 8
   cableRadius: 0.002
   invertNormals: 0
@@ -1027,6 +1043,7 @@ GameObject:
   - component: {fileID: 546786690054202476}
   - component: {fileID: 503075626941901116}
   - component: {fileID: 3566494645388308322}
+  - component: {fileID: 334439226020905226}
   m_Layer: 7
   m_Name: InteractivePartCable (1)
   m_TagString: Interactable
@@ -1137,6 +1154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 6622377996191045067}
 --- !u!54 &546786690054202476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1216,6 +1235,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stripperPoint: {fileID: 4407659452809064127}
+--- !u!114 &334439226020905226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004049464428656792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines: []
+  outlineActive: 0
 --- !u!1 &1020065827122002708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1580,9 @@ GameObject:
   - component: {fileID: 590505528587205042}
   - component: {fileID: 6487796289544462301}
   - component: {fileID: 8862742131281230406}
+  - component: {fileID: 1440790416857898498}
+  - component: {fileID: 3727069397317537636}
+  - component: {fileID: 1090101822032093820}
   m_Layer: 7
   m_Name: YellowWhite
   m_TagString: Untagged
@@ -1598,6 +1634,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 1440790416857898498}
+  outlineManager: {fileID: 1090101822032093820}
 --- !u!33 &6487796289544462301
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1648,6 +1686,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1440790416857898498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495881422167337443}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.42647526, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &3727069397317537636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495881422167337443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018287003, y: 0.0015504663, z: 0.0015891341}
+  m_Center: {x: 0.008952271, y: 0.0000017428251, z: -0.00000022750467}
+--- !u!114 &1090101822032093820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495881422167337443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines: []
+  outlineActive: 0
 --- !u!1 &1501007205384288005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1856,9 @@ GameObject:
   - component: {fileID: 1962254348232137126}
   - component: {fileID: 938130463386572554}
   - component: {fileID: 6792698324522351588}
+  - component: {fileID: 4760216479314279394}
+  - component: {fileID: 2726766297566751793}
+  - component: {fileID: 3377408812276091278}
   m_Layer: 7
   m_Name: BrownWhite
   m_TagString: Untagged
@@ -1816,6 +1910,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 4760216479314279394}
+  outlineManager: {fileID: 3377408812276091278}
 --- !u!33 &938130463386572554
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1866,6 +1962,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4760216479314279394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025356763471386488}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.42647526, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &2726766297566751793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025356763471386488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018287003, y: 0.0015504663, z: 0.0015891341}
+  m_Center: {x: 0.008952271, y: 0.0000017428251, z: -0.00000022750467}
+--- !u!114 &3377408812276091278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025356763471386488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines: []
+  outlineActive: 0
 --- !u!1 &2183001596015938646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2690,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5000001, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 9.440025}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -2791,6 +2940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &2726107334241413899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,6 +4133,9 @@ GameObject:
   - component: {fileID: 5809987681479085865}
   - component: {fileID: 1498117611844068892}
   - component: {fileID: 867141432351965094}
+  - component: {fileID: 4381909447580443729}
+  - component: {fileID: 7811638439657360873}
+  - component: {fileID: 3770059736665131853}
   m_Layer: 7
   m_Name: GreenWhite
   m_TagString: Untagged
@@ -4034,6 +4187,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 4381909447580443729}
+  outlineManager: {fileID: 3770059736665131853}
 --- !u!33 &1498117611844068892
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4084,6 +4239,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4381909447580443729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800528015005013544}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.42647526, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &7811638439657360873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800528015005013544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018287003, y: 0.0015504663, z: 0.0015891341}
+  m_Center: {x: 0.008952271, y: 0.0000017428251, z: -0.00000022750467}
+--- !u!114 &3770059736665131853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3800528015005013544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines: []
+  outlineActive: 0
 --- !u!1 &3804134415699848965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,6 +4408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5977326560279499688}
+  - component: {fileID: 8168743699871451765}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -4226,6 +4435,25 @@ Transform:
   - {fileID: 4407659452809064127}
   m_Father: {fileID: 497516437204746660}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!114 &8168743699871451765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934185280262427969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c32a9b85e67c548916a2f314feda2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutPart: {fileID: 3457333355256145705}
+  offsetY: -4
+  bezierTwistedPairs:
+  - {fileID: 5809987681479085865}
+  - {fileID: 4701450893203304791}
+  - {fileID: 590505528587205042}
+  - {fileID: 1962254348232137126}
 --- !u!1 &3999972472547623581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,6 +4571,9 @@ GameObject:
   - component: {fileID: 4701450893203304791}
   - component: {fileID: 5742721614526383103}
   - component: {fileID: 7169838822405992069}
+  - component: {fileID: 7395063393719941803}
+  - component: {fileID: 3545270922609670612}
+  - component: {fileID: 7911506725172742244}
   m_Layer: 7
   m_Name: BlueWhite
   m_TagString: Untagged
@@ -4394,6 +4625,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 7395063393719941803}
+  outlineManager: {fileID: 7911506725172742244}
 --- !u!33 &5742721614526383103
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4444,6 +4677,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7395063393719941803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077151510625365858}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.42647526, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &3545270922609670612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077151510625365858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018287003, y: 0.0015504663, z: 0.0015891341}
+  m_Center: {x: 0.008952271, y: 0.0000017428251, z: -0.00000022750467}
+--- !u!114 &7911506725172742244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077151510625365858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines: []
+  outlineActive: 0
 --- !u!1 &4270762491733050665
 GameObject:
   m_ObjectHideFlags: 0

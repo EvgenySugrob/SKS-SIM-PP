@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &37068667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4738,6 +4739,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &155093338
 GameObject:
   m_ObjectHideFlags: 0
@@ -6640,6 +6643,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &227923200
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,6 +8334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!114 &303004753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8570,6 +8576,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &305980840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5825417203156885734, guid: 0929eae2e7e8f4947bce867d343d4d14,
@@ -9576,6 +9584,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &322453072
 GameObject:
   m_ObjectHideFlags: 0
@@ -10224,6 +10234,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &346831598
 GameObject:
   m_ObjectHideFlags: 0
@@ -10337,6 +10349,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &347579210
 GameObject:
   m_ObjectHideFlags: 0
@@ -13499,6 +13513,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &440135007
 GameObject:
   m_ObjectHideFlags: 0
@@ -17006,6 +17022,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &549683880
 GameObject:
   m_ObjectHideFlags: 0
@@ -17119,6 +17137,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &553462233
 GameObject:
   m_ObjectHideFlags: 0
@@ -17864,6 +17884,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &573200400
 GameObject:
   m_ObjectHideFlags: 0
@@ -17977,6 +17999,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &573700998
 GameObject:
   m_ObjectHideFlags: 0
@@ -19128,12 +19152,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631437434}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.2164396, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0.015, y: 0, z: -0}
-  m_LocalScale: {x: 0.01224541, y: 0.0039701997, z: 0.06}
+  m_LocalRotation: {x: -0, y: 0.2164396, z: -0, w: 0.97629607}
+  m_LocalPosition: {x: 0.015000105, y: 0, z: -0.026}
+  m_LocalScale: {x: 0.012245411, y: 0.0039701997, z: 0.06}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 666259801}
+  m_Father: {fileID: 798520481}
   m_LocalEulerAnglesHint: {x: 0, y: 25, z: 0}
 --- !u!23 &631437436
 MeshRenderer:
@@ -19935,6 +19959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &664604708
 GameObject:
   m_ObjectHideFlags: 0
@@ -20074,11 +20099,13 @@ MonoBehaviour:
   playerCamera: {fileID: 944692881}
   projectorCutLine: {fileID: 1179551543}
   rayDistance: 10
-  offsetZ: 0.15
+  offsetZ: -10
   stripperPoint: {fileID: 0}
+  stripperRotationPivot: {fileID: 798520481}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  _isEnableStripper: 0
 --- !u!4 &666259801
 Transform:
   m_ObjectHideFlags: 0
@@ -20087,16 +20114,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666259799}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7047286, y: 0.057945095, z: -0.057945095, w: 0.7047286}
-  m_LocalPosition: {x: -0.947, y: 1.325, z: -2.83}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.17700005, y: -0.48099992, z: 0.22330019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1179551544}
-  - {fileID: 1492795669}
-  - {fileID: 631437435}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -9.401}
+  - {fileID: 798520481}
+  m_Father: {fileID: 1783976732}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!1 &666625854
 GameObject:
   m_ObjectHideFlags: 0
@@ -22103,6 +22129,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &705682415
 GameObject:
   m_ObjectHideFlags: 0
@@ -22321,6 +22349,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &708802816
 GameObject:
   m_ObjectHideFlags: 0
@@ -22539,6 +22569,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &712352657
 GameObject:
   m_ObjectHideFlags: 0
@@ -25447,6 +25479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &779559439
 GameObject:
   m_ObjectHideFlags: 0
@@ -25982,6 +26015,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &793398226
 GameObject:
   m_ObjectHideFlags: 0
@@ -26299,6 +26334,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798229745}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &798520480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798520481}
+  m_Layer: 0
+  m_Name: rotationPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798520481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798520480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1492795669}
+  - {fileID: 631437435}
+  m_Father: {fileID: 666259801}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798794209
 GameObject:
   m_ObjectHideFlags: 0
@@ -26422,6 +26490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &802901010
 GameObject:
   m_ObjectHideFlags: 0
@@ -28476,6 +28545,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &883361349
 GameObject:
   m_ObjectHideFlags: 0
@@ -28910,6 +28981,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &911944628
 GameObject:
   m_ObjectHideFlags: 0
@@ -30353,6 +30426,20 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2091711226}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &944692885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944692872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b092ff008bb4b4ab41434018b8a644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentManager: {fileID: 0}
+  distanceRay: 3
 --- !u!1 &945389060
 GameObject:
   m_ObjectHideFlags: 0
@@ -30947,6 +31034,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &951496877
 GameObject:
   m_ObjectHideFlags: 0
@@ -32142,6 +32231,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &977921203
 GameObject:
   m_ObjectHideFlags: 0
@@ -32992,6 +33083,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &991400373
 GameObject:
   m_ObjectHideFlags: 0
@@ -33264,6 +33357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!114 &996468685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33442,6 +33536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!114 &1007824893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35106,6 +35201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!114 &1059281060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36585,6 +36681,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1103503648
 GameObject:
   m_ObjectHideFlags: 0
@@ -37585,6 +37683,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1120726849
 GameObject:
   m_ObjectHideFlags: 0
@@ -37684,7 +37784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionSystem: {fileID: 11526875}
   stripperInteration: {fileID: 666259800}
-  stripper: {fileID: 0}
+  stripper: {fileID: 666259799}
+  pointForInteractionCable: {fileID: 1305714620}
 --- !u!1 &1125422936
 GameObject:
   m_ObjectHideFlags: 0
@@ -39060,7 +39161,7 @@ MonoBehaviour:
   m_DecalLayerMask: 2
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0.029334692}
-  m_Size: {x: 0.06054032, y: 0.0004775543, z: 0.058669385}
+  m_Size: {x: 0.012922049, y: 0.0004775543, z: 0.058669385}
   m_FadeFactor: 1
 --- !u!4 &1179551544
 Transform:
@@ -41231,6 +41332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &1245445660
 GameObject:
   m_ObjectHideFlags: 0
@@ -42084,6 +42186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &1267184597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43423,6 +43526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &1305714617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45262,6 +45366,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1363798300
 GameObject:
   m_ObjectHideFlags: 0
@@ -48392,12 +48498,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492795668}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.21643952, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: -0.015, y: 0, z: -0}
-  m_LocalScale: {x: 0.01224541, y: 0.0039701997, z: 0.06}
+  m_LocalRotation: {x: -0, y: -0.21643949, z: -0, w: 0.97629607}
+  m_LocalPosition: {x: -0.0149998665, y: 0, z: -0.026}
+  m_LocalScale: {x: 0.012245411, y: 0.0039701997, z: 0.06}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 666259801}
+  m_Father: {fileID: 798520481}
   m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
 --- !u!23 &1492795670
 MeshRenderer:
@@ -48912,6 +49018,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1521382231
 GameObject:
   m_ObjectHideFlags: 0
@@ -50193,6 +50301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &1572331479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50797,6 +50906,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4cce62041297cba4ebcf84b9d4198ceb, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1580414793
 GameObject:
   m_ObjectHideFlags: 0
@@ -50954,6 +51065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &1595139723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54661,6 +54773,8 @@ MonoBehaviour:
   twistIntensity: 2
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!4 &1704580778
 Transform:
   m_ObjectHideFlags: 0
@@ -54997,6 +55111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &1755381152
 GameObject:
   m_ObjectHideFlags: 0
@@ -55320,6 +55435,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1770794980
 GameObject:
   m_ObjectHideFlags: 0
@@ -55433,6 +55550,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: d5eab55b6b714bf428aaba41518c61c2, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1772900515
 GameObject:
   m_ObjectHideFlags: 0
@@ -57249,6 +57368,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1832666583
 GameObject:
   m_ObjectHideFlags: 0
@@ -58223,6 +58344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!65 &1856638378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58512,6 +58634,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1872435390
 GameObject:
   m_ObjectHideFlags: 0
@@ -59465,6 +59589,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 4e092e1ac030b3e498fff86c8e85ec65, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1882950135
 GameObject:
   m_ObjectHideFlags: 0
@@ -61302,6 +61428,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1 &1941551587
 GameObject:
   m_ObjectHideFlags: 0
@@ -63245,6 +63373,8 @@ MonoBehaviour:
   twistIntensity: 4
   wire1Mat: {fileID: 2100000, guid: 01947de2914e4434da8b9d801cfb97b1, type: 2}
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+  outlineSetting: {fileID: 0}
+  outlineManager: {fileID: 0}
 --- !u!1001 &2013636532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63367,6 +63497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SecondButton (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469644345682730322, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66125,6 +66260,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1363798301}
+    - targetCorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 666259801}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5070037348985706644, guid: 2d2954463d11db9488fbea95811224bc,
         type: 3}
@@ -66134,6 +66273,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 944692877}
+    - targetCorrespondingSourceObject: {fileID: 6341344241247827868, guid: 2d2954463d11db9488fbea95811224bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 944692885}
   m_SourcePrefab: {fileID: 100100000, guid: 2d2954463d11db9488fbea95811224bc, type: 3}
 --- !u!224 &2100879668 stripped
 RectTransform:
@@ -67868,6 +68011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b458da8d30a5d4f4290ae20a1dcfa1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!114 &2140620042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68363,10 +68507,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62783366064327614, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 503075626941901116, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Name
       value: BezierCable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440790416857898498, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559865751013992184, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043834524861073046, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841731778942473799, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381909447580443729, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522236980582952753, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: controlPoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760216479314279394, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
@@ -68416,6 +68605,21 @@ PrefabInstance:
     - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930899580082750339, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395063393719941803, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366663075105408140, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -68529,5 +68733,4 @@ SceneRoots:
   - {fileID: 991400375}
   - {fileID: 3493744544103507472}
   - {fileID: 655728546}
-  - {fileID: 666259801}
   - {fileID: 315659610}

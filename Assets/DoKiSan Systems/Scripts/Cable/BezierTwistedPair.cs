@@ -6,43 +6,46 @@ using UnityEngine;
 public class BezierTwistedPair : MonoBehaviour
 {
     [Header("Bezier Settings")]
-    public Transform startPoint;       // Начальная точка кривых
-    public Transform endPoint;         // Конечная точка кривых
-    public Transform controlPoint1;    // Первая контрольная точка
-    public Transform controlPoint2;    // Вторая контрольная точка
+    [SerializeField] Transform startPoint;       // Начальная точка кривых
+    [SerializeField] Transform endPoint;         // Конечная точка кривых
+    [SerializeField] Transform controlPoint1;    // Первая контрольная точка
+    [SerializeField] Transform controlPoint2;    // Вторая контрольная точка
 
     [Header("Cable Settings")]
-    public int curveSegments = 20;     // Количество сегментов кривой
-    public int radialSegments = 8;     // Количество сегментов для круга (трубка)
-    public float cableRadius = 0.05f;  // Радиус одного провода
+    [SerializeField] int curveSegments = 20;     // Количество сегментов кривой
+    [SerializeField] int radialSegments = 8;     // Количество сегментов для круга (трубка)
+    [SerializeField] float cableRadius = 0.05f;  // Радиус одного провода
 
     [Header("Twist Settings")]
-    public bool isTwisted = true;      // Флаг закручивания
-    public float twistIntensity = 2.0f; // Количество витков
+    [SerializeField] bool isTwisted = true;      // Флаг закручивания
+    [SerializeField] float twistIntensity = 2.0f; // Количество витков
 
     [Header("Material wires")]
-    public Material wire1Mat;
-    public Material wire2Mat;
-    // Отдельные меши для двух проводов
+    [SerializeField] Material wire1Mat;
+    [SerializeField] Material wire2Mat;
+    [SerializeField] Outline outlineSetting;
+    [SerializeField] OutlineManager outlineManager;
+
     private MeshFilter wire1MeshFilter;
     private MeshFilter wire2MeshFilter;
 
     private void Start()
     {
-        // Создаём два объекта для двух проводов
         GameObject wire1 = new GameObject("Wire1");
         wire1.transform.SetParent(transform, false);
-        wire1.transform.localPosition = Vector3.zero; // Локальная позиция
+        wire1.transform.localPosition = Vector3.zero; 
         wire1MeshFilter = wire1.AddComponent<MeshFilter>();
         wire1.AddComponent<MeshRenderer>().sharedMaterial = wire1Mat;
 
         GameObject wire2 = new GameObject("Wire2");
         wire2.transform.SetParent(transform, false);
-        wire2.transform.localPosition = Vector3.zero; // Локальная позиция
+        wire2.transform.localPosition = Vector3.zero; 
         wire2MeshFilter = wire2.AddComponent<MeshFilter>();
         wire2.AddComponent<MeshRenderer>().sharedMaterial = wire2Mat;
-
+        
         UpdateCables();
+
+        StartCoroutine(WaitForAddOutline(wire1,wire2));
     }
 
     private void Update()
@@ -52,16 +55,13 @@ public class BezierTwistedPair : MonoBehaviour
 
     private void UpdateCables()
     {
-        // Генерация базовой кривой
         Vector3[] baseCurve = GenerateBezierCurve();
 
-        // Преобразуем точки в локальное пространство
         for (int i = 0; i < baseCurve.Length; i++)
         {
             baseCurve[i] = transform.InverseTransformPoint(baseCurve[i]);
         }
 
-        // Генерация смещённых кривых
         Vector3[] curve1 = new Vector3[baseCurve.Length];
         Vector3[] curve2 = new Vector3[baseCurve.Length];
 
@@ -73,12 +73,10 @@ public class BezierTwistedPair : MonoBehaviour
                 ? (baseCurve[i + 1] - baseCurve[i]).normalized
                 : (baseCurve[i] - baseCurve[i - 1]).normalized;
 
-            // Локальные оси
             Vector3 up = Vector3.up;
             Vector3 right = Vector3.Cross(up, forward).normalized;
             up = Vector3.Cross(forward, right).normalized;
 
-            // Смещение для двух кабелей
             Vector3 offset1 = right * Mathf.Cos(angle) * cableRadius + up * Mathf.Sin(angle) * cableRadius;
             Vector3 offset2 = right * Mathf.Cos(angle + Mathf.PI) * cableRadius + up * Mathf.Sin(angle + Mathf.PI) * cableRadius;
 
@@ -86,7 +84,6 @@ public class BezierTwistedPair : MonoBehaviour
             curve2[i] = baseCurve[i] + offset2;
         }
 
-        // Обновляем меши для двух кривых
         wire1MeshFilter.mesh = GenerateTubeMesh(curve1);
         wire2MeshFilter.mesh = GenerateTubeMesh(curve2);
     }
@@ -107,8 +104,8 @@ public class BezierTwistedPair : MonoBehaviour
     private Mesh GenerateTubeMesh(Vector3[] curvePoints)
     {
         int ringVertexCount = radialSegments + 1;
-        int vertexCount = (curveSegments + 1) * ringVertexCount + 2; // +2 для центральных вершин
-        int triangleCount = curveSegments * radialSegments * 6 + radialSegments * 6; // +6 на крышки
+        int vertexCount = (curveSegments + 1) * ringVertexCount + 2; 
+        int triangleCount = curveSegments * radialSegments * 6 + radialSegments * 6; 
 
         Vector3[] vertices = new Vector3[vertexCount];
         int[] triangles = new int[triangleCount];
@@ -116,15 +113,14 @@ public class BezierTwistedPair : MonoBehaviour
 
         float angleStep = 360f / radialSegments;
 
-        // Центральные вершины для "крышек"
         Vector3 startCapCenter = curvePoints[0];
         Vector3 endCapCenter = curvePoints[curvePoints.Length - 1];
 
         vertices[vertexCount - 2] = startCapCenter;
         vertices[vertexCount - 1] = endCapCenter;
 
-        normals[vertexCount - 2] = -Vector3.forward; // Нормаль для первой "крышки" смотрит назад
-        normals[vertexCount - 1] = Vector3.forward;  // Нормаль для второй "крышки" смотрит вперёд
+        normals[vertexCount - 2] = -Vector3.forward;
+        normals[vertexCount - 1] = Vector3.forward;
 
         // Генерация вершин и нормалей
         for (int i = 0; i <= curveSegments; i++)
@@ -147,7 +143,6 @@ public class BezierTwistedPair : MonoBehaviour
 
         int tIndex = 0;
 
-        // Боковые стенки
         for (int i = 0; i < curveSegments; i++)
         {
             for (int j = 0; j < radialSegments; j++)
@@ -165,11 +160,10 @@ public class BezierTwistedPair : MonoBehaviour
             }
         }
 
-        // Крышка начала
         for (int j = 0; j < radialSegments; j++)
         {
             int current = j;
-            triangles[tIndex++] = vertexCount - 2; // Центральная вершина крышки
+            triangles[tIndex++] = vertexCount - 2;
             triangles[tIndex++] = current + 1;
             triangles[tIndex++] = current;
         }
@@ -179,12 +173,11 @@ public class BezierTwistedPair : MonoBehaviour
         for (int j = 0; j < radialSegments; j++)
         {
             int current = capStartIndex + j;
-            triangles[tIndex++] = vertexCount - 1; // Центральная вершина крышки
+            triangles[tIndex++] = vertexCount - 1;
             triangles[tIndex++] = current;
             triangles[tIndex++] = current + 1;
         }
 
-        // Создаем и возвращаем меш
         Mesh mesh = new Mesh();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
@@ -202,5 +195,18 @@ public class BezierTwistedPair : MonoBehaviour
         float ttt = tt * t;
 
         return uuu * p0 + 3 * uu * t * p1 + 3 * u * tt * p2 + ttt * p3;
+    }
+    private IEnumerator WaitForAddOutline(GameObject wire1, GameObject wire2)
+    {
+        yield return new WaitForSeconds(0.2f);
+        Outline outline1 = wire1.AddComponent<Outline>();
+        Outline outline2 = wire2.AddComponent<Outline>();
+
+        outline2.enabled = outline1.enabled = false;
+
+        outline2.OutlineColor = outline1.OutlineColor = outlineSetting.OutlineColor;
+        outline2.OutlineWidth = outline1.OutlineWidth = outlineSetting.OutlineWidth; 
+
+        outlineManager.AddObjectToList(outline1,outline2);
     }
 }
