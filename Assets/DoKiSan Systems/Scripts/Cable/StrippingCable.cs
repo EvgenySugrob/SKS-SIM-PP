@@ -8,17 +8,22 @@ public class StrippingCable : MonoBehaviour
     [SerializeField] StripperInteration stripperInteration;
     [SerializeField] GameObject stripper;
     [SerializeField] Transform pointForInteractionCable;
+    [SerializeField] TwistedPairUnravelingCount unravelingCount;
     
     public void StripperStartInteraction()
     {
-        if(!stripperInteration.StateEnableStripper())
+        if (interactionSystem.GetHeldObject() != null)
         {
-            DisableEnableNeeds(false);
-            StartProcess();
+            unravelingCount = interactionSystem.GetHeldObject().GetComponent<TwistedPairUnravelingCount>();
+            if (!stripperInteration.StateEnableStripper() && !unravelingCount.CableIsStripp())
+            {
+                DisableEnableNeeds(false);
+                StartProcess();
+            }
         }
     }
 
-    private void DisableEnableNeeds(bool isActive)
+    public void DisableEnableNeeds(bool isActive)
     {
         interactionSystem.enabled = isActive;
         stripper.SetActive(!isActive);

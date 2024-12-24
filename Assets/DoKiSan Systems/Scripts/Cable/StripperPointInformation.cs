@@ -11,12 +11,21 @@ public class StripperPointInformation : MonoBehaviour
 
     public YieldInstruction SetCutPosition(Transform partPoint)
     {
-        _startPosition = partPoint.position;
-        _startRotation = partPoint.rotation;
+        _startPosition = partPoint.localPosition;
+        _startRotation = partPoint.localRotation;
 
         return DOTween.Sequence()
             .Append(transform.DOMove(partPoint.position, 1f))
             .Join(transform.DORotateQuaternion(partPoint.rotation, 1f))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    public YieldInstruction BackInHand()
+    {
+        return DOTween.Sequence()
+            .Append(transform.DOLocalMove(Vector3.zero, 1f))
+            .Join(transform.DOLocalRotateQuaternion(_startRotation, 1f))
             .Play()
             .WaitForCompletion();
     }

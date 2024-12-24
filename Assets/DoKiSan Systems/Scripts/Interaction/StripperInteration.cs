@@ -73,6 +73,21 @@ public class StripperInteration : MonoBehaviour
         int intValue = isState ? 1 : 0;
         projectorMaterial.SetInt(shaderState, intValue);
     }
+    public bool StateEnableStripper()
+    {
+        return _isEnableStripper;
+    }
+
+    public void SetEnableSripperState(bool state)
+    {
+        _isEnableStripper = state;
+    }
+    public void EndStripping()
+    {
+        SetEnableSripperState(false);
+        projectorCutLine.enabled = true;
+        SwitchColor(false);
+    }
 
     private IEnumerator StartCutProcess(Vector3 pointForRtPivot)
     {
@@ -105,16 +120,6 @@ public class StripperInteration : MonoBehaviour
             .DOLocalMove(startStripperPosition, 1f)
             .Play()
             .WaitForCompletion();
-    }
-
-    public bool StateEnableStripper()
-    {
-        return _isEnableStripper;
-    }
-
-    public void SetEnableSripperState(bool state)
-    {
-        _isEnableStripper= state;
     }
 
     public YieldInstruction MoveToPoint(Transform point)

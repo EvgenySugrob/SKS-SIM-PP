@@ -8,14 +8,22 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     [Header("Cable pair info")]
     [SerializeField] int countPairInCable = 4;
     [SerializeField] WorkModeManipulation workModeManipulation;
+    private bool _cableIsStripp = false;
 
     [Header("End stripper interatcion")]
     [SerializeField] StripperPointInformation pointInformation;
+    [SerializeField] StrippingCable strippingCable;
+    [SerializeField] StripperInteration stripperInteration;
     private int _allCount = 0;
 
     private void Start()
     {
         pointInformation = GetComponent<StripperPointInformation>();
+    }
+
+    public bool CableIsStripp()
+    {
+        return _cableIsStripp;
     }
     public void CountUnravelingPair()
     {
@@ -26,8 +34,7 @@ public class TwistedPairUnravelingCount : MonoBehaviour
         }
         else
         {
-            StartCoroutine(RotateInteractPart(-270));
-//pointInforamtion - возврат обратно на начальную позицию перед началом работы со стриппером
+            StartCoroutine(ReturnCableInHand(-270));
         }
     }
 
@@ -35,8 +42,18 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     {
         workModeManipulation.WorkState(false);
         yield return RotateOnClick(angle);
+
         workModeManipulation.WorkState(true);
+        _cableIsStripp=true;
+        stripperInteration.EndStripping();
+        strippingCable.DisableEnableNeeds(true);
     }
+    private IEnumerator ReturnCableInHand(float angle)
+    {
+        yield return StartCoroutine(RotateInteractPart(angle));
+        yield return pointInformation.BackInHand();
+    }
+
     private YieldInstruction RotateOnClick(float angle)
     {
         return transform

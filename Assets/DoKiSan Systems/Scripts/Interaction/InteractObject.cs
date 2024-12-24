@@ -7,7 +7,14 @@ public class InteractObject : MonoBehaviour, IInteractableObject,IDisableCollide
     [SerializeField] List<Collider> colliders;
     public bool CanInteractable(GameObject objectInteract)
     {
-        return true;//////Вставить нужные букавы
+        if(transform.TryGetComponent(out TwistedPairUnravelingCount twistedPairUnraveling))
+        {
+            if(twistedPairUnraveling.CableIsStripp())
+            {
+                return true;
+            }
+        }
+        return false;//////Вставить нужные букавы
     }
 
     public void DisableCollider(bool isActive)
