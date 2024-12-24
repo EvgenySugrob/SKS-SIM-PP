@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - cutPlace
+  - Manipulation
   layers:
   - Default
   - TransparentFX

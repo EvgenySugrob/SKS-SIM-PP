@@ -15,6 +15,9 @@ public class BezierCable : MonoBehaviour
 
     private Mesh mesh;
 
+    [Header("For Interaction")]
+    [SerializeField] Collider colliderPart;
+
     void Start()
     {
         // Создаем пустой меш

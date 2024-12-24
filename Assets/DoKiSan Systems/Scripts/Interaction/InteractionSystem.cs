@@ -10,14 +10,6 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField] float interactDistance = 3f;
     [SerializeField] GameObject handSlot; 
 
-    private void Update()
-    {
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    HandleInteraction();
-        //}
-    }
-
     public void HandleInteraction()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);

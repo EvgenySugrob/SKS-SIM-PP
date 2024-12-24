@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class BezierTwistedPair : MonoBehaviour
+public class BezierTwistedPair : MonoBehaviour, IManipulate
 {
     [Header("Bezier Settings")]
     [SerializeField] Transform startPoint;       // Начальная точка кривых
@@ -26,11 +26,19 @@ public class BezierTwistedPair : MonoBehaviour
     [SerializeField] Outline outlineSetting;
     [SerializeField] OutlineManager outlineManager;
 
+    [Header("Normal Pair")]
+    [SerializeField] List<GameObject> wires;
+    [SerializeField] float speed;
+    [SerializeField] TwistedPairUnravelingCount unravelingCount;
     private MeshFilter wire1MeshFilter;
     private MeshFilter wire2MeshFilter;
+    private Collider colliderTwistedPair;
 
     private void Start()
     {
+        colliderTwistedPair= GetComponent<Collider>();
+        unravelingCount = transform.parent.GetComponent<TwistedPairUnravelingCount>();
+
         GameObject wire1 = new GameObject("Wire1");
         wire1.transform.SetParent(transform, false);
         wire1.transform.localPosition = Vector3.zero; 
@@ -42,7 +50,7 @@ public class BezierTwistedPair : MonoBehaviour
         wire2.transform.localPosition = Vector3.zero; 
         wire2MeshFilter = wire2.AddComponent<MeshFilter>();
         wire2.AddComponent<MeshRenderer>().sharedMaterial = wire2Mat;
-        
+
         UpdateCables();
 
         StartCoroutine(WaitForAddOutline(wire1,wire2));
@@ -208,5 +216,37 @@ public class BezierTwistedPair : MonoBehaviour
         outline2.OutlineWidth = outline1.OutlineWidth = outlineSetting.OutlineWidth; 
 
         outlineManager.AddObjectToList(outline1,outline2);
+    }
+
+    public void Manipulate()
+    {
+        unravelingCount.CountUnravelingPair();
+        StartCoroutine(Unraveling());
+    }
+
+    private IEnumerator Unraveling()
+    {
+        colliderTwistedPair.enabled = false;
+        float progress = 0;
+        float maxIntensity = twistIntensity;
+        while (progress < 1)
+        {
+            progress += Time.deltaTime * speed;
+            twistIntensity = Mathf.Lerp(maxIntensity, 0, progress);
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.3f);
+        DisableTwistedPair();
+    }
+    private void DisableTwistedPair()
+    {
+        foreach (GameObject wire in wires)
+        {
+            wire.SetActive(true);
+        }
+        wire1MeshFilter.gameObject.SetActive(false);
+        wire2MeshFilter.gameObject.SetActive(false);
+        
+        this.enabled= false;
     }
 }

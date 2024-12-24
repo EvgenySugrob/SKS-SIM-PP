@@ -358,6 +358,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &29420917
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +905,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &53757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2049,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &64913257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,6 +3753,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &115993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,6 +4630,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &154385854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,6 +4746,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &155093338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,6 +5801,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &197823595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,6 +6329,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &218607406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,6 +6655,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &227923200
 GameObject:
   m_ObjectHideFlags: 0
@@ -7205,6 +7218,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &246857617
 GameObject:
   m_ObjectHideFlags: 0
@@ -8578,6 +8592,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &305980840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5825417203156885734, guid: 0929eae2e7e8f4947bce867d343d4d14,
@@ -9586,6 +9603,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &322453072
 GameObject:
   m_ObjectHideFlags: 0
@@ -10236,6 +10256,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &346831598
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,6 +10374,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &347579210
 GameObject:
   m_ObjectHideFlags: 0
@@ -10983,6 +11009,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &359047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -11949,6 +11976,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &381848470
 GameObject:
   m_ObjectHideFlags: 0
@@ -13515,6 +13543,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &440135007
 GameObject:
   m_ObjectHideFlags: 0
@@ -14252,6 +14283,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &474022226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14359,6 +14391,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &477212122
 GameObject:
   m_ObjectHideFlags: 0
@@ -14781,6 +14814,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1001 &489854658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16174,6 +16208,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &531832555
 GameObject:
   m_ObjectHideFlags: 0
@@ -17024,6 +17059,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &549683880
 GameObject:
   m_ObjectHideFlags: 0
@@ -17139,6 +17177,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &553462233
 GameObject:
   m_ObjectHideFlags: 0
@@ -17383,6 +17424,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &557231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17886,6 +17928,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &573200400
 GameObject:
   m_ObjectHideFlags: 0
@@ -18001,6 +18046,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &573700998
 GameObject:
   m_ObjectHideFlags: 0
@@ -18213,6 +18261,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &596342196
 GameObject:
   m_ObjectHideFlags: 0
@@ -18425,6 +18474,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &600466297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460447450073191685, guid: 81dbcbac40ae12b439b514aad04a853e,
@@ -19021,6 +19071,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &625459450
 GameObject:
   m_ObjectHideFlags: 0
@@ -20067,6 +20118,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &666259799
 GameObject:
   m_ObjectHideFlags: 0
@@ -21899,6 +21951,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!114 &697650791 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7436363431230517803, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -22131,6 +22184,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &705682415
 GameObject:
   m_ObjectHideFlags: 0
@@ -22351,6 +22407,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &708802816
 GameObject:
   m_ObjectHideFlags: 0
@@ -22571,6 +22630,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &712352657
 GameObject:
   m_ObjectHideFlags: 0
@@ -22678,6 +22740,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &713660780
 GameObject:
   m_ObjectHideFlags: 0
@@ -22785,6 +22848,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &714221378
 GameObject:
   m_ObjectHideFlags: 0
@@ -25692,6 +25756,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &786083807
 GameObject:
   m_ObjectHideFlags: 0
@@ -26017,6 +26082,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &793398226
 GameObject:
   m_ObjectHideFlags: 0
@@ -26229,6 +26297,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &798229745
 GameObject:
   m_ObjectHideFlags: 0
@@ -28113,6 +28182,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &876216718
 GameObject:
   m_ObjectHideFlags: 0
@@ -28220,6 +28290,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &879066492
 GameObject:
   m_ObjectHideFlags: 0
@@ -28432,6 +28503,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &881292011
 GameObject:
   m_ObjectHideFlags: 0
@@ -28547,6 +28619,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &883361349
 GameObject:
   m_ObjectHideFlags: 0
@@ -28983,6 +29058,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &911944628
 GameObject:
   m_ObjectHideFlags: 0
@@ -29405,6 +29483,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &932815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -30440,6 +30519,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentManager: {fileID: 0}
   distanceRay: 3
+--- !u!114 &944692886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944692872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b6b563c790aa444a5da47548ac40c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 944692881}
+  distanceRay: 3
+  isWork: 1
 --- !u!1 &945389060
 GameObject:
   m_ObjectHideFlags: 0
@@ -31036,6 +31130,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &951496877
 GameObject:
   m_ObjectHideFlags: 0
@@ -31248,6 +31345,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &952844622
 GameObject:
   m_ObjectHideFlags: 0
@@ -32233,6 +32331,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &977921203
 GameObject:
   m_ObjectHideFlags: 0
@@ -32970,6 +33071,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &990800660
 GameObject:
   m_ObjectHideFlags: 0
@@ -33085,6 +33187,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &991400373
 GameObject:
   m_ObjectHideFlags: 0
@@ -34380,6 +34485,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1030784724
 GameObject:
   m_ObjectHideFlags: 0
@@ -34697,6 +34803,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1040814008
 GameObject:
   m_ObjectHideFlags: 0
@@ -36683,6 +36790,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1103503648
 GameObject:
   m_ObjectHideFlags: 0
@@ -37570,6 +37680,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -37685,6 +37796,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1120726849
 GameObject:
   m_ObjectHideFlags: 0
@@ -38979,6 +39093,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1175878487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4624115928136863818, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -39528,6 +39643,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1194040299
 GameObject:
   m_ObjectHideFlags: 0
@@ -40265,6 +40381,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1204300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -40687,6 +40804,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1224508632
 GameObject:
   m_ObjectHideFlags: 0
@@ -41004,6 +41122,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1234630383
 GameObject:
   m_ObjectHideFlags: 0
@@ -42029,6 +42148,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1266642415
 GameObject:
   m_ObjectHideFlags: 0
@@ -42598,6 +42718,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1276271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -43425,6 +43546,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1305714613
 GameObject:
   m_ObjectHideFlags: 0
@@ -43738,6 +43860,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1314366049
 GameObject:
   m_ObjectHideFlags: 0
@@ -44728,6 +44851,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1352429864
 GameObject:
   m_ObjectHideFlags: 0
@@ -45368,6 +45492,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1363798300
 GameObject:
   m_ObjectHideFlags: 0
@@ -45823,6 +45950,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1393566907
 GameObject:
   m_ObjectHideFlags: 0
@@ -46758,6 +46886,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1422373006
 GameObject:
   m_ObjectHideFlags: 0
@@ -48052,6 +48181,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1471308155
 GameObject:
   m_ObjectHideFlags: 0
@@ -48905,6 +49035,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1520795558
 GameObject:
   m_ObjectHideFlags: 0
@@ -49020,6 +49151,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1521382231
 GameObject:
   m_ObjectHideFlags: 0
@@ -49442,6 +49576,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1537471148
 GameObject:
   m_ObjectHideFlags: 0
@@ -50908,6 +51043,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1580414793
 GameObject:
   m_ObjectHideFlags: 0
@@ -53136,6 +53274,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1651785679
 GameObject:
   m_ObjectHideFlags: 0
@@ -53348,6 +53487,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1662795648
 GameObject:
   m_ObjectHideFlags: 0
@@ -54681,6 +54821,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1704580774
 GameObject:
   m_ObjectHideFlags: 0
@@ -54775,6 +54916,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!4 &1704580778
 Transform:
   m_ObjectHideFlags: 0
@@ -54901,6 +55045,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1729514013
 GameObject:
   m_ObjectHideFlags: 0
@@ -55437,6 +55582,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1770794980
 GameObject:
   m_ObjectHideFlags: 0
@@ -55552,6 +55700,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1772900515
 GameObject:
   m_ObjectHideFlags: 0
@@ -55869,6 +56020,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1783961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -55976,6 +56128,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!4 &1783976732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
@@ -56330,6 +56483,199 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812347732}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1813308222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 62783366064327614, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0103753
+      objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0083524
+      objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450222459819226413, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503075626941901116, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Name
+      value: BezierCable (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440790416857898498, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495881422167337443, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559865751013992184, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769567333629169892, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: workModeManipulation
+      value: 
+      objectReference: {fileID: 944692886}
+    - target: {fileID: 2025356763471386488, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043834524861073046, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.010375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.008352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800528015005013544, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841731778942473799, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077151510625365858, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381909447580443729, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522236980582952753, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: controlPoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760216479314279394, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885942852037250611, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207429110807343031, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930899580082750339, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395063393719941803, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366663075105408140, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17f88fb6f0c387e45b68928db015b752, type: 3}
 --- !u!1 &1813429179
 GameObject:
   m_ObjectHideFlags: 0
@@ -56857,6 +57203,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1826355178
 GameObject:
   m_ObjectHideFlags: 0
@@ -57370,6 +57717,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1832666583
 GameObject:
   m_ObjectHideFlags: 0
@@ -58636,6 +58986,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1872435390
 GameObject:
   m_ObjectHideFlags: 0
@@ -59591,6 +59944,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1882950135
 GameObject:
   m_ObjectHideFlags: 0
@@ -60124,6 +60480,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1894849479
 GameObject:
   m_ObjectHideFlags: 0
@@ -60473,6 +60830,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1907190263
 GameObject:
   m_ObjectHideFlags: 0
@@ -60790,6 +61148,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1913727391
 GameObject:
   m_ObjectHideFlags: 0
@@ -61430,6 +61789,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1 &1941551587
 GameObject:
   m_ObjectHideFlags: 0
@@ -62587,6 +62949,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1978375329
 GameObject:
   m_ObjectHideFlags: 0
@@ -62904,6 +63267,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1987886137
 GameObject:
   m_ObjectHideFlags: 0
@@ -63011,6 +63375,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &1988536910
 GameObject:
   m_ObjectHideFlags: 0
@@ -63094,6 +63459,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988536910}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2002521195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1769567333629169892, guid: 17f88fb6f0c387e45b68928db015b752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3493744544103507472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec41c5a21ce1d342ad48506141ec98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2003994353
 GameObject:
   m_ObjectHideFlags: 0
@@ -63375,6 +63752,9 @@ MonoBehaviour:
   wire2Mat: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
   outlineSetting: {fileID: 0}
   outlineManager: {fileID: 0}
+  wires: []
+  speed: 0
+  unravelingCount: {fileID: 0}
 --- !u!1001 &2013636532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65105,6 +65485,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &2056554882
 GameObject:
   m_ObjectHideFlags: 0
@@ -65619,6 +66000,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &2080947573
 GameObject:
   m_ObjectHideFlags: 0
@@ -65724,6 +66106,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080947573}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2090574502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3493744544103507472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2090574507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090574502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec41c5a21ce1d342ad48506141ec98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countPairInCable: 4
+  workModeManipulation: {fileID: 0}
+  pointInformation: {fileID: 0}
 --- !u!1001 &2091711226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66021,6 +66424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5376468694409717184, guid: 2d2954463d11db9488fbea95811224bc,
         type: 3}
+      propertyPath: workMode
+      value: 
+      objectReference: {fileID: 944692886}
+    - target: {fileID: 5376468694409717184, guid: 2d2954463d11db9488fbea95811224bc,
+        type: 3}
       propertyPath: uiManipulation
       value: 
       objectReference: {fileID: 1120726852}
@@ -66277,6 +66685,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 944692885}
+    - targetCorrespondingSourceObject: {fileID: 6341344241247827868, guid: 2d2954463d11db9488fbea95811224bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 944692886}
   m_SourcePrefab: {fileID: 100100000, guid: 2d2954463d11db9488fbea95811224bc, type: 3}
 --- !u!224 &2100879668 stripped
 RectTransform:
@@ -67507,6 +67919,7 @@ MonoBehaviour:
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
+  colliderPart: {fileID: 0}
 --- !u!1 &2124298851
 GameObject:
   m_ObjectHideFlags: 0
@@ -68512,11 +68925,31 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0103753
+      objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0083524
+      objectReference: {fileID: 0}
+    - target: {fileID: 207672966227190865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 503075626941901116, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 590505528587205042, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: unravelingCount
+      value: 
+      objectReference: {fileID: 2002521195}
     - target: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Name
@@ -68527,20 +68960,60 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1495881422167337443, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
     - target: {fileID: 1559865751013992184, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769567333629169892, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: workModeManipulation
+      value: 
+      objectReference: {fileID: 944692886}
+    - target: {fileID: 1962254348232137126, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: unravelingCount
+      value: 
+      objectReference: {fileID: 2002521195}
+    - target: {fileID: 2025356763471386488, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
       objectReference: {fileID: 0}
     - target: {fileID: 3043834524861073046, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.010375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.008352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800528015005013544, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
+      objectReference: {fileID: 0}
     - target: {fileID: 3841731778942473799, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Anchor.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077151510625365858, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_TagString
+      value: Manipulation
       objectReference: {fileID: 0}
     - target: {fileID: 4381909447580443729, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
@@ -68552,10 +69025,20 @@ PrefabInstance:
       propertyPath: controlPoints.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4701450893203304791, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: unravelingCount
+      value: 
+      objectReference: {fileID: 2002521195}
     - target: {fileID: 4760216479314279394, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809987681479085865, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: unravelingCount
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6595488479176741781, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
@@ -68625,7 +69108,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2090574507}
   m_SourcePrefab: {fileID: 100100000, guid: 17f88fb6f0c387e45b68928db015b752, type: 3}
 --- !u!1 &5935041657486430380 stripped
 GameObject:
@@ -68732,5 +69219,6 @@ SceneRoots:
   - {fileID: 1704580778}
   - {fileID: 991400375}
   - {fileID: 3493744544103507472}
+  - {fileID: 1813308222}
   - {fileID: 655728546}
   - {fileID: 315659610}

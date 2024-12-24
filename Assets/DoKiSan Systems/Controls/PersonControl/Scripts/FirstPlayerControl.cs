@@ -21,6 +21,9 @@ namespace DoKiSan.Controls
         [Header("UI")]
         [SerializeField] UIManipulation uiManipulation;
 
+        [Header("Manipulation")]
+        [SerializeField] WorkModeManipulation workMode;
+
         private Controller inputs;
         private Animator animator;
         private float velocityVertical = 0f, cinemachineTargetPitch = 0, returnSpeed;
@@ -61,6 +64,10 @@ namespace DoKiSan.Controls
             if(!uiManipulation.MainUIGroupIsActive())
             {
                 interactionSystem.HandleInteraction();
+            }
+            else
+            {
+                workMode.CheckObject();
             }
         }
 
