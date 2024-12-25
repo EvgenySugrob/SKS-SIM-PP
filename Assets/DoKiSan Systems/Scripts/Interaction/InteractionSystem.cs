@@ -8,7 +8,76 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField] GameObject heldObject;
     [SerializeField] Camera mainCamera;
     [SerializeField] float interactDistance = 3f;
-    [SerializeField] GameObject handSlot; 
+    [SerializeField] GameObject handSlot;
+
+    [Header("Cabple part manipulation")]
+    [SerializeField] bool isCablePartMoving=false;
+    private bool _isSwiping;
+    private Vector3 _prevPosition;
+    private CablePointBezier _currentPointBezier;
+
+
+    private void Update()
+    {
+        if(isCablePartMoving)
+        {
+            ProcessClickDown();
+            ProcessClickUp();
+            ProcessSwipe();
+        }
+    }
+
+    public void StateCablePartMoving(bool state)
+    {
+        isCablePartMoving= state;
+    }
+    private void ProcessClickUp()
+    {
+        if (Input.GetMouseButtonUp(0) == false)
+            return;
+
+        _currentPointBezier = null;
+        _isSwiping = false;
+    }
+
+    private void ProcessSwipe()
+    {
+        if (_isSwiping == false)
+            return;
+
+        if (_prevPosition == Input.mousePosition)
+            return;
+
+        if (_currentPointBezier == null)
+        return;
+
+        _prevPosition= Input.mousePosition;
+
+        Ray touchRay = GetRay(_prevPosition);
+        Plane plane = new Plane(Vector3.up, Vector3.zero);
+
+        if(plane.Raycast(touchRay, out float hitDistance))
+        {
+            Vector3 point = touchRay.GetPoint(hitDistance);
+
+            _currentPointBezier.transform.position = point;
+        }
+    }
+
+    private void ProcessClickDown()
+    {
+        if (Input.GetMouseButtonDown(0) == false)
+            return;
+
+        _isSwiping = true;
+        _prevPosition = Input.mousePosition;
+
+        if (Physics.Raycast(GetRay(_prevPosition), out RaycastHit hit))
+            if (hit.collider.TryGetComponent(out CablePointBezier cablePoint))
+                _currentPointBezier= cablePoint;
+    }
+
+    private Ray GetRay(Vector3 position) => mainCamera.ScreenPointToRay(position);
 
     public void HandleInteraction()
     {
@@ -52,15 +121,21 @@ public class InteractionSystem : MonoBehaviour
                 interactable1.Interact(obj2);
                 interactable2.Interact(obj1);
                 Debug.Log($"Взаимодействие между {obj1.name} и {obj2.name}");
+
+                //heldObject.transform.SetParent(null);
+                //heldObject = null;
             }
         }
-
-        heldObject.transform.SetParent(null);
-        heldObject = null;
     }
 
     public GameObject GetHeldObject()
     {
         return heldObject;
+    }
+
+    public void ClearHand()
+    {
+        heldObject.transform.SetParent(null);
+        heldObject = null;
     }
 }

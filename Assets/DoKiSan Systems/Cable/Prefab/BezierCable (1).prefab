@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 4653318115865875206}
   - component: {fileID: 1307684665430675790}
   - component: {fileID: 8766661223211383588}
+  - component: {fileID: 5266821080399097486}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -281,6 +282,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 5889644231967296408}
   outlineActive: 0
+--- !u!114 &5266821080399097486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478491567630121309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483504524257863806
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +305,7 @@ GameObject:
   - component: {fileID: 3104204076703490020}
   - component: {fileID: 2170737521944831268}
   - component: {fileID: 5272570756100326575}
+  - component: {fileID: 4821250706355256616}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -352,6 +366,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 7055783324208297193}
   outlineActive: 0
+--- !u!114 &4821250706355256616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483504524257863806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &488602214122864145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,6 +1466,8 @@ MonoBehaviour:
   countPairInCable: 4
   workModeManipulation: {fileID: 0}
   pointInformation: {fileID: 0}
+  strippingCable: {fileID: 0}
+  stripperInteration: {fileID: 0}
 --- !u!1 &1020065827122002708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,6 +3848,7 @@ GameObject:
   - component: {fileID: 1578087117810656671}
   - component: {fileID: 1594080228446922960}
   - component: {fileID: 7357896872882154259}
+  - component: {fileID: 1373359251193360412}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -3880,6 +3909,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 1752547535513195475}
   outlineActive: 0
+--- !u!114 &1373359251193360412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056720779093223815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3115456172426017022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,7 +3946,7 @@ Transform:
   m_GameObject: {fileID: 3115456172426017022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.46, z: -9.92}
+  m_LocalPosition: {x: -0, y: -0.46, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4373,6 +4414,7 @@ GameObject:
   - component: {fileID: 1219301583299651087}
   - component: {fileID: 3562796778006087546}
   - component: {fileID: 323988139053657936}
+  - component: {fileID: 3562178308769405120}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -4433,6 +4475,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 5948701326743686163}
   outlineActive: 0
+--- !u!114 &3562178308769405120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705933866317056820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3797195973886533297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,6 +4959,7 @@ GameObject:
   - component: {fileID: 6386544026244410837}
   - component: {fileID: 2528822335220304221}
   - component: {fileID: 2391504259042227354}
+  - component: {fileID: 587067605762484760}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -4965,6 +5020,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 1481652431579070895}
   outlineActive: 0
+--- !u!114 &587067605762484760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988448850344646650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3999972472547623581
 GameObject:
   m_ObjectHideFlags: 0
@@ -6815,6 +6882,7 @@ GameObject:
   - component: {fileID: 6637249362279089196}
   - component: {fileID: 1385221124580770383}
   - component: {fileID: 81372608394604278}
+  - component: {fileID: 757643663394618575}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -6875,6 +6943,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 7189275828869448727}
   outlineActive: 0
+--- !u!114 &757643663394618575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006560619572320916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6067354109529729494
 GameObject:
   m_ObjectHideFlags: 0
@@ -7339,6 +7419,7 @@ GameObject:
   - component: {fileID: 1239761346133617316}
   - component: {fileID: 1107362213918444570}
   - component: {fileID: 1178492717719943738}
+  - component: {fileID: 2845594818676105747}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -7399,6 +7480,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 1020824707401951161}
   outlineActive: 0
+--- !u!114 &2845594818676105747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403193168557060802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6940427953559089467
 GameObject:
   m_ObjectHideFlags: 0
@@ -8979,6 +9072,7 @@ GameObject:
   - component: {fileID: 680045134617382525}
   - component: {fileID: 2745764491238983300}
   - component: {fileID: 7502396751188207012}
+  - component: {fileID: 6380351812024409066}
   m_Layer: 7
   m_Name: InteractionPivot
   m_TagString: Untagged
@@ -9039,6 +9133,18 @@ MonoBehaviour:
   outlines:
   - {fileID: 7765017545976151738}
   outlineActive: 0
+--- !u!114 &6380351812024409066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788465815673115645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8809361696787095077
 GameObject:
   m_ObjectHideFlags: 0

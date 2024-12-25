@@ -14,6 +14,7 @@ public class StripperInteration : MonoBehaviour
     [SerializeField] float offsetZ = 0.15f;
     [SerializeField] Transform stripperPoint;
     [SerializeField] Transform stripperRotationPivot;
+    [SerializeField] Transform stripperUperPart;
     [SerializeField] LayerMask layerMask;
 
     private Material projectorMaterial;
@@ -108,7 +109,9 @@ public class StripperInteration : MonoBehaviour
 
         return DOTween.Sequence()
             .Append(stripperRotationPivot.DOMove(point,1f))
+            .Append(stripperUperPart.DOLocalRotate(Vector3.right*20,1f,RotateMode.LocalAxisAdd))
             .Append(stripperRotationPivot.DOLocalRotate(Vector3.up*360,0.75f,RotateMode.FastBeyond360))
+            .Append(stripperUperPart.DOLocalRotate(Vector3.left*20,1f,RotateMode.LocalAxisAdd))
             .Append(stripperRotationPivot.DOLocalMove(startPoint,1f))
             .Play()
             .WaitForCompletion();

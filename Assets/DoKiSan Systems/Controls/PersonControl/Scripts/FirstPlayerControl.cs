@@ -1,4 +1,6 @@
+using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +25,17 @@ namespace DoKiSan.Controls
 
         [Header("Manipulation")]
         [SerializeField] WorkModeManipulation workMode;
+
+        [Header("Eyes move over PP")]
+        [SerializeField] bool limitlStateControl;
+        [SerializeField] Transform eyes;
+        [SerializeField] float speed;
+        [SerializeField] float leftLimit = -1;
+        [SerializeField] float rightLimit = 1;
+        private Transform _startParentEyes;
+        private Vector3 _startPosition;
+        private Quaternion _startRotation;
+
 
         private Controller inputs;
         private Animator animator;
@@ -89,18 +102,22 @@ namespace DoKiSan.Controls
                 velocityVertical = jumpForce;
             }
         }
-
+        private void Start()
+        {
+            _startParentEyes = eyes.transform.parent;
+        }
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (!uiManipulation.MainUIGroupIsActive())
+            if (!uiManipulation.MainUIGroupIsActive() && !limitlStateControl)
             {
                 PlayerMove();
             }
+            
         }
         private void LateUpdate()
         {
-            if (!uiManipulation.MainUIGroupIsActive())
+            if (!uiManipulation.MainUIGroupIsActive() && !limitlStateControl)
             {
                 PlayerRotation();
             }
@@ -108,6 +125,11 @@ namespace DoKiSan.Controls
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+            }
+
+            if (limitlStateControl)
+            {
+                LimitMoveEyes();
             }
         }
         private void PlayerRotation()
@@ -126,7 +148,11 @@ namespace DoKiSan.Controls
         private void PlayerMove()
         {
             //Move player
-            velocityVertical -= gravityInScene * Time.fixedDeltaTime;
+            if(!limitlStateControl)
+            {
+                velocityVertical -= gravityInScene * Time.fixedDeltaTime;
+            }
+
             Vector2 side = inputs.Player.Moving.ReadValue<Vector2>(); //Takes Vector2, which ranges from [-1; -1] to [1; 1].The first coordinates -move back to the left, the second - forward to the right
             GetComponent<CharacterController>().Move(transform.TransformDirection(side.x, velocityVertical, side.y) * speedCharacter * Time.fixedDeltaTime);
             if (GetComponent<CharacterController>().isGrounded)
@@ -142,6 +168,43 @@ namespace DoKiSan.Controls
             if (needClampAngle < -360f) needClampAngle += 360f;
             if (needClampAngle > 360f) needClampAngle -= 360f;
             return Mathf.Clamp(needClampAngle, minAngleAxis, maxAngleAxis);
+        }
+
+        public void SwitchTypeMovePlayer(bool state)
+        {
+            limitlStateControl = state;
+        }
+
+        public void PointForMove(Transform point)
+        {
+            StartCoroutine(MoveEyesToPP(point));
+        }
+        private IEnumerator MoveEyesToPP(Transform newParent)
+        {
+            _startPosition = eyes.localPosition;
+            _startRotation = eyes.localRotation;
+            eyes.transform.parent = newParent;
+            yield return StartMoveToPP();
+            
+        }
+        private YieldInstruction StartMoveToPP()
+        {
+            return DOTween.Sequence()
+                .Append(eyes.DOLocalMove(Vector3.zero, 1.5f))
+                .Join(eyes.DOLocalRotate(Vector3.zero, 1.5f))
+                .Play()
+                .WaitForCompletion();
+        }
+        
+        private void LimitMoveEyes()
+        {
+            float input = Input.GetAxis("Horizontal");
+            Vector3 localMove = new Vector3(input * speed * Time.deltaTime, 0f, 0f);
+
+            Vector3 newPosition = eyes.transform.localPosition + localMove;
+            newPosition.x = Mathf.Clamp(newPosition.x, leftLimit, rightLimit);
+
+            eyes.transform.localPosition= newPosition;
         }
     }
 }
