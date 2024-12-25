@@ -1483,7 +1483,7 @@ GameObject:
   - component: {fileID: 5889644231967296408}
   m_Layer: 7
   m_Name: WhitePart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 7189275828869448727}
   m_Layer: 7
   m_Name: GreenPart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 5948701326743686163}
   m_Layer: 7
   m_Name: WhitePart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2526,7 +2526,7 @@ GameObject:
   - component: {fileID: 1020824707401951161}
   m_Layer: 7
   m_Name: BrownPart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4782,7 +4782,7 @@ GameObject:
   - component: {fileID: 1752547535513195475}
   m_Layer: 7
   m_Name: BluePart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5747,7 +5747,7 @@ GameObject:
   - component: {fileID: 7765017545976151738}
   m_Layer: 7
   m_Name: WhitePart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7612,7 +7612,7 @@ GameObject:
   - component: {fileID: 1481652431579070895}
   m_Layer: 7
   m_Name: WhitePart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8187,7 +8187,7 @@ GameObject:
   - component: {fileID: 7055783324208297193}
   m_Layer: 7
   m_Name: YellowPart
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

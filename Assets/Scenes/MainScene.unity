@@ -34235,6 +34235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentManager: {fileID: 0}
   distanceRay: 3
+  animationFrame:
+  - {fileID: 2800000, guid: 893c06a0f4dd3a24abcfca2d6cc29754, type: 3}
+  - {fileID: 2800000, guid: f68524d4f919129428800ec04e206791, type: 3}
+  frameRate: 2
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &944692886
 MonoBehaviour:
   m_ObjectHideFlags: 0

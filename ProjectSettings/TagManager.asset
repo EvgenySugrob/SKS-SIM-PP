@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - cutPlace
   - Manipulation
+  - ChangeIcon
   layers:
   - Default
   - TransparentFX

@@ -5,11 +5,20 @@ using UnityEngineInternal;
 
 public class OutlineDetection : MonoBehaviour
 {
+    [Header("Outline")]
     [SerializeField] OutlineManager currentManager;
     [SerializeField] float distanceRay=3f;
     private OutlineManager _prevManager;
     private GameObject _currentObject;
     private Camera _mainCamera;
+
+    [Header("Switch cursor")]
+    [SerializeField] Texture2D[] animationFrame;
+    [SerializeField] float frameRate = 2f;
+    [SerializeField] Vector2 hotSpot = Vector2.zero;
+    private int _currentFrame = 0;
+    private float timer;
+    
 
     private void Start()
     {
@@ -54,5 +63,30 @@ public class OutlineDetection : MonoBehaviour
                 currentManager= null;
             }
         }
+
+        //UpdateCursor();
     }
+
+    //private void UpdateCursor()
+    //{
+    //    if (_currentObject.CompareTag("ChangeIcon") || _currentObject.CompareTag("Manipulation"))
+    //    {
+    //        if (animationFrame.Length == 0)
+    //            return;
+
+    //        timer += Time.deltaTime;
+    //        if (timer >= 1f / frameRate)
+    //        {
+    //            timer -= 1f / frameRate;
+
+    //            _currentFrame = (_currentFrame + 1) % animationFrame.Length;
+
+    //            Cursor.SetCursor(animationFrame[_currentFrame], hotSpot, CursorMode.Auto);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    //    }
+    //}
 }
