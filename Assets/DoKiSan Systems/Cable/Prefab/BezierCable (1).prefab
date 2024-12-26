@@ -506,6 +506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: white
+  typeGroupCable: White/Blue
 --- !u!1 &483504524257863806
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: orange
+  typeGroupCable: White/OrangeGreen
 --- !u!1 &488602214122864145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,6 +4581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: blue
+  typeGroupCable: White/Blue
 --- !u!1 &3115456172426017022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,6 +5256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: white
+  typeGroupCable: White/Brown
 --- !u!1 &3797195973886533297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5802,6 +5810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: white
+  typeGroupCable: White/GreenOrange
 --- !u!1 &3999972472547623581
 GameObject:
   m_ObjectHideFlags: 0
@@ -8047,6 +8057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: green
+  typeGroupCable: White/GreenOrange
 --- !u!1 &6067354109529729494
 GameObject:
   m_ObjectHideFlags: 0
@@ -8586,6 +8598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: brown
+  typeGroupCable: White/Brown
 --- !u!1 &6803938369604065428
 GameObject:
   m_ObjectHideFlags: 0
@@ -9495,7 +9509,7 @@ GameObject:
   - component: {fileID: 2516749483602180587}
   - component: {fileID: 7055783324208297193}
   m_Layer: 7
-  m_Name: YellowPart
+  m_Name: OrangePart
   m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10776,6 +10790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
+  typeCable: white
+  typeGroupCable: White/OrangeGreen
 --- !u!1 &8809361696787095077
 GameObject:
   m_ObjectHideFlags: 0
