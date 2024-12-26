@@ -372,12 +372,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2056554883}
   endPoint: {fileID: 1074227587}
-  controlPoint1: {fileID: 1007831530}
-  controlPoint2: {fileID: 773025957}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &29420917
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,12 +955,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 322453073}
   endPoint: {fileID: 477212123}
-  controlPoint1: {fileID: 1201548647}
-  controlPoint2: {fileID: 1600551370}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &53757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,12 +2204,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1185746516}
   endPoint: {fileID: 1617210227}
-  controlPoint1: {fileID: 1295614044}
-  controlPoint2: {fileID: 1107670887}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &64913257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,12 +4013,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2043701250}
   endPoint: {fileID: 856264607}
-  controlPoint1: {fileID: 1144547162}
-  controlPoint2: {fileID: 2103611030}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &115993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,12 +5026,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2027639914}
   endPoint: {fileID: 970525732}
-  controlPoint1: {fileID: 616947883}
-  controlPoint2: {fileID: 698151176}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &154385854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,12 +6362,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1352429865}
   endPoint: {fileID: 1436671972}
-  controlPoint1: {fileID: 728209120}
-  controlPoint2: {fileID: 2023299032}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &195120760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,12 +7100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1031189963}
   endPoint: {fileID: 188173433}
-  controlPoint1: {fileID: 2119347781}
-  controlPoint2: {fileID: 666899045}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &218607406
 GameObject:
   m_ObjectHideFlags: 0
@@ -7989,12 +7989,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1851867897}
   endPoint: {fileID: 1068229496}
-  controlPoint1: {fileID: 396661963}
-  controlPoint2: {fileID: 1019099853}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &246857617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12268,12 +12268,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1813816244}
   endPoint: {fileID: 523027184}
-  controlPoint1: {fileID: 1432113648}
-  controlPoint2: {fileID: 1961021600}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &359047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13445,12 +13445,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1365749640}
   endPoint: {fileID: 1694781352}
-  controlPoint1: {fileID: 1907190264}
-  controlPoint2: {fileID: 894468000}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &378963989
 GameObject:
   m_ObjectHideFlags: 0
@@ -16155,12 +16155,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1528751036}
   endPoint: {fileID: 88626504}
-  controlPoint1: {fileID: 416415743}
-  controlPoint2: {fileID: 639184000}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &474022226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16263,12 +16263,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1978375330}
   endPoint: {fileID: 1422373007}
-  controlPoint1: {fileID: 2135402625}
-  controlPoint2: {fileID: 53757083}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &477056195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16791,12 +16791,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 411488180}
   endPoint: {fileID: 545567581}
-  controlPoint1: {fileID: 77099004}
-  controlPoint2: {fileID: 2143642460}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1001 &489854658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18488,12 +18488,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1267265182}
   endPoint: {fileID: 368587124}
-  controlPoint1: {fileID: 277493446}
-  controlPoint2: {fileID: 1673385082}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &531832555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19776,12 +19776,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 229267389}
   endPoint: {fileID: 1452233829}
-  controlPoint1: {fileID: 1109145144}
-  controlPoint2: {fileID: 1627574979}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &557231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -20801,12 +20801,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1927278908}
   endPoint: {fileID: 708802817}
-  controlPoint1: {fileID: 753007731}
-  controlPoint2: {fileID: 1424668442}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &596342196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21014,12 +21014,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 779559440}
   endPoint: {fileID: 951496878}
-  controlPoint1: {fileID: 992774848}
-  controlPoint2: {fileID: 1165993450}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &600466297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460447450073191685, guid: 81dbcbac40ae12b439b514aad04a853e,
@@ -21611,12 +21611,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2016883322}
   endPoint: {fileID: 1812347733}
-  controlPoint1: {fileID: 1129124278}
-  controlPoint2: {fileID: 1832666584}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &625459450
 GameObject:
   m_ObjectHideFlags: 0
@@ -22508,6 +22508,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 5892822841304631997, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+        type: 3}
+      propertyPath: alphaSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
         type: 3}
       propertyPath: pointForEyes
@@ -22639,12 +22644,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 419795353}
   endPoint: {fileID: 620983465}
-  controlPoint1: {fileID: 793398227}
-  controlPoint2: {fileID: 1256914232}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &666259799
 GameObject:
   m_ObjectHideFlags: 0
@@ -24544,12 +24549,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1176297581}
   endPoint: {fileID: 684251393}
-  controlPoint1: {fileID: 1790983330}
-  controlPoint2: {fileID: 957468425}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &689264982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2101956276030286225, guid: c92fb872977897d47a1837f1ef421bcf,
@@ -25527,12 +25532,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 133906312}
   endPoint: {fileID: 1105039319}
-  controlPoint1: {fileID: 440135008}
-  controlPoint2: {fileID: 502852686}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &713660780
 GameObject:
   m_ObjectHideFlags: 0
@@ -25635,12 +25640,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 745060131}
   endPoint: {fileID: 457417888}
-  controlPoint1: {fileID: 718468307}
-  controlPoint2: {fileID: 1290213097}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &714221378
 GameObject:
   m_ObjectHideFlags: 0
@@ -28795,12 +28800,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1043726852}
   endPoint: {fileID: 463562186}
-  controlPoint1: {fileID: 1400326310}
-  controlPoint2: {fileID: 1141337457}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &786083807
 GameObject:
   m_ObjectHideFlags: 0
@@ -29113,12 +29118,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 594666831}
   endPoint: {fileID: 55786890}
-  controlPoint1: {fileID: 251643198}
-  controlPoint2: {fileID: 337862117}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &790905016
 Transform:
   m_ObjectHideFlags: 0
@@ -29533,12 +29538,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1359144931}
   endPoint: {fileID: 1234630384}
-  controlPoint1: {fileID: 543363748}
-  controlPoint2: {fileID: 246857618}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &798229745
 GameObject:
   m_ObjectHideFlags: 0
@@ -31568,12 +31573,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1874070243}
   endPoint: {fileID: 1854296301}
-  controlPoint1: {fileID: 1147956188}
-  controlPoint2: {fileID: 1772900516}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &876216718
 GameObject:
   m_ObjectHideFlags: 0
@@ -31676,12 +31681,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1044463427}
   endPoint: {fileID: 859257053}
-  controlPoint1: {fileID: 424800985}
-  controlPoint2: {fileID: 749088092}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &879066492
 GameObject:
   m_ObjectHideFlags: 0
@@ -31889,12 +31894,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2080947574}
   endPoint: {fileID: 168319265}
-  controlPoint1: {fileID: 1370743497}
-  controlPoint2: {fileID: 1907282992}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &881292011
 GameObject:
   m_ObjectHideFlags: 0
@@ -32764,12 +32769,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1729854249}
   endPoint: {fileID: 702727312}
-  controlPoint1: {fileID: 2080510402}
-  controlPoint2: {fileID: 766166189}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &915175222
 Transform:
   m_ObjectHideFlags: 0
@@ -33123,12 +33128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1255490382}
   endPoint: {fileID: 155093339}
-  controlPoint1: {fileID: 625459451}
-  controlPoint2: {fileID: 1199781500}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &932815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -34238,8 +34243,8 @@ MonoBehaviour:
   animationFrame:
   - {fileID: 2800000, guid: 893c06a0f4dd3a24abcfca2d6cc29754, type: 3}
   - {fileID: 2800000, guid: f68524d4f919129428800ec04e206791, type: 3}
-  frameRate: 2
-  hotSpot: {x: 0, y: 0}
+  frameRate: 3
+  hotSpot: {x: 32, y: 32}
 --- !u!114 &944692886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35061,12 +35066,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1577577523}
   endPoint: {fileID: 541639350}
-  controlPoint1: {fileID: 1879754442}
-  controlPoint2: {fileID: 1472569748}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &952844622
 GameObject:
   m_ObjectHideFlags: 0
@@ -37015,12 +37020,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 932815305}
   endPoint: {fileID: 1598702823}
-  controlPoint1: {fileID: 803970758}
-  controlPoint2: {fileID: 786083808}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &990800660
 GameObject:
   m_ObjectHideFlags: 0
@@ -38622,12 +38627,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2124648618}
   endPoint: {fileID: 1651785680}
-  controlPoint1: {fileID: 106501452}
-  controlPoint2: {fileID: 981584959}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1030784724
 GameObject:
   m_ObjectHideFlags: 0
@@ -38940,12 +38945,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1668165537}
   endPoint: {fileID: 1276271545}
-  controlPoint1: {fileID: 1851786062}
-  controlPoint2: {fileID: 1109914704}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1040695926
 GameObject:
   m_ObjectHideFlags: 0
@@ -41970,12 +41975,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 979062905}
   endPoint: {fileID: 1861408575}
-  controlPoint1: {fileID: 170483044}
-  controlPoint2: {fileID: 1488003740}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -43425,12 +43430,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 480332933}
   endPoint: {fileID: 967576495}
-  controlPoint1: {fileID: 300273104}
-  controlPoint2: {fileID: 1571267076}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1175878487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4624115928136863818, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -44080,12 +44085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1537528418}
   endPoint: {fileID: 1456032829}
-  controlPoint1: {fileID: 705682416}
-  controlPoint2: {fileID: 1976001885}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1194040299
 GameObject:
   m_ObjectHideFlags: 0
@@ -44889,12 +44894,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 418370680}
   endPoint: {fileID: 263849688}
-  controlPoint1: {fileID: 1818150426}
-  controlPoint2: {fileID: 1854117044}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1204300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -45312,12 +45317,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 718741149}
   endPoint: {fileID: 952844623}
-  controlPoint1: {fileID: 1358048557}
-  controlPoint2: {fileID: 526309184}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1224508632
 GameObject:
   m_ObjectHideFlags: 0
@@ -45630,12 +45635,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 168144312}
   endPoint: {fileID: 1099977028}
-  controlPoint1: {fileID: 1259838883}
-  controlPoint2: {fileID: 1236539691}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1234630383
 GameObject:
   m_ObjectHideFlags: 0
@@ -46841,12 +46846,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 531476283}
   endPoint: {fileID: 1616284097}
-  controlPoint1: {fileID: 918179234}
-  controlPoint2: {fileID: 201189772}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1266642415
 GameObject:
   m_ObjectHideFlags: 0
@@ -47411,12 +47416,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1596727470}
   endPoint: {fileID: 728177237}
-  controlPoint1: {fileID: 1224508633}
-  controlPoint2: {fileID: 1076666867}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1276271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -48419,12 +48424,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1196101129}
   endPoint: {fileID: 1525288392}
-  controlPoint1: {fileID: 1882006615}
-  controlPoint2: {fileID: 802901011}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1305714613
 GameObject:
   m_ObjectHideFlags: 0
@@ -48733,12 +48738,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 38199440}
   endPoint: {fileID: 1828988537}
-  controlPoint1: {fileID: 879066493}
-  controlPoint2: {fileID: 789209014}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1314366049
 GameObject:
   m_ObjectHideFlags: 0
@@ -50037,12 +50042,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1941551588}
   endPoint: {fileID: 1684601877}
-  controlPoint1: {fileID: 1974127371}
-  controlPoint2: {fileID: 1645671211}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1352429864
 GameObject:
   m_ObjectHideFlags: 0
@@ -51241,12 +51246,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1952551493}
   endPoint: {fileID: 540066528}
-  controlPoint1: {fileID: 170819759}
-  controlPoint2: {fileID: 596342197}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1388026921
 GameObject:
   m_ObjectHideFlags: 0
@@ -52410,12 +52415,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 118819607}
   endPoint: {fileID: 635359438}
-  controlPoint1: {fileID: 205082810}
-  controlPoint2: {fileID: 451602957}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1422373006
 GameObject:
   m_ObjectHideFlags: 0
@@ -53921,12 +53926,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 197823596}
   endPoint: {fileID: 956072671}
-  controlPoint1: {fileID: 1882238615}
-  controlPoint2: {fileID: 848818592}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1471308155
 GameObject:
   m_ObjectHideFlags: 0
@@ -54951,12 +54956,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 763498251}
   endPoint: {fileID: 2038547272}
-  controlPoint1: {fileID: 1441252590}
-  controlPoint2: {fileID: 295002850}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1520795558
 GameObject:
   m_ObjectHideFlags: 0
@@ -55492,12 +55497,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 732652922}
   endPoint: {fileID: 1024042793}
-  controlPoint1: {fileID: 219964046}
-  controlPoint2: {fileID: 336875286}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1534869338
 GameObject:
   m_ObjectHideFlags: 0
@@ -56422,12 +56427,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 403462463}
   endPoint: {fileID: 1279649994}
-  controlPoint1: {fileID: 436734771}
-  controlPoint2: {fileID: 1388026922}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &1560372054
 Transform:
   m_ObjectHideFlags: 0
@@ -59611,12 +59616,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 359079360}
   endPoint: {fileID: 477056196}
-  controlPoint1: {fileID: 1929928266}
-  controlPoint2: {fileID: 1880087191}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1639986358
 GameObject:
   m_ObjectHideFlags: 0
@@ -60052,12 +60057,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1958011705}
   endPoint: {fileID: 117583474}
-  controlPoint1: {fileID: 1450143576}
-  controlPoint2: {fileID: 623009005}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1651785679
 GameObject:
   m_ObjectHideFlags: 0
@@ -60265,12 +60270,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 810953926}
   endPoint: {fileID: 1373663599}
-  controlPoint1: {fileID: 229607890}
-  controlPoint2: {fileID: 1599887516}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1662795648
 GameObject:
   m_ObjectHideFlags: 0
@@ -60654,12 +60659,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 86142870}
   endPoint: {fileID: 374916291}
-  controlPoint1: {fileID: 1426902819}
-  controlPoint2: {fileID: 1288903841}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1673385081
 GameObject:
   m_ObjectHideFlags: 0
@@ -61812,12 +61817,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1849796261}
   endPoint: {fileID: 423775846}
-  controlPoint1: {fileID: 348482868}
-  controlPoint2: {fileID: 256796032}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1704580774
 GameObject:
   m_ObjectHideFlags: 0
@@ -62036,12 +62041,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1314366050}
   endPoint: {fileID: 1025688371}
-  controlPoint1: {fileID: 1356123378}
-  controlPoint2: {fileID: 1103503649}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1721392826
 GameObject:
   m_ObjectHideFlags: 0
@@ -63073,12 +63078,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1556515382}
   endPoint: {fileID: 758337722}
-  controlPoint1: {fileID: 1799862653}
-  controlPoint2: {fileID: 1561706000}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1755381152
 GameObject:
   m_ObjectHideFlags: 0
@@ -63974,12 +63979,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1565604164}
   endPoint: {fileID: 1872435391}
-  controlPoint1: {fileID: 527513277}
-  controlPoint2: {fileID: 601603922}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1783961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -64082,12 +64087,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1326342942}
   endPoint: {fileID: 1965693586}
-  controlPoint1: {fileID: 54126251}
-  controlPoint2: {fileID: 1338593348}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &1783976732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
@@ -65320,12 +65325,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1471308156}
   endPoint: {fileID: 1945704764}
-  controlPoint1: {fileID: 2101721121}
-  controlPoint2: {fileID: 76657836}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1826355178
 GameObject:
   m_ObjectHideFlags: 0
@@ -66674,12 +66679,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1894922983}
   endPoint: {fileID: 1678663194}
-  controlPoint1: {fileID: 1721392827}
-  controlPoint2: {fileID: 1991259261}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1854117043
 GameObject:
   m_ObjectHideFlags: 0
@@ -68932,12 +68937,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 396743857}
   endPoint: {fileID: 1125422937}
-  controlPoint1: {fileID: 347579211}
-  controlPoint2: {fileID: 1881495861}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1894849479
 GameObject:
   m_ObjectHideFlags: 0
@@ -69387,12 +69392,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 531832556}
   endPoint: {fileID: 648610088}
-  controlPoint1: {fileID: 409506339}
-  controlPoint2: {fileID: 1266642416}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1907190263
 GameObject:
   m_ObjectHideFlags: 0
@@ -69705,12 +69710,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2022955023}
   endPoint: {fileID: 1316548998}
-  controlPoint1: {fileID: 1579235918}
-  controlPoint2: {fileID: 725102566}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1913727391
 GameObject:
   m_ObjectHideFlags: 0
@@ -70023,12 +70028,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1750386460}
   endPoint: {fileID: 1571843288}
-  controlPoint1: {fileID: 2080188991}
-  controlPoint2: {fileID: 205521627}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!4 &1920635433
 Transform:
   m_ObjectHideFlags: 0
@@ -72007,12 +72012,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1692192891}
   endPoint: {fileID: 297802686}
-  controlPoint1: {fileID: 1895959385}
-  controlPoint2: {fileID: 1095199465}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1978375329
 GameObject:
   m_ObjectHideFlags: 0
@@ -72430,12 +72435,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2135208036}
   endPoint: {fileID: 425855011}
-  controlPoint1: {fileID: 1164358693}
-  controlPoint2: {fileID: 644960969}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1987886137
 GameObject:
   m_ObjectHideFlags: 0
@@ -72538,12 +72543,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1886340351}
   endPoint: {fileID: 1204300714}
-  controlPoint1: {fileID: 1851338416}
-  controlPoint2: {fileID: 1283670859}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &1988536910
 GameObject:
   m_ObjectHideFlags: 0
@@ -74753,12 +74758,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 492867125}
   endPoint: {fileID: 421516911}
-  controlPoint1: {fileID: 1521382232}
-  controlPoint2: {fileID: 1953915496}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &2056554882
 GameObject:
   m_ObjectHideFlags: 0
@@ -75260,12 +75265,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1112113041}
   endPoint: {fileID: 1030784725}
-  controlPoint1: {fileID: 1444327314}
-  controlPoint2: {fileID: 2142317139}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &2080188990
 GameObject:
   m_ObjectHideFlags: 0
@@ -77756,12 +77761,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2048129747}
   endPoint: {fileID: 724952417}
-  controlPoint1: {fileID: 911944629}
-  controlPoint2: {fileID: 1618441433}
+  controlPoints: []
   curveSegments: 20
   radialSegments: 8
   cableRadius: 0.0004
-  colliderPart: {fileID: 0}
+  invertNormals: 0
+  enableOrbitalAdjustment: 1
 --- !u!1 &2124298851
 GameObject:
   m_ObjectHideFlags: 0

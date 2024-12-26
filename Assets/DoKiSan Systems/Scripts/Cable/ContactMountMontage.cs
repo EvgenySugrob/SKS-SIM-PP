@@ -38,6 +38,11 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
         _interactionSystem.StateCablePartMoving(true);
+        foreach (BoxCollider collider in cableSlotCollider)
+        {
+            collider.enabled = true;
+        }
+        mainCollider.enabled = false;
     }
 
     private IEnumerator CableToMontageposition(Transform cable)

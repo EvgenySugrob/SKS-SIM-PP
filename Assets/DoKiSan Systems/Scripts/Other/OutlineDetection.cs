@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -17,7 +19,8 @@ public class OutlineDetection : MonoBehaviour
     [SerializeField] float frameRate = 2f;
     [SerializeField] Vector2 hotSpot = Vector2.zero;
     private int _currentFrame = 0;
-    private float timer;
+    private float _timer;
+    private bool _isCursorAnimate;
     
 
     private void Start()
@@ -54,6 +57,25 @@ public class OutlineDetection : MonoBehaviour
             {
                 currentManager.EnableOutline(false);
             }
+
+            if(_currentObject.CompareTag("Manipulation") && _currentObject.GetComponent<BezierTwistedPair>())
+            {
+                if(!_isCursorAnimate)
+                {
+                    _isCursorAnimate = true;
+                    _currentFrame = 0;
+                    _timer = 0;
+                }
+                AnimateCursor();
+            }
+            else
+            {
+                if (_isCursorAnimate)
+                {
+                    _isCursorAnimate = false;
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                }
+            }
         }
         else
         {
@@ -61,32 +83,27 @@ public class OutlineDetection : MonoBehaviour
             {
                 currentManager.EnableOutline(false);
                 currentManager= null;
+                if (_isCursorAnimate)
+                {
+                    _isCursorAnimate = false;
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                }
             }
         }
-
-        //UpdateCursor();
     }
 
-    //private void UpdateCursor()
-    //{
-    //    if (_currentObject.CompareTag("ChangeIcon") || _currentObject.CompareTag("Manipulation"))
-    //    {
-    //        if (animationFrame.Length == 0)
-    //            return;
+    private void AnimateCursor()
+    {
+        if (animationFrame.Length == 0)
+            return;
 
-    //        timer += Time.deltaTime;
-    //        if (timer >= 1f / frameRate)
-    //        {
-    //            timer -= 1f / frameRate;
+        _timer += Time.deltaTime;
 
-    //            _currentFrame = (_currentFrame + 1) % animationFrame.Length;
-
-    //            Cursor.SetCursor(animationFrame[_currentFrame], hotSpot, CursorMode.Auto);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-    //    }
-    //}
+        if(_timer>=1f/frameRate)
+        {
+            _timer -= 1/frameRate;
+            _currentFrame = (_currentFrame+1)%animationFrame.Length;
+            Cursor.SetCursor(animationFrame[_currentFrame], hotSpot, CursorMode.Auto);
+        }
+    }
 }

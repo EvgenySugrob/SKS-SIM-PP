@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &112770519114580879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2484612379103338848}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2484612379103338848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112770519114580879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5247960541576773811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &304143553161884662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4828918422840161210}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4828918422840161210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304143553161884662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1320482866564869484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &409487051562307979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7350843989470730474}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7350843989470730474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409487051562307979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1209965619950036678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438150247266287274
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +208,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 844841038465837314}
+  - {fileID: 7350843989470730474}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2658640486557623656
@@ -150,9 +244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 7350843989470730474}
+  typeCablePort: white
+  typeGroupCable: White/OrangeGreen
 --- !u!1 &491832809008835634
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +366,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7884853324352123567}
+  - {fileID: 2484612379103338848}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8137257559457066878
@@ -303,9 +402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 2484612379103338848}
+  typeCablePort: white
+  typeGroupCable: White/Blue
 --- !u!1 &765645211330736606
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +458,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765645211330736606}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -389,6 +492,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1289564685887717960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6122977319564918386}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6122977319564918386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289564685887717960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3784626611422968331}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833735939771611280
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +555,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2604002603382814954}
+  - {fileID: 6122977319564918386}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7047562746232663275
@@ -456,9 +591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 6122977319564918386}
+  typeCablePort: brown
+  typeGroupCable: White/Brown
 --- !u!1 &2028755079692249736
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +637,37 @@ Transform:
   - {fileID: 3784626611422968331}
   m_Father: {fileID: 5741022163348410169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2176161031810934184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878216977185783595}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1878216977185783595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176161031810934184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7229316190801239796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2681368334805557159
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +700,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6180141133093483918}
+  - {fileID: 19653525959153795}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8059844061889386179
@@ -565,9 +736,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 19653525959153795}
+  typeCablePort: green
+  typeGroupCable: White/GreenOrange
 --- !u!1 &3392480024012820071
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +775,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3570648463778635804}
+  - {fileID: 1878216977185783595}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7690837560127022213
@@ -635,9 +811,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 1878216977185783595}
+  typeCablePort: white
+  typeGroupCable: White/GreenOrange
 --- !u!1 &4020221526207502709
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +901,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4378627901431099125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19653525959153795}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19653525959153795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378627901431099125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8384555058329161764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4660749272981735957
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +1098,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5333754060373223547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3068335884545309233}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3068335884545309233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333754060373223547}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 660050769102947341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5424716351834034086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1293,10 @@ MonoBehaviour:
   - {fileID: 2658640486557623656}
   - {fileID: 8831484246136861817}
   - {fileID: 5802955303210306248}
+  - {fileID: 7047562746232663275}
   cableMontagePoint: {fileID: 265132218272858300}
+  _mainParent: {fileID: 0}
+  _interactionSystem: {fileID: 0}
 --- !u!1 &5609553497971769328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1322,7 @@ Transform:
   m_GameObject: {fileID: 5609553497971769328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01186, y: -0.01414, z: 0}
+  m_LocalPosition: {x: -0.0086, y: -0.01414, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1115,6 +1360,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5363612468405903727}
+  - {fileID: 3959504147451100820}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4425196833542843631
@@ -1150,9 +1396,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 3959504147451100820}
+  typeCablePort: blue
+  typeGroupCable: White/Blue
+--- !u!1 &8091766675266675990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3959504147451100820}
+  m_Layer: 0
+  m_Name: PointBeforeDriving
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3959504147451100820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091766675266675990}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5241470324656800970}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8102132785376135079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1632,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1236279717849915010}
+  - {fileID: 3068335884545309233}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5802955303210306248
@@ -1386,9 +1668,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 3068335884545309233}
+  typeCablePort: white
+  typeGroupCable: White/Brown
 --- !u!1 &9185244635560327915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1707,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1363214733002721137}
+  - {fileID: 4828918422840161210}
   m_Father: {fileID: 3197094194623833362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8831484246136861817
@@ -1456,6 +1743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a785f91fc31053a49bd3d26ff747163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectMaterial: {fileID: 0}
   matRenderer: {fileID: 0}
   alphaMaterial: 0
+  alphaSpeed: 1
+  isSelected: 0
+  pointBeforeDriving: {fileID: 4828918422840161210}
+  typeCablePort: orange
+  typeGroupCable: White/OrangeGreen

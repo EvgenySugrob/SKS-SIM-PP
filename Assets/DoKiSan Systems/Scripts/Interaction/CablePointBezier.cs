@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CablePointBezier : MonoBehaviour
+public class CablePointBezier : MonoBehaviour, IDisableColliders
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] BoxCollider boxCollider;
+    [SerializeField] string typeCable;
+    [SerializeField] string typeGroupCable;
+
+    private void Start()
     {
-        
+        boxCollider = GetComponent<BoxCollider>();
+    }
+    public void DisableCollider(bool isActive)
+    {
+        boxCollider.enabled = isActive;
     }
 
-    // Update is called once per frame
-    void Update()
+    public string GetTypeCable()
     {
-        
+        return typeCable;
     }
 }
