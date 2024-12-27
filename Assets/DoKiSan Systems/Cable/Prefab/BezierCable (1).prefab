@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 5266821080399097486}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 4821250706355256616}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1339,6 +1339,7 @@ GameObject:
   - component: {fileID: 4522236980582952753}
   - component: {fileID: 1559865751013992184}
   - component: {fileID: 9017733140070032817}
+  - component: {fileID: 8081886570206882390}
   m_Layer: 0
   m_Name: BezierCable (1)
   m_TagString: Untagged
@@ -1446,6 +1447,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931234014702394272}
   m_Mesh: {fileID: 0}
+--- !u!114 &8081886570206882390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931234014702394272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.42647526, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &971080925703190150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e987a531a6964649a381251c78ae496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlines: []
+  outlines:
+  - {fileID: 8081886570206882390}
   outlineActive: 0
 --- !u!114 &1769567333629169892
 MonoBehaviour:
@@ -1854,6 +1874,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &669577688562070292
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1985,6 +2008,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &133492003190198482
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2886,6 +2912,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &3921016104426388280
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3017,6 +3046,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &8986061048058638288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4509,7 +4541,7 @@ GameObject:
   - component: {fileID: 1373359251193360412}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5184,7 +5216,7 @@ GameObject:
   - component: {fileID: 3562178308769405120}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5601,6 +5633,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &1580841181848120890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5738,7 +5773,7 @@ GameObject:
   - component: {fileID: 587067605762484760}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6680,6 +6715,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &741177827419961369
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7985,7 +8023,7 @@ GameObject:
   - component: {fileID: 757643663394618575}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8526,7 +8564,7 @@ GameObject:
   - component: {fileID: 2845594818676105747}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8978,6 +9016,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &6112688395383541567
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9558,6 +9599,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 0
+  interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
+    type: 3}
+  interactivePointParent: {fileID: 0}
 --- !u!33 &3377000008049655558
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10718,7 +10762,7 @@ GameObject:
   - component: {fileID: 6380351812024409066}
   m_Layer: 7
   m_Name: InteractionPivot
-  m_TagString: Untagged
+  m_TagString: ChangeIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

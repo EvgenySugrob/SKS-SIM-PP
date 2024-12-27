@@ -17,6 +17,15 @@ public class BezierCable : MonoBehaviour
     private Mesh mesh;
     private Quaternion lastStartRotation;
     private Quaternion lastEndRotation;
+    
+
+    [Header("Generate Interaction point")]
+    [SerializeField] GameObject interactivePointPrefab; // Префаб интерактивной точки
+    [SerializeField] Transform interactivePointParent;
+    [SerializeField] int interactivePointsCount = 4;
+    private List<InteractivePointHandler> interactivePoints = new List<InteractivePointHandler>();
+    private Vector3[] bezierCurvePoints;
+    private Quaternion interactivPointRotation;
 
     void Start()
     {
@@ -25,24 +34,29 @@ public class BezierCable : MonoBehaviour
 
         lastStartRotation = startPoint.rotation;
         lastEndRotation = endPoint.rotation;
+
+        interactivePointParent = transform;
+        interactivPointRotation = transform.rotation;
+        GenerateCableMesh();
+        GenerateInteractivePoints();
     }
 
     void Update()
     {
         HandlePointRotation();
         GenerateCableMesh();
+        UpdateInteractivePointsPositions();
     }
 
     private void GenerateCableMesh()
     {
-        Vector3[] curvePoints = GenerateBezierCurve();
-
-        for (int i = 0; i < curvePoints.Length; i++)
+        bezierCurvePoints = GenerateBezierCurve();
+        for (int i = 0; i < bezierCurvePoints.Length; i++)
         {
-            curvePoints[i] = transform.InverseTransformPoint(curvePoints[i]);
+            bezierCurvePoints[i] = transform.InverseTransformPoint(bezierCurvePoints[i]);
         }
 
-        Mesh generatedMesh = ExtrudeTube(curvePoints);
+        Mesh generatedMesh = ExtrudeTube(bezierCurvePoints);
         mesh.Clear();
         mesh.vertices = generatedMesh.vertices;
         mesh.triangles = generatedMesh.triangles;
@@ -68,6 +82,46 @@ public class BezierCable : MonoBehaviour
         }
 
         return points;
+    }
+
+    private void GenerateInteractivePoints()
+    {
+        // Удаляем старые точки
+        foreach (var point in interactivePoints)
+        {
+            if (point != null)
+                Destroy(point.gameObject);
+        }
+        interactivePoints.Clear();
+
+        // Создаём новые точки вдоль кривой
+        for (int i = 0; i < interactivePointsCount; i++)
+        {
+            float t = i / (float)(interactivePointsCount - 1);
+            Vector3 positionOnCurve = CalculateBezierPoint(t, GenerateBezierCurve());
+
+            GameObject newPoint = Instantiate(interactivePointPrefab, positionOnCurve, interactivPointRotation, interactivePointParent);
+            InteractivePointHandler handler = newPoint.GetComponent<InteractivePointHandler>();
+            handler.Initialize(this, i, positionOnCurve);
+            interactivePoints.Add(handler);
+        }
+    }
+
+    private void UpdateInteractivePointsPositions()
+    {
+        for (int i = 0; i < interactivePoints.Count; i++)
+        {
+            Vector3 positionOnCurve = CalculateBezierPoint(i / (float)(interactivePointsCount - 1), GenerateBezierCurve());
+            interactivePoints[i].UpdatePositionOnCurve(positionOnCurve);
+        }
+    }
+
+    public void UpdateControlPoint(int index, Vector3 delta)
+    {
+        if (index >= 0 && index < controlPoints.Length)
+        {
+            controlPoints[index].position += delta;
+        }
     }
 
     private void HandlePointRotation()
@@ -110,14 +164,15 @@ public class BezierCable : MonoBehaviour
     {
         int ringVertexCount = radialSegments + 1;
         int vertexCount = (curveSegments + 1) * ringVertexCount;
-        int triangleCount = curveSegments * radialSegments * 6;
+        int triangleCount = curveSegments * radialSegments * 6 + radialSegments * 6; // Учёт треугольников крышек
 
-        Vector3[] vertices = new Vector3[vertexCount];
+        Vector3[] vertices = new Vector3[vertexCount + 2]; // Добавляем 2 вершины для центров крышек
         int[] triangles = new int[triangleCount];
-        Vector3[] normals = new Vector3[vertexCount];
+        Vector3[] normals = new Vector3[vertexCount + 2];
 
         float angleStep = 360f / radialSegments;
 
+        // Генерация вершин и нормалей для кабеля
         for (int i = 0; i <= curveSegments; i++)
         {
             Vector3 center = curvePoints[i];
@@ -142,6 +197,13 @@ public class BezierCable : MonoBehaviour
             }
         }
 
+        // Центры крышек
+        vertices[vertexCount] = curvePoints[0]; // Первая крышка
+        vertices[vertexCount + 1] = curvePoints[curvePoints.Length - 1]; // Вторая крышка
+        normals[vertexCount] = invertNormals ? Vector3.back : Vector3.forward;
+        normals[vertexCount + 1] = invertNormals ? Vector3.forward : Vector3.back;
+
+        // Генерация треугольников для трубки
         int tIndex = 0;
         for (int i = 0; i < curveSegments; i++)
         {
@@ -169,8 +231,42 @@ public class BezierCable : MonoBehaviour
                     triangles[tIndex++] = next;
                     triangles[tIndex++] = current + 1;
                     triangles[tIndex++] = next + 1;
-
                 }
+            }
+        }
+
+        // Треугольники для крышки в начале
+        for (int j = 0; j < radialSegments; j++)
+        {
+            if (invertNormals)
+            {
+                triangles[tIndex++] = vertexCount; // Центральная вершина начала
+                triangles[tIndex++] = j + 1;
+                triangles[tIndex++] = j;
+            }
+            else
+            {
+                triangles[tIndex++] = vertexCount; // Центральная вершина начала
+                triangles[tIndex++] = j;
+                triangles[tIndex++] = j + 1;
+            }
+        }
+
+        // Треугольники для крышки в конце
+        int endStartIndex = (curveSegments * ringVertexCount);
+        for (int j = 0; j < radialSegments; j++)
+        {
+            if (invertNormals)
+            {
+                triangles[tIndex++] = vertexCount + 1; // Центральная вершина конца
+                triangles[tIndex++] = endStartIndex + j;
+                triangles[tIndex++] = endStartIndex + j + 1;
+            }
+            else
+            {
+                triangles[tIndex++] = vertexCount + 1; // Центральная вершина конца
+                triangles[tIndex++] = endStartIndex + j + 1;
+                triangles[tIndex++] = endStartIndex + j;
             }
         }
 

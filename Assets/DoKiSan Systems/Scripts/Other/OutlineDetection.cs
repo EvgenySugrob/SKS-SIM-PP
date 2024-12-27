@@ -58,7 +58,7 @@ public class OutlineDetection : MonoBehaviour
                 currentManager.EnableOutline(false);
             }
 
-            if(_currentObject.CompareTag("Manipulation") && _currentObject.GetComponent<BezierTwistedPair>())
+            if(_currentObject.CompareTag("Manipulation") && _currentObject.GetComponent<BezierTwistedPair>()||_currentObject.CompareTag("ChangeIcon"))
             {
                 if(!_isCursorAnimate)
                 {

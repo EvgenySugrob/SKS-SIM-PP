@@ -147,6 +147,8 @@ MonoBehaviour:
   interactDistance: 3
   handSlot: {fileID: 1363798300}
   isCablePartMoving: 0
+  _currentPointBezier: {fileID: 0}
+  _interactPointHandler: {fileID: 0}
 --- !u!114 &11526877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5376468694409717184, guid: 2d2954463d11db9488fbea95811224bc,
@@ -378,6 +380,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &29420917
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +966,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &53757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2218,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &64913257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4030,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &115993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,6 +5046,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &154385854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,6 +6385,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &195120760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7106,6 +7126,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &218607406
 GameObject:
   m_ObjectHideFlags: 0
@@ -7995,6 +8018,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &246857617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12274,6 +12300,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &359047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13451,6 +13480,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &378963989
 GameObject:
   m_ObjectHideFlags: 0
@@ -16161,6 +16193,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &474022226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16269,6 +16304,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &477056195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16797,6 +16835,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1001 &489854658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18494,6 +18535,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &531832555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19782,6 +19826,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &557231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -20807,6 +20854,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &596342196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21020,6 +21070,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &600466297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460447450073191685, guid: 81dbcbac40ae12b439b514aad04a853e,
@@ -21617,6 +21670,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &625459450
 GameObject:
   m_ObjectHideFlags: 0
@@ -22650,6 +22706,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &666259799
 GameObject:
   m_ObjectHideFlags: 0
@@ -24555,6 +24614,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &689264982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2101956276030286225, guid: c92fb872977897d47a1837f1ef421bcf,
@@ -25538,6 +25600,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &713660780
 GameObject:
   m_ObjectHideFlags: 0
@@ -25646,6 +25711,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &714221378
 GameObject:
   m_ObjectHideFlags: 0
@@ -28806,6 +28874,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &786083807
 GameObject:
   m_ObjectHideFlags: 0
@@ -29124,6 +29195,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &790905016
 Transform:
   m_ObjectHideFlags: 0
@@ -29544,6 +29618,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &798229745
 GameObject:
   m_ObjectHideFlags: 0
@@ -31579,6 +31656,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &876216718
 GameObject:
   m_ObjectHideFlags: 0
@@ -31687,6 +31767,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &879066492
 GameObject:
   m_ObjectHideFlags: 0
@@ -31900,6 +31983,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &881292011
 GameObject:
   m_ObjectHideFlags: 0
@@ -32775,6 +32861,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &915175222
 Transform:
   m_ObjectHideFlags: 0
@@ -33134,6 +33223,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &932815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -34241,10 +34333,10 @@ MonoBehaviour:
   currentManager: {fileID: 0}
   distanceRay: 3
   animationFrame:
-  - {fileID: 2800000, guid: 893c06a0f4dd3a24abcfca2d6cc29754, type: 3}
-  - {fileID: 2800000, guid: f68524d4f919129428800ec04e206791, type: 3}
+  - {fileID: 2800000, guid: b247b2b14c8cffb4e90da2e5384c7b3f, type: 3}
+  - {fileID: 2800000, guid: cae77564c7e3bc14880307777111a6fb, type: 3}
   frameRate: 3
-  hotSpot: {x: 32, y: 32}
+  hotSpot: {x: 16, y: 16}
 --- !u!114 &944692886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35072,6 +35164,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &952844622
 GameObject:
   m_ObjectHideFlags: 0
@@ -37026,6 +37121,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &990800660
 GameObject:
   m_ObjectHideFlags: 0
@@ -38633,6 +38731,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1030784724
 GameObject:
   m_ObjectHideFlags: 0
@@ -38951,6 +39052,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1040695926
 GameObject:
   m_ObjectHideFlags: 0
@@ -41981,6 +42085,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -43436,6 +43543,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1175878487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4624115928136863818, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -44091,6 +44201,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1194040299
 GameObject:
   m_ObjectHideFlags: 0
@@ -44900,6 +45013,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1204300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -45323,6 +45439,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1224508632
 GameObject:
   m_ObjectHideFlags: 0
@@ -45641,6 +45760,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1234630383
 GameObject:
   m_ObjectHideFlags: 0
@@ -46852,6 +46974,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1266642415
 GameObject:
   m_ObjectHideFlags: 0
@@ -47422,6 +47547,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1276271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -48430,6 +48558,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1305714613
 GameObject:
   m_ObjectHideFlags: 0
@@ -48744,6 +48875,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1314366049
 GameObject:
   m_ObjectHideFlags: 0
@@ -50048,6 +50182,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1352429864
 GameObject:
   m_ObjectHideFlags: 0
@@ -51252,6 +51389,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1388026921
 GameObject:
   m_ObjectHideFlags: 0
@@ -52421,6 +52561,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1422373006
 GameObject:
   m_ObjectHideFlags: 0
@@ -53932,6 +54075,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1471308155
 GameObject:
   m_ObjectHideFlags: 0
@@ -54962,6 +55108,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1520795558
 GameObject:
   m_ObjectHideFlags: 0
@@ -55503,6 +55652,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1534869338
 GameObject:
   m_ObjectHideFlags: 0
@@ -56433,6 +56585,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &1560372054
 Transform:
   m_ObjectHideFlags: 0
@@ -59622,6 +59777,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1639986358
 GameObject:
   m_ObjectHideFlags: 0
@@ -60063,6 +60221,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1651785679
 GameObject:
   m_ObjectHideFlags: 0
@@ -60276,6 +60437,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1662795648
 GameObject:
   m_ObjectHideFlags: 0
@@ -60665,6 +60829,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1673385081
 GameObject:
   m_ObjectHideFlags: 0
@@ -61823,6 +61990,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1704580774
 GameObject:
   m_ObjectHideFlags: 0
@@ -62047,6 +62217,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1721392826
 GameObject:
   m_ObjectHideFlags: 0
@@ -63084,6 +63257,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1755381152
 GameObject:
   m_ObjectHideFlags: 0
@@ -63985,6 +64161,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1783961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -64093,6 +64272,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &1783976732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
@@ -64798,6 +64980,11 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8580796003642396397, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: interactivePointsCount
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65331,6 +65518,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1826355178
 GameObject:
   m_ObjectHideFlags: 0
@@ -66685,6 +66875,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1854117043
 GameObject:
   m_ObjectHideFlags: 0
@@ -68943,6 +69136,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1894849479
 GameObject:
   m_ObjectHideFlags: 0
@@ -69398,6 +69594,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1907190263
 GameObject:
   m_ObjectHideFlags: 0
@@ -69716,6 +69915,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1913727391
 GameObject:
   m_ObjectHideFlags: 0
@@ -70034,6 +70236,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!4 &1920635433
 Transform:
   m_ObjectHideFlags: 0
@@ -72018,6 +72223,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1978375329
 GameObject:
   m_ObjectHideFlags: 0
@@ -72441,6 +72649,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1987886137
 GameObject:
   m_ObjectHideFlags: 0
@@ -72549,6 +72760,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &1988536910
 GameObject:
   m_ObjectHideFlags: 0
@@ -74764,6 +74978,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &2056554882
 GameObject:
   m_ObjectHideFlags: 0
@@ -75271,6 +75488,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &2080188990
 GameObject:
   m_ObjectHideFlags: 0
@@ -75658,29 +75878,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085170757}
   m_CullTransparentMesh: 1
---- !u!1 &2090574502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
-    type: 3}
-  m_PrefabInstance: {fileID: 3493744544103507472}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2090574507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090574502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec41c5a21ce1d342ad48506141ec98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countPairInCable: 4
-  workModeManipulation: {fileID: 0}
-  pointInformation: {fileID: 0}
-  strippingCable: {fileID: 0}
-  stripperInteration: {fileID: 0}
 --- !u!1001 &2091711226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77767,6 +77964,9 @@ MonoBehaviour:
   cableRadius: 0.0004
   invertNormals: 0
   enableOrbitalAdjustment: 1
+  interactivePointPrefab: {fileID: 0}
+  interactivePointParent: {fileID: 0}
+  interactivePointsCount: 4
 --- !u!1 &2124298851
 GameObject:
   m_ObjectHideFlags: 0
@@ -79292,11 +79492,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 931234014702394272, guid: 17f88fb6f0c387e45b68928db015b752,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2090574507}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17f88fb6f0c387e45b68928db015b752, type: 3}
 --- !u!114 &3736508959972197836
 MonoBehaviour:
