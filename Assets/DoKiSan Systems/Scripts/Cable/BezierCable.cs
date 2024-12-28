@@ -17,12 +17,15 @@ public class BezierCable : MonoBehaviour
     private Mesh mesh;
     private Quaternion lastStartRotation;
     private Quaternion lastEndRotation;
-    
+
 
     [Header("Generate Interaction point")]
     [SerializeField] GameObject interactivePointPrefab; // Префаб интерактивной точки
     [SerializeField] Transform interactivePointParent;
     [SerializeField] int interactivePointsCount = 4;
+    [SerializeField] bool isDebug;
+    [SerializeField]private bool isDraggingInteractivePoint;
+    [SerializeField] CablePointBezier cablePointBezier;
     private List<InteractivePointHandler> interactivePoints = new List<InteractivePointHandler>();
     private Vector3[] bezierCurvePoints;
     private Quaternion interactivPointRotation;
@@ -86,12 +89,12 @@ public class BezierCable : MonoBehaviour
 
     private void GenerateInteractivePoints()
     {
-        // Удаляем старые точки
-        foreach (var point in interactivePoints)
-        {
-            if (point != null)
-                Destroy(point.gameObject);
-        }
+        //// Удаляем старые точки
+        //foreach (var point in interactivePoints)
+        //{
+        //    if (point != null)
+        //        Destroy(point.gameObject);
+        //}
         interactivePoints.Clear();
 
         // Создаём новые точки вдоль кривой
@@ -104,11 +107,14 @@ public class BezierCable : MonoBehaviour
             InteractivePointHandler handler = newPoint.GetComponent<InteractivePointHandler>();
             handler.Initialize(this, i, positionOnCurve);
             interactivePoints.Add(handler);
+            cablePointBezier.FillingList(handler);
         }
     }
 
     private void UpdateInteractivePointsPositions()
     {
+        if (isDraggingInteractivePoint) return; // Пропуск обновления, если происходит перетаскивание
+
         for (int i = 0; i < interactivePoints.Count; i++)
         {
             Vector3 positionOnCurve = CalculateBezierPoint(i / (float)(interactivePointsCount - 1), GenerateBezierCurve());
@@ -116,11 +122,16 @@ public class BezierCable : MonoBehaviour
         }
     }
 
-    public void UpdateControlPoint(int index, Vector3 delta)
+    public void SetDraggingInteractivePoint(bool isDragging)
+    {
+        isDraggingInteractivePoint = isDragging;
+    }
+
+    public void UpdateControlPoint(int index, Vector3 offset)
     {
         if (index >= 0 && index < controlPoints.Length)
         {
-            controlPoints[index].position += delta;
+            controlPoints[index].position = offset;
         }
     }
 

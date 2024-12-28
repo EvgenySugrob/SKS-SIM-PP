@@ -508,6 +508,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: white
   typeGroupCable: White/Blue
+  interactivePointList: []
 --- !u!1 &483504524257863806
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +597,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: orange
   typeGroupCable: White/OrangeGreen
+  interactivePointList: []
 --- !u!1 &488602214122864145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,6 +1879,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 5266821080399097486}
 --- !u!33 &669577688562070292
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2011,6 +2017,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 757643663394618575}
 --- !u!33 &133492003190198482
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2915,6 +2925,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 3562178308769405120}
 --- !u!33 &3921016104426388280
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3049,6 +3063,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 2845594818676105747}
 --- !u!33 &8986061048058638288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4615,6 +4633,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: blue
   typeGroupCable: White/Blue
+  interactivePointList: []
 --- !u!1 &3115456172426017022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,6 +5309,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: white
   typeGroupCable: White/Brown
+  interactivePointList: []
 --- !u!1 &3797195973886533297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,6 +5656,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 1373359251193360412}
 --- !u!33 &1580841181848120890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5847,6 +5871,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: white
   typeGroupCable: White/GreenOrange
+  interactivePointList: []
 --- !u!1 &3999972472547623581
 GameObject:
   m_ObjectHideFlags: 0
@@ -6718,6 +6743,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 6380351812024409066}
 --- !u!33 &741177827419961369
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8097,6 +8126,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: green
   typeGroupCable: White/GreenOrange
+  interactivePointList: []
 --- !u!1 &6067354109529729494
 GameObject:
   m_ObjectHideFlags: 0
@@ -8638,6 +8668,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: brown
   typeGroupCable: White/Brown
+  interactivePointList: []
 --- !u!1 &6803938369604065428
 GameObject:
   m_ObjectHideFlags: 0
@@ -9019,6 +9050,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 587067605762484760}
 --- !u!33 &6112688395383541567
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9602,6 +9637,10 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 2030700666147541463, guid: 7531fc2c1fef170458d96f3ae39a7617,
     type: 3}
   interactivePointParent: {fileID: 0}
+  interactivePointsCount: 6
+  isDebug: 0
+  isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 4821250706355256616}
 --- !u!33 &3377000008049655558
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10836,6 +10875,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   typeCable: white
   typeGroupCable: White/OrangeGreen
+  interactivePointList: []
 --- !u!1 &8809361696787095077
 GameObject:
   m_ObjectHideFlags: 0

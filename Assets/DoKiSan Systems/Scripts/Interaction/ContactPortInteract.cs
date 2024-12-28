@@ -18,6 +18,7 @@ public class ContactPortInteract : MonoBehaviour
     [SerializeField] Transform pointBeforeDriving;
     [SerializeField] string typeCablePort;
     [SerializeField] string typeGroupCable;
+    [SerializeField] CablePointBezier cablePoint;
     private bool _isBusy;
 
 
@@ -93,5 +94,10 @@ public class ContactPortInteract : MonoBehaviour
         }
 
         return isMatches;
+    }
+
+    public void SetCablePoint(CablePointBezier cable)
+    {
+        cablePoint = cable;
     }
 }

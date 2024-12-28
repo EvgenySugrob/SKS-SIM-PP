@@ -11,18 +11,18 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField] GameObject handSlot;
 
     [Header("Cabple part manipulation")]
-    [SerializeField] bool isCablePartMoving=false;
+    [SerializeField] bool isCablePartMoving = false;
     private bool _isSwiping;
     private Vector3 _prevPosition;
-    [SerializeField]private CablePointBezier _currentPointBezier;
+    [SerializeField] private CablePointBezier _currentPointBezier;
     private ContactPortInteract _contactInteract;
-    [SerializeField]private InteractivePointHandler _interactPointHandler;
+    [SerializeField] private InteractivePointHandler _interactPointHandler;
     private Vector3 _startPosition;
 
 
     private void Update()
     {
-        if(isCablePartMoving)
+        if (isCablePartMoving)
         {
             ProcessClickDown();
             ProcessClickUp();
@@ -32,38 +32,42 @@ public class InteractionSystem : MonoBehaviour
 
     public void StateCablePartMoving(bool state)
     {
-        isCablePartMoving= state;
+        isCablePartMoving = state;
     }
     private void ProcessClickUp()
     {
         if (Input.GetMouseButtonUp(0) == false)
             return;
 
-        if(_currentPointBezier!=null)
+        if (_currentPointBezier != null)
         {
             //if(_contactInteract.CheckSlotAndCAble(_currentPointBezier.GetTypeCable())) 
             //{
-                 //проверка на соответсвие схеме на потом
+            //проверка на соответсвие схеме на потом
             //}
             if (!_contactInteract.GetStateSlot())
             {
                 _currentPointBezier.transform.position = _contactInteract.GetPointBeforeDriving().position;
                 _currentPointBezier.transform.parent = _contactInteract.transform;
+                _currentPointBezier.ActiveInteractivePoint(true);
+
                 _contactInteract.SetStateSlot(true);
+                _contactInteract.SetCablePoint(_currentPointBezier);
             }
             else
             {
                 _currentPointBezier.transform.position = _startPosition;
+                _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
             }
             _contactInteract.SelectPort(false);
-            _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
+            ;
         }
-        else if(_interactPointHandler!=null)
+        else if (_interactPointHandler != null)
         {
             _interactPointHandler.IsDraging(false);
             _interactPointHandler.GetComponent<IDisableColliders>().DisableCollider(true);
         }
-        _interactPointHandler= null;
+        _interactPointHandler = null;
         _currentPointBezier = null;
         _isSwiping = false;
     }
@@ -76,52 +80,69 @@ public class InteractionSystem : MonoBehaviour
         if (_prevPosition == Input.mousePosition)
             return;
 
-        if (_currentPointBezier == null || _interactPointHandler == null)
-        return;
+        //if (_currentPointBezier == null || _interactPointHandler == null)
+        //    return;
 
-        _prevPosition= Input.mousePosition;
-
-        Ray touchRay = GetRay(_prevPosition);
-        float fixedY = _currentPointBezier.transform.position.y;
-        Plane plane = new Plane(Vector3.up, new Vector3(0,fixedY,0));
-
-        if(plane.Raycast(touchRay, out float hitDistance))
+        if (_currentPointBezier != null)
         {
-            Vector3 point = touchRay.GetPoint(hitDistance);
-            point.y = fixedY;
-            if (_currentPointBezier !=null)
-            {
-                _currentPointBezier.transform.position = point;
-            }
-            else if (_interactPointHandler != null)
-            {
-                _interactPointHandler.IsDraging(true);
-                _interactPointHandler.OnDrag(point);
-            }
-        }
+            _prevPosition = Input.mousePosition;
 
-        if(Physics.Raycast(touchRay,out RaycastHit hit))
-        {
-            if(hit.collider.TryGetComponent(out ContactPortInteract portInteract))
+            Ray touchRay = GetRay(_prevPosition);
+            float fixedY = _currentPointBezier.transform.position.y;
+            Plane plane = new Plane(Vector3.up, new Vector3(0, fixedY, 0));
+
+            if (plane.Raycast(touchRay, out float hitDistance))
             {
-                if(_contactInteract == null)
+                Vector3 point = touchRay.GetPoint(hitDistance);
+                point.y = fixedY;
+                if (_currentPointBezier != null)
                 {
-                    _contactInteract = portInteract;
+                    _currentPointBezier.transform.position = point;
                 }
-                if(portInteract!=_contactInteract)
+            }
+
+            if (Physics.Raycast(touchRay, out RaycastHit hit))
+            {
+                if (hit.collider.TryGetComponent(out ContactPortInteract portInteract))
+                {
+                    if (_contactInteract == null)
+                    {
+                        _contactInteract = portInteract;
+                    }
+                    if (portInteract != _contactInteract)
+                    {
+                        _contactInteract.SelectPort(false);
+                        _contactInteract = portInteract;
+                    }
+                }
+
+                if (_contactInteract != null && portInteract == _contactInteract)
+                {
+                    _contactInteract.SelectPort(true);
+                }
+                else if (_contactInteract != null && portInteract != _contactInteract)
                 {
                     _contactInteract.SelectPort(false);
-                    _contactInteract = portInteract;
                 }
             }
+        }
+        if(_interactPointHandler != null)
+        {
+            _prevPosition = Input.mousePosition;
 
-            if(_contactInteract != null && portInteract == _contactInteract)
+            Ray touchRay = GetRay(_prevPosition);
+            float fixedY = _interactPointHandler.transform.position.y;
+            Plane plane = new Plane(Vector3.up, new Vector3(0, fixedY, 0));
+
+            if (plane.Raycast(touchRay, out float hitDistance))
             {
-                _contactInteract.SelectPort(true);
-            }
-            else if(_contactInteract != null && portInteract != _contactInteract)
-            {
-                _contactInteract.SelectPort(false);
+                Vector3 point = touchRay.GetPoint(hitDistance);
+                point.y = fixedY;
+                if (_interactPointHandler != null)
+                {
+                    _interactPointHandler.IsDraging(true);
+                    _interactPointHandler.OnDrag(point);
+                }
             }
         }
     }
@@ -142,12 +163,12 @@ public class InteractionSystem : MonoBehaviour
                 _startPosition = _currentPointBezier.transform.position;
                 _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(false);
             }
-            else if(hit.collider.TryGetComponent(out InteractivePointHandler interactPoint))
+            if (hit.collider.TryGetComponent(out InteractivePointHandler interactPoint))
             {
                 _interactPointHandler = interactPoint;
                 _interactPointHandler.GetComponent<IDisableColliders>().DisableCollider(false);
             }
-        }    
+        }
     }
 
     private Ray GetRay(Vector3 position) => mainCamera.ScreenPointToRay(position);

@@ -9,15 +9,18 @@ public class InteractivePointHandler : MonoBehaviour, IDisableColliders
     private int indexOnCurve;
     private Vector3 initialPosition;
     [SerializeField] bool isDrag;
+    private MeshRenderer meshRenderer;
 
     private void Start()
     {
         sphereCollider = GetComponent<SphereCollider>();
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     public void DisableCollider(bool isActive)
     {
         sphereCollider.enabled = isActive;
+        meshRenderer.enabled = isActive;
     }
 
     public void Initialize(BezierCable cable, int indexOnCurve, Vector3 initialPosition)
@@ -29,21 +32,33 @@ public class InteractivePointHandler : MonoBehaviour, IDisableColliders
 
     public void OnDrag(Vector3 newPosition)
     {
-        Vector3 delta = newPosition - initialPosition;
-        cable.UpdateControlPoint(indexOnCurve, delta);
+        if (!isDrag)
+            return;
+        cable.SetDraggingInteractivePoint(true);
+
+        transform.position = newPosition;
+
+        Vector3 offset = transform.position;
+        cable.UpdateControlPoint(indexOnCurve,offset);
+
     }
 
     public void UpdatePositionOnCurve(Vector3 newPosition)
     {
-        if (isDrag==false)
+        if (isDrag == false)
         {
             transform.position = newPosition;
             initialPosition = newPosition;
         }
     }
 
-    public void IsDraging(bool isACtive)
+    public void IsDraging(bool isActive)
     {
-        isDrag = isACtive;
+        isDrag = isActive;
+
+        if (!isActive) // Когда перетаскивание завершено
+        {
+            cable.SetDraggingInteractivePoint(false);
+        }
     }
 }

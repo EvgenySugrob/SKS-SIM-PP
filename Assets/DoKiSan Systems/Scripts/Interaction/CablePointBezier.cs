@@ -7,6 +7,7 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] string typeCable;
     [SerializeField] string typeGroupCable;
+    [SerializeField] List<InteractivePointHandler> interactivePointList = new List<InteractivePointHandler>();
 
     private void Start()
     {
@@ -20,5 +21,17 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     public string GetTypeCable()
     {
         return typeCable;
+    }
+
+    public void FillingList(InteractivePointHandler point)
+    {
+        interactivePointList.Add(point);
+    }
+    public void ActiveInteractivePoint(bool isActive)
+    {
+        foreach(InteractivePointHandler point in interactivePointList)
+        {
+            point.DisableCollider(isActive);
+        }
     }
 }

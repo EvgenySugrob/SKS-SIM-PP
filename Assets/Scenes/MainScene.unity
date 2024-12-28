@@ -383,6 +383,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &29420917
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +972,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &53757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2227,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &64913257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4033,6 +4042,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &115993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5049,6 +5061,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &154385854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,6 +6403,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &195120760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,6 +7147,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &218607406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8021,6 +8042,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &246857617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12303,6 +12327,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &359047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13483,6 +13510,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &378963989
 GameObject:
   m_ObjectHideFlags: 0
@@ -16196,6 +16226,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &474022226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16307,6 +16340,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &477056195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16838,6 +16874,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1001 &489854658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18538,6 +18577,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &531832555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19829,6 +19871,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &557231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -20857,6 +20902,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &596342196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21073,6 +21121,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &600466297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460447450073191685, guid: 81dbcbac40ae12b439b514aad04a853e,
@@ -21673,6 +21724,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &625459450
 GameObject:
   m_ObjectHideFlags: 0
@@ -22709,6 +22763,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &666259799
 GameObject:
   m_ObjectHideFlags: 0
@@ -24617,6 +24674,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &689264982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2101956276030286225, guid: c92fb872977897d47a1837f1ef421bcf,
@@ -25603,6 +25663,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &713660780
 GameObject:
   m_ObjectHideFlags: 0
@@ -25714,6 +25777,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &714221378
 GameObject:
   m_ObjectHideFlags: 0
@@ -28877,6 +28943,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &786083807
 GameObject:
   m_ObjectHideFlags: 0
@@ -29198,6 +29267,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &790905016
 Transform:
   m_ObjectHideFlags: 0
@@ -29621,6 +29693,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &798229745
 GameObject:
   m_ObjectHideFlags: 0
@@ -31659,6 +31734,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &876216718
 GameObject:
   m_ObjectHideFlags: 0
@@ -31770,6 +31848,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &879066492
 GameObject:
   m_ObjectHideFlags: 0
@@ -31986,6 +32067,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &881292011
 GameObject:
   m_ObjectHideFlags: 0
@@ -32864,6 +32948,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &915175222
 Transform:
   m_ObjectHideFlags: 0
@@ -33226,6 +33313,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &932815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -35167,6 +35257,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &952844622
 GameObject:
   m_ObjectHideFlags: 0
@@ -37124,6 +37217,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &990800660
 GameObject:
   m_ObjectHideFlags: 0
@@ -38734,6 +38830,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1030784724
 GameObject:
   m_ObjectHideFlags: 0
@@ -39055,6 +39154,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1040695926
 GameObject:
   m_ObjectHideFlags: 0
@@ -42088,6 +42190,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -43546,6 +43651,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1175878487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4624115928136863818, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -44204,6 +44312,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1194040299
 GameObject:
   m_ObjectHideFlags: 0
@@ -45016,6 +45127,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1204300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -45442,6 +45556,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1224508632
 GameObject:
   m_ObjectHideFlags: 0
@@ -45763,6 +45880,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1234630383
 GameObject:
   m_ObjectHideFlags: 0
@@ -46977,6 +47097,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1266642415
 GameObject:
   m_ObjectHideFlags: 0
@@ -47550,6 +47673,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1276271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -48561,6 +48687,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1305714613
 GameObject:
   m_ObjectHideFlags: 0
@@ -48878,6 +49007,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1314366049
 GameObject:
   m_ObjectHideFlags: 0
@@ -50185,6 +50317,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1352429864
 GameObject:
   m_ObjectHideFlags: 0
@@ -51392,6 +51527,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1388026921
 GameObject:
   m_ObjectHideFlags: 0
@@ -52564,6 +52702,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1422373006
 GameObject:
   m_ObjectHideFlags: 0
@@ -54078,6 +54219,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1471308155
 GameObject:
   m_ObjectHideFlags: 0
@@ -55111,6 +55255,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1520795558
 GameObject:
   m_ObjectHideFlags: 0
@@ -55655,6 +55802,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1534869338
 GameObject:
   m_ObjectHideFlags: 0
@@ -56588,6 +56738,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &1560372054
 Transform:
   m_ObjectHideFlags: 0
@@ -59780,6 +59933,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1639986358
 GameObject:
   m_ObjectHideFlags: 0
@@ -60224,6 +60380,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1651785679
 GameObject:
   m_ObjectHideFlags: 0
@@ -60440,6 +60599,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1662795648
 GameObject:
   m_ObjectHideFlags: 0
@@ -60832,6 +60994,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1673385081
 GameObject:
   m_ObjectHideFlags: 0
@@ -61993,6 +62158,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1704580774
 GameObject:
   m_ObjectHideFlags: 0
@@ -62220,6 +62388,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1721392826
 GameObject:
   m_ObjectHideFlags: 0
@@ -63260,6 +63431,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1755381152
 GameObject:
   m_ObjectHideFlags: 0
@@ -64164,6 +64338,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1783961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -64275,6 +64452,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &1783976732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
@@ -64970,6 +65150,11 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7124447919382542658, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: cablePoint
+      value: 
+      objectReference: {fileID: 2070512094}
     - target: {fileID: 7395063393719941803, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Enabled
@@ -65521,6 +65706,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1826355178
 GameObject:
   m_ObjectHideFlags: 0
@@ -66878,6 +67066,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1854117043
 GameObject:
   m_ObjectHideFlags: 0
@@ -69139,6 +69330,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1894849479
 GameObject:
   m_ObjectHideFlags: 0
@@ -69597,6 +69791,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1907190263
 GameObject:
   m_ObjectHideFlags: 0
@@ -69918,6 +70115,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1913727391
 GameObject:
   m_ObjectHideFlags: 0
@@ -70239,6 +70439,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!4 &1920635433
 Transform:
   m_ObjectHideFlags: 0
@@ -72226,6 +72429,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1978375329
 GameObject:
   m_ObjectHideFlags: 0
@@ -72652,6 +72858,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1987886137
 GameObject:
   m_ObjectHideFlags: 0
@@ -72763,6 +72972,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &1988536910
 GameObject:
   m_ObjectHideFlags: 0
@@ -74981,6 +75193,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &2056554882
 GameObject:
   m_ObjectHideFlags: 0
@@ -75257,6 +75472,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2070188962}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2070512094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 757643663394618575, guid: 17f88fb6f0c387e45b68928db015b752,
+    type: 3}
+  m_PrefabInstance: {fileID: 1813308222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967eafd3e36b7fb41837952514a104ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2070845000
 GameObject:
   m_ObjectHideFlags: 0
@@ -75491,6 +75718,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &2080188990
 GameObject:
   m_ObjectHideFlags: 0
@@ -77967,6 +78197,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
+  cablePoint: {fileID: 0}
+  isDebug: 0
+  isDraggingInteractivePoint: 0
 --- !u!1 &2124298851
 GameObject:
   m_ObjectHideFlags: 0
