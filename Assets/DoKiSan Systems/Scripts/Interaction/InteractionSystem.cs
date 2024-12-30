@@ -19,6 +19,8 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField] private InteractivePointHandler _interactPointHandler;
     private Vector3 _startPosition;
 
+    private bool _isInteract=true;
+
 
     private void Update()
     {
@@ -198,6 +200,9 @@ public class InteractionSystem : MonoBehaviour
     }
     private void PickupObject(GameObject obj)
     {
+        if (!_isInteract)
+            return;
+
         heldObject = obj;
         obj.transform.SetParent(handSlot.transform);
         obj.transform.localPosition = Vector3.zero;
@@ -205,6 +210,9 @@ public class InteractionSystem : MonoBehaviour
     }
     private void TryInteraction(GameObject obj1, GameObject obj2)
     {
+        if (!_isInteract)
+            return;
+
         IInteractableObject interactable1 = obj1.GetComponent<IInteractableObject>();
         IInteractableObject interactable2 = obj2.GetComponent<IInteractableObject>();
         Debug.Log("TryInteract");
@@ -229,7 +237,15 @@ public class InteractionSystem : MonoBehaviour
 
     public void ClearHand()
     {
-        heldObject.transform.SetParent(null);
         heldObject = null;
+    }
+
+    public void SetInteract(bool isActive)
+    {
+        _isInteract = isActive;
+    }
+    public bool GetInteractStatus()
+    {
+        return _isInteract;
     }
 }

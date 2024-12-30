@@ -8,10 +8,13 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] string typeCable;
     [SerializeField] string typeGroupCable;
     [SerializeField] List<InteractivePointHandler> interactivePointList = new List<InteractivePointHandler>();
+    [SerializeField] Transform endPoint;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+        int indexLastChild = transform.childCount - 1;
+        endPoint = transform.GetChild(indexLastChild);
     }
     public void DisableCollider(bool isActive)
     {

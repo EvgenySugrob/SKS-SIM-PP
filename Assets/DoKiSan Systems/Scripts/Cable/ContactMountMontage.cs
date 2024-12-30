@@ -6,10 +6,14 @@ using UnityEngine;
 public class ContactMountMontage : MonoBehaviour, IInteractableObject
 {
     [SerializeField] BoxCollider mainCollider;
-    [SerializeField] List<BoxCollider> cableSlotCollider;
+    [SerializeField] List<ContactPortInteract> contactPortInteracts;
     [SerializeField] Transform cableMontagePoint;
     [SerializeField] private Transform _mainParent;
     [SerializeField] private InteractionSystem _interactionSystem;
+    
+    [Header("Termination")]
+    [SerializeField] Termination termination;
+    [SerializeField] Transform terminationPoint;
 
     public bool CanInteractable(GameObject objectInteract)
     {
@@ -34,18 +38,46 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
 
     public void Interact(GameObject objectInteract)
     {
-        StartCoroutine(CableToMontageposition(objectInteract.transform));
+        StartCoroutine(CableToMontagePosition(objectInteract.transform));
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
         _interactionSystem.StateCablePartMoving(true);
-        foreach (BoxCollider collider in cableSlotCollider)
+        foreach(ContactPortInteract port in contactPortInteracts)
         {
-            collider.enabled = true;
+            port.ActiveBoxColliderPort(true);
         }
+        
         mainCollider.enabled = false;
+        TerminationToolSetCurrenInfo(objectInteract);
+        _interactionSystem.ClearHand();
     }
 
-    private IEnumerator CableToMontageposition(Transform cable)
+    public bool CheckAllPortReady()
+    {
+        bool isReady = true;
+
+        foreach (ContactPortInteract port in contactPortInteracts)
+        {
+            if(!port.GetStateSlot())
+            {
+                isReady = false;
+                break;
+            }
+        }
+        return isReady;
+    }
+
+    public Transform GetTerminationPoint()
+    {
+        return terminationPoint;
+    }
+
+    private void TerminationToolSetCurrenInfo(GameObject objectInteract)
+    {
+        termination = objectInteract.GetComponent<InteractObject>().GetTerminationTool();
+        termination.SetCurrentPortInteract(this);
+    }
+    private IEnumerator CableToMontagePosition(Transform cable)
     {
         cable.parent = cableMontagePoint;
         Vector3 endRotate = new Vector3(-180f, 0f, -90f);

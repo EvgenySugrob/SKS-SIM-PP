@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractObject : MonoBehaviour, IInteractableObject,IDisableColliders
 {
     [SerializeField] List<Collider> colliders;
+    [SerializeField] Termination termination;
     public bool CanInteractable(GameObject objectInteract)
     {
         bool isInteract = false;
@@ -39,5 +40,10 @@ public class InteractObject : MonoBehaviour, IInteractableObject,IDisableCollide
     public void Interact(GameObject objectInteract)
     {
         Debug.Log($"{name} взаимодействует с твоей мамой и с {objectInteract.name}");
+    }
+
+    public Termination GetTerminationTool()
+    {
+        return termination;
     }
 }

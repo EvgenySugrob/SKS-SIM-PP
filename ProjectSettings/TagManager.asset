@@ -8,6 +8,7 @@ TagManager:
   - cutPlace
   - Manipulation
   - ChangeIcon
+  - TerminationCheck
   layers:
   - Default
   - TransparentFX

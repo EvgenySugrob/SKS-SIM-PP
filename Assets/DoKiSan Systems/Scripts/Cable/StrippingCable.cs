@@ -26,6 +26,7 @@ public class StrippingCable : MonoBehaviour
     public void DisableEnableNeeds(bool isActive)
     {
         interactionSystem.enabled = isActive;
+        interactionSystem.SetInteract(isActive);
         stripper.SetActive(!isActive);
     }
 

@@ -383,9 +383,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &29420917
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &37068667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -972,9 +973,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &53757082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,9 +2228,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &64913257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,9 +4043,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &115993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,9 +5062,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &154385854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6403,9 +6404,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &195120760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7147,9 +7148,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &218607406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8042,9 +8043,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &246857617
 GameObject:
   m_ObjectHideFlags: 0
@@ -9289,6 +9290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!114 &303004753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12327,9 +12329,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &359047287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13510,9 +13512,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &378963989
 GameObject:
   m_ObjectHideFlags: 0
@@ -16226,9 +16228,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &474022226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16340,9 +16342,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &477056195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16874,9 +16876,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1001 &489854658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18577,9 +18579,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &531832555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19871,9 +19873,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &557231572
 GameObject:
   m_ObjectHideFlags: 0
@@ -20902,9 +20904,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &596342196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21121,9 +21123,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &600466297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460447450073191685, guid: 81dbcbac40ae12b439b514aad04a853e,
@@ -21724,9 +21726,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &625459450
 GameObject:
   m_ObjectHideFlags: 0
@@ -21831,89 +21833,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625459450}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &631437434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 631437435}
-  - component: {fileID: 631437437}
-  - component: {fileID: 631437436}
-  m_Layer: 0
-  m_Name: part1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &631437435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631437434}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.2164396, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0.015000105, y: 0, z: -0.026}
-  m_LocalScale: {x: 0.012245411, y: 0.0039701997, z: 0.06}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 798520481}
-  m_LocalEulerAnglesHint: {x: 0, y: 25, z: 0}
---- !u!23 &631437436
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631437434}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &631437437
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631437434}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &632410121
 GameObject:
@@ -22763,9 +22682,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &666259799
 GameObject:
   m_ObjectHideFlags: 0
@@ -24674,9 +24593,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &689264982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2101956276030286225, guid: c92fb872977897d47a1837f1ef421bcf,
@@ -25663,9 +25582,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &713660780
 GameObject:
   m_ObjectHideFlags: 0
@@ -25777,9 +25696,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &714221378
 GameObject:
   m_ObjectHideFlags: 0
@@ -28727,6 +28646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!1 &779559439
 GameObject:
   m_ObjectHideFlags: 0
@@ -28943,9 +28863,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &786083807
 GameObject:
   m_ObjectHideFlags: 0
@@ -29267,9 +29187,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &790905016
 Transform:
   m_ObjectHideFlags: 0
@@ -29693,9 +29613,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &798229745
 GameObject:
   m_ObjectHideFlags: 0
@@ -29830,8 +29750,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1492795669}
-  - {fileID: 631437435}
   - {fileID: 835078735}
   m_Father: {fileID: 666259801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29959,6 +29877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!1 &802901010
 GameObject:
   m_ObjectHideFlags: 0
@@ -31734,9 +31653,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &876216718
 GameObject:
   m_ObjectHideFlags: 0
@@ -31848,9 +31767,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &879066492
 GameObject:
   m_ObjectHideFlags: 0
@@ -32067,9 +31986,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &881292011
 GameObject:
   m_ObjectHideFlags: 0
@@ -32948,9 +32867,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &915175222
 Transform:
   m_ObjectHideFlags: 0
@@ -33313,9 +33232,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &932815304
 GameObject:
   m_ObjectHideFlags: 0
@@ -35257,9 +35176,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &952844622
 GameObject:
   m_ObjectHideFlags: 0
@@ -37217,9 +37136,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &990800660
 GameObject:
   m_ObjectHideFlags: 0
@@ -37716,6 +37635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!114 &996468685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37983,6 +37903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!114 &1007824893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38830,9 +38751,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1030784724
 GameObject:
   m_ObjectHideFlags: 0
@@ -39154,9 +39075,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1040695926
 GameObject:
   m_ObjectHideFlags: 0
@@ -39800,6 +39721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!114 &1059281060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42190,9 +42112,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -42648,13 +42570,158 @@ Transform:
   m_GameObject: {fileID: 1133663716}
   serializedVersion: 2
   m_LocalRotation: {x: -0.11377706, y: 0.8832894, z: -0.3575896, w: -0.2810415}
-  m_LocalPosition: {x: 0, y: -0.004, z: 0.115}
+  m_LocalPosition: {x: 0.007, y: -0.004, z: 0.1738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1861660734}
+  - {fileID: 1134958784}
   m_Father: {fileID: 1539452045}
   m_LocalEulerAnglesHint: {x: 44.08, y: -504.7, z: 0}
+--- !u!1001 &1134958783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1133663717}
+    m_Modifications:
+    - target: {fileID: 60461304762859208, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826808942587682232, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980267057016976135, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Name
+      value: Wire_termination_tool_closed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980267057016976135, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980267057016976135, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019194361259191526, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359183723227576860, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323204950412261670, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688127263533135725, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757886668177636489, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969532170269387365, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302815427860600116, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488958699009696371, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074003072386245001, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556495618745899232, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43c89a3ce09916942a3edd1ceb0b1982, type: 3}
+--- !u!4 &1134958784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1166576107170294205, guid: 43c89a3ce09916942a3edd1ceb0b1982,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134958783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1141337456
 GameObject:
   m_ObjectHideFlags: 0
@@ -43092,6 +43159,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2121955815}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReadyToStartWork
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Termination, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762865519938765034, guid: a9bec7f9c8f593444a40318018f4ce84,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6509055452965686477, guid: a9bec7f9c8f593444a40318018f4ce84,
         type: 3}
@@ -43651,9 +43753,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1175878487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4624115928136863818, guid: 55df1f7c915e0b941bede8ed1b56fef2,
@@ -44312,9 +44414,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1194040299
 GameObject:
   m_ObjectHideFlags: 0
@@ -45127,9 +45229,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1204300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -45235,6 +45337,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204300713}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1211362654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 624297466089231030, guid: f72e626e3e537e84cb3d83a01fba8070,
+    type: 3}
+  m_PrefabInstance: {fileID: 5965803431233125256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1218812233
 GameObject:
   m_ObjectHideFlags: 0
@@ -45556,9 +45664,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1224508632
 GameObject:
   m_ObjectHideFlags: 0
@@ -45880,9 +45988,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1234630383
 GameObject:
   m_ObjectHideFlags: 0
@@ -46212,6 +46320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!1 &1245445660
 GameObject:
   m_ObjectHideFlags: 0
@@ -47097,9 +47206,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1266642415
 GameObject:
   m_ObjectHideFlags: 0
@@ -47258,6 +47367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &1267184597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47673,9 +47783,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1276271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -48687,9 +48797,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1305714613
 GameObject:
   m_ObjectHideFlags: 0
@@ -48792,6 +48902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &1305714617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49007,9 +49118,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1314366049
 GameObject:
   m_ObjectHideFlags: 0
@@ -50317,9 +50428,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1352429864
 GameObject:
   m_ObjectHideFlags: 0
@@ -51527,9 +51638,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1388026921
 GameObject:
   m_ObjectHideFlags: 0
@@ -52702,9 +52813,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1422373006
 GameObject:
   m_ObjectHideFlags: 0
@@ -54219,9 +54330,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1471308155
 GameObject:
   m_ObjectHideFlags: 0
@@ -54713,89 +54824,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488003739}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1492795668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1492795669}
-  - component: {fileID: 1492795671}
-  - component: {fileID: 1492795670}
-  m_Layer: 0
-  m_Name: part1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1492795669
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492795668}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21643949, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: -0.0149998665, y: 0, z: -0.026}
-  m_LocalScale: {x: 0.012245411, y: 0.0039701997, z: 0.06}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 798520481}
-  m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
---- !u!23 &1492795670
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492795668}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1492795671
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492795668}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1505568817
 GameObject:
   m_ObjectHideFlags: 0
@@ -55255,9 +55283,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1520795558
 GameObject:
   m_ObjectHideFlags: 0
@@ -55802,9 +55830,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1534869338
 GameObject:
   m_ObjectHideFlags: 0
@@ -56738,9 +56766,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &1560372054
 Transform:
   m_ObjectHideFlags: 0
@@ -57232,6 +57260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &1572331479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57999,6 +58028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &1595139723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59933,9 +59963,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1639986358
 GameObject:
   m_ObjectHideFlags: 0
@@ -60380,9 +60410,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1651785679
 GameObject:
   m_ObjectHideFlags: 0
@@ -60599,9 +60629,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1662795648
 GameObject:
   m_ObjectHideFlags: 0
@@ -60994,9 +61024,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1673385081
 GameObject:
   m_ObjectHideFlags: 0
@@ -62158,9 +62188,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1704580774
 GameObject:
   m_ObjectHideFlags: 0
@@ -62388,9 +62418,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1721392826
 GameObject:
   m_ObjectHideFlags: 0
@@ -62812,6 +62842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!1 &1736864251
 GameObject:
   m_ObjectHideFlags: 0
@@ -63431,9 +63462,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1755381152
 GameObject:
   m_ObjectHideFlags: 0
@@ -64338,9 +64369,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1783961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -64452,9 +64483,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &1783976732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
@@ -65045,6 +65076,11 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3205100057676006449, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: termination
+      value: 
+      objectReference: {fileID: 2121955815}
     - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -65706,9 +65742,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1826355178
 GameObject:
   m_ObjectHideFlags: 0
@@ -67066,9 +67102,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1854117043
 GameObject:
   m_ObjectHideFlags: 0
@@ -67332,6 +67368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!65 &1856638378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67590,6 +67627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547372146702564108, guid: d0777c958db677f429c7970d78611370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479240454420319590, guid: d0777c958db677f429c7970d78611370,
         type: 3}
@@ -69330,9 +69372,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1894849479
 GameObject:
   m_ObjectHideFlags: 0
@@ -69791,9 +69833,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1907190263
 GameObject:
   m_ObjectHideFlags: 0
@@ -70115,9 +70157,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1913727391
 GameObject:
   m_ObjectHideFlags: 0
@@ -70439,9 +70481,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!4 &1920635433
 Transform:
   m_ObjectHideFlags: 0
@@ -72429,9 +72471,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1978375329
 GameObject:
   m_ObjectHideFlags: 0
@@ -72858,9 +72900,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1987886137
 GameObject:
   m_ObjectHideFlags: 0
@@ -72972,9 +73014,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &1988536910
 GameObject:
   m_ObjectHideFlags: 0
@@ -75193,9 +75235,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &2056554882
 GameObject:
   m_ObjectHideFlags: 0
@@ -75718,9 +75760,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &2080188990
 GameObject:
   m_ObjectHideFlags: 0
@@ -76703,6 +76745,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 666259801}
+    - targetCorrespondingSourceObject: {fileID: 5376468695574345713, guid: 2d2954463d11db9488fbea95811224bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121955814}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5070037348985706644, guid: 2d2954463d11db9488fbea95811224bc,
         type: 3}
@@ -78086,6 +78132,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119347780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2121955814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+    type: 3}
+  m_PrefabInstance: {fileID: 5965803431233125256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2121955815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+    type: 3}
+  m_PrefabInstance: {fileID: 5965803431233125256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf2e11d243e0de4f89e684a016e2368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122915349
 GameObject:
   m_ObjectHideFlags: 0
@@ -78197,9 +78261,9 @@ MonoBehaviour:
   interactivePointPrefab: {fileID: 0}
   interactivePointParent: {fileID: 0}
   interactivePointsCount: 4
-  cablePoint: {fileID: 0}
   isDebug: 0
   isDraggingInteractivePoint: 0
+  cablePointBezier: {fileID: 0}
 --- !u!1 &2124298851
 GameObject:
   m_ObjectHideFlags: 0
@@ -78705,6 +78769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: []
+  termination: {fileID: 0}
 --- !u!114 &2140620042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79607,6 +79672,11 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3205100057676006449, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: termination
+      value: 
+      objectReference: {fileID: 2121955815}
     - target: {fileID: 3457333355256145705, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -79989,6 +80059,89 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 449200548357027910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5965803431233125256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1783976732}
+    m_Modifications:
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 944692881}
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: terminationTool
+      value: 
+      objectReference: {fileID: 1211362654}
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: interactionSystem
+      value: 
+      objectReference: {fileID: 11526875}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0907
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052783242456938303, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_Name
+      value: TerminationTool
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f72e626e3e537e84cb3d83a01fba8070, type: 3}
 --- !u!65 &6019865326403224000
 BoxCollider:
   m_ObjectHideFlags: 0

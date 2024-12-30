@@ -16,15 +16,22 @@ public class ContactPortInteract : MonoBehaviour
 
     [Header("InteractionPart")]
     [SerializeField] Transform pointBeforeDriving;
+    [SerializeField] Transform pointAfterDriving;
+    [SerializeField] BoxCollider boxCollider;
     [SerializeField] string typeCablePort;
     [SerializeField] string typeGroupCable;
     [SerializeField] CablePointBezier cablePoint;
-    private bool _isBusy;
 
+    [Header("Termination")]
+    [SerializeField] Transform point1;
+    [SerializeField] Transform point2;
+    private bool _isBusy;
+    private bool _terminationDone;
 
 
     private void Start()
     {
+        boxCollider = GetComponent<BoxCollider>();
         _selectMaterial = transform.GetChild(0).transform.GetComponent<MeshRenderer>().sharedMaterial;
         matRenderer = transform.GetChild(0).transform.GetComponent<Renderer>();
         if(matRenderer!=null)
@@ -57,6 +64,11 @@ public class ContactPortInteract : MonoBehaviour
         }
     }
 
+    public void ActiveBoxColliderPort(bool isActive)
+    {
+        boxCollider.enabled = isActive;
+    }
+
     public void SelectPort(bool isActive)
     {
         isSelected = isActive;
@@ -76,6 +88,15 @@ public class ContactPortInteract : MonoBehaviour
     public void SetStateSlot(bool isState)
     {
         _isBusy= isState;
+    }
+
+    public void SetTerminationState(bool isDone)
+    {
+        _terminationDone = isDone;
+    }
+    public bool GetTerminationState()
+    {
+        return _terminationDone;
     }
 
     public bool CheckSlotAndCAble(string cableType)
@@ -99,5 +120,19 @@ public class ContactPortInteract : MonoBehaviour
     public void SetCablePoint(CablePointBezier cable)
     {
         cablePoint = cable;
+    }
+
+    public Transform GetFirstPoint()
+    {
+        return point1;
+    }
+    public Transform GetSecondPoint()
+    {
+        return point2;
+    }
+
+    public void CableAfterDriving()
+    {
+        cablePoint.transform.position = pointAfterDriving.position;
     }
 }
