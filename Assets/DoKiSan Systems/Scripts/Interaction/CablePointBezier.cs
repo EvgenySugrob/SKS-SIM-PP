@@ -9,6 +9,7 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] string typeGroupCable;
     [SerializeField] List<InteractivePointHandler> interactivePointList = new List<InteractivePointHandler>();
     [SerializeField] Transform endPoint;
+    [SerializeField] private int needIndexInteractivePoint = 3;
 
     private void Start()
     {
@@ -34,7 +35,12 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     {
         foreach(InteractivePointHandler point in interactivePointList)
         {
-            point.DisableCollider(isActive);
+            if(point.GetIndexInteractivePoint() == needIndexInteractivePoint)
+            {
+                Debug.Log("WellDone");
+                point.DisableCollider(isActive);
+            }
+                
         }
     }
 }

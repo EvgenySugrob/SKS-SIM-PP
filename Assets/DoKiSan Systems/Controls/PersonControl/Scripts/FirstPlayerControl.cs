@@ -196,6 +196,22 @@ namespace DoKiSan.Controls
                 .WaitForCompletion();
         }
         
+        public void MoveEyesToHead()
+        {
+            eyes.transform.parent = _startParentEyes;
+            StartCoroutine(StartMoveToHead());
+        }
+
+        private IEnumerator StartMoveToHead() 
+        {
+            limitlStateControl = false;
+            yield return DOTween.Sequence()
+                .Append(eyes.DOLocalMove(Vector3.zero, 1.5f))
+                .Join(eyes.DOLocalRotate(Vector3.zero, 1.5f))
+                .Play()
+                .WaitForCompletion();
+        }
+
         private void LimitMoveEyes()
         {
             float input = Input.GetAxis("Horizontal");

@@ -6,7 +6,7 @@ public class InteractivePointHandler : MonoBehaviour, IDisableColliders
 {
     [SerializeField] SphereCollider sphereCollider;
     private BezierCable cable;
-    private int indexOnCurve;
+    [SerializeField]private int indexOnCurve;
     private Vector3 initialPosition;
     [SerializeField] bool isDrag;
     private MeshRenderer meshRenderer;
@@ -60,5 +60,9 @@ public class InteractivePointHandler : MonoBehaviour, IDisableColliders
         {
             cable.SetDraggingInteractivePoint(false);
         }
+    }
+    public int GetIndexInteractivePoint()
+    {
+        return indexOnCurve;
     }
 }

@@ -148,6 +148,7 @@ MonoBehaviour:
   handSlot: {fileID: 1363798300}
   isCablePartMoving: 0
   _currentPointBezier: {fileID: 0}
+  _contactInteract: {fileID: 0}
   _interactPointHandler: {fileID: 0}
 --- !u!114 &11526877 stripped
 MonoBehaviour:
@@ -42115,6 +42116,18 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 0}
+--- !u!114 &1115143479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+    type: 3}
+  m_PrefabInstance: {fileID: 655728546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5c2df7b3477a74e92d4e0037129214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1116682128
 GameObject:
   m_ObjectHideFlags: 0
@@ -65051,6 +65064,11 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1739442735779628935, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
     - target: {fileID: 1769567333629169892, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: strippingCable
@@ -65071,6 +65089,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Manipulation
       objectReference: {fileID: 0}
+    - target: {fileID: 2071862770244918776, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
+    - target: {fileID: 2922156361035081781, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
     - target: {fileID: 3043834524861073046, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Anchor.y
@@ -65196,6 +65224,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7740025301864441510, guid: 17f88fb6f0c387e45b68928db015b752,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b70502b929c65484c9f381d6d75b2b11, type: 2}
     - target: {fileID: 8366663075105408140, guid: 17f88fb6f0c387e45b68928db015b752,
         type: 3}
       propertyPath: m_Anchor.y
@@ -80069,6 +80102,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
         type: 3}
+      propertyPath: _startParent
+      value: 
+      objectReference: {fileID: 1783976732}
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 944692881}
@@ -80079,9 +80117,19 @@ PrefabInstance:
       objectReference: {fileID: 1211362654}
     - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
         type: 3}
+      propertyPath: panelInteraction
+      value: 
+      objectReference: {fileID: 1115143479}
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
       propertyPath: interactionSystem
       value: 
       objectReference: {fileID: 11526875}
+    - target: {fileID: 3232022494019342654, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: firstPlayerControl
+      value: 
+      objectReference: {fileID: 11526877}
     - target: {fileID: 3988929100115509305, guid: f72e626e3e537e84cb3d83a01fba8070,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80136,6 +80184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TerminationTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052783242456938303, guid: f72e626e3e537e84cb3d83a01fba8070,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

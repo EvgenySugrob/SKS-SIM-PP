@@ -180,13 +180,22 @@ public class BezierCable : MonoBehaviour
         Vector3[] vertices = new Vector3[vertexCount + 2]; // Добавляем 2 вершины для центров крышек
         int[] triangles = new int[triangleCount];
         Vector3[] normals = new Vector3[vertexCount + 2];
+        Vector2[] uvs = new Vector2[vertexCount + 2]; // Массив для UV-координат
 
         float angleStep = 360f / radialSegments;
+        float totalLength = CalculateCurveLength(curvePoints);
 
-        // Генерация вершин и нормалей для кабеля
+        // Генерация вершин, нормалей и UV для кабеля
+        float currentLength = 0f;
         for (int i = 0; i <= curveSegments; i++)
         {
             Vector3 center = curvePoints[i];
+
+            // Обновляем текущую длину
+            if (i > 0)
+            {
+                currentLength += Vector3.Distance(curvePoints[i - 1], curvePoints[i]);
+            }
 
             Vector3 forward = (i < curveSegments) ? (curvePoints[i + 1] - curvePoints[i]).normalized : (curvePoints[i] - curvePoints[i - 1]).normalized;
             Vector3 up = Vector3.up;
@@ -205,6 +214,11 @@ public class BezierCable : MonoBehaviour
                 Vector3 localPos = right * Mathf.Cos(angle) * cableRadius + up * Mathf.Sin(angle) * cableRadius;
                 vertices[i * ringVertexCount + j] = center + localPos;
                 normals[i * ringVertexCount + j] = invertNormals ? -localPos.normalized : localPos.normalized;
+
+                // UV-координаты: U - вдоль длины кабеля (нормализуем по totalLength), V - вдоль окружности
+                float u = currentLength / totalLength; // Доля пройденной длины
+                float v = (float)j / radialSegments;   // Угол вокруг окружности
+                uvs[i * ringVertexCount + j] = new Vector2(u, v);
             }
         }
 
@@ -213,6 +227,9 @@ public class BezierCable : MonoBehaviour
         vertices[vertexCount + 1] = curvePoints[curvePoints.Length - 1]; // Вторая крышка
         normals[vertexCount] = invertNormals ? Vector3.back : Vector3.forward;
         normals[vertexCount + 1] = invertNormals ? Vector3.forward : Vector3.back;
+
+        uvs[vertexCount] = new Vector2(0, 0); // UV для первой крышки
+        uvs[vertexCount + 1] = new Vector2(1, 0); // UV для второй крышки
 
         // Генерация треугольников для трубки
         int tIndex = 0;
@@ -285,7 +302,24 @@ public class BezierCable : MonoBehaviour
         tubeMesh.vertices = vertices;
         tubeMesh.triangles = triangles;
         tubeMesh.normals = normals;
+        tubeMesh.uv = uvs; // Присваиваем UV-координаты
+
+        //for (int i = 0; i < uvs.Length; i++)
+        //{
+        //    Debug.Log($"UV[{i}] = {uvs[i]}");
+        //}
+
         return tubeMesh;
+    }
+
+    private float CalculateCurveLength(Vector3[] curvePoints)
+    {
+        float length = 0f;
+        for (int i = 1; i < curvePoints.Length; i++)
+        {
+            length += Vector3.Distance(curvePoints[i - 1], curvePoints[i]);
+        }
+        return length;
     }
 
     private Vector3 CalculateBezierPoint(float t, Vector3[] points)

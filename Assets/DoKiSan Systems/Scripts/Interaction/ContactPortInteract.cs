@@ -134,5 +134,6 @@ public class ContactPortInteract : MonoBehaviour
     public void CableAfterDriving()
     {
         cablePoint.transform.position = pointAfterDriving.position;
+        cablePoint.ActiveInteractivePoint(false);
     }
 }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DoKiSan.Controls;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,17 @@ public class Termination : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 _startToolPosition;
     private Vector3 _startToolRotation;
-    Transform _startParent;
+    [SerializeField]Transform _startParent;
     [SerializeField]bool _isActive = false;
     private bool _isWorkProgress = false;
+    private int _countPorts = 8;
+    private int _currentCountIsDone = 0;
 
     [Header("Check before work")]
     [SerializeField] InteractionSystem interactionSystem;
     [SerializeField] ContactMountMontage currentContactMount;
+    [SerializeField] FirstPlayerControl firstPlayerControl;
+    [SerializeField] PatchPanelInteraction panelInteraction;
     private ContactPortInteract _currentPort;
     private ContactPortInteract _prevPort;
 
@@ -96,11 +101,38 @@ public class Termination : MonoBehaviour
     private IEnumerator MoveCutPositionAndCutCable(Transform point1, Transform point2)
     {
         _isWorkProgress = false;
+
         yield return MoveCutPositionAndCut(point1,point2);
         _currentPort.CableAfterDriving();
         yield return new WaitForSeconds(.5f);
         yield return ReturnBack(point1);
-        _isWorkProgress = true;
+
+        if (WorkIsDone())
+        {
+            transform.parent = _startParent;
+            currentContactMount = null;
+            yield return EndWorkProgress();
+            _isActive= false;
+            firstPlayerControl.MoveEyesToHead();
+            panelInteraction.DisableCollider(true);
+            interactionSystem.SetInteract(true);
+
+            _currentPort.SelectPort(false);
+            _currentPort = null;
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            _isWorkProgress = true;
+        }
+    }
+
+    private YieldInstruction EndWorkProgress()
+    {
+        return terminationTool.DOMove(_startPosition,1f)
+            .Play()
+            .WaitForCompletion();
     }
 
     private YieldInstruction MoveCutPositionAndCut(Transform point1,Transform point2)
@@ -114,7 +146,9 @@ public class Termination : MonoBehaviour
     }
 
     private YieldInstruction ReturnBack(Transform point1)
-    { 
+    {
+        _currentPort.ActiveBoxColliderPort(false);
+        _currentPort.SelectPort(false);
         return DOTween.Sequence()
             .Append(terminationTool.DOMove(point1.position,1f))
             .Append(terminationTool.DOLocalMove(_startToolPosition,1f))
@@ -141,9 +175,23 @@ public class Termination : MonoBehaviour
 
             transform.parent = null;
             _isWorkProgress = true;
-            //начало работы с забивкой
         }
         
+    }
+
+    public bool WorkIsDone()
+    {
+        bool isDone = false;
+
+        _currentCountIsDone++;
+
+        if (_currentCountIsDone == _countPorts)
+        {
+            isDone = true;
+            _currentCountIsDone = 0;
+        }
+
+        return isDone;
     }
 
     private IEnumerator MoveOnWorkPosition()

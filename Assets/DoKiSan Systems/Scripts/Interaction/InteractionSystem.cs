@@ -15,7 +15,7 @@ public class InteractionSystem : MonoBehaviour
     private bool _isSwiping;
     private Vector3 _prevPosition;
     [SerializeField] private CablePointBezier _currentPointBezier;
-    private ContactPortInteract _contactInteract;
+    [SerializeField]private ContactPortInteract _contactInteract;
     [SerializeField] private InteractivePointHandler _interactPointHandler;
     private Vector3 _startPosition;
 
@@ -47,23 +47,32 @@ public class InteractionSystem : MonoBehaviour
             //{
             //проверка на соответсвие схеме на потом
             //}
-            if (!_contactInteract.GetStateSlot())
+            if(_contactInteract != null)
             {
-                _currentPointBezier.transform.position = _contactInteract.GetPointBeforeDriving().position;
-                _currentPointBezier.transform.parent = _contactInteract.transform;
-                _currentPointBezier.ActiveInteractivePoint(true);
+                if (!_contactInteract.GetStateSlot())
+                {
+                    _currentPointBezier.transform.position = _contactInteract.GetPointBeforeDriving().position;
+                    _currentPointBezier.transform.parent = _contactInteract.transform;
+                    _currentPointBezier.ActiveInteractivePoint(true);
 
-                _contactInteract.SetStateSlot(true);
-                _contactInteract.SetCablePoint(_currentPointBezier);
+                    _contactInteract.SetStateSlot(true);
+                    _contactInteract.SetCablePoint(_currentPointBezier);
+                }
+                else
+                {
+                    _currentPointBezier.transform.position = _startPosition;
+                    _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
+                }
+                _contactInteract.SelectPort(false);
             }
             else
             {
                 _currentPointBezier.transform.position = _startPosition;
                 _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
             }
-            _contactInteract.SelectPort(false);
-            ;
+            
         }
+        
         else if (_interactPointHandler != null)
         {
             _interactPointHandler.IsDraging(false);
@@ -116,6 +125,14 @@ public class InteractionSystem : MonoBehaviour
                         _contactInteract.SelectPort(false);
                         _contactInteract = portInteract;
                     }
+                }
+                else
+                {
+                    if(_contactInteract!=null)
+                    {
+                        _contactInteract.SelectPort(false);
+                    }
+                    _contactInteract = null;
                 }
 
                 if (_contactInteract != null && portInteract == _contactInteract)
