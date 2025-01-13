@@ -265,4 +265,8 @@ public class InteractionSystem : MonoBehaviour
     {
         return _isInteract;
     }
+    public bool IsCablePartMovingActive()
+    {
+        return isCablePartMoving;
+    }
 }

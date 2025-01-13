@@ -5,8 +5,11 @@ using UnityEngine;
 public class SpawnSockets : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectPool = new GameObject[6];
+    [SerializeField] private MarkCable[] cablePool = new MarkCable[6];
     [SerializeField] private List<Transform> pointSockets;
     [SerializeField] private List<Transform> _alreadyPoints;
+
+    private string _nameSocket = "Розетка №";
 
 
     private void Start()
@@ -23,6 +26,11 @@ public class SpawnSockets : MonoBehaviour
             objectPool[i].transform.position = targetPoint.position;
             objectPool[i].transform.rotation = targetPoint.rotation;
             objectPool[i].SetActive(true);
+
+            MarkSocket mark = objectPool[i].GetComponent<MarkSocket>();
+            mark.SetNameSocket(_nameSocket + i.ToString());
+
+            cablePool[i].SetSocket(mark);
         }
     }
 
