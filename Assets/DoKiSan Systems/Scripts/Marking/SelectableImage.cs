@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectableImage : MonoBehaviour
+public class SelectableImage : MonoBehaviour, ICheckingMenu
 {
     [SerializeField] Image selectableBackground;
+    [SerializeField] GameObject needsMenuOpen;
+    [SerializeField] CableTesterUIControl testerUIControl;
 
     private Tween _animationFadeIn;
     private Tween _animationFadeOut;
@@ -28,4 +30,8 @@ public class SelectableImage : MonoBehaviour
         _animationFadeOut.Restart();
     }
 
+    public void SetSelfCheckMenu()
+    {
+        
+    }
 }

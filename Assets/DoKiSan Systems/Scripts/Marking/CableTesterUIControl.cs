@@ -9,7 +9,7 @@ public class CableTesterUIControl : MonoBehaviour
     [SerializeField] GameObject mainWindow;
     [SerializeField] SelectableImage[] selectableImage = new SelectableImage[2];
     private SelectableImage _currentSelectableImage = null;
-    private SelectableImage _prevSelectableImage= null;
+    private SelectableImage _prevSelectableImage = null;
     private int _currentIndexMainImage = 1;
 
     [Header("Mapping window")]
@@ -21,9 +21,37 @@ public class CableTesterUIControl : MonoBehaviour
     [SerializeField] RectTransform[] scanIconPath = new RectTransform[4];
     private Vector3 _startScanIconPosition;
 
+    [Header("Current and prev window show")]
+    [SerializeField] GameObject _currentWindowShow;
+    [SerializeField] GameObject _prevWindowShow;
+    [SerializeField]private List<SelectableImage> _currentImageGroup = new List<SelectableImage>();
+    [SerializeField]private List<SelectableImage> _prevImageGroup = new List<SelectableImage>();
+
     private void Start()
     {
         _startScanIconPosition = scanIcon.position;
+    }
+
+    public void SetCurrentImageGroup(SelectableImage[] images)
+    {
+        _currentImageGroup.Clear();
+
+        for (int i = 0; i < images.Length; i++)
+        {
+            _currentImageGroup.Add(images[i]);
+        }
+
+        //Проверить заполнения листов 
+        if(_prevImageGroup == null)
+        {
+            _prevImageGroup = _currentImageGroup;
+        }
+
+        if(_prevImageGroup!=_currentImageGroup)
+        {
+            _prevImageGroup.Clear();
+            _prevImageGroup = _currentImageGroup;
+        }
     }
 
     public void LeftRightNavigation(int index)
