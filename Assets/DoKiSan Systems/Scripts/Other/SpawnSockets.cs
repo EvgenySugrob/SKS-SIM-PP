@@ -53,4 +53,12 @@ public class SpawnSockets : MonoBehaviour
             return index;
         }
     }
+
+    public void ActiveCollidersOnSockets(bool isActive)
+    {
+        for (int i = 0; i < objectPool.Length; i++)
+        {
+            objectPool[i].GetComponent<BoxCollider>().enabled = isActive;
+        }
+    }
 }

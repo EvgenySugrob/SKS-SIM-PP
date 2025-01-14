@@ -29,6 +29,7 @@ public class BezierCable : MonoBehaviour
     private List<InteractivePointHandler> interactivePoints = new List<InteractivePointHandler>();
     private Vector3[] bezierCurvePoints;
     private Quaternion interactivPointRotation;
+    [SerializeField] bool isInteractivePointBezier = true;
 
     void Start()
     {
@@ -89,6 +90,8 @@ public class BezierCable : MonoBehaviour
 
     private void GenerateInteractivePoints()
     {
+        if (!isInteractivePointBezier)
+            return;
         //// Удаляем старые точки
         //foreach (var point in interactivePoints)
         //{

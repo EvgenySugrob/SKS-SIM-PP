@@ -252,6 +252,11 @@ public class InteractionSystem : MonoBehaviour
         return heldObject;
     }
 
+    public void ForcedSetHeldObject(GameObject forcedHeldObject)
+    {
+        heldObject = forcedHeldObject;
+    }
+
     public void ClearHand()
     {
         heldObject = null;
