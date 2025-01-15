@@ -1346,6 +1346,8 @@ GameObject:
   - component: {fileID: 1559865751013992184}
   - component: {fileID: 9017733140070032817}
   - component: {fileID: 8081886570206882390}
+  - component: {fileID: 7450299009673900848}
+  - component: {fileID: 6102901510777176773}
   m_Layer: 0
   m_Name: BezierCable (1)
   m_TagString: Untagged
@@ -1471,6 +1473,41 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &7450299009673900848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931234014702394272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fec1856cd703a945b6acf449fbf4e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 0}
+  boxCollider: {fileID: 0}
+--- !u!65 &6102901510777176773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931234014702394272}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.011448476, y: 0.012433673, z: 2.41541}
+  m_Center: {x: 0.00007084571, y: -0.00021085702, z: 0.46357968}
 --- !u!1 &971080925703190150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1926,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 5266821080399097486}
+  isInteractivePointBezier: 1
 --- !u!33 &669577688562070292
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2027,6 +2065,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 757643663394618575}
+  isInteractivePointBezier: 1
 --- !u!33 &133492003190198482
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2935,6 +2974,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 3562178308769405120}
+  isInteractivePointBezier: 1
 --- !u!33 &3921016104426388280
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3073,6 +3113,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 2845594818676105747}
+  isInteractivePointBezier: 1
 --- !u!33 &8986061048058638288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5671,6 +5712,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 1373359251193360412}
+  isInteractivePointBezier: 1
 --- !u!33 &1580841181848120890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6760,6 +6802,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 6380351812024409066}
+  isInteractivePointBezier: 1
 --- !u!33 &741177827419961369
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9071,6 +9114,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 587067605762484760}
+  isInteractivePointBezier: 1
 --- !u!33 &6112688395383541567
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9658,6 +9702,7 @@ MonoBehaviour:
   isDebug: 0
   isDraggingInteractivePoint: 0
   cablePointBezier: {fileID: 4821250706355256616}
+  isInteractivePointBezier: 1
 --- !u!33 &3377000008049655558
 MeshFilter:
   m_ObjectHideFlags: 0

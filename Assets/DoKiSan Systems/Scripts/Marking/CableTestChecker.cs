@@ -8,8 +8,10 @@ using UnityEngine;
 public class CableTestChecker : MonoBehaviour, IInteractableObject
 {
     [Header("Main position and rotation")]
+    [SerializeField] OutlineDetection outlineDetection;
     [SerializeField] Transform nfActivePosition;
-    [SerializeField] Transform _currentCable;
+    [SerializeField] Transform nfsTool;
+    [SerializeField] Transform jackPortScan;
     [SerializeField] bool markingIsActiv = false;
     [SerializeField] bool screenActive = false;
     private Transform _prevCable;
@@ -17,6 +19,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Quaternion _startEyesRotation;
     private Vector3 _startEyesPosition;
     private Vector3 _startPosition;
+    private Vector3 _startNFSToolPosition;
     private Transform _startParent;
     private Transform _startEyesParent;
 
@@ -36,6 +39,19 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     [Header("Sockets")]
     [SerializeField] SpawnSockets spawnSockets;
+    [SerializeField] MarkSocket currentSocket;
+
+    [Header("Patch cord")]
+    [SerializeField] Transform patchCord;
+    [SerializeField] Transform partInTools;
+    [SerializeField] Transform partInSocket;
+    [SerializeField] Transform patchCordConnectPosition;
+    private Vector3 _startPatchCordPosition;
+    private Vector3 _startPartInToolPosition;
+    private Vector3 _startPartInSocketPosition;
+
+    private MarkCable _currentMarkCable;
+    private NfsController _nfsController;
 
     private void Start()
     {
@@ -43,17 +59,50 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _startRotation = transform.localRotation;
         _startParent = transform.parent;
 
+        _startNFSToolPosition = nfsTool.localPosition;
+        _nfsController = nfsTool.GetComponent<NfsController>();
+
         _startEyesPosition = eyesPlayer.localPosition;
         _startEyesRotation = eyesPlayer.localRotation;
         _startEyesParent = eyesPlayer.parent;
-    }
+
+        _startPatchCordPosition = patchCord.localPosition;
+        _startPartInToolPosition = partInTools.localPosition;
+        _startPartInSocketPosition = partInSocket.localPosition;
+}
 
     private void Update()
     {
         if(markingIsActiv)
         {
-
+            SearchMarkingCable();
         }
+    }
+
+    private void SearchMarkingCable()
+    {
+        GameObject objectdetect = outlineDetection.GetCurrentObject();
+        int countLight = 0;
+        if (outlineDetection.GetCurrentObject().GetComponent<MarkCable>())
+        {
+            _currentMarkCable = objectdetect.GetComponent<MarkCable>();
+        }
+        else
+        {
+            _currentMarkCable=null;
+        }
+
+        if(_currentMarkCable!=null && _currentMarkCable.GetBoundSocket() != currentSocket)
+        {
+            countLight = 1;
+        }
+        else if(_currentMarkCable!=null && _currentMarkCable.GetBoundSocket() == currentSocket)
+        {
+            Debug.Log("Ёбать, мы нашли нужный!!!" + _currentMarkCable.name);
+            countLight = 3;
+            //вкл диодов идиотов
+        }
+        _nfsController.EnableDiods(countLight);
     }
 
     public void StartChecker()
@@ -61,7 +110,6 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         if (interactionSystem.IsCablePartMovingActive())
             return;
 
-        markingIsActiv = true;
         gameObject.SetActive(true);
 
         StartCoroutine(MoveOnJobPosition());
@@ -136,10 +184,17 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
         if(objectInteract.TryGetComponent(out MarkSocket socket))
         {
-            StartCoroutine(MoveEyesToPointAndTools(socket.GetEyesPivot(),socket.GetFirstToolPivot()));
+            currentSocket = socket;
+            StartCoroutine(MoveEyesToPointAndTools(currentSocket.GetEyesPivot(),currentSocket.GetFirstToolPivot()));
 
             ActiveButtonsOnTool(true);
         }
+    }
+
+    public void StartSearch()
+    {
+        ActiveButtonsOnTool(false);
+        StartCoroutine(SerachToolPosition());
     }
 
     private IEnumerator MoveEyesToPointAndTools(Transform eyesPoint, Transform firstPivot)
@@ -166,6 +221,55 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             .Append(transform.DOLocalMove(Vector3.zero, 1f))
             .Join(transform.DOLocalRotate(Vector3.zero, 1f))
             .Play()
+            .WaitForCompletion();
+    }
+
+    private IEnumerator SerachToolPosition()
+    {
+        patchCord.gameObject.SetActive(true);
+        yield return ConnectWithTool();
+        yield return ConnectWithSocket();
+        yield return EyesReturnBack();
+        yield return NFSToolOnPosition();
+        firstPlayerControl.enabled = true;
+        markingIsActiv = true;
+    }
+
+    private YieldInstruction ConnectWithTool()
+    {
+        return DOTween.Sequence()
+            .Append(patchCord.DOMove(patchCordConnectPosition.position, 1f))
+            .Append(partInTools.DOMove(jackPortScan.position, 0.5f))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    private YieldInstruction ConnectWithSocket()
+    {
+        return DOTween.Sequence()
+            .Append(transform.DOMove(currentSocket.GetSecondToolPivot().position, 1f))
+            .Append(partInSocket.DOMove(currentSocket.GetJackBetweenPivot().position, 0.5f).SetEase(Ease.Linear))
+            .Append(partInSocket.DOMove(currentSocket.GetJackPartPivot().position, 0.5f))
+            .Play() 
+            .WaitForCompletion();
+    }
+    private YieldInstruction EyesReturnBack()
+    {
+        eyesPlayer.parent = _startEyesParent;
+
+        return DOTween.Sequence()
+            .Append(eyesPlayer.DOLocalMove(_startEyesPosition,1f))
+            .Join(eyesPlayer.DOLocalRotateQuaternion(_startEyesRotation,1f))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    private YieldInstruction NFSToolOnPosition()
+    {
+        nfsTool.gameObject.SetActive(true);
+
+        return nfsTool.DOLocalMove(nfActivePosition.localPosition,1f)
+            .Play() 
             .WaitForCompletion();
     }
 

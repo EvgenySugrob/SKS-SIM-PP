@@ -9,6 +9,7 @@ public class SelectableImage : MonoBehaviour, ICheckingMenu
     [SerializeField] Image selectableBackground;
     [SerializeField] GameObject needsMenuOpen;
     [SerializeField] CableTesterUIControl testerUIControl;
+    [SerializeField] string nameMenu;
 
     private Tween _animationFadeIn;
     private Tween _animationFadeOut;
@@ -32,6 +33,7 @@ public class SelectableImage : MonoBehaviour, ICheckingMenu
 
     public void SetSelfCheckMenu()
     {
-        
+        Debug.Log("Выполняюсь с " + gameObject.name);
+        testerUIControl.OpenWindowSelectebleWindow(needsMenuOpen,nameMenu);
     }
 }

@@ -8,25 +8,25 @@ public class InteractObject : MonoBehaviour, IInteractableObject,IDisableCollide
     [SerializeField] Termination termination;
     public bool CanInteractable(GameObject objectInteract)
     {
-        bool isInteract = false;
-        if(objectInteract.TryGetComponent(out PatchPanelInteraction patchPanel))
-        {
-            if(patchPanel.GetMountingState()==false)
-            {
-                isInteract= true;
-            }
-            else
-            {
-                isInteract= false;
-            }
-        }
-        else
-        {
-            isInteract= false;
-        }
+        bool isInteract = true;
+        //if(objectInteract.TryGetComponent(out PatchPanelInteraction patchPanel))
+        //{
+        //    if(patchPanel.GetMountingState()==false)
+        //    {
+        //        isInteract= true;
+        //    }
+        //    else
+        //    {
+        //        isInteract= false;
+        //    }
+        //}
+        //else
+        //{
+        //    isInteract= false;
+        //}
 
 
-        return true;
+        return isInteract;
     }
 
     public void DisableCollider(bool isActive)

@@ -106,4 +106,9 @@ public class OutlineDetection : MonoBehaviour
             Cursor.SetCursor(animationFrame[_currentFrame], hotSpot, CursorMode.Auto);
         }
     }
+
+    public GameObject GetCurrentObject()
+    {
+        return _currentObject;
+    }
 }

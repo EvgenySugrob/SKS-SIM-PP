@@ -11,6 +11,7 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     [SerializeField] MarkCable cable;
     [SerializeField] Transform eyesPivot;
     [SerializeField] Transform jackPartPivot;
+    [SerializeField] Transform jactBetweenPivot;
     [SerializeField] Transform firstToolsPivot;
     [SerializeField] Transform secondToolsPivot;
 
@@ -46,5 +47,12 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     {
         return secondToolsPivot;
     }
-  
+    public Transform GetJackPartPivot()
+    {
+        return jackPartPivot;
+    }
+    public Transform GetJackBetweenPivot()
+    {
+        return jactBetweenPivot;
+    }
 }

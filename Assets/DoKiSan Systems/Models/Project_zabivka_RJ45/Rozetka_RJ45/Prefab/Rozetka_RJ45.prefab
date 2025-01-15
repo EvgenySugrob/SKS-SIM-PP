@@ -397,7 +397,8 @@ MonoBehaviour:
   isMarking: 0
   cable: {fileID: 0}
   eyesPivot: {fileID: 6202839485543846262}
-  jackPartPivot: {fileID: 0}
+  jackPartPivot: {fileID: 2039215996097005906}
+  jactBetweenPivot: {fileID: 7238768666524814027}
   firstToolsPivot: {fileID: 1326328822902851800}
   secondToolsPivot: {fileID: 1261366400307010661}
 --- !u!1001 &986177679799986609
@@ -458,6 +459,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1288974502638493923, guid: 255dbad094cb6b9468e2bd4fb6004598,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01701
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288974502638493923, guid: 255dbad094cb6b9468e2bd4fb6004598,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01753
+      objectReference: {fileID: 0}
     - target: {fileID: 3685144088799067102, guid: 255dbad094cb6b9468e2bd4fb6004598,
         type: 3}
       propertyPath: m_Name
@@ -486,9 +497,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 986177679799986609}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2039215996097005906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1288974502638493923, guid: 255dbad094cb6b9468e2bd4fb6004598,
+    type: 3}
+  m_PrefabInstance: {fileID: 986177679799986609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6202839485543846262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6610003296557873351, guid: 255dbad094cb6b9468e2bd4fb6004598,
+    type: 3}
+  m_PrefabInstance: {fileID: 986177679799986609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7238768666524814027 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7627653972871160698, guid: 255dbad094cb6b9468e2bd4fb6004598,
     type: 3}
   m_PrefabInstance: {fileID: 986177679799986609}
   m_PrefabAsset: {fileID: 0}

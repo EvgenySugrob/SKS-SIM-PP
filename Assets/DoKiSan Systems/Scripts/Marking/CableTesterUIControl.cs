@@ -5,6 +5,7 @@ using UnityEngine;
 public class CableTesterUIControl : MonoBehaviour
 {
     [Header("Main windows")]
+    [SerializeField] CableTestChecker cableTestChecker;
     [SerializeField] GameObject loadScreen;
     [SerializeField] GameObject mainWindow;
     [SerializeField] SelectableImage[] selectableImage = new SelectableImage[2];
@@ -12,24 +13,25 @@ public class CableTesterUIControl : MonoBehaviour
     private SelectableImage _prevSelectableImage = null;
     private int _currentIndexMainImage = 1;
 
-    [Header("Mapping window")]
-    [SerializeField] GameObject mappingWindow;
-
-    [Header("Scan window")]
-    [SerializeField] GameObject scanningWindow;
-    [SerializeField] RectTransform scanIcon;
-    [SerializeField] RectTransform[] scanIconPath = new RectTransform[4];
-    private Vector3 _startScanIconPosition;
-
     [Header("Current and prev window show")]
     [SerializeField] GameObject _currentWindowShow;
     [SerializeField] GameObject _prevWindowShow;
     [SerializeField]private List<SelectableImage> _currentImageGroup = new List<SelectableImage>();
     [SerializeField]private List<SelectableImage> _prevImageGroup = new List<SelectableImage>();
+    [SerializeField]private ICheckingMenu _checkingMenu;
+    
 
     private void Start()
     {
-        _startScanIconPosition = scanIcon.position;
+        //_startScanIconPosition = scanIcon.position;
+        _currentImageGroup.Clear();
+        _currentWindowShow = mainWindow;
+        _prevWindowShow = _currentWindowShow;
+
+        for (int i = 0; i < selectableImage.Length; i++)
+        {
+            _currentImageGroup.Add(selectableImage[i]);
+        }
     }
 
     public void SetCurrentImageGroup(SelectableImage[] images)
@@ -60,18 +62,51 @@ public class CableTesterUIControl : MonoBehaviour
 
         if(_currentIndexMainImage<0)
         {
-            _currentIndexMainImage = selectableImage.Length - 1;
+            _currentIndexMainImage = _currentImageGroup.Count - 1;
         }
-        else if (_currentIndexMainImage>selectableImage.Length-1)
+        else if (_currentIndexMainImage>_currentImageGroup.Count-1)
         {
             _currentIndexMainImage = 0;
         }
-        SelecetIconBackgroundActive(selectableImage[_currentIndexMainImage]);
+        SelecetIconBackgroundActive(_currentImageGroup[_currentIndexMainImage]);
+    }
+
+    public void ConfirmCurrentSelectebleImage()
+    {
+        _checkingMenu.SetSelfCheckMenu();
+    }
+
+    public void OpenWindowSelectebleWindow(GameObject selectableMenu, string nameMenu)
+    {
+        if (selectableMenu == null)
+            return;
+
+        _prevWindowShow = _currentWindowShow;
+        _prevWindowShow.SetActive(false);
+        _currentWindowShow = selectableMenu;
+        _currentWindowShow.SetActive(true);
+
+        switch (nameMenu)
+        {
+            case "mapping":
+                break;
+            case "scan":
+                ScanWorkProgress();
+                break;
+            default: 
+                break;
+        }
+    }
+
+    private void ScanWorkProgress()
+    {
+        cableTestChecker.StartSearch();
     }
 
     private void SelecetIconBackgroundActive(SelectableImage image)
     {
         _currentSelectableImage = image;
+        _checkingMenu = image.GetComponent<ICheckingMenu>();
 
         if(_prevSelectableImage == null)
         {
