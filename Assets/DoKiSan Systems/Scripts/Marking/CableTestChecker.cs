@@ -98,7 +98,6 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         }
         else if(_currentMarkCable!=null && _currentMarkCable.GetBoundSocket() == currentSocket)
         {
-            Debug.Log("Ёбать, мы нашли нужный!!!" + _currentMarkCable.name);
             countLight = 3;
             //вкл диодов идиотов
         }

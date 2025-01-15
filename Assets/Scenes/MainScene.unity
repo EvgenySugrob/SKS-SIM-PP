@@ -48966,8 +48966,8 @@ MonoBehaviour:
   - {fileID: 965551728}
   - {fileID: 1725210753}
   - {fileID: 887070759}
-  deafultMaterial: {fileID: 0}
-  colorfullMaterial: {fileID: 0}
+  deafultMaterial: {fileID: 2100000, guid: d5cfe8ee519484440b79cc7dfa4054e4, type: 2}
+  colorfullMaterial: {fileID: 2100000, guid: 8ba59b65ede662f47a100b81a6950177, type: 2}
 --- !u!1 &1158669046
 GameObject:
   m_ObjectHideFlags: 0

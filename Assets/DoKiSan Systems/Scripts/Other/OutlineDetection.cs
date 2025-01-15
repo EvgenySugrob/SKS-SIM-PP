@@ -21,6 +21,7 @@ public class OutlineDetection : MonoBehaviour
     private int _currentFrame = 0;
     private float _timer;
     private bool _isCursorAnimate;
+    private RaycastHit _hit;
     
 
     private void Start()
@@ -31,9 +32,9 @@ public class OutlineDetection : MonoBehaviour
     private void Update()
     {
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray,out RaycastHit hit,distanceRay))
+        if (Physics.Raycast(ray,out _hit,distanceRay))
         {
-            _currentObject = hit.collider.gameObject;
+            _currentObject = _hit.collider.gameObject;
             if (_currentObject.GetComponent<OutlineManager>())
             {
                 currentManager = _currentObject.GetComponent<OutlineManager>();
@@ -110,5 +111,10 @@ public class OutlineDetection : MonoBehaviour
     public GameObject GetCurrentObject()
     {
         return _currentObject;
+    }
+
+    public RaycastHit GetPointRaycast()
+    {
+        return _hit;
     }
 }
