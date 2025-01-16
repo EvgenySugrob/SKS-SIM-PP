@@ -120,6 +120,13 @@ public class Termination : MonoBehaviour
             _currentPort.SelectPort(false);
             _currentPort = null;
 
+            interactionSystem.StateCablePartMoving(false);
+            interactionSystem.enabled = true;
+
+            terminationTool.localPosition = _startToolPosition;
+            transform.parent = _startParent;
+            transform.localPosition = _startPosition;
+
             gameObject.SetActive(false);
         }
         else

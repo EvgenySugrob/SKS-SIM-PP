@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class MarkSocket : MonoBehaviour,IInteractableObject
 {
     public string nameSocket { private set; get; }
-    [SerializeField] private bool isMarking = false;
+    [SerializeField] private bool _isMarking = false;
     [SerializeField] int numberSocket;
 
     [Header("Interaction")]
@@ -16,6 +18,18 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     [SerializeField] Transform firstToolsPivot;
     [SerializeField] Transform secondToolsPivot;
 
+    [Header("Decal material")]
+    [SerializeField] DecalProjector numberDecal;
+    [SerializeField] Texture2D imageIcon;
+    private Material _decalMaterial;
+
+    private void Start()
+    {
+        _decalMaterial = new Material(numberDecal.material);
+        numberDecal.material = _decalMaterial;
+        _decalMaterial.SetTexture("_numberIcon", imageIcon);
+    }
+
     public void SetNameSocket(string name)
     {
         nameSocket = name;
@@ -25,10 +39,22 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     {
         bool isInteract = false;
 
-        if(!isMarking)
+        if(!_isMarking)
             isInteract = true;
 
         return isInteract;
+    }
+
+    public void MarkingDone()
+    {
+        _isMarking = true;
+        transform.GetComponent<BoxCollider>().enabled = false;
+        _decalMaterial.SetInt("_markingDone", 1);
+    }
+
+    public bool GetMarkingDone()
+    {
+        return _isMarking; 
     }
 
     public void Interact(GameObject objectInteract)

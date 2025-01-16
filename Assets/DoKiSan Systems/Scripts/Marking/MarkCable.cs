@@ -34,6 +34,7 @@ public class MarkCable : MonoBehaviour
     {
         boxCollider.enabled = false;
         _isMark = true;
+        socket.MarkingDone();
     }
 
     public MarkSocket GetBoundSocket()

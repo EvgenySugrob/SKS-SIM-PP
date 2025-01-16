@@ -175,7 +175,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     private IEnumerator NfsTesterBackInHand()
     {
-        yield return nfsTool.DOMove(_startNFSToolPosition, 1f)
+        yield return nfsTool.DOLocalMove(_startNFSToolPosition, 1f)
             .Play()
             .WaitForCompletion();
     }
@@ -295,8 +295,6 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         {
             currentSocket = socket;
             StartCoroutine(MoveEyesToPointAndTools(currentSocket.GetEyesPivot(),currentSocket.GetFirstToolPivot()));
-
-            ActiveButtonsOnTool(true);
         }
     }
 
@@ -314,6 +312,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
         transform.parent = firstPivot;
         yield return MoveTools();
+        ActiveButtonsOnTool(true);
     }
 
     private YieldInstruction MoveEyes()

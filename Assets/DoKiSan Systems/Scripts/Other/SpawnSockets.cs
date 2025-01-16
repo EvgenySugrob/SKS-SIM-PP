@@ -58,7 +58,10 @@ public class SpawnSockets : MonoBehaviour
     {
         for (int i = 0; i < objectPool.Length; i++)
         {
-            objectPool[i].GetComponent<BoxCollider>().enabled = isActive;
+            if (objectPool[i].GetComponent<MarkSocket>().GetMarkingDone() == false)
+            {
+                objectPool[i].GetComponent<BoxCollider>().enabled = isActive;
+            }
         }
     }
 

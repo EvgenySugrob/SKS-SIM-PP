@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 59740b2347707ce4091e562d20878021, type: 2}
+  m_Material: {fileID: 2100000, guid: a6d311fd5e9ccda46a68af3a4ee1e2e3, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
   m_StartAngleFade: 180
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c8ddff2ef24034dba3c3de319bc8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMarking: 0
+  _isMarking: 0
   numberSocket: 0
   cable: {fileID: 0}
   eyesPivot: {fileID: 6202839485543846262}
@@ -459,6 +459,7 @@ MonoBehaviour:
   jactBetweenPivot: {fileID: 7238768666524814027}
   firstToolsPivot: {fileID: 1326328822902851800}
   secondToolsPivot: {fileID: 1261366400307010661}
+  numberDecal: {fileID: 4500001621303310409}
 --- !u!1001 &986177679799986609
 PrefabInstance:
   m_ObjectHideFlags: 0
