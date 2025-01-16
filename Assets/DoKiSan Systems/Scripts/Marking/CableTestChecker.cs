@@ -3,7 +3,9 @@ using DoKiSan.Controls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CableTestChecker : MonoBehaviour, IInteractableObject
 {
@@ -33,6 +35,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [SerializeField] GameObject backgroundUI;
     [SerializeField] RectTransform logoBackground;
     [SerializeField] GameObject mainMenu;
+    [SerializeField] CableTesterUIControl uiControll;
 
     [Header("Buttons on tool")]
     [SerializeField] BoxCollider[] buttonsColliders = new BoxCollider[7];
@@ -50,12 +53,20 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Vector3 _startPartInToolPosition;
     private Vector3 _startPartInSocketPosition;
 
+    [Header("NFS tool working")]
+    [SerializeField] float detectionRange = 5;
+    [SerializeField] Camera playerCamera;
+    private List<MarkCable> _cableList = new List<MarkCable>();
     private MarkCable _currentMarkCable;
     private NfsController _nfsController;
+    private bool _testerOnSocket = false;
 
     private void Start()
     {
+        _cableList = spawnSockets.GetCablePool();
+
         _startPosition = transform.localPosition;
+        Debug.Log(_startPosition + "\n" + transform.position);
         _startRotation = transform.localRotation;
         _startParent = transform.parent;
 
@@ -77,44 +88,143 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         {
             SearchMarkingCable();
         }
+        else
+        {
+            _nfsController.DisableAllDiods();
+        }
+    }
+
+    private bool IsNearbyCable(MarkCable cable)
+    {
+        if (cable == null || currentSocket == null) return false;
+
+        int targetCableIndex = _cableList.FindIndex(cable => cable.GetBoundSocket() == currentSocket);
+        int nearbyCableIndex = _cableList.IndexOf(cable);
+
+        return Mathf.Abs(targetCableIndex - nearbyCableIndex) == 1;
     }
 
     private void SearchMarkingCable()
     {
-        GameObject objectdetect = outlineDetection.GetCurrentObject();
+        GameObject detectedObject = outlineDetection.GetCurrentObject();
+        _currentMarkCable = null;
         int countLight = 0;
-        if (outlineDetection.GetCurrentObject().GetComponent<MarkCable>())
-        {
-            _currentMarkCable = objectdetect.GetComponent<MarkCable>();
-        }
-        else
-        {
-            _currentMarkCable=null;
-        }
 
-        if(_currentMarkCable!=null && _currentMarkCable.GetBoundSocket() != currentSocket)
+        if (detectedObject != null && detectedObject.GetComponent<MarkCable>())
         {
-            countLight = 1;
-        }
-        else if(_currentMarkCable!=null && _currentMarkCable.GetBoundSocket() == currentSocket)
-        {
-            countLight = 3;
-            //вкл диодов идиотов
+            MarkCable markCable = detectedObject.GetComponent<MarkCable>();
+
+            float distanceToObject = Vector3.Distance(detectedObject.transform.position, playerCamera.transform.position);
+
+            if (distanceToObject <= detectionRange)
+            {
+                _currentMarkCable = markCable;
+
+                if (_currentMarkCable.GetBoundSocket() == currentSocket)
+                {
+                    countLight = 3; 
+                    if(Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(NfsTesterBackInHand());
+                        _currentMarkCable.StartMarkingCable(this);
+                        markingIsActiv = false;
+                        firstPlayerControl.enabled=false;
+                        nfsTool.gameObject.SetActive(false);
+                    }
+                }
+                else if (IsNearbyCable(_currentMarkCable))
+                {
+                    countLight = 2; 
+                }
+                else
+                {
+                    countLight = 1; 
+                }
+            }
         }
         _nfsController.EnableDiods(countLight);
     }
+
+    public void ReturnTesterInHand()
+    {
+        PatchCordOnStartPosition();
+        TesterOnStartPosition();
+        //возвращение основного тестера в руку после маркировки кабеля
+    }
+
+    private void PatchCordOnStartPosition()
+    {
+        partInTools.localPosition = _startPartInToolPosition;
+        partInSocket.localPosition = _startPartInSocketPosition;
+        patchCord.localPosition = _startPatchCordPosition;
+        
+        patchCord.gameObject.SetActive(false);
+    }
+
+    private void TesterOnStartPosition()
+    {
+        transform.gameObject.SetActive(false);
+        transform.parent = _startParent;
+        transform.localPosition = _startPosition;
+        transform.localRotation = _startRotation;
+
+        uiControll.OpenMainMenuAfterWork();
+
+        EnableTester();
+    }
+
+    private IEnumerator NfsTesterBackInHand()
+    {
+        yield return nfsTool.DOMove(_startNFSToolPosition, 1f)
+            .Play()
+            .WaitForCompletion();
+    }
+
 
     public void StartChecker()
     {
         if (interactionSystem.IsCablePartMovingActive())
             return;
 
+        if(!markingIsActiv && !toolsInHand)
+        {
+            EnableTester();
+        }
+        else if(!markingIsActiv && toolsInHand)
+        {
+            DisableTester();
+        }
+    }
+
+    private void EnableTester()
+    {
+        Debug.Log("вкл");
         gameObject.SetActive(true);
 
         StartCoroutine(MoveOnJobPosition());
         interactionSystem.ForcedSetHeldObject(gameObject);
         ActiveSockets(true);
         toolsInHand = true;
+    }
+    private void DisableTester()
+    {
+        Debug.Log("Выкл");
+        StartCoroutine(MoveOnStartPosition());
+        interactionSystem.ForcedSetHeldObject(null);
+        ActiveSockets(false);
+        toolsInHand = false;
+    }
+
+    private IEnumerator MoveOnStartPosition()
+    {
+        Debug.Log("Корутина выключения");
+        PlayerControlDisable(false);
+        yield return transform.DOLocalMove(_startPosition, 0.5f)
+            .Play()
+            .WaitForCompletion();
+        //gameObject.SetActive(false);
+        PlayerControlDisable(true);
+        Debug.Log("Корутина кончилась");
     }
 
     private IEnumerator MoveOnJobPosition()
@@ -193,6 +303,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     public void StartSearch()
     {
         ActiveButtonsOnTool(false);
+        spawnSockets.ActiveCollidersOnSockets(false);
         StartCoroutine(SerachToolPosition());
     }
 

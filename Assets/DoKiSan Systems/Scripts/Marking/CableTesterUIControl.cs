@@ -98,6 +98,14 @@ public class CableTesterUIControl : MonoBehaviour
         }
     }
 
+    public void OpenMainMenuAfterWork()
+    {
+        _prevWindowShow = _currentWindowShow;
+        _prevWindowShow.SetActive(false);
+        _currentWindowShow = mainWindow;
+        _currentWindowShow.SetActive(true);
+    }
+
     private void ScanWorkProgress()
     {
         cableTestChecker.StartSearch();

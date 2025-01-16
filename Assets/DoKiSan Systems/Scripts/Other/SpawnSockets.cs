@@ -30,7 +30,7 @@ public class SpawnSockets : MonoBehaviour
             MarkSocket mark = objectPool[i].GetComponent<MarkSocket>();
             mark.SetNameSocket(_nameSocket + i.ToString());
 
-            cablePool[i].SetSocket(mark);
+            cablePool[i].SetSocket(mark,mark.GetNumberSocket());
         }
     }
 
@@ -60,5 +60,15 @@ public class SpawnSockets : MonoBehaviour
         {
             objectPool[i].GetComponent<BoxCollider>().enabled = isActive;
         }
+    }
+
+    public List<MarkCable> GetCablePool()
+    {
+        List<MarkCable> cableList= new List<MarkCable>();
+        for (int i = 0; i < cablePool.Length; i++)
+        {
+            cableList.Add(cablePool[i]);
+        }
+        return cableList;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
@@ -30,6 +31,23 @@ public class BezierCable : MonoBehaviour
     private Vector3[] bezierCurvePoints;
     private Quaternion interactivPointRotation;
     [SerializeField] bool isInteractivePointBezier = true;
+    private bool _isDisabled = false;
+    
+    private void OnEnable()
+    {
+        if (!_isDisabled) 
+            return;
+        mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh;
+
+        lastStartRotation = startPoint.rotation;
+        lastEndRotation = endPoint.rotation;
+
+        interactivePointParent = transform;
+        interactivPointRotation = transform.rotation;
+        GenerateCableMesh();
+        GenerateInteractivePoints();
+    }
 
     void Start()
     {
@@ -360,6 +378,7 @@ public class BezierCable : MonoBehaviour
             Destroy(mesh);
             mesh = null;
         }
+        _isDisabled = true;
     }
     //public Transform startPoint;       // Начальная точка кабеля
     //public Transform endPoint;         // Конечная точка кабеля

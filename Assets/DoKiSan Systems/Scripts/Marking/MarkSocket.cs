@@ -6,6 +6,7 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
 {
     public string nameSocket { private set; get; }
     [SerializeField] private bool isMarking = false;
+    [SerializeField] int numberSocket;
 
     [Header("Interaction")]
     [SerializeField] MarkCable cable;
@@ -54,5 +55,9 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     public Transform GetJackBetweenPivot()
     {
         return jactBetweenPivot;
+    }
+    public int GetNumberSocket()
+    {
+        return numberSocket;
     }
 }

@@ -9,7 +9,7 @@ public class NfsController : MonoBehaviour
     [SerializeField] Material deafultMaterial;
     [SerializeField] Material colorfullMaterial;
 
-    private void DisableAllDiods()
+    public void DisableAllDiods()
     {
         for (int i = 0; i < indicatorColor.Length; i++)
         {
