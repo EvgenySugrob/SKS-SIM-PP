@@ -13,8 +13,8 @@ public class Termination : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 _startToolPosition;
     private Vector3 _startToolRotation;
-    [SerializeField]Transform _startParent;
-    [SerializeField]bool _isActive = false;
+    [SerializeField] Transform _startParent;
+    [SerializeField] bool _isActive = false;
     private bool _isWorkProgress = false;
     private int _countPorts = 8;
     private int _currentCountIsDone = 0;
@@ -115,6 +115,7 @@ public class Termination : MonoBehaviour
             _isActive= false;
             firstPlayerControl.MoveEyesToHead();
             panelInteraction.DisableCollider(true);
+            panelInteraction.CableTerminationCountCheck();
             interactionSystem.SetInteract(true);
 
             _currentPort.SelectPort(false);

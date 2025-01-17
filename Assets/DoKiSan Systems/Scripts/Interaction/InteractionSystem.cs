@@ -203,6 +203,9 @@ public class InteractionSystem : MonoBehaviour
             {
                 if (targetObject.CompareTag("Interactable"))
                 {
+                    if (targetObject.GetComponent<PatchPanelInteraction>() && !targetObject.GetComponent<PatchPanelInteraction>().GetIsCanMontage())
+                        return;
+
                     PickupObject(targetObject);
                 }
             }
@@ -219,6 +222,11 @@ public class InteractionSystem : MonoBehaviour
     {
         if (!_isInteract)
             return;
+
+        if(obj.GetComponent<PatchPanelInteraction>().GetIsCanMontage())
+        {
+            obj.GetComponent<PatchPanelInteraction>().SetInHandState(true);
+        }
 
         heldObject = obj;
         obj.transform.SetParent(handSlot.transform);

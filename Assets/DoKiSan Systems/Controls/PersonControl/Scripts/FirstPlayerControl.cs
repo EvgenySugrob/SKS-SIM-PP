@@ -200,11 +200,11 @@ namespace DoKiSan.Controls
         {
             eyes.transform.parent = _startParentEyes;
             StartCoroutine(StartMoveToHead());
+            limitlStateControl = false;
         }
 
         private IEnumerator StartMoveToHead() 
         {
-            limitlStateControl = false;
             yield return DOTween.Sequence()
                 .Append(eyes.DOLocalMove(Vector3.zero, 1.5f))
                 .Join(eyes.DOLocalRotate(Vector3.zero, 1.5f))
