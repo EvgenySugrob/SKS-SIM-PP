@@ -8,6 +8,8 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     [Header("Cable pair info")]
     [SerializeField] int countPairInCable = 4;
     [SerializeField] WorkModeManipulation workModeManipulation;
+    [SerializeField] string nameSocket = "Розетка №";
+    [SerializeField] Transform nameForPanelDisplay;
     private bool _cableIsStripp = false;
 
     [Header("End stripper interatcion")]
@@ -20,7 +22,10 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     {
         pointInformation = GetComponent<StripperPointInformation>();
     }
-
+    public void SetNameSocket(string name)
+    {
+        nameSocket = name;
+    }
     public bool CableIsStripp()
     {
         return _cableIsStripp;
@@ -62,4 +67,9 @@ public class TwistedPairUnravelingCount : MonoBehaviour
             .WaitForCompletion();
     }
 
+    public void DisplayNameOnPanel(Transform pointOnPanel)
+    {
+        nameForPanelDisplay.position= pointOnPanel.position;
+        nameForPanelDisplay.gameObject.SetActive(true);
+    }
 }

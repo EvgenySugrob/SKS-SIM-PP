@@ -223,9 +223,13 @@ public class InteractionSystem : MonoBehaviour
         if (!_isInteract)
             return;
 
-        if(obj.GetComponent<PatchPanelInteraction>().GetIsCanMontage())
+        if(obj.TryGetComponent(out PatchPanelInteraction ppInteraction)/*obj.GetComponent<PatchPanelInteraction>().GetIsCanMontage()*/)
         {
-            obj.GetComponent<PatchPanelInteraction>().SetInHandState(true);
+            if(ppInteraction.GetIsCanMontage())
+            {
+                ppInteraction.SetInHandState(true);
+            }
+            //obj.GetComponent<PatchPanelInteraction>().SetInHandState(true);
         }
 
         heldObject = obj;

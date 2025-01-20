@@ -15,6 +15,9 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     [SerializeField] Termination termination;
     [SerializeField] Transform terminationPoint;
 
+    [Header("Transform for nameSocket")]
+    [SerializeField] Transform pointforName;
+
     public bool CanInteractable(GameObject objectInteract)
     {
         bool isInteract = false;
@@ -39,6 +42,9 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     public void Interact(GameObject objectInteract)
     {
         StartCoroutine(CableToMontagePosition(objectInteract.transform));
+
+        objectInteract.GetComponent<TwistedPairUnravelingCount>().DisplayNameOnPanel(pointforName);
+
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
         _interactionSystem.StateCablePartMoving(true);

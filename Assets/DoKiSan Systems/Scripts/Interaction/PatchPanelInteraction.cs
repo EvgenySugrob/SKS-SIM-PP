@@ -1,3 +1,4 @@
+using DG.Tweening;
 using DoKiSan.Controls;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] FirstPlayerControl playerControl;
     [SerializeField] Transform pointForEyes;
     [SerializeField] InteractionSystem interactionSystem;
-    private bool _isMounted = false;
+    [SerializeField] private bool _isMounted = false;
 
     [Header("Montage interaction")]
     [SerializeField] int countCableOnScene = 6;
@@ -18,10 +19,14 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] OutlineDetection outlineDetection;
     [SerializeField] GameObject slotsContainer;
     [SerializeField] PatchPanelSlotInteract[] ppSlots = new PatchPanelSlotInteract[4];
+    [SerializeField] private PatchPanelSlotInteract _mountingSlot;
     private int _currentCountMontageCable = 0;
     private bool _inHand = false;
     private PatchPanelSlotInteract _currentSlot;
     private PatchPanelSlotInteract _prevSlot;
+
+    [Header("Tester done interaction")]
+    [SerializeField] bool _isTesterDoneInteract = false;
 
     private void Update()
     {
@@ -48,6 +53,22 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
                 _prevSlot.ActiveShowPart(false);
                 _prevSlot = _currentSlot;
             }
+
+            if(Input.GetMouseButtonDown(0))
+            {
+                playerControl.enabled= false;
+                interactionSystem.enabled= false;
+
+                _inHand = false;
+                _currentSlot.BusySlotPP(true,this);
+                _isMounted = true;
+                _mountingSlot = _currentSlot;
+                
+                Transform pointMontage = _currentSlot.transform;
+                interactionSystem.ClearHand();
+
+                StartCoroutine(MountingPatchPanel(pointMontage));
+            }
         }
 
         if(_currentSlot!=null && currentObject.GetComponent<PatchPanelSlotInteract>())
@@ -59,6 +80,21 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             _currentSlot.ActiveShowPart(false);
         }
         
+    }
+
+    private IEnumerator MountingPatchPanel(Transform mountingPoint)
+    {
+        yield return DOTween.Sequence()
+            .Append(transform.DOMove(mountingPoint.position,1f))
+            .Join(transform.DORotateQuaternion(mountingPoint.rotation,1f))
+            .Play()
+            .WaitForCompletion();
+        transform.parent = mountingPoint.parent;
+        _currentSlot.ActiveShowPart(false);
+
+        interactionSystem.enabled = true;
+        playerControl.enabled = true;
+        this.enabled = false;
     }
 
     public bool CanInteractable(GameObject objectInteract)
@@ -87,6 +123,14 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
                 isInteract = true;
             }
         }
+
+        //if(objectInteract.TryGetComponent(out CableTestChecker cableChecker))
+        //{
+        //    if(_isTesterDoneInteract)
+        //    {
+        //        isInteract = true;
+        //    }
+        //}
         return isInteract;
     }
 
@@ -115,20 +159,37 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     {
         return _isMounted;
     }
+    public void ReleaseSlot()
+    {
+        _isMounted= false;
+        _mountingSlot.BusySlotPP(false, null);
+    }
 
     public bool GetIsCanMontage()
     {
         return _isCanMontage;
     }
-
+    
     public void CableTerminationCountCheck()
     {
         _currentCountMontageCable++;
+        CheckOnTesterInteractionDone();
 
         if(_currentCountMontageCable == countCableOnScene)
         {
             _isCanMontage = true;
-            _currentCountMontageCable = 0;
+            //_currentCountMontageCable = 0;
+        }
+    }
+    private void CheckOnTesterInteractionDone()
+    {
+        if(_currentCountMontageCable>0)
+        {
+            _isTesterDoneInteract= true;
+        }
+        else if (_currentCountMontageCable == 0)
+        {
+            _isTesterDoneInteract= false;
         }
     }
 
@@ -136,5 +197,11 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     {
         _inHand = isState;
         slotsContainer.SetActive(isState);
+
+        if(_mountingSlot!=null)
+        {
+            ReleaseSlot();
+            this.enabled = isState;
+        }
     }
 }

@@ -10,6 +10,7 @@ public class MarkCable : MonoBehaviour
     [SerializeField] Transform cableMarkPart;
     [SerializeField] Transform cableOnMarkPosition;
     [SerializeField] SetMarkOnCable setMarkOnCable;
+    [SerializeField] TwistedPairUnravelingCount twistedPair;
 
     private Vector3 _markPosition = new Vector3(-0.004f, 0, 0);
     private int _numberSocket = 0;
@@ -24,10 +25,11 @@ public class MarkCable : MonoBehaviour
         _startCableMarkPartRotation= cableMarkPart.rotation;
     }
 
-    public void SetSocket(MarkSocket markSocket,int number)
+    public void SetSocket(MarkSocket markSocket,int number,string name)
     {
         socket = markSocket;
         _numberSocket = number;
+        twistedPair.SetNameSocket(name);
     }
 
     public void Marking()

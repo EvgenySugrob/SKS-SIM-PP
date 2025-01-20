@@ -1491,6 +1491,7 @@ MonoBehaviour:
   cableMarkPart: {fileID: 497516437204746660}
   cableOnMarkPosition: {fileID: 0}
   setMarkOnCable: {fileID: 7855338601245934465}
+  twistedPair: {fileID: 1769567333629169892}
 --- !u!65 &6102901510777176773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countPairInCable: 4
   workModeManipulation: {fileID: 0}
+  nameSocket: "\u0420\u043E\u0437\u0435\u0442\u043A\u0430 \u2116"
   pointInformation: {fileID: 0}
   strippingCable: {fileID: 0}
   stripperInteration: {fileID: 0}

@@ -5,7 +5,14 @@ using UnityEngine;
 public class PatchPanelSlotInteract : MonoBehaviour, IInteractableObject
 {
     [SerializeField] GameObject showPart;
+    [SerializeField] PatchPanelInteraction patchPanel;
+    private BoxCollider _boxCollider;
     private bool _isBusy = false;
+
+    private void Start()
+    {
+        _boxCollider= GetComponent<BoxCollider>();
+    }
 
     public bool CanInteractable(GameObject objectInteract)
     {
@@ -20,6 +27,13 @@ public class PatchPanelSlotInteract : MonoBehaviour, IInteractableObject
     public void Interact(GameObject objectInteract)
     {
         throw new System.NotImplementedException();
+    }
+
+    public void BusySlotPP(bool isBusy, PatchPanelInteraction panel)
+    {
+        _isBusy= isBusy;
+        patchPanel = panel;
+        _boxCollider.enabled = !isBusy;
     }
 
     public bool GetBusyState()

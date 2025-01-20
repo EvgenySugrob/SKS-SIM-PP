@@ -149,7 +149,6 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         PatchCordOnStartPosition();
         TesterOnStartPosition();
-        //возвращение основного тестера в руку после маркировки кабеля
     }
 
     private void PatchCordOnStartPosition()

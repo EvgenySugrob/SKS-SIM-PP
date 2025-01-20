@@ -28,9 +28,9 @@ public class SpawnSockets : MonoBehaviour
             objectPool[i].SetActive(true);
 
             MarkSocket mark = objectPool[i].GetComponent<MarkSocket>();
-            mark.SetNameSocket(_nameSocket + i.ToString());
+            mark.SetNameSocket(_nameSocket + (i+1).ToString());
 
-            cablePool[i].SetSocket(mark,mark.GetNumberSocket());
+            cablePool[i].SetSocket(mark,mark.GetNumberSocket(),mark.nameSocket);
         }
     }
 

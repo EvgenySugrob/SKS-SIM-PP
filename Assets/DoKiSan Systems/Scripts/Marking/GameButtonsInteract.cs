@@ -19,7 +19,7 @@ public class GameButtonsInteract : MonoBehaviour
 
     private void Awake()
     {
-        tweenBt = transform.DOLocalMoveZ(offsetBt,duration)
+        tweenBt = transform.DOLocalMoveY(offsetBt,duration)
             .SetEase(easeType)
             .SetLoops(2,loopType)
             .SetAutoKill(false);

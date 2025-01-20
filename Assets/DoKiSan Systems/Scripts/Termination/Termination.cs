@@ -7,6 +7,7 @@ using UnityEngine;
 public class Termination : MonoBehaviour
 {
     [Header("Temrmination")]
+    [SerializeField] float animationDuration = 1f;
     [SerializeField] Transform terminationTool;
     [SerializeField] Camera playerCamera;
     [SerializeField] float distanceRay;
@@ -146,9 +147,9 @@ public class Termination : MonoBehaviour
     private YieldInstruction MoveCutPositionAndCut(Transform point1,Transform point2)
     {
         return DOTween.Sequence()
-            .Append(terminationTool.DOMove(point1.position, 1f))
-            .Join(terminationTool.DOLocalRotate(Vector3.zero,1f))
-            .Append(terminationTool.DOMove(point2.position,1f))
+            .Append(terminationTool.DOMove(point1.position, animationDuration))
+            .Join(terminationTool.DOLocalRotate(Vector3.zero, animationDuration))
+            .Append(terminationTool.DOMove(point2.position, animationDuration))
             .Play()
             .WaitForCompletion();
     }
@@ -158,9 +159,9 @@ public class Termination : MonoBehaviour
         _currentPort.ActiveBoxColliderPort(false);
         _currentPort.SelectPort(false);
         return DOTween.Sequence()
-            .Append(terminationTool.DOMove(point1.position,1f))
-            .Append(terminationTool.DOLocalMove(_startToolPosition,1f))
-            .Join(terminationTool.DOLocalRotate(_startToolRotation,1f))
+            .Append(terminationTool.DOMove(point1.position,animationDuration))
+            .Append(terminationTool.DOLocalMove(_startToolPosition,animationDuration))
+            .Join(terminationTool.DOLocalRotate(_startToolRotation,animationDuration))
             .Play()
             .WaitForCompletion();
     }
@@ -205,7 +206,7 @@ public class Termination : MonoBehaviour
     private IEnumerator MoveOnWorkPosition()
     {
         yield return transform
-            .DOLocalMove(currentContactMount.GetTerminationPoint().position,1f)
+            .DOLocalMove(currentContactMount.GetTerminationPoint().position, animationDuration)
             .Play()
             .WaitForCompletion();
         yield return new WaitForSeconds(0.5f);
