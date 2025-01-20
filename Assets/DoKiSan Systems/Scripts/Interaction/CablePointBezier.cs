@@ -10,6 +10,7 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] List<InteractivePointHandler> interactivePointList = new List<InteractivePointHandler>();
     [SerializeField] Transform endPoint;
     [SerializeField] private int needIndexInteractivePoint = 3;
+    [SerializeField] ContactPortInteract portInteract;
 
     private void Start()
     {
@@ -25,6 +26,28 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     public string GetTypeCable()
     {
         return typeCable;
+    }
+
+    public bool IsNullPortInteractSlot()
+    {
+        if (portInteract == null)
+            return true;
+        else 
+            return false;
+    }
+
+    public void SetPort(ContactPortInteract port)
+    {
+        if (port == null && portInteract!=null)
+        {
+            portInteract.SetStateSlot(false);
+        }
+        portInteract = port;
+    }
+
+    public ContactPortInteract GetPortInteract()
+    {
+        return portInteract;
     }
 
     public void FillingList(InteractivePointHandler point)

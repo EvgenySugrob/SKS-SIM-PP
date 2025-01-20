@@ -51,8 +51,12 @@ public class InteractionSystem : MonoBehaviour
             {
                 if (!_contactInteract.GetStateSlot())
                 {
+                    Debug.Log("!_contactInteract.GetStateSlot()");
                     _currentPointBezier.transform.position = _contactInteract.GetPointBeforeDriving().position;
                     _currentPointBezier.transform.parent = _contactInteract.transform;
+                    _currentPointBezier.SetPort(_contactInteract);
+                    Debug.Log(_contactInteract.name + " _currentPointBezier.SetPort(_contactInteract)");
+                    _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
                     _currentPointBezier.ActiveInteractivePoint(true);
 
                     _contactInteract.SetStateSlot(true);
@@ -60,7 +64,10 @@ public class InteractionSystem : MonoBehaviour
                 }
                 else
                 {
-                    _currentPointBezier.transform.position = _startPosition;
+                    Debug.Log("ELSE !_contactInteract.GetStateSlot()");
+                    _contactInteract.SwapWireSlot(_currentPointBezier);
+
+                    //_currentPointBezier.transform.position = _startPosition;
                     _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
                 }
                 _contactInteract.SelectPort(false);
@@ -181,6 +188,11 @@ public class InteractionSystem : MonoBehaviour
                 _currentPointBezier = cablePoint;
                 _startPosition = _currentPointBezier.transform.position;
                 _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(false);
+
+                //if(!_currentPointBezier.IsNullPortInteractSlot())
+                //{
+                //    _currentPointBezier.SetPort(null);
+                //}
             }
             if (hit.collider.TryGetComponent(out InteractivePointHandler interactPoint))
             {

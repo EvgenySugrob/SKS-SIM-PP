@@ -25,7 +25,7 @@ public class ContactPortInteract : MonoBehaviour
     [Header("Termination")]
     [SerializeField] Transform point1;
     [SerializeField] Transform point2;
-    private bool _isBusy;
+    [SerializeField] private bool _isBusy;
     private bool _terminationDone;
 
 
@@ -129,6 +129,23 @@ public class ContactPortInteract : MonoBehaviour
     public Transform GetSecondPoint()
     {
         return point2;
+    }
+
+    public void SwapWireSlot(CablePointBezier wireToSwap)
+    {
+        ContactPortInteract swapPort = wireToSwap.GetPortInteract();
+
+        wireToSwap.transform.parent = transform;
+        cablePoint.transform.parent = swapPort.transform;
+
+        wireToSwap.transform.position = pointBeforeDriving.position;
+        cablePoint.transform.position = swapPort.GetPointBeforeDriving().position;
+
+        swapPort.SetCablePoint(cablePoint);
+        SetCablePoint(wireToSwap);
+
+        cablePoint.SetPort(swapPort);
+        wireToSwap.SetPort(this);
     }
 
     public void CableAfterDriving()
