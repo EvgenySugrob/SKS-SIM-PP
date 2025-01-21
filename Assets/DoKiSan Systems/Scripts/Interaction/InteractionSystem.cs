@@ -51,11 +51,10 @@ public class InteractionSystem : MonoBehaviour
             {
                 if (!_contactInteract.GetStateSlot())
                 {
-                    Debug.Log("!_contactInteract.GetStateSlot()");
                     _currentPointBezier.transform.position = _contactInteract.GetPointBeforeDriving().position;
                     _currentPointBezier.transform.parent = _contactInteract.transform;
                     _currentPointBezier.SetPort(_contactInteract);
-                    Debug.Log(_contactInteract.name + " _currentPointBezier.SetPort(_contactInteract)");
+                    
                     _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);
                     _currentPointBezier.ActiveInteractivePoint(true);
 
@@ -64,7 +63,6 @@ public class InteractionSystem : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("ELSE !_contactInteract.GetStateSlot()");
                     _contactInteract.SwapWireSlot(_currentPointBezier);
 
                     //_currentPointBezier.transform.position = _startPosition;

@@ -49,7 +49,6 @@ public class MarkCable : MonoBehaviour
         setMarkOnCable.SetNumberOnDecal(_numberSocket);
 
         StartCoroutine(MoveInteractpartOnPosition(tester));
-        Debug.Log("После корутины");
         Marking();
         
     }
@@ -62,7 +61,6 @@ public class MarkCable : MonoBehaviour
         yield return new WaitForSeconds(1f);
         yield return ReturnInteractCable();
         tester.ReturnTesterInHand();
-        Debug.Log("Из корутины - готово");
     }
 
     private YieldInstruction MoveInteract()

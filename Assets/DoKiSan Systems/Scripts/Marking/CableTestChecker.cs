@@ -29,7 +29,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [SerializeField] InteractionSystem interactionSystem;
     [SerializeField] FirstPlayerControl firstPlayerControl;
     [SerializeField] Transform eyesPlayer;
-    private bool toolsInHand = false;
+    [SerializeField]private bool toolsInHand = false;
 
     [Header("UITool")]
     [SerializeField] GameObject backgroundUI;
@@ -61,12 +61,17 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private NfsController _nfsController;
     private bool _testerOnSocket = false;
 
+    [Header("Check for correct termination")]
+    [SerializeField] PatchPanelInteraction panelInteraction;
+    [SerializeField] Transform nfrChecker;
+    [SerializeField] bool isCheckCorrectPortConnect;
+    private Vector3 _startNfrPosition;
+
     private void Start()
     {
         _cableList = spawnSockets.GetCablePool();
 
         _startPosition = transform.localPosition;
-        Debug.Log(_startPosition + "\n" + transform.position);
         _startRotation = transform.localRotation;
         _startParent = transform.parent;
 
@@ -80,6 +85,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _startPatchCordPosition = patchCord.localPosition;
         _startPartInToolPosition = partInTools.localPosition;
         _startPartInSocketPosition = partInSocket.localPosition;
+
+        _startNfrPosition = nfrChecker.localPosition;
 }
 
     private void Update()
@@ -182,6 +189,9 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     public void StartChecker()
     {
+        if (interactionSystem.GetHeldObject() != null && interactionSystem.GetHeldObject()!=transform.gameObject)
+            return;
+
         if (interactionSystem.IsCablePartMovingActive())
             return;
 
@@ -197,33 +207,39 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     private void EnableTester()
     {
-        Debug.Log("вкл");
         gameObject.SetActive(true);
 
         StartCoroutine(MoveOnJobPosition());
         interactionSystem.ForcedSetHeldObject(gameObject);
         ActiveSockets(true);
         toolsInHand = true;
+
+        if(panelInteraction.GetTesterDoneInteract() && !panelInteraction.GetMountingState())
+        {
+            panelInteraction.Flip(true);
+        }
     }
     private void DisableTester()
     {
-        Debug.Log("Выкл");
         StartCoroutine(MoveOnStartPosition());
         interactionSystem.ForcedSetHeldObject(null);
         ActiveSockets(false);
         toolsInHand = false;
+
+        if (panelInteraction.GetTesterDoneInteract() && !panelInteraction.GetMountingState())
+        {
+            panelInteraction.Flip(false);
+        }
     }
 
     private IEnumerator MoveOnStartPosition()
     {
-        Debug.Log("Корутина выключения");
         PlayerControlDisable(false);
         yield return transform.DOLocalMove(_startPosition, 0.5f)
             .Play()
             .WaitForCompletion();
         //gameObject.SetActive(false);
         PlayerControlDisable(true);
-        Debug.Log("Корутина кончилась");
     }
 
     private IEnumerator MoveOnJobPosition()
@@ -279,6 +295,9 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
         if(toolsInHand)
             isInteract = true;
+
+        if (objectInteract.GetComponent<TwistedPairUnravelingCount>())
+            isInteract = false;
 
         return isInteract;
     }

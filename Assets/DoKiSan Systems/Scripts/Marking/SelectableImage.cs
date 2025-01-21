@@ -33,7 +33,6 @@ public class SelectableImage : MonoBehaviour, ICheckingMenu
 
     public void SetSelfCheckMenu()
     {
-        Debug.Log("Выполняюсь с " + gameObject.name);
         testerUIControl.OpenWindowSelectebleWindow(needsMenuOpen,nameMenu);
     }
 }

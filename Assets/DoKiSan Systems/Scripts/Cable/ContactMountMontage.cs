@@ -10,10 +10,12 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     [SerializeField] Transform cableMontagePoint;
     [SerializeField] private Transform _mainParent;
     [SerializeField] private InteractionSystem _interactionSystem;
-    
+
     [Header("Termination")]
+    [SerializeField] PatchPanelInteraction patchPanel;
     [SerializeField] Termination termination;
     [SerializeField] Transform terminationPoint;
+    [SerializeField] bool isTeminationDone = false;
 
     [Header("Transform for nameSocket")]
     [SerializeField] Transform pointforName;
@@ -23,7 +25,7 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
         bool isInteract = false;
         if(objectInteract.TryGetComponent(out TwistedPairUnravelingCount twistedPair))
         {
-            if(twistedPair.CableIsStripp())
+            if(twistedPair.CableIsStripp() && !isTeminationDone)
             {
                 isInteract = true;
             }
@@ -48,14 +50,26 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
         _interactionSystem.StateCablePartMoving(true);
-        foreach(ContactPortInteract port in contactPortInteracts)
-        {
-            port.ActiveBoxColliderPort(true);
-        }
+
+        DisablePortsColliders(true);
         
         mainCollider.enabled = false;
+        patchPanel.DisableAllContactMount(false);
+
         TerminationToolSetCurrenInfo(objectInteract);
         _interactionSystem.ClearHand();
+    }
+
+    public void ColliderDisable(bool isActive)
+    {
+        mainCollider.enabled = isActive;
+        if(isActive)
+            patchPanel.DisableAllContactMount(false);
+    }
+
+    public void TerminationDone(bool isDone)
+    {
+        isTeminationDone = isDone;
     }
 
     public bool CheckAllPortReady()
@@ -76,6 +90,14 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     public Transform GetTerminationPoint()
     {
         return terminationPoint;
+    }
+
+    public void DisablePortsColliders(bool isActive)
+    {
+        foreach (ContactPortInteract port in contactPortInteracts)
+        {
+            port.ActiveBoxColliderPort(isActive);
+        }
     }
 
     private void TerminationToolSetCurrenInfo(GameObject objectInteract)

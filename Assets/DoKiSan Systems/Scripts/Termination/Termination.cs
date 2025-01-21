@@ -25,6 +25,12 @@ public class Termination : MonoBehaviour
     [SerializeField] ContactMountMontage currentContactMount;
     [SerializeField] FirstPlayerControl firstPlayerControl;
     [SerializeField] PatchPanelInteraction panelInteraction;
+    [SerializeField] GameObject btCanvas;
+    [SerializeField] GameObject btBackView;
+
+    [Header("Remove mode")]
+    [SerializeField] bool isRemoveMod=false;
+    [SerializeField] Transform removeModels;
     private ContactPortInteract _currentPort;
     private ContactPortInteract _prevPort;
 
@@ -33,7 +39,6 @@ public class Termination : MonoBehaviour
         _startPosition = transform.localPosition;
         _startToolPosition = terminationTool.localPosition;
         _startToolRotation = terminationTool.localEulerAngles;
-        Debug.Log(_startToolRotation);
         _startParent = transform.parent;
     }
 
@@ -56,9 +61,18 @@ public class Termination : MonoBehaviour
 
             if (NeedsPortOutline(targetObject))
             {
-                if(Input.GetMouseButtonDown(0))
+                ContactPortInteract port = targetObject.GetComponent<ContactPortInteract>();
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    StartCoroutine(MoveCutPositionAndCutCable(_currentPort.GetFirstPoint(),_currentPort.GetSecondPoint()));
+                    if(port.GetStateSlot() && !port.GetTerminationState())
+                    {
+                        StartCoroutine(MoveCutPositionAndCutCable(_currentPort.GetFirstPoint(), _currentPort.GetSecondPoint()));
+                    }
+                    else if(port.GetStateSlot() && port.GetTerminationState())
+                    {
+                        StartCoroutine(MoveRemovePosition(_currentPort.GetFirstPoint(), _currentPort.GetSecondPoint()));
+                    }
                 }
             }
         }
@@ -98,43 +112,113 @@ public class Termination : MonoBehaviour
 
         return needsPort;
     }
+    private void ActiveReturnBtCanvas(bool isActive)
+    {
+        btBackView.SetActive(isActive);
+        btCanvas.SetActive(isActive);
+    }
+    public void BtBackViewOnClick()
+    {
+        transform.parent = _startParent;
+        terminationTool.position = _startPosition;
+        _isActive = false;
+
+        currentContactMount.DisablePortsColliders(false);
+        currentContactMount.ColliderDisable(true);
+        currentContactMount.TerminationDone(true);
+        currentContactMount = null;
+
+        panelInteraction.DisableCollider(true);
+        panelInteraction.CableTerminationCountCheck();
+        interactionSystem.SetInteract(true);
+
+        if(_currentPort!=null)
+        {
+            _currentPort.SelectPort(false);
+        }
+        _currentPort = null;
+
+        interactionSystem.StateCablePartMoving(false);
+        interactionSystem.enabled = true;
+
+        terminationTool.localPosition = _startToolPosition;
+        transform.parent = _startParent;
+        transform.localPosition = _startPosition;
+
+        gameObject.SetActive(false);
+
+        firstPlayerControl.MoveEyesToHead();
+        ActiveReturnBtCanvas(false);
+    }
+
+    private IEnumerator MoveRemovePosition(Transform point1, Transform point2)
+    {
+        _isWorkProgress = false;
+
+        terminationTool.gameObject.SetActive(false);
+        removeModels.gameObject.SetActive(true);
+
+        yield return MoveRemovePositionAndRemove(point1, point2);
+        yield return new WaitForSeconds(.3f);
+
+        _currentPort.CableRemoveFromPort();
+        yield return ReturnBackFromRemovePosition(point1);
+        
+
+        if (WorkIsDone(-1))
+        {
+            //что-то будет
+        }
+
+        ActiveReturnBtCanvas(false);
+
+        removeModels.gameObject.SetActive(false);
+        terminationTool.gameObject.SetActive(true);
+        _isWorkProgress = true;
+    }
+
+    private YieldInstruction MoveRemovePositionAndRemove(Transform point1, Transform point2)
+    {
+        return DOTween.Sequence()
+            .Append(removeModels.DOMove(point1.position, animationDuration))
+            .Join(removeModels.DOLocalRotate(Vector3.zero, animationDuration))
+            .Append(removeModels.DOMove(point2.position, animationDuration))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    private YieldInstruction ReturnBackFromRemovePosition(Transform point1)
+    {
+        return DOTween.Sequence()
+            .Append(removeModels.DOMove(point1.position, 0.2f))
+            .Append(removeModels.DOLocalMove(_startToolPosition, 0.2f))
+            .Join(removeModels.DOLocalRotate(_startToolRotation, 0.2f))
+            .Play()
+            .WaitForCompletion();
+    }
 
     private IEnumerator MoveCutPositionAndCutCable(Transform point1, Transform point2)
     {
         _isWorkProgress = false;
+        _currentPort.SelectPort(false);
 
         yield return MoveCutPositionAndCut(point1,point2);
         _currentPort.CableAfterDriving();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         yield return ReturnBack(point1);
 
-        if (WorkIsDone())
+        if (WorkIsDone(1))
         {
-            transform.parent = _startParent;
-            currentContactMount = null;
-            yield return EndWorkProgress();
-            _isActive= false;
-            firstPlayerControl.MoveEyesToHead();
-            panelInteraction.DisableCollider(true);
-            panelInteraction.CableTerminationCountCheck();
-            interactionSystem.SetInteract(true);
-
-            _currentPort.SelectPort(false);
-            _currentPort = null;
-
-            interactionSystem.StateCablePartMoving(false);
-            interactionSystem.enabled = true;
-
-            terminationTool.localPosition = _startToolPosition;
-            transform.parent = _startParent;
-            transform.localPosition = _startPosition;
-
-            gameObject.SetActive(false);
+            ActiveReturnBtCanvas(true);
+            //yield return EndWorkProgress();
+            //firstPlayerControl.MoveEyesToHead();
         }
         else
         {
-            _isWorkProgress = true;
+            ActiveReturnBtCanvas(false);
+            
         }
+        _isWorkProgress = true;
     }
 
     private YieldInstruction EndWorkProgress()
@@ -156,8 +240,8 @@ public class Termination : MonoBehaviour
 
     private YieldInstruction ReturnBack(Transform point1)
     {
-        _currentPort.ActiveBoxColliderPort(false);
-        _currentPort.SelectPort(false);
+        //_currentPort.ActiveBoxColliderPort(false);
+        
         return DOTween.Sequence()
             .Append(terminationTool.DOMove(point1.position,animationDuration))
             .Append(terminationTool.DOLocalMove(_startToolPosition,animationDuration))
@@ -185,19 +269,36 @@ public class Termination : MonoBehaviour
             transform.parent = null;
             _isWorkProgress = true;
         }
+        else if (currentContactMount.CheckAllPortReady()&&_isActive)
+        {
+            _isWorkProgress = false;
+            interactionSystem.SetInteract(true);
+            interactionSystem.enabled = true;
+
+            terminationTool.localPosition = _startToolPosition;
+            transform.parent = _startParent;
+            transform.localPosition = _startPosition;
+
+            _isActive= false;
+            gameObject.SetActive(false);
+        }
         
     }
 
-    public bool WorkIsDone()
+    public bool WorkIsDone(int i)
     {
+        Debug.Log(i);
         bool isDone = false;
 
-        _currentCountIsDone++;
+        _currentCountIsDone += i;
+        Debug.Log(_currentCountIsDone);
 
+        if(_currentCountIsDone<0)
+            _currentCountIsDone = 0;
+        
         if (_currentCountIsDone == _countPorts)
         {
             isDone = true;
-            _currentCountIsDone = 0;
         }
 
         return isDone;

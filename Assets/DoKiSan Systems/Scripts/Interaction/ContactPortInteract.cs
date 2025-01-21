@@ -26,7 +26,7 @@ public class ContactPortInteract : MonoBehaviour
     [SerializeField] Transform point1;
     [SerializeField] Transform point2;
     [SerializeField] private bool _isBusy;
-    private bool _terminationDone;
+    [SerializeField] private bool _terminationDone;
 
 
     private void Start()
@@ -151,6 +151,16 @@ public class ContactPortInteract : MonoBehaviour
     public void CableAfterDriving()
     {
         cablePoint.transform.position = pointAfterDriving.position;
+        cablePoint.GetComponent<IDisableColliders>().DisableCollider(false);
         cablePoint.ActiveInteractivePoint(false);
+        SetTerminationState(true);
+    }
+
+    public void CableRemoveFromPort()
+    {
+        cablePoint.transform.position = pointBeforeDriving.position;
+        cablePoint.GetComponent<IDisableColliders>().DisableCollider(true);
+        cablePoint.ActiveInteractivePoint(true);
+        SetTerminationState(false);
     }
 }

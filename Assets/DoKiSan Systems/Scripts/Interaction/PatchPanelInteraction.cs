@@ -11,6 +11,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] FirstPlayerControl playerControl;
     [SerializeField] Transform pointForEyes;
     [SerializeField] InteractionSystem interactionSystem;
+    [SerializeField] ContactMountMontage[] contactsMount = new ContactMountMontage[0];
     [SerializeField] private bool _isMounted = false;
 
     [Header("Montage interaction")]
@@ -27,6 +28,12 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
 
     [Header("Tester done interaction")]
     [SerializeField] bool _isTesterDoneInteract = false;
+    [SerializeField] CheckCorrectTermination checkCorrectTermination;
+
+    private void Start()
+    {
+        checkCorrectTermination = GetComponent<CheckCorrectTermination>();
+    }
 
     private void Update()
     {
@@ -36,6 +43,13 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         }
     }
 
+    public void DisableAllContactMount(bool isDisable)
+    {
+        for (int i = 0; i < contactsMount.Length; i++)
+        {
+            contactsMount[i].ColliderDisable(isDisable);
+        }
+    }
     private void SeekInteractionSlot()
     {
         GameObject currentObject = outlineDetection.GetCurrentObject();
@@ -170,7 +184,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         return _isCanMontage;
     }
     
-    public void CableTerminationCountCheck()
+    public void CableTerminationCountCheck() //проверка общее кол-во забитых проводов
     {
         _currentCountMontageCable++;
         CheckOnTesterInteractionDone();
@@ -180,8 +194,12 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             _isCanMontage = true;
             //_currentCountMontageCable = 0;
         }
+        else
+        {
+            _isCanMontage = false;
+        }
     }
-    private void CheckOnTesterInteractionDone()
+    private void CheckOnTesterInteractionDone() //для проверки готовой витой пары
     {
         if(_currentCountMontageCable>0)
         {
@@ -191,6 +209,11 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         {
             _isTesterDoneInteract= false;
         }
+    }
+
+    public bool GetTesterDoneInteract()
+    {
+        return _isTesterDoneInteract;
     }
 
     public void SetInHandState(bool isState)
@@ -203,5 +226,10 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             ReleaseSlot();
             this.enabled = isState;
         }
+    }
+
+    public void Flip(bool isFlip)
+    {
+        checkCorrectTermination.FlipingPanel(isFlip);            
     }
 }

@@ -60,7 +60,6 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
         {
             if(point.GetIndexInteractivePoint() == needIndexInteractivePoint)
             {
-                Debug.Log("WellDone");
                 point.DisableCollider(isActive);
             }
                 
