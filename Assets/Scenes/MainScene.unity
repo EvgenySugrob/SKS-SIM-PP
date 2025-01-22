@@ -124,6 +124,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &1242032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2749456171325544075, guid: b4d4a7ef0e64ca547a551e51406611fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132952603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4160946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3867,7 +3873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 252393222}
   m_Layer: 6
-  m_Name: jackFinalPortScanR
+  m_Name: jackFirstPortScanR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11184,6 +11190,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6387006588641965604}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &580579060 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4406662288541147109, guid: b4d4a7ef0e64ca547a551e51406611fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2132952603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &583374967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12131,11 +12143,26 @@ PrefabInstance:
       propertyPath: ppPointFlip
       value: 
       objectReference: {fileID: 1409018873}
+    - target: {fileID: 3073089819823472642, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+        type: 3}
+      propertyPath: patchPanelInteraction
+      value: 
+      objectReference: {fileID: 1115143479}
     - target: {fileID: 5892822841304631997, guid: 46a88c9e5c579f044be47ef2ffbbc792,
         type: 3}
       propertyPath: alphaSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+        type: 3}
+      propertyPath: flipPoint
+      value: 
+      objectReference: {fileID: 530941748}
+    - target: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+        type: 3}
+      propertyPath: ppPointFlip
+      value: 
+      objectReference: {fileID: 1409018873}
     - target: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
         type: 3}
       propertyPath: pointForEyes
@@ -12261,12 +12288,19 @@ PrefabInstance:
       propertyPath: ppSlots.Array.data[17]
       value: 
       objectReference: {fileID: 634215332}
+    - target: {fileID: 7705297394599679936, guid: 46a88c9e5c579f044be47ef2ffbbc792,
+        type: 3}
+      propertyPath: checkCorrectTermination
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7744558744015706287, guid: 46a88c9e5c579f044be47ef2ffbbc792,
         type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 64
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3073089819823472642, guid: 46a88c9e5c579f044be47ef2ffbbc792, type: 3}
+    - {fileID: 694906370533107137, guid: 46a88c9e5c579f044be47ef2ffbbc792, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 275562855682581672, guid: 46a88c9e5c579f044be47ef2ffbbc792,
@@ -25963,8 +25997,15 @@ MonoBehaviour:
   detectionRange: 3
   playerCamera: {fileID: 944692881}
   panelInteraction: {fileID: 1115143479}
-  nfrChecker: {fileID: 0}
-  isCheckCorrectPortConnect: 0
+  nfrChecker: {fileID: 1321680637}
+  nfrJack: {fileID: 2132952604}
+  nfrJackTool: {fileID: 1242032}
+  nfrJackSocket: {fileID: 580579060}
+  nfrJackConnectPosition: {fileID: 550863205}
+  jackFirstPoint: {fileID: 252393222}
+  jackFinalPoint: {fileID: 1651816399}
+  isSearchtSocketTermination: 0
+  isNfrInSocket: 0
 --- !u!1001 &1251735233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30270,7 +30311,7 @@ Transform:
   m_GameObject: {fileID: 1409018872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.1360001, y: -0.000000014901161, z: 0}
+  m_LocalPosition: {x: 0.1762, y: -0.000000014901161, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34655,7 +34696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651816399}
   m_Layer: 6
-  m_Name: jackFirsPortScanR
+  m_Name: jackFinalPortScanR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45492,7 +45533,7 @@ PrefabInstance:
     - target: {fileID: 7519670303015372561, guid: b4d4a7ef0e64ca547a551e51406611fc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16699997
+      value: 0.5068
       objectReference: {fileID: 0}
     - target: {fileID: 7519670303015372561, guid: b4d4a7ef0e64ca547a551e51406611fc,
         type: 3}

@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 614568365608786050}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!1 &2466416754078163291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9102798029581125590}
+  m_Layer: 0
+  m_Name: NfrPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9102798029581125590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466416754078163291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0.174, z: -0.001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 614568365608786050}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
 --- !u!1 &2873415286864706117
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +124,7 @@ Transform:
   m_Children:
   - {fileID: 6610003296557873351}
   - {fileID: 2289951039553085801}
+  - {fileID: 9102798029581125590}
   - {fileID: 2030803822691759572}
   - {fileID: 1288974502638493923}
   - {fileID: 7627653972871160698}

@@ -65,6 +65,14 @@ public class SpawnSockets : MonoBehaviour
         }
     }
 
+    public void ActiveAllColliders(bool isActive)
+    {
+        for (int i = 0; i < objectPool.Length; i++)
+        {
+            objectPool[i].GetComponent<BoxCollider>().enabled = isActive;
+        }
+    }
+
     public List<MarkCable> GetCablePool()
     {
         List<MarkCable> cableList= new List<MarkCable>();

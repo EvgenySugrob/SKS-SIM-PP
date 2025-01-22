@@ -28,11 +28,18 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
 
     [Header("Tester done interaction")]
     [SerializeField] bool _isTesterDoneInteract = false;
-    [SerializeField] CheckCorrectTermination checkCorrectTermination;
+    [SerializeField] bool isFliping = false;
+    [SerializeField] Transform ppPointFlip;
+    [SerializeField] Transform flipPoint;
+    [SerializeField] float yPosition = 0.8748f;
+    [SerializeField] float animationSpeed = 0.33f;
+    private Vector3 _startPosition;
+    private Quaternion _startRotation;
 
     private void Start()
     {
-        checkCorrectTermination = GetComponent<CheckCorrectTermination>();
+        _startPosition = transform.position;
+        _startRotation = transform.rotation;
     }
 
     private void Update()
@@ -138,13 +145,13 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             }
         }
 
-        //if(objectInteract.TryGetComponent(out CableTestChecker cableChecker))
-        //{
-        //    if(_isTesterDoneInteract)
-        //    {
-        //        isInteract = true;
-        //    }
-        //}
+        if (objectInteract.TryGetComponent(out CableTestChecker cableChecker))
+        {
+            if (_isTesterDoneInteract && isFliping)
+            {
+                isInteract = true;
+            }
+        }
         return isInteract;
     }
 
@@ -153,9 +160,13 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         if (_inHand)
             return;
 
-        playerControl.SwitchTypeMovePlayer(true);
-        playerControl.PointForMove(pointForEyes);
-        DisableCollider(false);
+        if(!isFliping)
+        {
+            playerControl.SwitchTypeMovePlayer(true);
+            playerControl.PointForMove(pointForEyes);
+            DisableCollider(false);
+        }
+        
     }
     public InteractionSystem GetInteractionSystem() 
     {
@@ -230,6 +241,56 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
 
     public void Flip(bool isFlip)
     {
-        checkCorrectTermination.FlipingPanel(isFlip);            
+        FlipingPanel(isFlip);            
+    }
+    public bool GetFliping()
+    {
+        return isFliping;
+    }
+    private void FlipingPanel(bool isFlip)
+    {
+        if (isFlip)
+            StartCoroutine(FlipPanelFaceUp());
+        else
+            StartCoroutine(FlipPanelFaceDown());
+    }
+    private IEnumerator FlipPanelFaceUp()
+    {
+        Vector3 correctStartPosition = new Vector3(_startPosition.x, yPosition, _startPosition.z);
+
+        yield return DOTween.Sequence()
+            .Append(transform.DOMove(flipPoint.position, animationSpeed))
+            .SetEase(Ease.Linear)
+            .Append(transform.DORotateQuaternion(flipPoint.rotation, animationSpeed))
+            .SetEase(Ease.Linear)
+            .Append(transform.DOMove(correctStartPosition, animationSpeed))
+            .SetEase(Ease.Linear)
+            .Play()
+            .WaitForCompletion();
+
+        isFliping= true;
+    }
+
+    private IEnumerator FlipPanelFaceDown()
+    {
+
+        yield return DOTween.Sequence()
+           .Append(transform.DOMove(flipPoint.position, animationSpeed))
+           .SetEase(Ease.Linear)
+           .Append(transform.DORotateQuaternion(_startRotation, animationSpeed))
+           .SetEase(Ease.Linear)
+           .Append(transform.DOMove(_startPosition, animationSpeed))
+           .SetEase(Ease.Linear)
+           .Play()
+           .WaitForCompletion();
+
+        isFliping= false;
+    }
+
+    public void PlayerMoveOnFlipPosition()
+    {
+        playerControl.SwitchTypeMovePlayer(true);
+        playerControl.PointForMove(ppPointFlip);
+        DisableCollider(false);
     }
 }

@@ -163,4 +163,14 @@ public class ContactPortInteract : MonoBehaviour
         cablePoint.ActiveInteractivePoint(true);
         SetTerminationState(false);
     }
+
+    public string GetTypeCableColorPort()
+    {
+        return typeCablePort;
+    }
+
+    public string GetTypeCableColor()
+    {
+        return cablePoint.GetTypeCable();
+    }
 }

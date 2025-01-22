@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -59,13 +60,22 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private List<MarkCable> _cableList = new List<MarkCable>();
     private MarkCable _currentMarkCable;
     private NfsController _nfsController;
-    private bool _testerOnSocket = false;
 
     [Header("Check for correct termination")]
     [SerializeField] PatchPanelInteraction panelInteraction;
     [SerializeField] Transform nfrChecker;
-    [SerializeField] bool isCheckCorrectPortConnect;
+    [SerializeField] Transform nfrJack;
+    [SerializeField] Transform nfrJackTool;
+    [SerializeField] Transform nfrJackSocket;
+    [SerializeField] Transform nfrJackConnectPosition;
+    [SerializeField] Transform jackFirstPoint;
+    [SerializeField] Transform jackFinalPoint;
+    [SerializeField] bool isSearchtSocketTermination;
+    [SerializeField] bool isNfrInSocket;
     private Vector3 _startNfrPosition;
+    private Vector3 _nfrJackStartPosition;
+    private Vector3 _nfrJackToolPartStartPosition;
+    private Vector3 _nfrJackSocketStartPosition;
 
     private void Start()
     {
@@ -87,7 +97,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _startPartInSocketPosition = partInSocket.localPosition;
 
         _startNfrPosition = nfrChecker.localPosition;
-}
+        _nfrJackStartPosition = nfrJack.localPosition;
+        _nfrJackToolPartStartPosition = nfrJackTool.localPosition;
+        _nfrJackSocketStartPosition = nfrJackSocket.localPosition;
+    }
 
     private void Update()
     {
@@ -191,15 +204,14 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         if (interactionSystem.GetHeldObject() != null && interactionSystem.GetHeldObject()!=transform.gameObject)
             return;
-
         if (interactionSystem.IsCablePartMovingActive())
             return;
 
-        if(!markingIsActiv && !toolsInHand)
+        if(!markingIsActiv && !isSearchtSocketTermination && !toolsInHand)
         {
             EnableTester();
         }
-        else if(!markingIsActiv && toolsInHand)
+        else if(!markingIsActiv && !isSearchtSocketTermination && toolsInHand)
         {
             DisableTester();
         }
@@ -299,21 +311,130 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         if (objectInteract.GetComponent<TwistedPairUnravelingCount>())
             isInteract = false;
 
+        Debug.Log(isInteract + " Tester");
         return isInteract;
     }
 
     public void Interact(GameObject objectInteract)
+    {
+        if(objectInteract.TryGetComponent(out MarkSocket socket) && !isSearchtSocketTermination)
+        {
+            PlayerControlDisable(false);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            currentSocket = socket;
+            StartCoroutine(MoveEyesToPointAndTools(currentSocket.GetEyesPivot(),currentSocket.GetFirstToolPivot()));
+        }
+
+        if(objectInteract.TryGetComponent(out PatchPanelInteraction checkCorrect) && !isSearchtSocketTermination)
+        {
+            if(checkCorrect.GetFliping())
+            {
+                ShowNfr();
+            }
+        }
+
+        if(objectInteract.TryGetComponent(out MarkSocket socketTermination) && isSearchtSocketTermination)
+        {
+            SearchSocketsForCheckTermination(socketTermination);
+        }
+        
+        if(objectInteract.GetComponent<PatchPanelInteraction>() && isSearchtSocketTermination &&isNfrInSocket)
+        {
+            if(checkCorrect.GetFliping())
+            {
+                PlayerMoveOnPositionSelectPort();
+            }
+        }
+    }
+
+    private void PlayerMoveOnPositionSelectPort()
+    {
+        panelInteraction.PlayerMoveOnFlipPosition();
+    }
+
+    private void ShowNfr()
+    {
+        StartCoroutine(DisableNFAndShowNfr());
+    }
+    private IEnumerator DisableNFAndShowNfr()
+    {
+        PlayerControlDisable(false);
+        isSearchtSocketTermination = true;
+        nfrChecker.gameObject.SetActive(true);
+
+        yield return DOTween.Sequence()
+            .Append(transform.DOLocalMove(_startPosition, 0.3f))
+            .SetEase(Ease.Linear)
+            .Append(nfrChecker.DOLocalMove(nfActivePosition.localPosition, 0.3f))
+            .Play()
+            .WaitForCompletion();
+
+        PlayerControlDisable(true);
+        spawnSockets.ActiveAllColliders(true);
+        
+    }
+
+    private void SearchSocketsForCheckTermination(MarkSocket socket)
     {
         PlayerControlDisable(false);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        if(objectInteract.TryGetComponent(out MarkSocket socket))
-        {
-            currentSocket = socket;
-            StartCoroutine(MoveEyesToPointAndTools(currentSocket.GetEyesPivot(),currentSocket.GetFirstToolPivot()));
-        }
+        currentSocket = socket;
+
+        StartCoroutine(MoveEyesAnNfr(currentSocket.GetEyesPivot(), currentSocket.GetNfrPivot()));
+    }
+
+    private IEnumerator MoveEyesAnNfr(Transform eyesPoint, Transform firstPivot)
+    {
+        eyesPlayer.parent = eyesPoint;
+        yield return MoveEyes();
+
+        nfrChecker.parent = firstPivot;
+        yield return MoveNfr();
+
+        nfrJack.gameObject.SetActive(true);
+
+        yield return ConnectWithNfr();
+        yield return ConncetWithSocket();
+
+        isNfrInSocket= true;
+
+        yield return EyesReturnBack();
+        yield return MoveUp();
+        PlayerControlDisable(true);
+    }
+
+    private YieldInstruction MoveNfr()
+    {
+        return nfrChecker.DOLocalMove(Vector3.zero, 0.5f)
+            .Play()
+            .WaitForCompletion();
+    }
+
+    private YieldInstruction ConnectWithNfr()
+    {
+        return DOTween.Sequence()
+            .Append(nfrJack.DOMove(nfrJackConnectPosition.position,0.8f))
+            .Append(nfrJackTool.DOMove(jackFirstPoint.position, 0.3f))
+            .SetEase(Ease.Linear)
+            .Append(nfrJackTool.DOMove(jackFinalPoint.position,0.3f))
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction ConncetWithSocket()
+    {
+        return DOTween.Sequence()
+            .Append(nfrChecker.DOMove(currentSocket.GetSecondToolPivot().position,1f))
+            .Append(nfrJackSocket.DOMove(currentSocket.GetJackBetweenPivot().position,0.3f))
+            .SetEase(Ease.Linear)
+            .Append(nfrJackSocket.DOMove(currentSocket.GetJackPartPivot().position,0.3f))
+            .Play()
+            .WaitForCompletion();
     }
 
     public void StartSearch()
@@ -321,6 +442,11 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         ActiveButtonsOnTool(false);
         spawnSockets.ActiveCollidersOnSockets(false);
         StartCoroutine(SerachToolPosition());
+    }
+
+    public bool GetIsSearchSocketTermimnation()
+    {
+        return isSearchtSocketTermination;
     }
 
     private IEnumerator MoveEyesToPointAndTools(Transform eyesPoint, Transform firstPivot)
@@ -375,7 +501,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         return DOTween.Sequence()
             .Append(transform.DOMove(currentSocket.GetSecondToolPivot().position, 1f))
-            .Append(partInSocket.DOMove(currentSocket.GetJackBetweenPivot().position, 0.5f).SetEase(Ease.Linear))
+            .Append(partInSocket.DOMove(currentSocket.GetJackBetweenPivot().position, 0.5f)
+            .SetEase(Ease.Linear))
             .Append(partInSocket.DOMove(currentSocket.GetJackPartPivot().position, 0.5f))
             .Play() 
             .WaitForCompletion();

@@ -290,6 +290,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 5245521985104404599}
   point2: {fileID: 8497223408985822355}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &491832809008835634
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +458,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 8428472161572071953}
   point2: {fileID: 6241531633833291944}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &765645211330736606
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +688,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 6717843203827345215}
   point2: {fileID: 4671074019567339981}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &2028755079692249736
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +843,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 2668833234878019619}
   point2: {fileID: 1732358105473841300}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &2770316906944665710
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +959,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 4675756828882839780}
   point2: {fileID: 3373302597203275514}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &4020221526207502709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1472,10 @@ MonoBehaviour:
   cableMontagePoint: {fileID: 265132218272858300}
   _mainParent: {fileID: 0}
   _interactionSystem: {fileID: 0}
+  patchPanel: {fileID: 0}
   termination: {fileID: 0}
   terminationPoint: {fileID: 5061281483129543953}
+  isTeminationDone: 0
   pointforName: {fileID: 0}
 --- !u!1 &5469213327660513114
 GameObject:
@@ -1641,6 +1653,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 6465729000601463129}
   point2: {fileID: 4604479351094831654}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &7092148256545196019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2028,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 1979978090180984188}
   point2: {fileID: 6682156749614007119}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1 &9185244635560327915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,6 +2113,8 @@ MonoBehaviour:
   cablePoint: {fileID: 0}
   point1: {fileID: 7569161312150592736}
   point2: {fileID: 5168050469094956823}
+  _isBusy: 0
+  _terminationDone: 0
 --- !u!1001 &4715843860212853
 PrefabInstance:
   m_ObjectHideFlags: 0

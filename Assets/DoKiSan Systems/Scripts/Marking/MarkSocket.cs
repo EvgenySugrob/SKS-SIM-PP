@@ -8,6 +8,7 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
 {
     public string nameSocket { private set; get; }
     [SerializeField] private bool _isMarking = false;
+    [SerializeField] private bool _isTerminationCheck = false;
     [SerializeField] int numberSocket;
 
     [Header("Interaction")]
@@ -17,6 +18,7 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     [SerializeField] Transform jactBetweenPivot;
     [SerializeField] Transform firstToolsPivot;
     [SerializeField] Transform secondToolsPivot;
+    [SerializeField] Transform nfrPivot;
 
     [Header("Decal material")]
     [SerializeField] DecalProjector numberDecal;
@@ -42,6 +44,11 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
         if(!_isMarking)
             isInteract = true;
 
+        if(objectInteract.GetComponent<CableTestChecker>().GetIsSearchSocketTermimnation())
+        {
+            isInteract = true;
+        }
+
         return isInteract;
     }
 
@@ -56,10 +63,13 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     {
         return _isMarking; 
     }
-
+    public bool GetTerminationCheck()
+    {
+        return _isTerminationCheck;
+    }
     public void Interact(GameObject objectInteract)
     {
-        Debug.Log("Интерактирую с NF");
+        
     }
 
     public Transform GetEyesPivot()
@@ -85,5 +95,9 @@ public class MarkSocket : MonoBehaviour,IInteractableObject
     public int GetNumberSocket()
     {
         return numberSocket;
+    }
+    public Transform GetNfrPivot()
+    {
+        return nfrPivot;
     }
 }
