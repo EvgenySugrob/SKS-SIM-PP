@@ -33,6 +33,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] Transform flipPoint;
     [SerializeField] float yPosition = 0.8748f;
     [SerializeField] float animationSpeed = 0.33f;
+    [SerializeField] PortConnectInfo[] portsConnectInfo = new PortConnectInfo[0];
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
@@ -292,5 +293,14 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         playerControl.SwitchTypeMovePlayer(true);
         playerControl.PointForMove(ppPointFlip);
         DisableCollider(false);
+        PortsEnable(true);
+    }
+
+    public void PortsEnable(bool isActive)
+    {
+        for (int i = 0; i < portsConnectInfo.Length; i++)
+        {
+            portsConnectInfo[i].EnableColliders(isActive);
+        }
     }
 }

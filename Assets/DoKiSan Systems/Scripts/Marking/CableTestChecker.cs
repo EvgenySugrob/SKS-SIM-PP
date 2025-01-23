@@ -13,8 +13,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [Header("Main position and rotation")]
     [SerializeField] OutlineDetection outlineDetection;
     [SerializeField] Transform nfActivePosition;
+    [SerializeField] Transform nfPortCheckPosition;
     [SerializeField] Transform nfsTool;
     [SerializeField] Transform jackPortScan;
+    [SerializeField] Transform[] pathJackToRJConnect = new Transform[0];
     [SerializeField] bool markingIsActiv = false;
     [SerializeField] bool screenActive = false;
     private Transform _prevCable;
@@ -25,6 +27,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Vector3 _startNFSToolPosition;
     private Transform _startParent;
     private Transform _startEyesParent;
+    private Vector3[] rjSlotPath = new Vector3[3];
 
     [Header("Check limits on work")]
     [SerializeField] InteractionSystem interactionSystem;
@@ -50,6 +53,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [SerializeField] Transform partInTools;
     [SerializeField] Transform partInSocket;
     [SerializeField] Transform patchCordConnectPosition;
+    [SerializeField] Transform patchCordParent;
     private Vector3 _startPatchCordPosition;
     private Vector3 _startPartInToolPosition;
     private Vector3 _startPartInSocketPosition;
@@ -63,6 +67,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     [Header("Check for correct termination")]
     [SerializeField] PatchPanelInteraction panelInteraction;
+    [SerializeField] PortConnectInfo currentPortConnect;
     [SerializeField] Transform nfrChecker;
     [SerializeField] Transform nfrJack;
     [SerializeField] Transform nfrJackTool;
@@ -100,6 +105,11 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _nfrJackStartPosition = nfrJack.localPosition;
         _nfrJackToolPartStartPosition = nfrJackTool.localPosition;
         _nfrJackSocketStartPosition = nfrJackSocket.localPosition;
+
+        for (int i = 0; i < pathJackToRJConnect.Length; i++)
+        {
+            rjSlotPath[i] = pathJackToRJConnect[i].localPosition;
+        }
     }
 
     private void Update()
@@ -348,6 +358,12 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
                 PlayerMoveOnPositionSelectPort();
             }
         }
+
+        if(objectInteract.GetComponent<PortConnectInfo>() && isSearchtSocketTermination && isNfrInSocket)
+        {
+            currentPortConnect = objectInteract.GetComponent<PortConnectInfo>();
+            ConnectWithPort(currentPortConnect.GetPatchCordConnection(),currentPortConnect.GetPatchCordBetweenConection());
+        }
     }
 
     private void PlayerMoveOnPositionSelectPort()
@@ -402,10 +418,13 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         yield return ConnectWithNfr();
         yield return ConncetWithSocket();
 
+        //¬озможно стоить ограничить доступ к розеткам 
+        //»ли добавить возможность забрать NFR и отменить его установку
         isNfrInSocket= true;
 
         yield return EyesReturnBack();
         yield return MoveUp();
+
         PlayerControlDisable(true);
     }
 
@@ -430,9 +449,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         return DOTween.Sequence()
             .Append(nfrChecker.DOMove(currentSocket.GetSecondToolPivot().position,1f))
-            .Append(nfrJackSocket.DOMove(currentSocket.GetJackBetweenPivot().position,0.3f))
-            .SetEase(Ease.Linear)
-            .Append(nfrJackSocket.DOMove(currentSocket.GetJackPartPivot().position,0.3f))
+            .Append(nfrJackSocket.DOMove(currentSocket.GetJackBetweenPivot().position,0.4f))
+            .Append(nfrJackSocket.DOMove(currentSocket.GetJackPartPivot().position,0.4f))
             .Play()
             .WaitForCompletion();
     }
@@ -531,5 +549,67 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         interactionSystem.enabled = isActive;
         firstPlayerControl.enabled = isActive;
+    }
+
+    public bool GetIsNfrInSocket()
+    {
+        return isNfrInSocket;
+    }
+
+    private void ConnectWithPort(Transform patchCordEndPosition,Transform patchCordBetweenPosition)
+    {
+        ActiveButtonsOnTool(false);
+        PlayerControlDisable(false);
+        panelInteraction.PortsEnable(false);
+        StartCoroutine(PatchCordConnectWithPort(patchCordEndPosition,patchCordBetweenPosition));
+    }
+    private IEnumerator PatchCordConnectWithPort(Transform patchCordEndPosition, Transform patchCordEndBetweenPosition)
+    {
+        patchCord.gameObject.SetActive(true);
+
+        yield return PatchCordMove(patchCordConnectPosition.position);
+        yield return PatchCordConnectWithNF();
+        yield return PatchCordConnectWithPortSlot(patchCordEndPosition,patchCordEndBetweenPosition);
+        yield return MoveNfOnCheckPosition();
+        ActiveButtonsOnTool(true);
+        //PlayerControlDisable(true);
+    }
+    private YieldInstruction PatchCordMove(Vector3 position)
+    {
+        return patchCord.DOMove(position,0.5f)
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction PatchCordConnectWithNF()
+    {
+        for (int i = 0; i < pathJackToRJConnect.Length; i++)
+        {
+            rjSlotPath[i] = pathJackToRJConnect[i].position;
+        }
+
+        return DOTween.Sequence()
+            .Append(partInTools.DOPath(rjSlotPath,1f,PathType.CatmullRom))
+            .SetEase(Ease.Linear)
+            .Join(partInTools.DORotateQuaternion(pathJackToRJConnect[1].rotation,0.5f))
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction PatchCordConnectWithPortSlot(Transform endPosition,Transform betweenPosition)
+    {
+        partInSocket.parent = endPosition.parent;
+
+        return DOTween.Sequence()
+            .Append(partInSocket.DOMove(betweenPosition.position, 0.5f))
+            .SetEase(Ease.Linear)
+            .Join(partInSocket.DORotateQuaternion(betweenPosition.rotation,0.5f))
+            .Append(partInSocket.DOMove(endPosition.position,0.5f))
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction MoveNfOnCheckPosition()
+    {
+        return transform.DOMove(nfPortCheckPosition.position,0.8f)
+            .Play()
+            .WaitForCompletion();
     }
 }
