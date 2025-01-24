@@ -286,6 +286,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 4581484073738335012}
   boxCollider: {fileID: 0}
   typeCablePort: white
+  typeNumberCablePort: 3
   typeGroupCable: White/OrangeGreen
   cablePoint: {fileID: 0}
   point1: {fileID: 5245521985104404599}
@@ -454,6 +455,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 1149895352915597098}
   boxCollider: {fileID: 0}
   typeCablePort: white
+  typeNumberCablePort: 5
   typeGroupCable: White/Blue
   cablePoint: {fileID: 0}
   point1: {fileID: 8428472161572071953}
@@ -684,6 +686,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 4232601632725243985}
   boxCollider: {fileID: 0}
   typeCablePort: brown
+  typeNumberCablePort: 8
   typeGroupCable: White/Brown
   cablePoint: {fileID: 0}
   point1: {fileID: 6717843203827345215}
@@ -772,7 +775,7 @@ GameObject:
   - component: {fileID: 8059844061889386179}
   - component: {fileID: 1188346324144839858}
   m_Layer: 0
-  m_Name: Green/Orange
+  m_Name: Orange/Green
   m_TagString: TerminationCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,8 +841,9 @@ MonoBehaviour:
   pointBeforeDriving: {fileID: 19653525959153795}
   pointAfterDriving: {fileID: 887523411046081352}
   boxCollider: {fileID: 0}
-  typeCablePort: green
-  typeGroupCable: White/GreenOrange
+  typeCablePort: orange
+  typeNumberCablePort: 2
+  typeGroupCable: White/OrangeGreen
   cablePoint: {fileID: 0}
   point1: {fileID: 2668833234878019619}
   point2: {fileID: 1732358105473841300}
@@ -955,6 +959,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 3690094504609898836}
   boxCollider: {fileID: 0}
   typeCablePort: white
+  typeNumberCablePort: 1
   typeGroupCable: White/GreenOrange
   cablePoint: {fileID: 0}
   point1: {fileID: 4675756828882839780}
@@ -1649,6 +1654,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 8838195004402899646}
   boxCollider: {fileID: 0}
   typeCablePort: blue
+  typeNumberCablePort: 4
   typeGroupCable: White/Blue
   cablePoint: {fileID: 0}
   point1: {fileID: 6465729000601463129}
@@ -2024,6 +2030,7 @@ MonoBehaviour:
   pointAfterDriving: {fileID: 7060117268468101469}
   boxCollider: {fileID: 0}
   typeCablePort: white
+  typeNumberCablePort: 7
   typeGroupCable: White/Brown
   cablePoint: {fileID: 0}
   point1: {fileID: 1979978090180984188}
@@ -2042,7 +2049,7 @@ GameObject:
   - component: {fileID: 8831484246136861817}
   - component: {fileID: 2562891125835547114}
   m_Layer: 0
-  m_Name: Orange/Green
+  m_Name: Green/Orange
   m_TagString: TerminationCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2108,8 +2115,9 @@ MonoBehaviour:
   pointBeforeDriving: {fileID: 4828918422840161210}
   pointAfterDriving: {fileID: 6692000584176458495}
   boxCollider: {fileID: 0}
-  typeCablePort: orange
-  typeGroupCable: White/OrangeGreen
+  typeCablePort: green
+  typeNumberCablePort: 6
+  typeGroupCable: White/GreenOrange
   cablePoint: {fileID: 0}
   point1: {fileID: 7569161312150592736}
   point2: {fileID: 5168050469094956823}

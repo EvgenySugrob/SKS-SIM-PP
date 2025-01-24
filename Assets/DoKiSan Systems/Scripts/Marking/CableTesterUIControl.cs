@@ -19,6 +19,14 @@ public class CableTesterUIControl : MonoBehaviour
     [SerializeField]private List<SelectableImage> _currentImageGroup = new List<SelectableImage>();
     [SerializeField]private List<SelectableImage> _prevImageGroup = new List<SelectableImage>();
     [SerializeField]private ICheckingMenu _checkingMenu;
+
+    [Header("Mapping Menu")]
+    [SerializeField] SelectableImage[] mappingSelectableImage= new SelectableImage[2];
+    [SerializeField] GameObject testingWindow;
+    [SerializeField] GameObject resultWindow;
+    [SerializeField] GameObject resultError;
+    [SerializeField] GameObject resultDone;
+    [SerializeField] UILineRenderConection lineRenderConection;
     
 
     private void Start()
@@ -36,13 +44,6 @@ public class CableTesterUIControl : MonoBehaviour
 
     public void SetCurrentImageGroup(SelectableImage[] images)
     {
-        _currentImageGroup.Clear();
-
-        for (int i = 0; i < images.Length; i++)
-        {
-            _currentImageGroup.Add(images[i]);
-        }
-
         //Проверить заполнения листов 
         if(_prevImageGroup == null)
         {
@@ -53,6 +54,13 @@ public class CableTesterUIControl : MonoBehaviour
         {
             _prevImageGroup.Clear();
             _prevImageGroup = _currentImageGroup;
+        }
+
+        _currentImageGroup.Clear();
+
+        for (int i = 0; i < images.Length; i++)
+        {
+            _currentImageGroup.Add(images[i]);
         }
     }
 
@@ -81,20 +89,35 @@ public class CableTesterUIControl : MonoBehaviour
         if (selectableMenu == null)
             return;
 
-        _prevWindowShow = _currentWindowShow;
-        _prevWindowShow.SetActive(false);
-        _currentWindowShow = selectableMenu;
-        _currentWindowShow.SetActive(true);
+        bool dontOpenNextWindow = false;
 
         switch (nameMenu)
         {
             case "mapping":
+                StartCoroutine(WaitLoadTestingScreen());
+
+                //SetCurrentImageGroup(mappingSelectableImage);
                 break;
+
             case "scan":
+                if (cableTestChecker.GetIsNfrInSocket() || cableTestChecker.GetIsSearchSocketTermimnation())
+                {
+                    dontOpenNextWindow = true;
+                    break;
+                } 
                 ScanWorkProgress();
+
                 break;
             default: 
                 break;
+        }
+
+        if(!dontOpenNextWindow)
+        {
+            _prevWindowShow = _currentWindowShow;
+            _prevWindowShow.SetActive(false);
+            _currentWindowShow = selectableMenu;
+            _currentWindowShow.SetActive(true);
         }
     }
 
@@ -129,6 +152,28 @@ public class CableTesterUIControl : MonoBehaviour
         if(_currentSelectableImage!=null)
         {
             _currentSelectableImage.FadeInIcon();
+        }
+    }
+
+    private IEnumerator WaitLoadTestingScreen()
+    {
+        PortConnectInfo port = cableTestChecker.GetCurrentPort();
+
+        yield return new WaitForSeconds(2f);
+
+        if (port.IsConnectingPair())
+        {
+            lineRenderConection.SetPortsInfo(port.GetArrayContact());
+
+            resultDone.SetActive(true);
+            resultWindow.SetActive(true);
+            testingWindow.SetActive(false);
+        }
+        else
+        {
+            resultError.SetActive(true);
+            resultWindow.SetActive(true);
+            testingWindow.SetActive(false);
         }
     }
 }

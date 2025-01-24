@@ -6,6 +6,7 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
 {
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] string typeCable;
+    [SerializeField] int indexNumberCable;
     [SerializeField] string typeGroupCable;
     [SerializeField] List<InteractivePointHandler> interactivePointList = new List<InteractivePointHandler>();
     [SerializeField] Transform endPoint;
@@ -64,5 +65,9 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
             }
                 
         }
+    }
+    public int GetIndexNumberCable()
+    {
+        return indexNumberCable;
     }
 }

@@ -507,10 +507,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: white
+  indexNumberCable: 5
   typeGroupCable: White/Blue
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &483504524257863806
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,10 +600,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: orange
+  indexNumberCable: 2
   typeGroupCable: White/OrangeGreen
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &488602214122864145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1880,7 @@ MonoBehaviour:
   countPairInCable: 4
   workModeManipulation: {fileID: 0}
   nameSocket: "\u0420\u043E\u0437\u0435\u0442\u043A\u0430 \u2116"
+  nameForPanelDisplay: {fileID: 0}
   pointInformation: {fileID: 0}
   strippingCable: {fileID: 0}
   stripperInteration: {fileID: 0}
@@ -2454,7 +2459,7 @@ Transform:
   m_GameObject: {fileID: 1495881422167337443}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.0027598944, y: 0.00068899605, z: 0.00074}
+  m_LocalPosition: {x: 0.00276, y: 0.00082, z: -0.000768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6190,10 +6195,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: blue
+  indexNumberCable: 4
   typeGroupCable: White/Blue
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &3115456172426017022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6868,10 +6875,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: white
+  indexNumberCable: 7
   typeGroupCable: White/Brown
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &3797195973886533297
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,7 +7017,7 @@ Transform:
   m_GameObject: {fileID: 3800528015005013544}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.00276, y: 0.00082, z: -0.000768}
+  m_LocalPosition: {x: 0.0027598944, y: 0.00068899605, z: 0.00074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7433,10 +7442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: white
+  indexNumberCable: 3
   typeGroupCable: White/GreenOrange
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &3999972472547623581
 GameObject:
   m_ObjectHideFlags: 0
@@ -9749,10 +9760,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: green
+  indexNumberCable: 6
   typeGroupCable: White/GreenOrange
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &6067354109529729494
 GameObject:
   m_ObjectHideFlags: 0
@@ -10293,10 +10306,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: brown
+  indexNumberCable: 8
   typeGroupCable: White/Brown
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &6803938369604065428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12587,10 +12602,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   typeCable: white
+  indexNumberCable: 1
   typeGroupCable: White/OrangeGreen
   interactivePointList: []
   endPoint: {fileID: 0}
   needIndexInteractivePoint: 3
+  portInteract: {fileID: 0}
 --- !u!1 &8809361696787095077
 GameObject:
   m_ObjectHideFlags: 0

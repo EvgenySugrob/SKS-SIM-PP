@@ -19,6 +19,7 @@ public class ContactPortInteract : MonoBehaviour
     [SerializeField] Transform pointAfterDriving;
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] string typeCablePort;
+    [SerializeField] int typeNumberCablePort;
     [SerializeField] string typeGroupCable;
     [SerializeField] CablePointBezier cablePoint;
 
@@ -172,5 +173,14 @@ public class ContactPortInteract : MonoBehaviour
     public string GetTypeCableColor()
     {
         return cablePoint.GetTypeCable();
+    }
+    public int GetTypeNumberCablePort()
+    {
+        return typeNumberCablePort;
+    }
+
+    public int GetTypeIndexCablePort()
+    {
+        return cablePoint.GetIndexNumberCable();
     }
 }

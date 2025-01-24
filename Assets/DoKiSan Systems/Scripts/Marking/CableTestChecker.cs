@@ -555,6 +555,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     {
         return isNfrInSocket;
     }
+    public PortConnectInfo GetCurrentPort()
+    {
+        return currentPortConnect;
+    }
 
     private void ConnectWithPort(Transform patchCordEndPosition,Transform patchCordBetweenPosition)
     {

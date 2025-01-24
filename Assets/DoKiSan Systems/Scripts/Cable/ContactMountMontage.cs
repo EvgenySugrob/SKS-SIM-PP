@@ -116,5 +116,8 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
             .WaitForCompletion();
     }
 
-
+    public bool GetIsTerminationDone()
+    {
+        return isTeminationDone;
+    }
 }
