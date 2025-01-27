@@ -7,7 +7,7 @@ using UnityEngine;
 public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisableColliders
 {
     [Header("Main")]
-    [SerializeField] List<Collider> colliders;
+    [SerializeField] List<BoxCollider> colliders;
     [SerializeField] FirstPlayerControl playerControl;
     [SerializeField] Transform pointForEyes;
     [SerializeField] InteractionSystem interactionSystem;
@@ -176,9 +176,9 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     public void DisableCollider(bool isActive)
     {
        foreach(Collider collider in colliders)
-        {
+       {
             collider.enabled = isActive;
-        }
+       }
     }
 
     public bool GetMountingState()

@@ -6059,7 +6059,7 @@ PrefabInstance:
         type: 3}
       propertyPath: contactMountMontage
       value: 
-      objectReference: {fileID: 2990480938848623541}
+      objectReference: {fileID: 1988439156588782293}
     - target: {fileID: 1420869951135651499, guid: 0bfe404605096604aa29898b008bdf51,
         type: 3}
       propertyPath: m_Name

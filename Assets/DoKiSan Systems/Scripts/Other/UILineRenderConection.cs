@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,10 +12,16 @@ public class UILineRenderConection : MonoBehaviour
     [SerializeField] LineRenderer gLine;
     [SerializeField] PointForLineRender[] gUpDownPoints = new PointForLineRender[2];
     [SerializeField] TMP_Text resultText;
+    List<string> addedPairs = new List<string>();
+    string crossMappingInfo = "Cross mapping: ";
+    string defaultText = "OK!";
+    bool hasCrossMapping = false;
 
 
     public void SetPortsInfo(ContactPortInteract[] ports)
     {
+        addedPairs.Clear();
+
         for (int i = 0; i < connectLine.Length; i++)
         {
             int indexDownPoints = ports[i].GetTypeIndexCablePort() - 1;
@@ -23,10 +30,33 @@ public class UILineRenderConection : MonoBehaviour
             connectLine[i].SetPosition(1, downPoints[indexDownPoints].GetWorldPositionPoint());
 
             connectLine[i].enabled= true;
+
+            if (indexDownPoints != i)
+            {
+                string pair = $"{Math.Min(i + 1, indexDownPoints + 1)}{Math.Max(i + 1, indexDownPoints + 1)}";
+
+                if (!addedPairs.Contains(pair))
+                {
+                    if (hasCrossMapping)
+                        crossMappingInfo += ", ";
+                    crossMappingInfo += pair;
+                    addedPairs.Add(pair);
+                    hasCrossMapping = true;
+                }
+            }
         }
 
-        gLine.SetPosition(0, gUpDownPoints[0].GetWorldPositionPoint());
-        gLine.SetPosition(1, gUpDownPoints[1].GetWorldPositionPoint());
-        gLine.enabled= true;
+        //gLine.SetPosition(0, gUpDownPoints[0].GetWorldPositionPoint());
+        //gLine.SetPosition(1, gUpDownPoints[1].GetWorldPositionPoint());
+        //gLine.enabled= true;
+
+        if (hasCrossMapping)
+        {
+            resultText.text = crossMappingInfo;
+        }
+        else
+        {
+            resultText.text = defaultText;
+        }
     }
 }

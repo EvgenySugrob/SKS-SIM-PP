@@ -185,6 +185,11 @@ namespace DoKiSan.Controls
             _startRotation = eyes.localRotation;
             eyes.transform.parent = newParent;
             yield return StartMoveToPP();
+
+            if(interactionSystem.GetHeldObject().GetComponent<CableTestChecker>())
+            {
+                interactionSystem.GetHeldObject().GetComponent<CableTestChecker>().EnableReturnBtUI(true);
+            }
             
         }
         private YieldInstruction StartMoveToPP()
@@ -200,7 +205,7 @@ namespace DoKiSan.Controls
         {
             eyes.transform.parent = _startParentEyes;
             StartCoroutine(StartMoveToHead());
-            limitlStateControl = false;
+            
         }
 
         private IEnumerator StartMoveToHead() 
@@ -210,6 +215,7 @@ namespace DoKiSan.Controls
                 .Join(eyes.DOLocalRotate(Vector3.zero, 1.5f))
                 .Play()
                 .WaitForCompletion();
+            limitlStateControl = false;
         }
 
         private void LimitMoveEyes()

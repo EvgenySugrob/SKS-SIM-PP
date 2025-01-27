@@ -43,6 +43,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     [Header("Buttons on tool")]
     [SerializeField] BoxCollider[] buttonsColliders = new BoxCollider[7];
+    [SerializeField] BoxCollider returnButtons;
+    [SerializeField] GameObject backBtGroup;
+    [SerializeField] GameObject terminationBackBt;
+    [SerializeField] GameObject portConnectReturnMainViewBt;
 
     [Header("Sockets")]
     [SerializeField] SpawnSockets spawnSockets;
@@ -81,6 +85,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Vector3 _nfrJackStartPosition;
     private Vector3 _nfrJackToolPartStartPosition;
     private Vector3 _nfrJackSocketStartPosition;
+    private Quaternion _nfrStartRotation;
 
     private void Start()
     {
@@ -105,6 +110,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _nfrJackStartPosition = nfrJack.localPosition;
         _nfrJackToolPartStartPosition = nfrJackTool.localPosition;
         _nfrJackSocketStartPosition = nfrJackSocket.localPosition;
+        _nfrStartRotation = nfrChecker.localRotation;
 
         for (int i = 0; i < pathJackToRJConnect.Length; i++)
         {
@@ -293,12 +299,16 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             .WaitForCompletion();
     }
 
-    private void ActiveButtonsOnTool(bool isAcive)
+    public void ActiveButtonsOnTool(bool isAcive)
     {
         for (int i = 0; i < buttonsColliders.Length; i++)
         {
             buttonsColliders[i].enabled = isAcive;
         }
+    }
+    public void ActiveReturnButtons(bool isActive)
+    {
+        returnButtons.enabled = isActive;
     }
 
     private void ActiveSockets(bool isActive)
@@ -560,6 +570,47 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         return currentPortConnect;
     }
 
+    public void EnableReturnBtUI(bool isActive)
+    {
+        terminationBackBt.SetActive(!isActive);
+        portConnectReturnMainViewBt.SetActive(isActive);
+        backBtGroup.SetActive(isActive);
+    }
+    private void NfrFastInHand()
+    {
+        nfrJack.gameObject.SetActive(false);
+        nfrJackTool.localPosition = _nfrJackToolPartStartPosition;
+        nfrJackSocket.localPosition = _nfrJackSocketStartPosition;
+        nfrJackSocket.parent = nfrJack;
+        nfrJack.localPosition = _nfrJackStartPosition;
+        
+        nfrChecker.gameObject.SetActive(false);
+        nfrChecker.parent = _startParent;
+        nfrChecker.localRotation = _nfrStartRotation;
+        nfrChecker.localPosition = _startNfrPosition;
+
+        isSearchtSocketTermination = false;
+        isNfrInSocket= false;
+    }
+
+    private void DisablePatchCordNf()
+    {
+        patchCord.gameObject.SetActive(false);
+    }
+
+    public void PortConnectReturnMainViewClick()
+    {
+        EnableReturnBtUI(false);
+
+        NfrFastInHand();
+        DisablePatchCordNf();
+        panelInteraction.PortsEnable(false);
+
+        firstPlayerControl.MoveEyesToHead();
+
+        panelInteraction.DisableCollider(true);
+    }
+
     private void ConnectWithPort(Transform patchCordEndPosition,Transform patchCordBetweenPosition)
     {
         ActiveButtonsOnTool(false);
@@ -575,7 +626,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         yield return PatchCordConnectWithNF();
         yield return PatchCordConnectWithPortSlot(patchCordEndPosition,patchCordEndBetweenPosition);
         yield return MoveNfOnCheckPosition();
+
+        EnableReturnBtUI(false);
         ActiveButtonsOnTool(true);
+
         //PlayerControlDisable(true);
     }
     private YieldInstruction PatchCordMove(Vector3 position)
@@ -613,6 +667,57 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private YieldInstruction MoveNfOnCheckPosition()
     {
         return transform.DOMove(nfPortCheckPosition.position,0.8f)
+            .Play()
+            .WaitForCompletion();
+    }
+
+    public void ReturnWorkPortsMode()
+    {
+        StartCoroutine(BackPortInteract());
+    }
+
+    private IEnumerator BackPortInteract()
+    {
+        yield return MoveUp();
+        yield return PatchCordConnectWithPortSlotBack(patchCordParent, currentPortConnect.GetPatchCordBetweenConection());
+        yield return PatchCordDisconnectWithNF();
+        yield return PatchCordMoveBack(_startPatchCordPosition);
+
+        PlayerControlDisable(true);
+        panelInteraction.PortsEnable(true);
+        EnableReturnBtUI(true);
+    }
+
+    private YieldInstruction PatchCordConnectWithPortSlotBack(Transform endPosition, Transform betweenPosition)
+    {
+        partInSocket.parent = endPosition;
+
+        return DOTween.Sequence()
+           .Append(partInSocket.DOMove(betweenPosition.position, 0.5f))
+           .SetEase(Ease.Linear)
+           .Join(partInSocket.DORotateQuaternion(betweenPosition.rotation, 0.5f))
+           .Append(partInSocket.DOLocalMove(_startPartInSocketPosition, 0.5f))
+           .Play()
+           .WaitForCompletion();
+    }
+
+    private YieldInstruction PatchCordDisconnectWithNF()
+    {
+        for (int i = pathJackToRJConnect.Length-1; i >=0; i--)
+        {
+            rjSlotPath[i] = pathJackToRJConnect[i].position;
+        }
+
+        return DOTween.Sequence()
+            .Append(partInTools.DOPath(rjSlotPath, 1f, PathType.CatmullRom))
+            .SetEase(Ease.Linear)
+            .Join(partInTools.DORotateQuaternion(pathJackToRJConnect[0].rotation, 0.5f))
+            .Play()
+            .WaitForCompletion();
+    }
+    private YieldInstruction PatchCordMoveBack(Vector3 position)
+    {
+        return patchCord.DOLocalMove(position, 0.5f)
             .Play()
             .WaitForCompletion();
     }

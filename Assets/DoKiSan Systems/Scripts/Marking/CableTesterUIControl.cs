@@ -129,6 +129,21 @@ public class CableTesterUIControl : MonoBehaviour
         _currentWindowShow.SetActive(true);
     }
 
+    public void ReturnMenuBtClick()
+    {
+        cableTestChecker.ActiveReturnButtons(false);
+
+        resultError.SetActive(false);
+        resultWindow.SetActive(false);
+        resultDone.SetActive(false);
+        testingWindow.SetActive(true);
+
+        _currentWindowShow = mainWindow;
+        _currentWindowShow.SetActive(true);
+
+        cableTestChecker.ReturnWorkPortsMode();
+    }
+
     private void ScanWorkProgress()
     {
         cableTestChecker.StartSearch();
@@ -157,6 +172,7 @@ public class CableTesterUIControl : MonoBehaviour
 
     private IEnumerator WaitLoadTestingScreen()
     {
+        cableTestChecker.ActiveButtonsOnTool(false);
         PortConnectInfo port = cableTestChecker.GetCurrentPort();
 
         yield return new WaitForSeconds(2f);
@@ -175,5 +191,7 @@ public class CableTesterUIControl : MonoBehaviour
             resultWindow.SetActive(true);
             testingWindow.SetActive(false);
         }
+
+        cableTestChecker.ActiveReturnButtons(true);
     }
 }

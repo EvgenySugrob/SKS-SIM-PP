@@ -10,7 +10,7 @@ public class PortConnectInfo : MonoBehaviour, IInteractableObject
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] ContactPortInteract[] contactPortInteracts = new ContactPortInteract[0];
     private bool _isSort = false;
-    private bool _isConnectingPair = false;
+    [SerializeField]private bool _isConnectingPair = false;
 
     [Header("PatchCordPosition")]
     [SerializeField] Transform patchCordPoint;
