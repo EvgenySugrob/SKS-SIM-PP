@@ -257,7 +257,7 @@ public class Termination : MonoBehaviour
 
     public void ReadyToStartWork()
     {
-        if (currentContactMount.CheckAllPortReady() && !_isActive)
+        if (currentContactMount.CheckAllPortReady() && !_isActive)  
         {
             _isActive = true;
             interactionSystem.SetInteract(false);

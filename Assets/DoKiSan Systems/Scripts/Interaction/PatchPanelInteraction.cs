@@ -2,6 +2,7 @@ using DG.Tweening;
 using DoKiSan.Controls;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisableColliders
@@ -58,6 +59,15 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             contactsMount[i].ColliderDisable(isDisable);
         }
     }
+
+    public void ContactMountColliderOffOn(bool isActive)
+    {
+        for (int i = 0; i < contactsMount.Length; i++)
+        {
+            contactsMount[i].ColliderOffOn(isActive);
+        }
+    }
+
     private void SeekInteractionSlot()
     {
         GameObject currentObject = outlineDetection.GetCurrentObject();
@@ -302,5 +312,10 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         {
             portsConnectInfo[i].EnableColliders(isActive);
         }
+    }  
+
+    public Transform GetPanelPointsForEyes()
+    {
+        return pointForEyes;
     }
 }

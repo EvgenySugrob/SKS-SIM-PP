@@ -4,7 +4,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +17,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [SerializeField] Transform jackPortScan;
     [SerializeField] Transform[] pathJackToRJConnect = new Transform[0];
     [SerializeField] bool markingIsActiv = false;
+    [SerializeField] bool isMarkinProgress = false;
     [SerializeField] bool screenActive = false;
     private Transform _prevCable;
     private Quaternion _startRotation;
@@ -86,6 +86,10 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Vector3 _nfrJackToolPartStartPosition;
     private Vector3 _nfrJackSocketStartPosition;
     private Quaternion _nfrStartRotation;
+
+    [Header("Repair termination")]
+    [SerializeField] RepairTermination repairTermination;
+    [SerializeField] GameObject needForRepairMontage;
 
     private void Start()
     {
@@ -164,6 +168,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
                         StartCoroutine(NfsTesterBackInHand());
                         _currentMarkCable.StartMarkingCable(this);
                         markingIsActiv = false;
+                        isMarkinProgress = false;
                         firstPlayerControl.enabled=false;
                         nfsTool.gameObject.SetActive(false);
                     }
@@ -263,11 +268,16 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private IEnumerator MoveOnStartPosition()
     {
         PlayerControlDisable(false);
-        yield return transform.DOLocalMove(_startPosition, 0.5f)
-            .Play()
-            .WaitForCompletion();
+        yield return NfOnStartPosition();
         //gameObject.SetActive(false);
         PlayerControlDisable(true);
+    }
+
+    private YieldInstruction NfOnStartPosition()
+    {
+        return transform.DOLocalMove(_startPosition, 0.5f)
+            .Play()
+            .WaitForCompletion();
     }
 
     private IEnumerator MoveOnJobPosition()
@@ -321,6 +331,11 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         return toolsInHand;
     }
 
+    public bool GetIsMarkingProgress()
+    {
+        return isMarkinProgress;
+    }
+
     public bool CanInteractable(GameObject objectInteract)
     {
         bool isInteract = false;
@@ -345,6 +360,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             Cursor.lockState = CursorLockMode.None;
 
             currentSocket = socket;
+            isMarkinProgress = true;
             StartCoroutine(MoveEyesToPointAndTools(currentSocket.GetEyesPivot(),currentSocket.GetFirstToolPivot()));
         }
 
@@ -620,6 +636,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     }
     private IEnumerator PatchCordConnectWithPort(Transform patchCordEndPosition, Transform patchCordEndBetweenPosition)
     {
+        EnableReturnBtUI(false);
         patchCord.gameObject.SetActive(true);
 
         yield return PatchCordMove(patchCordConnectPosition.position);
@@ -627,7 +644,6 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         yield return PatchCordConnectWithPortSlot(patchCordEndPosition,patchCordEndBetweenPosition);
         yield return MoveNfOnCheckPosition();
 
-        EnableReturnBtUI(false);
         ActiveButtonsOnTool(true);
 
         //PlayerControlDisable(true);
@@ -718,6 +734,55 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private YieldInstruction PatchCordMoveBack(Vector3 position)
     {
         return patchCord.DOLocalMove(position, 0.5f)
+            .Play()
+            .WaitForCompletion();
+    }
+
+    public void RepairActivationWithAnimation()
+    {
+        StartCoroutine(DisableNFBeforeRepair());
+    }
+
+    private IEnumerator DisableNFBeforeRepair()
+    {
+        toolsInHand = false;
+        PlayerControlDisable(false);
+        uiControll.ForceReturnBtClick();
+
+        yield return MoveUp();
+        yield return PatchCordConnectWithPortSlotBack(patchCordParent, currentPortConnect.GetPatchCordBetweenConection());
+        yield return PatchCordDisconnectWithNF();
+        yield return PatchCordMoveBack(_startPatchCordPosition);
+
+        firstPlayerControl.SwitchPointForRepairMode();
+
+        NfrFastInHand();
+        DisablePatchCordNf();
+        ActiveSockets(false);
+
+        yield return NfOnStartPosition();
+        if (panelInteraction.GetTesterDoneInteract() && !panelInteraction.GetMountingState())
+        {
+            panelInteraction.Flip(false);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        eyesPlayer.parent = panelInteraction.GetPanelPointsForEyes();
+        yield return MoveToPP();
+
+        interactionSystem.ForcedSetHeldObject(needForRepairMontage);
+        panelInteraction.ContactMountColliderOffOn(true);
+        PlayerControlDisable(true);
+
+        repairTermination.SetIsRepairModeActive(true);
+    }
+
+    private YieldInstruction MoveToPP()
+    {
+        return DOTween.Sequence()
+            .Append(eyesPlayer.DOLocalMove(Vector3.zero, 1f))
+            .Join(eyesPlayer.DOLocalRotate(Vector3.zero, 1f))
             .Play()
             .WaitForCompletion();
     }

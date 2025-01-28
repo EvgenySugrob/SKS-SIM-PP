@@ -67,6 +67,11 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
             patchPanel.DisableAllContactMount(false);
     }
 
+    public void ColliderOffOn(bool isActive)
+    {
+        mainCollider.enabled = isActive;
+    }
+
     public void TerminationDone(bool isDone)
     {
         isTeminationDone = isDone;

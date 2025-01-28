@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class UILineRenderConection : MonoBehaviour
 {
+    [Header("LineRenderer")]
     [SerializeField] LineRenderer[] connectLine = new LineRenderer[8];
     [SerializeField] PointForLineRender[] upPoints = new PointForLineRender[8];
     [SerializeField] PointForLineRender[] downPoints= new PointForLineRender[8];
@@ -17,10 +18,13 @@ public class UILineRenderConection : MonoBehaviour
     string defaultText = "OK!";
     bool hasCrossMapping = false;
 
+    [Header("RepairBt")]
+    [SerializeField] GameObject repairBtGroup;
 
     public void SetPortsInfo(ContactPortInteract[] ports)
     {
         addedPairs.Clear();
+        hasCrossMapping= false;
 
         for (int i = 0; i < connectLine.Length; i++)
         {
@@ -53,10 +57,12 @@ public class UILineRenderConection : MonoBehaviour
         if (hasCrossMapping)
         {
             resultText.text = crossMappingInfo;
+            repairBtGroup.SetActive(true);
         }
         else
         {
             resultText.text = defaultText;
+            repairBtGroup.SetActive(false);
         }
     }
 }

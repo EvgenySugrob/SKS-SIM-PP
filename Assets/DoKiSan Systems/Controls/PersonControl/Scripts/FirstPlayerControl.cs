@@ -208,6 +208,12 @@ namespace DoKiSan.Controls
             
         }
 
+        public void SwitchPointForRepairMode()
+        {
+            eyes.transform.parent = null;
+
+        }
+
         private IEnumerator StartMoveToHead() 
         {
             yield return DOTween.Sequence()

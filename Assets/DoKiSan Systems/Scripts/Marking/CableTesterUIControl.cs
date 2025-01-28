@@ -94,8 +94,16 @@ public class CableTesterUIControl : MonoBehaviour
         switch (nameMenu)
         {
             case "mapping":
-                StartCoroutine(WaitLoadTestingScreen());
-
+                if(cableTestChecker.GetIsMarkingProgress())
+                {
+                    dontOpenNextWindow = true;
+                    break;
+                }
+                else
+                {
+                    StartCoroutine(WaitLoadTestingScreen());
+                }
+                
                 //SetCurrentImageGroup(mappingSelectableImage);
                 break;
 
@@ -193,5 +201,16 @@ public class CableTesterUIControl : MonoBehaviour
         }
 
         cableTestChecker.ActiveReturnButtons(true);
+    }
+
+    public void ForceReturnBtClick()
+    {
+        resultError.SetActive(false);
+        resultWindow.SetActive(false);
+        resultDone.SetActive(false);
+        testingWindow.SetActive(true);
+
+        _currentWindowShow = mainWindow;
+        _currentWindowShow.SetActive(true);
     }
 }
