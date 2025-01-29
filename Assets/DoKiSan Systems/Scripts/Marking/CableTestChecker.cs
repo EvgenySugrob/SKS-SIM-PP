@@ -786,4 +786,24 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             .Play()
             .WaitForCompletion();
     }
+
+    public void ReInstallWithoutAnimation()
+    {
+        StartCoroutine(WithoutAnimation());
+    }
+    private IEnumerator WithoutAnimation()
+    {
+        PlayerControlDisable(false);
+        panelInteraction.DisableCollider(false);
+        firstPlayerControl.SwitchTypeMovePlayer(true);
+        eyesPlayer.parent = panelInteraction.GetPanelPointsForEyes();
+        interactionSystem.ForcedSetHeldObject(needForRepairMontage);
+
+        yield return MoveToPP();
+
+        panelInteraction.ContactMountColliderOffOn(true);
+        PlayerControlDisable(true);
+
+        repairTermination.SetIsRepairModeActive(true);
+    }
 }

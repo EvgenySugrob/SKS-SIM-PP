@@ -18,8 +18,10 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField]private ContactPortInteract _contactInteract;
     [SerializeField] private InteractivePointHandler _interactPointHandler;
     private Vector3 _startPosition;
-
     private bool _isInteract=true;
+
+    [Header("WindowInteractWinthPP")]
+    [SerializeField] RepairTermination windowInteracWithPP;
 
 
     private void Update()
@@ -213,8 +215,17 @@ public class InteractionSystem : MonoBehaviour
             {
                 if (targetObject.CompareTag("Interactable"))
                 {
-                    if (targetObject.GetComponent<PatchPanelInteraction>() && !targetObject.GetComponent<PatchPanelInteraction>().GetIsCanMontage())
+                    //if (targetObject.GetComponent<PatchPanelInteraction>() && !targetObject.GetComponent<PatchPanelInteraction>().GetIsCanMontage())
+                    //    return; // старая версия монтажа панели по клику
+
+                    if(targetObject.GetComponent<PatchPanelInteraction>())
+                    {
+                        if(targetObject.GetComponent<PatchPanelInteraction>().GetCurrentCountMontageCable() > 0)
+                        {
+                            windowInteracWithPP.ActiveWindowReInstall(true);
+                        }
                         return;
+                    }   
 
                     PickupObject(targetObject);
                 }

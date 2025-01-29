@@ -19,6 +19,7 @@ public class Termination : MonoBehaviour
     private bool _isWorkProgress = false;
     private int _countPorts = 8;
     private int _currentCountIsDone = 0;
+    private int _workSessionCount = 0;
 
     [Header("Check before work")]
     [SerializeField] InteractionSystem interactionSystem;
@@ -27,6 +28,7 @@ public class Termination : MonoBehaviour
     [SerializeField] PatchPanelInteraction panelInteraction;
     [SerializeField] GameObject btCanvas;
     [SerializeField] GameObject btBackView;
+    [SerializeField] RotateInteractionPivot rotateInteractionPivot;
 
     [Header("Remove mode")]
     [SerializeField] bool isRemoveMod=false;
@@ -123,8 +125,10 @@ public class Termination : MonoBehaviour
         terminationTool.position = _startPosition;
         _isActive = false;
 
+        rotateInteractionPivot.RotationInteractPartCable();
+
         currentContactMount.DisablePortsColliders(false);
-        currentContactMount.ColliderDisable(true);
+        currentContactMount.ColliderOffOn(true);
         currentContactMount.TerminationDone(true);
         currentContactMount = null;
 

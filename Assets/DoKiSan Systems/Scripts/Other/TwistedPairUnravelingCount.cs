@@ -17,6 +17,7 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     [SerializeField] StrippingCable strippingCable;
     [SerializeField] StripperInteration stripperInteration;
     private int _allCount = 0;
+    private bool _isRotateInMountMontage = false;
 
     private void Start()
     {
@@ -30,6 +31,15 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     {
         return _cableIsStripp;
     }
+    public void SetRotateState(bool isState)
+    {
+        _isRotateInMountMontage = isState;
+    }
+    public bool GetRotateState()
+    { 
+        return _isRotateInMountMontage;
+    }
+
     public void CountUnravelingPair()
     {
         _allCount++;

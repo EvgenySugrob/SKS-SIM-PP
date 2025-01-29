@@ -12,6 +12,7 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] Transform endPoint;
     [SerializeField] private int needIndexInteractivePoint = 3;
     [SerializeField] ContactPortInteract portInteract;
+    [SerializeField] bool alreadyInstal = false;
 
     private void Start()
     {
@@ -23,7 +24,14 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     {
         boxCollider.enabled = isActive;
     }
-
+    public bool GetAlreadyInstal()
+    {
+        return alreadyInstal;
+    }
+    public void SetAlreadyInstal(bool isInstal)
+    {
+        alreadyInstal = isInstal;
+    }
     public string GetTypeCable()
     {
         return typeCable;

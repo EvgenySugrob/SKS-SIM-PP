@@ -191,6 +191,14 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
        }
     }
 
+    public int GetCurrentCountMontageCable()
+    {
+        return _currentCountMontageCable;
+    }
+    public int GetCountCableOnScene()
+    {
+        return countCableOnScene;
+    }
     public bool GetMountingState()
     {
         return _isMounted;

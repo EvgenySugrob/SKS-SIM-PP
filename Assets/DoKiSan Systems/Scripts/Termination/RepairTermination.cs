@@ -23,6 +23,9 @@ public class RepairTermination : MonoBehaviour
     [Header("UIGroupRepair")]
     [SerializeField] GameObject repairUIGroup;
 
+    [Header("WindowInteractWithPP")]
+    [SerializeField] GameObject windowInteractPP;
+
     public bool GetIsRepairModeActive()
     {
         return isRepairModeActive;
@@ -44,6 +47,20 @@ public class RepairTermination : MonoBehaviour
         }
     }
 
+    public void ActiveWindowReInstall(bool isActive)
+    {
+        firstPlayerControl.enabled = !isActive;
+        interactionSystem.enabled = !isActive;
+
+        Cursor.visible = isActive;
+        if (isActive)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
+
+        windowInteractPP.SetActive(isActive);
+    }
+
     private void StartWithAnimationBack()
     {
         repairUIGroup.SetActive(false);
@@ -52,7 +69,8 @@ public class RepairTermination : MonoBehaviour
 
     private void StartWithoutAnimationBack()
     {
-
+        windowInteractPP.SetActive(false);
+        cableChecker.ReInstallWithoutAnimation();
     }
 
     private void Update()
@@ -69,7 +87,7 @@ public class RepairTermination : MonoBehaviour
         {
             ContactMountMontage contact = outlineDetection.GetCurrentObject().GetComponent<ContactMountMontage>();
 
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) && contact.GetIsTerminationDone())
             {
                 termination.SetCurrentPortInteract(contact);
                 panelInteraction.ContactMountColliderOffOn(false);
@@ -79,6 +97,7 @@ public class RepairTermination : MonoBehaviour
                 termination.ReadyToStartWork();
 
                 interactionSystem.ClearHand();
+                isRepairModeActive= false;
             }
         }
     }

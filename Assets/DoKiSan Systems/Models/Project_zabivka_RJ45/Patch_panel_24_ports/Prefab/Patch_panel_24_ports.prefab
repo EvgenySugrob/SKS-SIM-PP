@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 7744558744015706287}
   - component: {fileID: 7705297394599679936}
   - component: {fileID: 4149339453595554514}
+  - component: {fileID: 6443105625816439467}
   m_Layer: 0
   m_Name: Patch_panel_24_ports
   m_TagString: Untagged
@@ -250,6 +251,19 @@ MonoBehaviour:
   outlines:
   - {fileID: 4386950252713234905}
   outlineActive: 0
+--- !u!114 &6443105625816439467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619577386025942546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3c67c9b2ec1184c85bf173e0893e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleRotate: 180
 --- !u!1 &908114691697513090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2845,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -2841,6 +2865,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 2317600899128431257}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3200,6 +3229,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3210,6 +3269,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 6510083106299841637}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3301,6 +3365,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3311,6 +3385,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 2264251075857840520}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3397,6 +3476,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3407,6 +3496,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 958133420331732149}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3493,6 +3587,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3503,6 +3627,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 9009863731273784434}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3594,6 +3723,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3604,6 +3763,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 5144573986145526041}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3695,6 +3859,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3705,6 +3879,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 2184218579202080007}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3791,6 +3970,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3801,6 +3990,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 8272198892360615847}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -3978,6 +4172,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -3988,6 +4212,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 1793252989669433348}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -4170,6 +4399,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -4180,6 +4439,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 577538345539677399}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -4544,6 +4808,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -4554,6 +4828,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 1617225346549694129}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -4822,6 +5101,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -4832,6 +5141,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 3829778218294648539}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -5196,6 +5510,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -5206,6 +5550,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 9093912375049556114}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -5388,6 +5737,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0043
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -5398,6 +5757,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 2968862850479551684}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -5484,6 +5848,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -5494,6 +5868,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 7650005133759481725}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -5580,6 +5959,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -5590,6 +5999,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 7868860642127776088}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -5681,6 +6095,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -5691,6 +6135,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 7517758893965535375}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -6146,6 +6595,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -6156,6 +6615,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 2448062910155156141}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -6424,6 +6888,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -6434,6 +6928,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 3826512235911105852}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -6616,6 +7115,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -6626,6 +7135,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 9213915015310853483}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -6894,6 +7408,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -6904,6 +7428,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 3068346659139010244}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -7081,6 +7610,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -7091,6 +7650,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 3703504125866675050}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -7182,6 +7746,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0042999997
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -7192,6 +7766,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 268408778377908767}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name
@@ -7278,6 +7857,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4519099046950873350}
     m_Modifications:
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0047
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0095
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00334
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265132218272858300, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: patchPanel
@@ -7288,6 +7897,11 @@ PrefabInstance:
       propertyPath: pointforName
       value: 
       objectReference: {fileID: 4401597934012066932}
+    - target: {fileID: 825366044016665280, guid: 06338eb605b71b44fa13c4d89769e399,
+        type: 3}
+      propertyPath: rotateInteractionPivot
+      value: 
+      objectReference: {fileID: 6443105625816439467}
     - target: {fileID: 5424716351834034086, guid: 06338eb605b71b44fa13c4d89769e399,
         type: 3}
       propertyPath: m_Name

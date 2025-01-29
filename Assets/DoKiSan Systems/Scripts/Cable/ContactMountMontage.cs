@@ -20,6 +20,9 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     [Header("Transform for nameSocket")]
     [SerializeField] Transform pointforName;
 
+    [Header("RotatePartAfterMontage")]
+    [SerializeField] RotateInteractionPivot rotateInteractionPivot;
+
     public bool CanInteractable(GameObject objectInteract)
     {
         bool isInteract = false;
@@ -47,6 +50,8 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
 
         objectInteract.GetComponent<TwistedPairUnravelingCount>().DisplayNameOnPanel(pointforName);
 
+        rotateInteractionPivot.CheckAndSetObjectForRotate(objectInteract.transform);
+
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
         _interactionSystem.StateCablePartMoving(true);
@@ -63,8 +68,8 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     public void ColliderDisable(bool isActive)
     {
         mainCollider.enabled = isActive;
-        if(isActive)
-            patchPanel.DisableAllContactMount(false);
+        //if(isActive)
+        //    patchPanel.DisableAllContactMount(false);
     }
 
     public void ColliderOffOn(bool isActive)
