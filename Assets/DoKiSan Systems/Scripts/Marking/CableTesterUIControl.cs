@@ -181,11 +181,12 @@ public class CableTesterUIControl : MonoBehaviour
     private IEnumerator WaitLoadTestingScreen()
     {
         cableTestChecker.ActiveButtonsOnTool(false);
+        MarkSocket socket = cableTestChecker.GetCurrentSocket();
         PortConnectInfo port = cableTestChecker.GetCurrentPort();
 
         yield return new WaitForSeconds(2f);
 
-        if (port.IsConnectingPair())
+        if (port.IsConnectingPair() && port.GetNumberCable()==socket.GetNumberSocket())
         {
             lineRenderConection.SetPortsInfo(port.GetArrayContact());
 

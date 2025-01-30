@@ -18,6 +18,7 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     [SerializeField] bool isTeminationDone = false;
 
     [Header("Transform for nameSocket")]
+    [SerializeField] PortConnectInfo portConnectInfo;
     [SerializeField] Transform pointforName;
 
     [Header("RotatePartAfterMontage")]
@@ -49,7 +50,7 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
         StartCoroutine(CableToMontagePosition(objectInteract.transform));
 
         objectInteract.GetComponent<TwistedPairUnravelingCount>().DisplayNameOnPanel(pointforName);
-
+        portConnectInfo.SetNumberCable(objectInteract.GetComponent<TwistedPairUnravelingCount>().GetCableNumber());
         rotateInteractionPivot.CheckAndSetObjectForRotate(objectInteract.transform);
 
         _mainParent = transform.parent.parent;
@@ -59,7 +60,7 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
         DisablePortsColliders(true);
         
         mainCollider.enabled = false;
-        patchPanel.DisableAllContactMount(false);
+        patchPanel.ContactMountColliderOffOn(false);
 
         TerminationToolSetCurrenInfo(objectInteract);
         _interactionSystem.ClearHand();

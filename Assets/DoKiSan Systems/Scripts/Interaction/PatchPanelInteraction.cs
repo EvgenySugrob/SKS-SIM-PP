@@ -35,6 +35,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] float yPosition = 0.8748f;
     [SerializeField] float animationSpeed = 0.33f;
     [SerializeField] PortConnectInfo[] portsConnectInfo = new PortConnectInfo[0];
+    [SerializeField] GameObject windowPP;
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
@@ -46,7 +47,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
 
     private void Update()
     {
-        if(_inHand)
+        if(_inHand && windowPP.activeSelf==false)
         {
             SeekInteractionSlot();
         }
@@ -56,7 +57,10 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     {
         for (int i = 0; i < contactsMount.Length; i++)
         {
-            contactsMount[i].ColliderDisable(isDisable);
+            if (contactsMount[i].GetIsTerminationDone()==false)
+            {
+                contactsMount[i].ColliderDisable(isDisable);
+            }
         }
     }
 
@@ -176,6 +180,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
             playerControl.SwitchTypeMovePlayer(true);
             playerControl.PointForMove(pointForEyes);
             DisableCollider(false);
+            DisableAllContactMount(true);
         }
         
     }

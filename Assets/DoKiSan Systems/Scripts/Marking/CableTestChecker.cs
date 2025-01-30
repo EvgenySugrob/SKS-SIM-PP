@@ -134,6 +134,11 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         }
     }
 
+    public MarkSocket GetCurrentSocket()
+    {
+        return currentSocket;
+    }
+
     private bool IsNearbyCable(MarkCable cable)
     {
         if (cable == null || currentSocket == null) return false;

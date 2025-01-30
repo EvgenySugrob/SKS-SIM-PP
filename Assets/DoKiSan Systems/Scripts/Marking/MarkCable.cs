@@ -30,6 +30,7 @@ public class MarkCable : MonoBehaviour
         socket = markSocket;
         _numberSocket = number;
         twistedPair.SetNameSocket(name);
+        twistedPair.SetCableNumber(number);
     }
 
     public void Marking()

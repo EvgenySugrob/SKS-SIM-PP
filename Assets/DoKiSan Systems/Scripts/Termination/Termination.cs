@@ -20,6 +20,7 @@ public class Termination : MonoBehaviour
     private int _countPorts = 8;
     private int _currentCountIsDone = 0;
     private int _workSessionCount = 0;
+    private int _previousThreshold = 0;
 
     [Header("Check before work")]
     [SerializeField] InteractionSystem interactionSystem;
@@ -158,6 +159,7 @@ public class Termination : MonoBehaviour
     private IEnumerator MoveRemovePosition(Transform point1, Transform point2)
     {
         _isWorkProgress = false;
+        _workSessionCount--;
 
         terminationTool.gameObject.SetActive(false);
         removeModels.gameObject.SetActive(true);
@@ -295,14 +297,25 @@ public class Termination : MonoBehaviour
         bool isDone = false;
 
         _currentCountIsDone += i;
-        Debug.Log(_currentCountIsDone);
+        Debug.Log($"Current Count: {_currentCountIsDone}, Work Session: {_workSessionCount}");
 
-        if(_currentCountIsDone<0)
+        if (_currentCountIsDone < 0)
             _currentCountIsDone = 0;
-        
-        if (_currentCountIsDone == _countPorts)
+
+        int requiredCount = _countPorts * (_workSessionCount + 1);
+
+        if (_currentCountIsDone >= requiredCount)
         {
-            isDone = true;
+            if (_previousThreshold != requiredCount) 
+            {
+                isDone = true;
+                _workSessionCount++;  
+                _previousThreshold = requiredCount; 
+            }
+        }
+        else if (_currentCountIsDone < _previousThreshold)
+        {
+            _previousThreshold = 0; 
         }
 
         return isDone;

@@ -291,6 +291,18 @@ public class InteractionSystem : MonoBehaviour
         heldObject = forcedHeldObject;
     }
 
+    public void TakePPinHand(GameObject obj)
+    {
+        PatchPanelInteraction panel = obj.GetComponent<PatchPanelInteraction>();
+        
+        panel.SetInHandState(true);
+
+        heldObject = obj;
+        obj.transform.SetParent(handSlot.transform);
+        obj.transform.localPosition = Vector3.zero;
+        Debug.Log("Объект поднят: " + obj.name);
+    }
+
     public void ClearHand()
     {
         heldObject = null;

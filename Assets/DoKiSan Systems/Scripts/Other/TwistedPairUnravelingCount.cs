@@ -16,6 +16,7 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     [SerializeField] StripperPointInformation pointInformation;
     [SerializeField] StrippingCable strippingCable;
     [SerializeField] StripperInteration stripperInteration;
+    [SerializeField] private int _numberSocket;
     private int _allCount = 0;
     private bool _isRotateInMountMontage = false;
 
@@ -26,6 +27,14 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     public void SetNameSocket(string name)
     {
         nameSocket = name;
+    }
+    public void SetCableNumber(int number)
+    {
+        _numberSocket = number;
+    }
+    public int GetCableNumber()
+    {
+        return _numberSocket;
     }
     public bool CableIsStripp()
     {

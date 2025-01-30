@@ -25,6 +25,7 @@ public class RepairTermination : MonoBehaviour
 
     [Header("WindowInteractWithPP")]
     [SerializeField] GameObject windowInteractPP;
+    [SerializeField] GameObject warningWindow;
 
     public bool GetIsRepairModeActive()
     {
@@ -33,6 +34,26 @@ public class RepairTermination : MonoBehaviour
     public void SetIsRepairModeActive(bool isActive)
     {
         isRepairModeActive= isActive;
+    }
+
+    public void TryMontagePatchPanel()
+    {
+        if(panelInteraction.GetIsCanMontage()==false)
+        {
+            ActiveWarningWindow(true);
+        }
+        else
+        {
+            interactionSystem.TakePPinHand(panelInteraction.gameObject);
+        }
+    }
+
+    public void ActiveWarningWindow(bool isActive)
+    {
+        warningWindow.SetActive(isActive);
+
+        if (isActive == false)
+            ActiveWindowReInstall(false);
     }
 
     public void ActiveRepairMode()

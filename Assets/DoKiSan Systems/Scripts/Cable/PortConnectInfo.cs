@@ -11,6 +11,7 @@ public class PortConnectInfo : MonoBehaviour, IInteractableObject
     [SerializeField] ContactPortInteract[] contactPortInteracts = new ContactPortInteract[0];
     private bool _isSort = false;
     [SerializeField]private bool _isConnectingPair = false;
+    [SerializeField] private int _cableNumber;
 
     [Header("PatchCordPosition")]
     [SerializeField] Transform patchCordPoint;
@@ -73,5 +74,13 @@ public class PortConnectInfo : MonoBehaviour, IInteractableObject
     {
         return contactPortInteracts;
     }
-    //Получение цветов кабеля
+    
+    public void SetNumberCable(int number)
+    {
+        _cableNumber= number;
+    }
+    public int GetNumberCable()
+    {
+        return _cableNumber;
+    }
 }
