@@ -6,6 +6,7 @@ using UnityEngine;
 public class StripperPointInformation : MonoBehaviour
 {
     [SerializeField] Transform stripperPoint;
+    [SerializeField] Transform distantPoint;
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
@@ -33,5 +34,10 @@ public class StripperPointInformation : MonoBehaviour
     public Transform GetStripperPoint()
     {
         return stripperPoint;
+    }
+
+    public Transform GetDistanPoint()
+    {
+        return distantPoint;
     }
 }

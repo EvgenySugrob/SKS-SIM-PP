@@ -1,7 +1,9 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -23,6 +25,11 @@ public class StripperInteration : MonoBehaviour
     private Transform startParent;
     private Vector3 startStripperPosition;
 
+    [Header("RangeCorrect")]
+    [SerializeField] Transform distantPoint;
+    [SerializeField] GameObject uiRange;
+    [SerializeField] TMP_Text rangeText;
+
     private void OnDisable()
     {
         SwitchColor(false);
@@ -39,6 +46,11 @@ public class StripperInteration : MonoBehaviour
             DetectionCutbleSection();
     }
 
+    public void ActiveRangeUI(bool isActive)
+    {
+        uiRange.SetActive(isActive);
+    }
+
     private void DetectionCutbleSection()
     {
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
@@ -49,6 +61,8 @@ public class StripperInteration : MonoBehaviour
             Vector3 stripperPosition = hit.point;
             stripperPoint.position = stripperPosition;
             transform.localPosition = new Vector3(transform.position.x, stripperPoint.localPosition.y, offsetZ);
+            float distance = Vector3.Distance(distantPoint.position, stripperPosition)*1000;
+            rangeText.text = $"{Mathf.Round(distance)} μμ";
 
 
             if (targetObjecet.CompareTag("cutPlace"))
@@ -92,6 +106,7 @@ public class StripperInteration : MonoBehaviour
 
     private IEnumerator StartCutProcess(Vector3 pointForRtPivot)
     {
+        ActiveRangeUI(false);
         projectorCutLine.enabled= false;
         yield return BeginMoveRotateRotationPivot(pointForRtPivot);
 
@@ -127,11 +142,16 @@ public class StripperInteration : MonoBehaviour
 
     public YieldInstruction MoveToPoint(Transform point)
     {
+        rangeText.text = "";
         stripperPoint = point;
         transform.parent = point.parent;
         return transform
             .DOMove(stripperPoint.position, 1f)
             .Play()
             .WaitForCompletion();
+    }
+    public void SetDistantPoint(Transform distPoint)
+    {
+        distantPoint = distPoint;
     }
 }

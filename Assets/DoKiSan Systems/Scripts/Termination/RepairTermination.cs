@@ -26,6 +26,9 @@ public class RepairTermination : MonoBehaviour
     [Header("WindowInteractWithPP")]
     [SerializeField] GameObject windowInteractPP;
     [SerializeField] GameObject warningWindow;
+    [SerializeField] GameObject montageBt;
+    [SerializeField] GameObject demontageBt;
+    [SerializeField] GameObject beamFormationBt;
 
     public bool GetIsRepairModeActive()
     {
@@ -45,7 +48,32 @@ public class RepairTermination : MonoBehaviour
         else
         {
             interactionSystem.TakePPinHand(panelInteraction.gameObject);
+            ActiveWindowReInstall(false);
+            //montageBt.SetActive(false);
+            //demontageBt.SetActive(true);
+            //beamFormationBt.SetActive(true);
         }
+    }
+
+    public void DemontagePanelBtClick()
+    {
+        interactionSystem.TakePPinHand(panelInteraction.gameObject);
+        ActiveWindowReInstall(false);
+        //montageBt.SetActive(true);
+        //demontageBt.SetActive(false);
+        //beamFormationBt.SetActive(false);
+    }
+
+    public void ControlMontageButtons(bool isState)
+    {
+        montageBt.SetActive(!isState);
+        demontageBt.SetActive(isState);
+        beamFormationBt.SetActive(isState);
+    }
+
+    public void BeamFormationBtClick()
+    {
+
     }
 
     public void ActiveWarningWindow(bool isActive)

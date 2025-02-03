@@ -34,14 +34,16 @@ public class StrippingCable : MonoBehaviour
     {
         GameObject heldObject = interactionSystem.GetHeldObject();
         Transform point = heldObject.GetComponent<StripperPointInformation>().GetStripperPoint();
+        Transform distantPoint = heldObject.GetComponent<StripperPointInformation>().GetDistanPoint();
 
-        StartCoroutine(BeginProccesCut(heldObject,point));
+        StartCoroutine(BeginProccesCut(heldObject,point,distantPoint));
         stripperInteration.SetEnableSripperState(true);
     }
 
     #region MoveToCutPosition
-    private IEnumerator BeginProccesCut(GameObject heldObject, Transform point)
+    private IEnumerator BeginProccesCut(GameObject heldObject, Transform point,Transform distantPoint)
     {
+        stripperInteration.SetDistantPoint(distantPoint);
         yield return StartCoroutine(ProcessMoveToCutPosition(heldObject));
         yield return StartCoroutine(ProcessMoveToPoint(point));
     }
@@ -53,6 +55,7 @@ public class StrippingCable : MonoBehaviour
     private IEnumerator ProcessMoveToPoint(Transform point)
     {
         yield return stripperInteration.MoveToPoint(point);
+        stripperInteration.ActiveRangeUI(true);
     }
     #endregion
 }

@@ -13,6 +13,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] Transform pointForEyes;
     [SerializeField] InteractionSystem interactionSystem;
     [SerializeField] ContactMountMontage[] contactsMount = new ContactMountMontage[0];
+    [SerializeField] GameObject table;
     [SerializeField] private bool _isMounted = false;
 
     [Header("Montage interaction")]
@@ -22,6 +23,7 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     [SerializeField] GameObject slotsContainer;
     [SerializeField] PatchPanelSlotInteract[] ppSlots = new PatchPanelSlotInteract[4];
     [SerializeField] private PatchPanelSlotInteract _mountingSlot;
+    [SerializeField] RepairTermination repairTermination;
     private int _currentCountMontageCable = 0;
     private bool _inHand = false;
     private PatchPanelSlotInteract _currentSlot;
@@ -99,7 +101,10 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
                 _currentSlot.BusySlotPP(true,this);
                 _isMounted = true;
                 _mountingSlot = _currentSlot;
-                
+                isFliping = true;
+
+                repairTermination.ControlMontageButtons(_isMounted);
+
                 Transform pointMontage = _currentSlot.transform;
                 interactionSystem.ClearHand();
 
@@ -115,7 +120,39 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         {
             _currentSlot.ActiveShowPart(false);
         }
+
+        if(currentObject == table)
+        {
+            table.GetComponent<Outline>().enabled = true;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                ReplacePanelOnTable();
+            }
+        }
+        else
+        {
+            table.GetComponent<Outline>().enabled = false;
+        }
         
+    }
+
+    private void ReplacePanelOnTable()
+    {
+        _inHand = false;
+        table.GetComponent<Outline>().enabled = false;
+        StartCoroutine(MovePanelOnTable());
+    }
+    private IEnumerator MovePanelOnTable()
+    {
+        interactionSystem.ClearHand();
+        transform.parent= null;
+
+        yield return DOTween.Sequence()
+            .Append(transform.DOMove(_startPosition, 1f))
+            .Join(transform.DORotateQuaternion(_startRotation,1f))
+            .Play()
+            .WaitForCompletion();
     }
 
     private IEnumerator MountingPatchPanel(Transform mountingPoint)
@@ -210,8 +247,10 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     }
     public void ReleaseSlot()
     {
+        isFliping= false;
         _isMounted= false;
         _mountingSlot.BusySlotPP(false, null);
+        repairTermination.ControlMontageButtons(_isMounted);
     }
 
     public bool GetIsCanMontage()
