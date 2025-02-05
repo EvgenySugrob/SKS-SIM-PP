@@ -14,11 +14,23 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] ContactPortInteract portInteract;
     [SerializeField] bool alreadyInstal = false;
 
+    [Header("Spawn particle")]
+    [SerializeField] GameObject prefabParticle;
+    [SerializeField] Transform startParticlePosition;
+    [SerializeField] float impulseStrength = 1f;
+    [SerializeField] float secondsToDispawn = 2f;
+    [SerializeField] BoxCollider particleCollider;
+    [SerializeField] Rigidbody rbParticle;
+    [SerializeField] bool isFirstCut;
+    private Coroutine _disableParticle;
+    private Quaternion _prefabParticleStartRotation;
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
         int indexLastChild = transform.childCount - 1;
         endPoint = transform.GetChild(indexLastChild);
+        _prefabParticleStartRotation = prefabParticle.transform.rotation;
     }
     public void DisableCollider(bool isActive)
     {
@@ -77,5 +89,40 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     public int GetIndexNumberCable()
     {
         return indexNumberCable;
+    }
+
+    public void FirstCutCheck()
+    {
+        if(!isFirstCut)
+        {
+            SpawnParticle();
+        }
+    }
+
+    private void SpawnParticle()
+    {
+        isFirstCut = true;
+        particleCollider.enabled = true;
+        rbParticle.isKinematic = false;
+        prefabParticle.SetActive(true);
+
+        rbParticle.AddRelativeForce(Vector3.up * impulseStrength, ForceMode.Impulse);
+
+        _disableParticle = StartCoroutine(TimerDisableParticle());
+    }
+
+    private IEnumerator TimerDisableParticle()
+    {
+        yield return new WaitForSeconds(secondsToDispawn);
+        DispawnParticle();
+    }
+
+    private void DispawnParticle()
+    {
+        rbParticle.isKinematic = true;
+        particleCollider.enabled = false;
+        prefabParticle.SetActive(false);
+        prefabParticle.transform.rotation = _prefabParticleStartRotation;
+        prefabParticle.transform.position = endPoint.position;
     }
 }

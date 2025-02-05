@@ -153,6 +153,7 @@ public class ContactPortInteract : MonoBehaviour
     {
         cablePoint.transform.position = pointAfterDriving.position;
         cablePoint.GetComponent<IDisableColliders>().DisableCollider(false);
+        cablePoint.FirstCutCheck();
         cablePoint.ActiveInteractivePoint(false);
         SetTerminationState(true);
     }

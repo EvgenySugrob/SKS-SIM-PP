@@ -129,7 +129,7 @@ public class Termination : MonoBehaviour
         rotateInteractionPivot.RotationInteractPartCable();
 
         currentContactMount.DisablePortsColliders(false);
-        currentContactMount.ColliderOffOn(true);
+        //currentContactMount.ColliderOffOn(true);
         currentContactMount.TerminationDone(true);
         currentContactMount = null;
 

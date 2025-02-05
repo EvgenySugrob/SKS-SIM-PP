@@ -30,6 +30,9 @@ public class RepairTermination : MonoBehaviour
     [SerializeField] GameObject demontageBt;
     [SerializeField] GameObject beamFormationBt;
 
+    [Header("BeamFormation")]
+    [SerializeField] BeamFormation beamFormation;
+
     public bool GetIsRepairModeActive()
     {
         return isRepairModeActive;
@@ -73,7 +76,8 @@ public class RepairTermination : MonoBehaviour
 
     public void BeamFormationBtClick()
     {
-
+        ActiveWindowReInstall(false);
+        beamFormation.StartFormationFormationBtClick();
     }
 
     public void ActiveWarningWindow(bool isActive)
