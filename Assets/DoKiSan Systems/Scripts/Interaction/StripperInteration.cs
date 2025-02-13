@@ -25,10 +25,15 @@ public class StripperInteration : MonoBehaviour
     private Transform startParent;
     private Vector3 startStripperPosition;
 
+    private GameObject cutteblePartCable;
+
     [Header("RangeCorrect")]
     [SerializeField] Transform distantPoint;
     [SerializeField] GameObject uiRange;
     [SerializeField] TMP_Text rangeText;
+
+    [Header("PatchCord work")]
+    [SerializeField] PatchCordCreate patchCord;
 
     private void OnDisable()
     {
@@ -44,6 +49,11 @@ public class StripperInteration : MonoBehaviour
     {
         if (_isEnableStripper)
             DetectionCutbleSection();
+    }
+
+    public void SetPatcCordCreate(PatchCordCreate patchCordCreate)
+    {
+        patchCord = patchCordCreate;
     }
 
     public void ActiveRangeUI(bool isActive)
@@ -73,6 +83,7 @@ public class StripperInteration : MonoBehaviour
                     Vector3 pointForRtPivot = targetObjecet.transform.position;
                     _isEnableStripper = false;
                     targetObjecet.GetComponent<IDisableColliders>().DisableCollider(false);
+                    cutteblePartCable = targetObjecet;
                     StartCoroutine(StartCutProcess(pointForRtPivot));
                 }
             }

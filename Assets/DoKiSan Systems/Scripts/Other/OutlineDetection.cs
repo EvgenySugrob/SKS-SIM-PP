@@ -117,4 +117,12 @@ public class OutlineDetection : MonoBehaviour
     {
         return _hit;
     }
+
+    public void ForceDisableOutline()
+    {
+        if (currentManager!=null)
+        {
+            currentManager.EnableOutline(false);
+        }
+    }
 }

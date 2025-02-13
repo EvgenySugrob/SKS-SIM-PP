@@ -20,6 +20,10 @@ public class TwistedPairUnravelingCount : MonoBehaviour
     private int _allCount = 0;
     private bool _isRotateInMountMontage = false;
 
+    [Header("PatchCord")]
+    [SerializeField] PatchCordCreate patchCordCreate;
+    [SerializeField] bool isPatchCordPart=false;
+
     private void Start()
     {
         pointInformation = GetComponent<StripperPointInformation>();
@@ -68,22 +72,51 @@ public class TwistedPairUnravelingCount : MonoBehaviour
         yield return RotateOnClick(angle);
 
         workModeManipulation.WorkState(true);
-        _cableIsStripp=true;
-        stripperInteration.EndStripping();
-        strippingCable.DisableEnableNeeds(true);
+
     }
     private IEnumerator ReturnCableInHand(float angle)
     {
         yield return StartCoroutine(RotateInteractPart(angle));
-        yield return pointInformation.BackInHand();
+
+        _cableIsStripp = true;
+        stripperInteration.EndStripping();
+
+        if (isPatchCordPart)
+        {
+            if(!patchCordCreate.CheckAllPArtStripping())
+            {
+                patchCordCreate.SetRightPartInHand();
+            }
+            else
+            {
+                patchCordCreate.ReturnRightPartBack();
+            }
+        }
+        else
+        {
+            yield return pointInformation.BackInHand();
+        }
+
+        strippingCable.DisableEnableNeeds(true);
     }
 
     private YieldInstruction RotateOnClick(float angle)
     {
-        return transform
+        if(isPatchCordPart)
+        {
+            return transform
+            .DOLocalRotate(Vector3.up * angle, 1.5f, RotateMode.WorldAxisAdd)
+            .Play()
+            .WaitForCompletion();
+        }
+        else
+        {
+            return transform
             .DOLocalRotate(Vector3.right * angle, 1.5f, RotateMode.WorldAxisAdd)
             .Play()
             .WaitForCompletion();
+        }
+        
     }
 
     public void DisplayNameOnPanel(Transform pointOnPanel)

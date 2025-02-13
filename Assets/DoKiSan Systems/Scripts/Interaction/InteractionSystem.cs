@@ -23,6 +23,9 @@ public class InteractionSystem : MonoBehaviour
     [Header("WindowInteractWinthPP")]
     [SerializeField] RepairTermination windowInteracWithPP;
 
+    [Header("PatchCordWork")]
+    [SerializeField] StrippingCable strippingCable;
+    [SerializeField] bool patchCordIsHand = false;
 
     private void Update()
     {
@@ -45,10 +48,6 @@ public class InteractionSystem : MonoBehaviour
 
         if (_currentPointBezier != null)
         {
-            //if(_contactInteract.CheckSlotAndCAble(_currentPointBezier.GetTypeCable())) 
-            //{
-            //проверка на соответсвие схеме на потом
-            //}
             if(_contactInteract != null)
             {
                 if (!_contactInteract.GetStateSlot())
@@ -257,6 +256,16 @@ public class InteractionSystem : MonoBehaviour
         obj.transform.SetParent(handSlot.transform);
         obj.transform.localPosition = Vector3.zero;
         Debug.Log("Объект поднят: " + obj.name);
+
+        if(obj.TryGetComponent(out PatchCordCreate patchCorde))
+        {
+            if(!patchCorde.GetStateStrippingState())
+            {
+                strippingCable.PatchCordTransmission(patchCorde);
+                patchCorde.SetLeftPartInHand();
+                patchCordIsHand = true;
+            }
+        }
     }
     private void TryInteraction(GameObject obj1, GameObject obj2)
     {

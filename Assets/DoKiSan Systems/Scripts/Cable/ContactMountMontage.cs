@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ContactMountMontage : MonoBehaviour, IInteractableObject
 {
+    [SerializeField] bool isEvenPort =false;
     [SerializeField] BoxCollider mainCollider;
     [SerializeField] List<ContactPortInteract> contactPortInteracts;
     [SerializeField] Transform cableMontagePoint;
@@ -51,7 +52,7 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
 
         objectInteract.GetComponent<TwistedPairUnravelingCount>().DisplayNameOnPanel(pointforName);
         portConnectInfo.SetNumberCable(objectInteract.GetComponent<TwistedPairUnravelingCount>().GetCableNumber());
-        rotateInteractionPivot.CheckAndSetObjectForRotate(objectInteract.transform);
+        rotateInteractionPivot.CheckAndSetObjectForRotate(objectInteract.transform, isEvenPort);
 
         _mainParent = transform.parent.parent;
         _interactionSystem = _mainParent.GetComponent<PatchPanelInteraction>().GetInteractionSystem();
@@ -64,6 +65,8 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
 
         TerminationToolSetCurrenInfo(objectInteract);
         _interactionSystem.ClearHand();
+
+        patchPanel.TransparentMaterial(0.5f);
     }
 
     public void ColliderDisable(bool isActive)
@@ -81,6 +84,11 @@ public class ContactMountMontage : MonoBehaviour, IInteractableObject
     public void TerminationDone(bool isDone)
     {
         isTeminationDone = isDone;
+
+        if(isTeminationDone)
+        {
+            patchPanel.TransparentMaterial(1f);
+        }
     }
 
     public bool CheckAllPortReady()

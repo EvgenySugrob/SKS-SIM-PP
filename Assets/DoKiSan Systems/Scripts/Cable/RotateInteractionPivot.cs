@@ -6,15 +6,18 @@ using UnityEngine;
 public class RotateInteractionPivot : MonoBehaviour
 {
     [SerializeField] float angleRotate;
+    [SerializeField] float secondAngleRotate;
+    [SerializeField] bool isEvenPort;
     private Transform _interactPartCable;
     private Vector3 _finalAngleRotation;
 
 
-    public void CheckAndSetObjectForRotate(Transform objectRotate)
+    public void CheckAndSetObjectForRotate(Transform objectRotate, bool statePort)
     {
         if(objectRotate.GetComponent<TwistedPairUnravelingCount>() && objectRotate.GetComponent<TwistedPairUnravelingCount>().GetRotateState() == false)
         {
             _interactPartCable = objectRotate;
+            isEvenPort = statePort;
         }
     }
 
@@ -27,8 +30,17 @@ public class RotateInteractionPivot : MonoBehaviour
     private IEnumerator RotateCable()
     {
         Vector3 oldAngle = _interactPartCable.localEulerAngles;
-        _finalAngleRotation = new Vector3(oldAngle.x,oldAngle.y,angleRotate);
 
+        if (isEvenPort)
+        {
+            _finalAngleRotation = new Vector3(0, secondAngleRotate, 0);
+        }
+        else 
+        {
+            
+            _finalAngleRotation = new Vector3(oldAngle.x, oldAngle.y, angleRotate);
+        }
+        
         yield return _interactPartCable.DOLocalRotate(_finalAngleRotation, 0.5f)
             .Play()
             .WaitForCompletion();

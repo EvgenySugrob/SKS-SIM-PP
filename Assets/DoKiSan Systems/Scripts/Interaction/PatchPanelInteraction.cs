@@ -41,10 +41,21 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
+    [Header("Cable alpha")]
+    [SerializeField] List<Renderer> cableMaterials;
+    [SerializeField] Material needsMaterial;
+    private Material _instantMaterial;
+
     private void Start()
     {
         _startPosition = transform.position;
         _startRotation = transform.rotation;
+
+        _instantMaterial = new Material(needsMaterial);
+        foreach (Renderer mat in cableMaterials)
+        {
+            mat.material = _instantMaterial;
+        }
     }
 
     private void Update()
@@ -53,6 +64,18 @@ public class PatchPanelInteraction : MonoBehaviour, IInteractableObject, IDisabl
         {
             SeekInteractionSlot();
         }
+    }
+
+    public void TransparentMaterial(float value)
+    {
+        StartCoroutine(Transparent(value));
+    }
+
+    private IEnumerator Transparent(float endValue)
+    {
+        yield return _instantMaterial.DOFade(endValue, 0.3f)
+            .Play()
+            .WaitForCompletion();
     }
 
     public void DisableAllContactMount(bool isDisable)

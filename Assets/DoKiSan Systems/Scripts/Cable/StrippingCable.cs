@@ -10,6 +10,11 @@ public class StrippingCable : MonoBehaviour
     [SerializeField] Transform pointForInteractionCable;
     [SerializeField] TwistedPairUnravelingCount unravelingCount;
     
+    public void PatchCordTransmission(PatchCordCreate patchCord)
+    {
+        stripperInteration.SetPatcCordCreate(patchCord);
+    }
+
     public void StripperStartInteraction()
     {
         if (interactionSystem.GetHeldObject() != null)
