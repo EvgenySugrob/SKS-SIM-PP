@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine;
 public class JackConnetctAndSetting : MonoBehaviour
 {
     [Header("General")]
-    [SerializeField] bool isActiveWork=false;
+    [SerializeField] bool isActiveWork = false;
+    [SerializeField] bool wiresIsDone = false;
+    [SerializeField] bool isJackMontageDone = false;
     [SerializeField] CablePointBezier cablePoint;
     [SerializeField] Camera mainCamera;
     [SerializeField] float interactDistance = 2f;
@@ -22,6 +25,7 @@ public class JackConnetctAndSetting : MonoBehaviour
     [SerializeField] GameObject mainCableBody;
     [SerializeField] JackWireSlotInfo[] wiresSlots = new JackWireSlotInfo[8];
     [SerializeField] JackWireSlotInfo currentSlot;
+
 
     private void Update()
     {
@@ -72,7 +76,9 @@ public class JackConnetctAndSetting : MonoBehaviour
             {
                 if (!currentSlot.GetStateSlot())
                 {
+                    cablePoint.SetJackSlot(currentSlot);
                     cablePoint.transform.position = currentSlot.transform.position;
+                    cablePoint.GetStartGroup().position = currentSlot.GetPositionForStartGroup().position;
                     cablePoint.GetComponent<IDisableColliders>().DisableCollider(true);
 
                     currentSlot.SetBusySlot(true);
@@ -80,17 +86,23 @@ public class JackConnetctAndSetting : MonoBehaviour
                 }
                 else
                 {
-                    //currentSlot.SwapWireSlot(cablePoint);
+                    currentSlot.SwapWireSlot(cablePoint, _startPosition);
                     cablePoint.GetComponent<IDisableColliders>().DisableCollider(true);
                 }
                 currentSlot.SelectPort(false);
+
+                if(CheckWiresReplaceInSlots())
+                {
+                    //показывать кнопку UI дл€ перехода к нат€гиванию джека
+                    ActiveJackCollider();
+                }
             }
             else
             {
                 cablePoint.transform.position = _startPosition;
                 cablePoint.GetComponent<IDisableColliders>().DisableCollider(true);
             }
-
+            
         }
 
         cablePoint = null;
@@ -177,8 +189,56 @@ public class JackConnetctAndSetting : MonoBehaviour
                 _startPosition = cablePoint.transform.position;
                 cablePoint.GetComponent<IDisableColliders>().DisableCollider(false);
             }
+
+            if (hit.collider.tag == jack.tag && wiresIsDone)
+            {
+                StartCoroutine(StartAnimationJack());
+            }
         }
     }
 
     private Ray GetRay(Vector3 position) => mainCamera.ScreenPointToRay(position);
+
+    private bool CheckWiresReplaceInSlots()
+    {
+        bool isDone = true;
+
+        for (int i = 0; i < wiresSlots.Length; i++)
+        {
+            if (wiresSlots[i].GetStateSlot() == false)
+            {
+                isDone = false;
+                break;
+            }
+        }
+
+        return isDone;
+    }
+
+    public void ActiveJackCollider()
+    {
+        wiresIsDone= true;
+        jack.GetComponent<BoxCollider>().enabled= true;
+    }
+
+    private IEnumerator StartAnimationJack()
+    {
+        isActiveWork = false;
+
+        for (int i = 0; i < wiresSlots.Length; i++)
+        {
+            wiresSlots[i].ColliderActive(false);
+
+            wiresSlots[i].GetCablePoint().DisableCollider(false);
+        }
+
+        jack.GetComponent<BoxCollider>().enabled= false;
+        jack.GetComponent<OutlineManager>().EnableOutline(false);
+
+        yield return jack.DOLocalMove(Vector3.zero,1f)
+            .Play()
+            .WaitForCompletion();
+
+        isJackMontageDone= true;
+    }
 }

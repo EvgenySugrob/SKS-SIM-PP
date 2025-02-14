@@ -8,9 +8,6 @@ public class PatchCordCreate : MonoBehaviour
 {
     [Header("Left part")]
     [SerializeField] Transform leftPart;
-    [SerializeField] GameObject cableLeftDeformModel;
-    [SerializeField] GameObject leftBody;
-    [SerializeField] GameObject jackLeftModel;
     [SerializeField] TwistedPairUnravelingCount leftPair;
     [SerializeField] BoxCollider leftCollider;
     private Vector3 _startLocalLeftPosition;
@@ -18,9 +15,6 @@ public class PatchCordCreate : MonoBehaviour
 
     [Header("Right part")]
     [SerializeField] Transform rightPart;
-    [SerializeField] GameObject cableRightDeformModel;
-    [SerializeField] GameObject rightBody;
-    [SerializeField] GameObject jackRightModel;
     [SerializeField] TwistedPairUnravelingCount rightPair;
     [SerializeField] BoxCollider rightCollider;
     private Vector3 _startLocalRightPosition;

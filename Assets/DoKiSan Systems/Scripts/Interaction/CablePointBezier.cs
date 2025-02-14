@@ -13,6 +13,8 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     [SerializeField] private int needIndexInteractivePoint = 3;
     [SerializeField] ContactPortInteract portInteract;
     [SerializeField] bool alreadyInstal = false;
+    [SerializeField] Transform startGroup;
+    [SerializeField] JackWireSlotInfo jackWireSlotInfo;
 
     [Header("Spawn particle")]
     [SerializeField] GameObject prefabParticle;
@@ -47,6 +49,11 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
     public string GetTypeCable()
     {
         return typeCable;
+    }
+
+    public Transform GetStartGroup()
+    {
+        return startGroup;
     }
 
     public bool IsNullPortInteractSlot()
@@ -124,5 +131,14 @@ public class CablePointBezier : MonoBehaviour, IDisableColliders
         prefabParticle.SetActive(false);
         prefabParticle.transform.rotation = _prefabParticleStartRotation;
         prefabParticle.transform.position = endPoint.position;
+    }
+
+    public void SetJackSlot(JackWireSlotInfo slot)
+    {
+        jackWireSlotInfo= slot;
+    }
+    public JackWireSlotInfo GetJackSlot()
+    {
+        return jackWireSlotInfo;
     }
 }

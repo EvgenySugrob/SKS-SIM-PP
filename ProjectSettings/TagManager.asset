@@ -12,6 +12,7 @@ TagManager:
   - ButtonNF
   - Socket
   - Table
+  - JackInteract
   layers:
   - Default
   - TransparentFX
