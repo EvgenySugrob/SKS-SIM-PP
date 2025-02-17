@@ -25,6 +25,7 @@ public class JackConnetctAndSetting : MonoBehaviour
     [SerializeField] GameObject mainCableBody;
     [SerializeField] JackWireSlotInfo[] wiresSlots = new JackWireSlotInfo[8];
     [SerializeField] JackWireSlotInfo currentSlot;
+    [SerializeField] Transform contacts;
 
 
     private void Update()
@@ -240,5 +241,10 @@ public class JackConnetctAndSetting : MonoBehaviour
             .WaitForCompletion();
 
         isJackMontageDone= true;
+    }
+
+    public bool GetMontageDone()
+    {
+        return isJackMontageDone;
     }
 }

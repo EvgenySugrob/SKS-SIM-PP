@@ -13,6 +13,9 @@ public class JackReplace : MonoBehaviour
     [SerializeField] PatchCordCreate patchCord;
     [SerializeField] Transform cameraChoisePosition;
 
+    [Header("Crimper")]
+    [SerializeField] Crimper crimper;
+
     [Header("Player and move")]
     [SerializeField] Transform eyesPlayer;
     [SerializeField] Camera playerCamera;
@@ -53,6 +56,8 @@ public class JackReplace : MonoBehaviour
 
                 StartCoroutine(MoveOnJackPosition(Vector3.zero));
                 jackConnect.StartJackMontage();
+
+                crimper.SetSelectedJack(jackConnect);
             }
         }
     }
@@ -64,7 +69,7 @@ public class JackReplace : MonoBehaviour
 
     public void StartJackReplace()
     {
-        if(patchCord.GetIsHandState() && !isJackSelectActive)
+        if(patchCord.GetIsHandState() && !isJackSelectActive && patchCord.GetStateStrippingState())
         {
             patchCord.DisableControl(false);
             patchCord.EnabledLeftRightCollider(true);
