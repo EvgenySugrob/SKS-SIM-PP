@@ -9,15 +9,18 @@ public class JackConnetctAndSetting : MonoBehaviour
     [SerializeField] bool isActiveWork = false;
     [SerializeField] bool wiresIsDone = false;
     [SerializeField] bool isJackMontageDone = false;
+    [SerializeField] bool isContactsCrimping=false;
     [SerializeField] CablePointBezier cablePoint;
     [SerializeField] Camera mainCamera;
     [SerializeField] float interactDistance = 2f;
+    private float crimpingContactProgress = 0f;
     private Vector3 _prevPosition;
     private Vector3 _startPosition;
     private bool _isSwiping;
 
     [Header("Point information")]
     [SerializeField] Transform cameraPoint;
+    [SerializeField] Transform startPoint;
 
     [Header("JackModel")]
     [SerializeField] Transform jack;
@@ -26,7 +29,19 @@ public class JackConnetctAndSetting : MonoBehaviour
     [SerializeField] JackWireSlotInfo[] wiresSlots = new JackWireSlotInfo[8];
     [SerializeField] JackWireSlotInfo currentSlot;
     [SerializeField] Transform contacts;
+    private Tween contactsAnim;
+    private float startOffsetY;
+    private float offsetY = -0.00403f;
 
+    private void Start()
+    {
+        startOffsetY = contacts.localPosition.y;
+
+        contactsAnim = contacts.DOLocalMoveY(offsetY, 1f)
+            .SetAutoKill(false)
+            .SetEase(Ease.Linear)
+            .Pause();
+    }
 
     private void Update()
     {
@@ -49,6 +64,7 @@ public class JackConnetctAndSetting : MonoBehaviour
 
         for (int i = 0; i < wiresSlots.Length; i++)
         {
+            wiresSlots[i].gameObject.SetActive(true);
             wiresSlots[i].ColliderActive(true);
         }
         jack.gameObject.SetActive(true);
@@ -63,6 +79,7 @@ public class JackConnetctAndSetting : MonoBehaviour
         for (int i = 0; i < wiresSlots.Length; i++)
         {
             wiresSlots[i].ColliderActive(false);
+            wiresSlots[i].gameObject.SetActive(false);
         }
     }
 
@@ -229,8 +246,8 @@ public class JackConnetctAndSetting : MonoBehaviour
         for (int i = 0; i < wiresSlots.Length; i++)
         {
             wiresSlots[i].ColliderActive(false);
-
             wiresSlots[i].GetCablePoint().DisableCollider(false);
+            wiresSlots[i].gameObject.SetActive(false);
         }
 
         jack.GetComponent<BoxCollider>().enabled= false;
@@ -246,5 +263,29 @@ public class JackConnetctAndSetting : MonoBehaviour
     public bool GetMontageDone()
     {
         return isJackMontageDone;
+    }
+
+    public void ContactCrimpingProgress(float progress)
+    {
+        if (crimpingContactProgress < progress)
+        {
+            crimpingContactProgress = progress;
+            contactsAnim.Goto(crimpingContactProgress * contactsAnim.Duration(), false);
+        }
+    }
+
+    public void EndContactCrimpingProgress()
+    {
+        isContactsCrimping = true;
+    }
+
+    public bool GetEndContactCrimping()
+    {
+        return isContactsCrimping;
+    }
+
+    public Transform GetStartPoint()
+    {
+        return startPoint;
     }
 }

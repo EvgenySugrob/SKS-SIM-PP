@@ -75,16 +75,20 @@ public class JackReplace : MonoBehaviour
             patchCord.EnabledLeftRightCollider(true);
             patchCord.PatchCordOnTable();
 
+            SaveStartPositionPlayer();
             MovePlayerEyesToSelectPart();
         }
     }
 
-    private void MovePlayerEyesToSelectPart()
+    private void SaveStartPositionPlayer()
     {
         _startParentEyes = eyesPlayer.parent;
         _startPositionEyes = eyesPlayer.localPosition;
         _startRotationEyes = eyesPlayer.localRotation;
+    }
 
+    private void MovePlayerEyesToSelectPart()
+    {
         eyesPlayer.parent = cameraChoisePosition;
         StartCoroutine(MoveEyes(Vector3.zero,cameraChoisePosition.localRotation));
     }
@@ -105,5 +109,27 @@ public class JackReplace : MonoBehaviour
         yield return eyesPlayer.DOLocalMove(jackPoint,0.5f)
             .Play() 
             .WaitForCompletion();
+    }
+
+    public void MoveEyesAfterFirstJackComplate()
+    {
+        MovePlayerEyesToSelectPart();
+    }
+
+    public void ReturnToMainWork()
+    {
+        StartCoroutine(ReturnToMain());
+    }
+    
+    private IEnumerator ReturnToMain()
+    {
+        eyesPlayer.parent = _startParentEyes;
+        yield return MoveEyes(_startPositionEyes, _startRotationEyes);
+
+        patchCord.DisableControl(true);
+        patchCord.DisableCollider(true);
+        
+        interactionSystem.ClearHand();
+        isJackSelectActive= false;
     }
 }

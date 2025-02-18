@@ -23,6 +23,7 @@ public class PatchCordCreate : MonoBehaviour
     [Header("General setting")]
     [SerializeField] bool isDoneStripperWork = false;
     [SerializeField] bool isHand=false;
+    [SerializeField] bool isCrimping = false;
     private BoxCollider _boxCollider;
     private Vector3 _startPatchCorPosition;
     private Quaternion _startPatchCorRotation;
@@ -48,6 +49,16 @@ public class PatchCordCreate : MonoBehaviour
         _startLocalRightRotation = rightPair.transform.localRotation;
 
         _boxCollider = GetComponent<BoxCollider>();
+    }
+
+    public bool GetCrimpingState()
+    {
+        return isCrimping;
+    }
+
+    public void SetCrimpingState(bool state)
+    {
+        isCrimping = state;
     }
 
     public void DisableControl(bool state)
@@ -141,4 +152,40 @@ public class PatchCordCreate : MonoBehaviour
         rightCollider.enabled = isEnable;
     }
 
+    public void CheckLastColliderEnable()
+    {
+        JackConnetctAndSetting leftJack = leftPair.GetComponent<JackConnetctAndSetting>();
+
+        if (!leftJack.GetEndContactCrimping())
+        {
+            leftCollider.enabled=true;
+        }
+        else
+        {
+            rightCollider.enabled = true;
+        }
+    }
+
+    public bool AllPartCrimping()
+    {
+        bool endCrimping = false;
+
+        JackConnetctAndSetting leftJack = leftPair.GetComponent<JackConnetctAndSetting>();
+        JackConnetctAndSetting rightJack = rightPair.GetComponent<JackConnetctAndSetting>();
+
+        if(leftJack.GetEndContactCrimping()&&rightJack.GetEndContactCrimping())
+        {
+            endCrimping = true;
+            SetCrimpingState(true);
+        }
+        else if(!leftJack.GetEndContactCrimping())
+        {
+            leftCollider.enabled = true;
+        }
+        else 
+        {
+            rightCollider.enabled = true;
+        }
+        return endCrimping;
+    }
 }

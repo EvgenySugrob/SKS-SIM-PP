@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Crimper : MonoBehaviour
 {
@@ -34,19 +35,29 @@ public class Crimper : MonoBehaviour
     [SerializeField] Transform choisePatchcordPardPoint;
 
     [Header("JackInformation")]
+    [SerializeField] PatchCordCreate patchCord;
+    [SerializeField] JackReplace jackReplace;
     [SerializeField] JackConnetctAndSetting jack;
     [SerializeField] Transform jackBetweenPoint;
     [SerializeField] Transform jackFinalPoint;
+    [SerializeField] Transform jackHandPoint;
     private Vector3 _jackStartPosition;
     private Quaternion _jackStartRotation;
 
     [Header("UI elements")]
     [SerializeField] GameObject uiGroup;
+    [SerializeField] Slider crimpingSlider;
+    [SerializeField] GameObject acceptBt;
+    [SerializeField] GameObject viewProgressBt;
+    [SerializeField] GameObject continueBt;
     [SerializeField] Tween crimpingAnim;
+    private float maxValueSlider;
     private float _lastSliderValue;
 
     private void Start()
     {
+        maxValueSlider = crimpingSlider.maxValue;
+
         _crimperStartPosition = transform.localPosition;
         _crimperStartRotation = transform.localRotation;
 
@@ -77,14 +88,17 @@ public class Crimper : MonoBehaviour
 
     private IEnumerator SetEyesAndJackCorrectPosition()
     {
-        _jackStartPosition = jack.transform.position;
-        _jackStartRotation= jack.transform.rotation;
+        _jackStartPosition = jack.transform.localPosition;
+        _jackStartRotation= jack.transform.localRotation;
 
         yield return SetEyesPosition(viewPosition);
 
         yield return SetCrimperPosition(crimperHandPoint);
 
         yield return SetJactPosition(jackBetweenPoint, jackFinalPoint);
+
+        uiGroup.SetActive(true);
+        viewProgressBt.SetActive(true);
     }
 
     private YieldInstruction SetEyesPosition(Transform endPoint)
@@ -112,6 +126,15 @@ public class Crimper : MonoBehaviour
             .WaitForCompletion();
     }
 
+    private YieldInstruction SetCrimperPosition(Vector3 position,Quaternion rotation)
+    {
+        return DOTween.Sequence()
+            .Append(transform.DOMove(position, 0.5f))
+            .Join(transform.DORotateQuaternion(rotation, 0.5f))
+            .Play()
+            .WaitForCompletion();
+    }
+
     private YieldInstruction SetJactPosition(Transform between, Transform final)
     {
         return DOTween.Sequence()
@@ -125,9 +148,92 @@ public class Crimper : MonoBehaviour
 
     public void Crimping(float value)
     {
-        crimpingAnim.Goto(value * crimpingAnim.Duration(), true);
-        crimpingAnim.Pause();
+        if(value<maxValueSlider)
+        {
+            crimpingAnim.Goto(value * crimpingAnim.Duration(), false);
+            _lastSliderValue = value;
 
-        _lastSliderValue = value;
+            jack.ContactCrimpingProgress(value);
+        }
+        else
+        {
+            crimpingSlider.interactable = false;
+            viewProgressBt.SetActive(false);
+            acceptBt.SetActive(true);
+        }
+        
+    }
+
+    public void AcceptCrimping()
+    {
+        acceptBt.SetActive(false);
+
+        jack.EndContactCrimpingProgress();
+
+        StartCoroutine(AcceptProgress());
+    }
+
+    private IEnumerator AcceptProgress()
+    {
+        yield return SliderDown();
+
+        uiGroup.SetActive(false);
+        crimpingSlider.interactable = true;
+
+        yield return SetJactPosition(jackBetweenPoint, jack.GetStartPoint());
+        yield return SetCrimperPosition(_crimperStartPosition,_crimperStartRotation);
+
+        jack = null;
+        _crimperIsActive = false;
+        
+        if(patchCord.AllPartCrimping())
+        {
+            jackReplace.ReturnToMainWork();
+        }
+        else
+        {
+            jackReplace.MoveEyesAfterFirstJackComplate();
+        }
+    }
+
+    public void ViewProgress()
+    {
+        StartCoroutine(SliderReturnBack());
+    }
+
+    private IEnumerator SliderReturnBack()
+    {
+        viewProgressBt.SetActive(false);
+        crimpingSlider.interactable = false;
+
+        yield return SliderDown();
+
+        yield return SetJactPosition(jackBetweenPoint,jackHandPoint);
+
+        continueBt.SetActive(true);
+
+    }
+
+    private YieldInstruction SliderDown()
+    {
+        return crimpingSlider.DOValue(0, 0.5f)
+            .SetEase(Ease.Linear)
+            .Play()
+            .WaitForCompletion();
+    }
+
+    public void ContinueProgress()
+    {
+        StartCoroutine(Continue());
+    }
+
+    private IEnumerator Continue()
+    {
+        continueBt.SetActive(false);
+
+        yield return SetJactPosition(jackBetweenPoint, jackFinalPoint);
+
+        crimpingSlider.interactable = true;
+        viewProgressBt.SetActive(true);
     }
 }

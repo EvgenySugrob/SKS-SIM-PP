@@ -226,6 +226,13 @@ public class InteractionSystem : MonoBehaviour
                         return;
                     }   
 
+                    if(targetObject.GetComponent<PatchCordCreate>())
+                    {
+                        if(targetObject.GetComponent<PatchCordCreate>().GetCrimpingState())
+                        {
+                            return;
+                        }
+                    }
                     PickupObject(targetObject);
                 }
             }
