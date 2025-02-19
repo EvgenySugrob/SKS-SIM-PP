@@ -101,7 +101,14 @@ public class CableTesterUIControl : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(WaitLoadTestingScreen());
+                    if(cableTestChecker.IsPatchCordTesting())
+                    {
+                        StartCoroutine(WaitLoadTestingScreenPatchCord());
+                    }
+                    else
+                    {
+                        StartCoroutine(WaitLoadTestingScreen());
+                    }
                 }
                 
                 //SetCurrentImageGroup(mappingSelectableImage);
@@ -202,6 +209,11 @@ public class CableTesterUIControl : MonoBehaviour
         }
 
         cableTestChecker.ActiveReturnButtons(true);
+    }
+
+    private IEnumerator WaitLoadTestingScreenPatchCord()
+    {
+        yield return new WaitForSeconds(2f);
     }
 
     public void ForceReturnBtClick()

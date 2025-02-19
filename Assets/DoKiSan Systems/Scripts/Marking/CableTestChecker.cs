@@ -91,6 +91,21 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     [SerializeField] RepairTermination repairTermination;
     [SerializeField] GameObject needForRepairMontage;
 
+    [Header("PatchcordTesting")]
+    [SerializeField] bool isPatchCordTesting = false;
+    [SerializeField] PatchCordCreate patchcordCreate;
+    [SerializeField] Transform patchcordCreatePoint;
+    [SerializeField] Transform leftPartFP;
+    [SerializeField] Transform rightPartFP;
+    [SerializeField] Transform leftPartEP;
+    [SerializeField] Transform rightPartEP;
+    private Transform _leftPart;
+    private Transform _rightPart;
+    private Vector3 _leftPartPositionPC;
+    private Vector3 _rightPartPositionPC;
+    private Quaternion _leftPartRotationPC;
+    private Quaternion _rightPartRotationPC;
+
     private void Start()
     {
         _cableList = spawnSockets.GetCablePool();
@@ -394,6 +409,13 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         {
             currentPortConnect = objectInteract.GetComponent<PortConnectInfo>();
             ConnectWithPort(currentPortConnect.GetPatchCordConnection(),currentPortConnect.GetPatchCordBetweenConection());
+        }
+
+        if(objectInteract.GetComponent<PatchCordCreate>() && objectInteract.GetComponent<PatchCordCreate>().GetCrimpingState())
+        {
+            Debug.Log("Ну давай, расчехляй патчкорд");
+            patchcordCreate = objectInteract.GetComponent<PatchCordCreate>();
+            StartCheckingPatchcordCreate();
         }
     }
 
@@ -810,5 +832,70 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         PlayerControlDisable(true);
 
         repairTermination.SetIsRepairModeActive(true);
+    }
+
+    public void SetIsPatchCordTesting(bool isState)
+    {
+        isPatchCordTesting = isState;
+    }
+
+    public bool IsPatchCordTesting()
+    {
+        return isPatchCordTesting;
+    }
+
+    private void StartCheckingPatchcordCreate()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        isPatchCordTesting = true;
+        PlayerControlDisable(false);
+        
+        StartCoroutine(StartCheckingPatchcord());
+    }
+
+    private IEnumerator StartCheckingPatchcord()
+    {
+        yield return MoveNfOnCheckPosition();
+        yield return MovePatchcordToNF(patchcordCreatePoint.position,patchcordCreatePoint.rotation);
+
+        _leftPart = patchcordCreate.GetLeftPart();
+        _rightPart= patchcordCreate.GetRightPart();
+
+        _leftPartPositionPC = _leftPart.position;
+        _leftPartRotationPC= _leftPart.rotation;
+
+        _rightPartPositionPC= _rightPart.position;
+        _rightPartRotationPC= _rightPart.rotation;
+
+        yield return LeftRightPartConnectToNF();
+    }
+
+    private YieldInstruction MovePatchcordToNF(Vector3 position, Quaternion rotation)
+    {
+        return DOTween.Sequence()
+            .Append(patchcordCreate.transform.DOMove(position,1f))
+            .Join(patchcordCreate.transform.DORotateQuaternion(rotation,1f))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    private YieldInstruction LeftRightPartConnectToNF()
+    {
+        return DOTween.Sequence()
+            .Append(_rightPart.DOMove(rightPartFP.position,0.5f))
+            .Join(_rightPart.DORotateQuaternion(rightPartFP.rotation,0.5f))
+            .Join(_leftPart.DOMove(leftPartFP.position,0.5f))
+            .Join(_leftPart.DORotateQuaternion(leftPartFP.rotation,0.5f))
+
+            .Append(_rightPart.DOMove(rightPartEP.position,0.5f))
+            .Join(_rightPart.DORotateQuaternion(rightPartEP.rotation,0.5f))
+            .Join(_leftPart.DOMove(leftPartEP.position,0.5f))
+            .Join(_leftPart.DORotateQuaternion(leftPartEP.rotation,0.5f))
+
+            .SetEase(Ease.Linear)
+            .Play()
+            .WaitForCompletion();
     }
 }

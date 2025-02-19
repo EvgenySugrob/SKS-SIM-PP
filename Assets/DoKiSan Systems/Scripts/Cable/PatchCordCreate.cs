@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatchCordCreate : MonoBehaviour
+public class PatchCordCreate : MonoBehaviour,IInteractableObject
 {
     [Header("Left part")]
     [SerializeField] Transform leftPart;
@@ -25,8 +25,8 @@ public class PatchCordCreate : MonoBehaviour
     [SerializeField] bool isHand=false;
     [SerializeField] bool isCrimping = false;
     private BoxCollider _boxCollider;
-    private Vector3 _startPatchCorPosition;
-    private Quaternion _startPatchCorRotation;
+    private Vector3 _startPatchCordPosition;
+    private Quaternion _startPatchCordRotation;
 
     [Header("Stripper")]
     [SerializeField] StripperInteration stripperInteration;
@@ -39,8 +39,8 @@ public class PatchCordCreate : MonoBehaviour
 
     private void Start()
     {
-        _startPatchCorPosition = transform.position;
-        _startPatchCorRotation = transform.rotation;
+        _startPatchCordPosition = transform.position;
+        _startPatchCordRotation = transform.rotation;
 
         _startLocalLeftPosition = leftPair.transform.localPosition;
         _startLocalLeftRotation = leftPair.transform.localRotation;
@@ -134,8 +134,8 @@ public class PatchCordCreate : MonoBehaviour
     private IEnumerator ReturnPatchCordOnTable()
     {
         yield return DOTween.Sequence()
-            .Append(transform.DOMove(_startPatchCorPosition,1f))
-            .Join(transform.DORotateQuaternion(_startPatchCorRotation,1f))
+            .Append(transform.DOMove(_startPatchCordPosition,1f))
+            .Join(transform.DORotateQuaternion(_startPatchCordRotation,1f))
             .Play()
             .WaitForCompletion();
         isHand= false;
@@ -187,5 +187,40 @@ public class PatchCordCreate : MonoBehaviour
             rightCollider.enabled = true;
         }
         return endCrimping;
+    }
+
+    public bool CanInteractable(GameObject objectInteract)
+    {
+        bool isCan = false;
+
+        if(isCrimping && objectInteract.GetComponent<CableTestChecker>())
+            isCan= true;
+
+        return isCan;
+    }
+
+    public void Interact(GameObject objectInteract)
+    {
+        
+    }
+
+    public Vector3 GetStartPosition()
+    {
+        return _startPatchCordPosition;
+    }
+
+    public Quaternion GetStartRotation() 
+    {
+        return _startPatchCordRotation;
+    }
+
+    public Transform GetLeftPart()
+    {
+        return leftPair.transform;
+    }
+
+    public Transform GetRightPart()
+    {
+        return rightPair.transform;
     }
 }

@@ -129,8 +129,8 @@ public class Crimper : MonoBehaviour
     private YieldInstruction SetCrimperPosition(Vector3 position,Quaternion rotation)
     {
         return DOTween.Sequence()
-            .Append(transform.DOMove(position, 0.5f))
-            .Join(transform.DORotateQuaternion(rotation, 0.5f))
+            .Append(transform.DOLocalMove(position, 0.5f))
+            .Join(transform.DOLocalRotateQuaternion(rotation, 0.5f))
             .Play()
             .WaitForCompletion();
     }
