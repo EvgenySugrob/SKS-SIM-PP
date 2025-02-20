@@ -65,4 +65,53 @@ public class UILineRenderConection : MonoBehaviour
             repairBtGroup.SetActive(false);
         }
     }
+
+    public void SetPatchCordMapping(int[] mainIndexGroup, int[] secondIndexGroup)
+    {
+        addedPairs.Clear();
+        hasCrossMapping = false;
+        crossMappingInfo = "Cross mapping: ";
+
+        if (mainIndexGroup.Length != secondIndexGroup.Length || mainIndexGroup.Length != connectLine.Length)
+        {
+            Debug.LogError("Ошибка: Размеры массивов не совпадают с количеством линий!");
+            return;
+        }
+
+        for (int i = 0; i < connectLine.Length; i++)
+        {
+            int indexMain = mainIndexGroup[i] - 1;
+            int indexSecond = secondIndexGroup[i] - 1;
+
+            // Соединение точек, аналогично SetPortsInfo
+            connectLine[i].SetPosition(0, upPoints[indexMain].GetWorldPositionPoint());
+            connectLine[i].SetPosition(1, downPoints[indexSecond].GetWorldPositionPoint());
+            connectLine[i].enabled = true;
+
+            // Проверяем, не перепутаны ли провода (индексы должны совпадать)
+            if (indexMain != indexSecond)
+            {
+                string pair = $"{Math.Min(mainIndexGroup[i], secondIndexGroup[i])}{Math.Max(mainIndexGroup[i], secondIndexGroup[i])}";
+
+                if (!addedPairs.Contains(pair))
+                {
+                    if (hasCrossMapping)
+                        crossMappingInfo += ", ";
+                    crossMappingInfo += pair;
+                    addedPairs.Add(pair);
+                    hasCrossMapping = true;
+                }
+            }
+        }
+
+        // Вывод результата
+        if (hasCrossMapping)
+        {
+            resultText.text = crossMappingInfo;
+        }
+        else
+        {
+            resultText.text = defaultText;
+        }
+    }
 }

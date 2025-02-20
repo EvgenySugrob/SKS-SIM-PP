@@ -39,6 +39,7 @@ public class UIController : MonoBehaviour, IDisableAfterLoading
         _aboutBt.RegisterCallback<ClickEvent>(OnOpenAboutWindow);
         _closeWindowBt.RegisterCallback<ClickEvent>(OnCloseAboutWindow);
         _aboutWindow.RegisterCallback<TransitionEndEvent>(OnAboutWindowClose);
+        _exitBt.RegisterCallback<ClickEvent>(OnExitApp);
     }
 
     private void OnStartClick(ClickEvent evt)

@@ -18,7 +18,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="buttonsAndTitle" style="flex-grow: 1; width: 60%; height: 100%;">
                 <ui:VisualElement style="flex-grow: 0; align-content: auto; align-self: center; align-items: center; width: 85%; flex-shrink: 0; height: 200px; margin-top: 120px; justify-content: center;">
-                    <ui:Label text="Пример названия программы.&#10;Очень большое и очень длинное" class="textStyle" style="font-size: 36px;" />
+                    <ui:Label text="Монтаж коммутационной патч-панели" class="textStyle" style="font-size: 36px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="buttons" style="flex-grow: 1; width: 85%; align-self: center; justify-content: space-around; margin-top: 45px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 240px;">
                     <ui:Button text="Начать" name="startBt" class="noramlState normalState" />
@@ -55,7 +55,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; width: 50%; height: 100%; align-self: flex-start; align-content: auto; justify-content: center;">
-            <ui:Label text="Виртуальный тренажер&#10;«Пример названия программы»&#10;Build x.x.x&#10;Unity xxxx.x.xxx&#10;&#10;© DoKiSan Systems&lt;sup&gt;®&lt;/sup&gt;, 2024.&#10;Все права защищены.&#10;www.dokisan.com&#10;&quot;DoKiSan&quot; зарегистрированный товарный знак № 810563" name="aboutText" class="textStyle" style="-unity-text-align: middle-left; font-size: 32px;" />
+            <ui:Label text="Виртуальный тренажер&#10;«Монтаж коммутационной патч-панели»&#10;Build 1.0.0&#10;Unity 2022.3.13f1&#10;&#10;© DoKiSan Systems&lt;sup&gt;®&lt;/sup&gt;, 2024.&#10;Все права защищены.&#10;www.dokisan.com&#10;&quot;DoKiSan&quot; зарегистрированный товарный знак № 810563" name="aboutText" class="textStyle" style="-unity-text-align: middle-left; font-size: 32px;" />
         </ui:VisualElement>
         <ui:Button name="closeWindowBt" class="closeBtState" />
     </ui:VisualElement>

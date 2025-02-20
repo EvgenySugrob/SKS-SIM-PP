@@ -857,6 +857,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
 
     private IEnumerator StartCheckingPatchcord()
     {
+        patchcordCreate.DisableCollider(false);
         yield return MoveNfOnCheckPosition();
         yield return MovePatchcordToNF(patchcordCreatePoint.position,patchcordCreatePoint.rotation);
 
@@ -870,6 +871,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _rightPartRotationPC= _rightPart.rotation;
 
         yield return LeftRightPartConnectToNF();
+
+        ActiveButtonsOnTool(true);
     }
 
     private YieldInstruction MovePatchcordToNF(Vector3 position, Quaternion rotation)
@@ -898,4 +901,51 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             .Play()
             .WaitForCompletion();
     }
+
+    public int[] GetMainPartIndexes()
+    {
+        return patchcordCreate.GetLeftArrayIndexes();
+    }
+    public int[] GetSecondPartIndexes()
+    {
+        return patchcordCreate.GetRightArrayIndexes();
+    }
+
+    public void EndTestPatchcord()
+    {
+        ActiveButtonsOnTool(false);
+        StartCoroutine(ReturnOnTablePatchcordAfterTest());
+    }
+
+    private IEnumerator ReturnOnTablePatchcordAfterTest()
+    {
+        yield return LeftRightPartToStartPosition();
+        yield return MovePatchcordToNF(patchcordCreate.GetStartPosition(),patchcordCreate.GetStartRotation());
+        yield return MoveUp();
+
+        isPatchCordTesting= false;
+        patchcordCreate.DisableCollider(true);
+
+        PlayerControlDisable(true);
+    }
+
+    private YieldInstruction LeftRightPartToStartPosition()
+    {
+        return DOTween.Sequence()
+                .Append(_rightPart.DOMove(rightPartFP.position, 0.5f))
+                .Join(_rightPart.DORotateQuaternion(rightPartFP.rotation, 0.5f))
+                .Join(_leftPart.DOMove(leftPartFP.position, 0.5f))
+                .Join(_leftPart.DORotateQuaternion(leftPartFP.rotation, 0.5f))
+
+                .Append(_rightPart.DOMove(_rightPartPositionPC, 0.5f))
+                .Join(_rightPart.DORotateQuaternion(_rightPartRotationPC, 0.5f))
+                .Join(_leftPart.DOMove(_leftPartPositionPC, 0.5f))
+                .Join(_leftPart.DORotateQuaternion(_leftPartRotationPC, 0.5f))
+
+                .SetEase(Ease.Linear)
+                .Play()
+                .WaitForCompletion();
+    }
+    
+
 }

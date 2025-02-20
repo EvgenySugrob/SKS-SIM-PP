@@ -600,6 +600,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 5889644231967296408}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &5266821080399097486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +622,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 426100577700356473}
   startParticlePosition: {fileID: 4162039797430151649}
   impulseStrength: 0.1
@@ -702,6 +705,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 7055783324208297193}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &4821250706355256616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +727,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 6934833754529688681}
   startParticlePosition: {fileID: 8049387869631924372}
   impulseStrength: 0.1
@@ -1041,6 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliders:
   - {fileID: 6622377996191045067}
+  isPatchCordPart: 0
 --- !u!1 &643524824719269260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1665,7 @@ MonoBehaviour:
   - {fileID: 8081886570206882390}
   - {fileID: 7827248396568544301}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!1 &971080925703190150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2003,7 @@ MonoBehaviour:
   - {fileID: 8081886570206882390}
   - {fileID: 7827248396568544301}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &1769567333629169892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,6 +2024,8 @@ MonoBehaviour:
   strippingCable: {fileID: 0}
   stripperInteration: {fileID: 0}
   _numberSocket: 0
+  patchCordCreate: {fileID: 0}
+  isPatchCordPart: 0
 --- !u!1 &1020065827122002708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlines: []
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!1 &1501007205384288005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlines: []
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!1 &2119768160568833337
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,6 +6492,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 1752547535513195475}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &1373359251193360412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6500,6 +6514,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 2904454311033381391}
   startParticlePosition: {fileID: 2546330803600828509}
   impulseStrength: 0.1
@@ -7204,6 +7220,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 5948701326743686163}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &3562178308769405120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,6 +7242,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 4594545461085139182}
   startParticlePosition: {fileID: 1740034039400694894}
   impulseStrength: 0.1
@@ -7512,6 +7531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlines: []
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!1 &3804134415699848965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7782,6 +7802,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 1481652431579070895}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &587067605762484760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7803,6 +7824,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 2166143265484371435}
   startParticlePosition: {fileID: 7903289400836996297}
   impulseStrength: 0.1
@@ -8090,6 +8113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlines: []
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!1 &4159988505907478644
 GameObject:
   m_ObjectHideFlags: 0
@@ -8834,8 +8858,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.056898855, y: 0.0036421767, z: 0.0052952133}
-  m_Center: {x: -0.0000740271, y: 0.00012729173, z: -0.000057224668}
+  m_Size: {x: 0.020514531, y: 0.0036421767, z: 0.0052952133}
+  m_Center: {x: 0.03683869, y: 0.0001272962, z: -0.000057220263}
 --- !u!114 &7747664927389462382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8852,6 +8876,10 @@ MonoBehaviour:
   outlineManager: {fileID: 334439226020905226}
   pointContainer: {fileID: 3877757606548671656}
   notInteractPuchok: {fileID: 2104293036290024880}
+  cableOutline: {fileID: 8081886570206882390}
+  upperPartCableOutline: {fileID: 7827248396568544301}
+  startColorOutline: {r: 1, g: 0.42745098, b: 0, a: 1}
+  selectedColorOutline: {r: 0.078788616, g: 0.9339623, b: 0, a: 1}
 --- !u!1 &4724349934731989548
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,7 +10086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4077254538378586977
 Transform:
   m_ObjectHideFlags: 0
@@ -10565,6 +10593,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 7189275828869448727}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &757643663394618575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10586,6 +10615,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 8656380754506629825}
   startParticlePosition: {fileID: 4712473907432528299}
   impulseStrength: 0.1
@@ -11120,6 +11151,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 1020824707401951161}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &2845594818676105747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11141,6 +11173,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 959083593748589568}
   startParticlePosition: {fileID: 1526398342662952167}
   impulseStrength: 0.1
@@ -12487,7 +12521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4591723358558481111
 Transform:
   m_ObjectHideFlags: 0
@@ -13600,6 +13634,7 @@ MonoBehaviour:
   outlines:
   - {fileID: 7765017545976151738}
   outlineActive: 0
+  isEnabledMain: 1
 --- !u!114 &6380351812024409066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13621,6 +13656,8 @@ MonoBehaviour:
   needIndexInteractivePoint: 3
   portInteract: {fileID: 0}
   alreadyInstal: 0
+  startGroup: {fileID: 0}
+  jackWireSlotInfo: {fileID: 0}
   prefabParticle: {fileID: 5996928186704843312}
   startParticlePosition: {fileID: 3515345521825489060}
   impulseStrength: 0.1

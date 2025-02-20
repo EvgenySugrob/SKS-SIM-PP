@@ -223,4 +223,13 @@ public class PatchCordCreate : MonoBehaviour,IInteractableObject
     {
         return rightPair.transform;
     }
+
+    public int[] GetLeftArrayIndexes()
+    {
+        return leftPair.GetComponent<JackConnetctAndSetting>().GetArrayIndexCable();
+    }
+    public int[] GetRightArrayIndexes()
+    {
+        return rightPair.GetComponent<JackConnetctAndSetting>().GetArrayIndexCable();
+    }
 }

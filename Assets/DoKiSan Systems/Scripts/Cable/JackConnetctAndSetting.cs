@@ -288,4 +288,16 @@ public class JackConnetctAndSetting : MonoBehaviour
     {
         return startPoint;
     }
+
+    public int[] GetArrayIndexCable()
+    {
+        int[] arrayCableIndex = new int[wiresSlots.Length];
+
+        for (int i = 0; i < wiresSlots.Length; i++)
+        {
+            arrayCableIndex[i] = wiresSlots[i].GetCablePoint().GetIndexNumberCable();
+        }
+
+        return arrayCableIndex;
+    }
 }

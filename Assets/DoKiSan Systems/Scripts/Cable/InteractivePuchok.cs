@@ -9,10 +9,15 @@ public class InteractivePuchok : MonoBehaviour
     [SerializeField] OutlineManager outlineManager;
     [SerializeField] Transform pointContainer;
     [SerializeField] Transform notInteractPuchok;
-
+    [SerializeField] Outline cableOutline;
+    [SerializeField] Outline upperPartCableOutline;
+    [SerializeField] Color startColorOutline;
+    [SerializeField] Color selectedColorOutline;
     private Vector3 _startPositionContainer;
     private Vector3 _startPositionNotInteractPuchok;
     private bool _startPositionRemeber = false;
+    
+    
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -26,6 +31,25 @@ public class InteractivePuchok : MonoBehaviour
     public void OutlineActive(bool isActive)
     {
         outlineManager.EnableOutline(isActive);
+    }
+
+    public void SelectedOnGroup(bool isSelect)
+    {
+        outlineManager.SwitchMainWork(!isSelect);
+
+        if(isSelect)
+        {
+            cableOutline.OutlineColor = selectedColorOutline;
+            upperPartCableOutline.OutlineColor = selectedColorOutline;
+        }
+        else
+        {
+            cableOutline.OutlineColor = startColorOutline;
+            upperPartCableOutline.OutlineColor = startColorOutline;
+
+            cableOutline.enabled= isSelect;
+            upperPartCableOutline.enabled = isSelect;
+        }
     }
 
     public Transform GetNotInteractPuchok()

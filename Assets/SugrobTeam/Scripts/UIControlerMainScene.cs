@@ -106,6 +106,24 @@ public class UIControlerMainScene : MonoBehaviour,IDisableAfterLoading
         _loadScreen.style.display = DisplayStyle.None;
     }
 
+    public void MainMenuOpen()
+    {
+        Debug.Log("Включить экран и запустить загрузку через другой скрипт");
+        _loadScreen.style.display = DisplayStyle.Flex;
+        _loadScreen.AddToClassList("loadScreen--Load");
+
+        RotationIcon();
+        sceneLoader.OnStartGame(nextSceneName);
+    }
+
+    public void ReloadCurrentScene()
+    {
+        _loadScreen.style.display = DisplayStyle.Flex;
+        _loadScreen.AddToClassList("loadScreen--Load");
+
+        RotationIcon();
+        sceneLoader.OnStartGame("MainScene");
+    }
     //void PrintAllElements(VisualElement element, string indent = "")
     //{
     //    // Выводим имя элемента

@@ -27,6 +27,9 @@ public class CableTesterUIControl : MonoBehaviour
     [SerializeField] GameObject resultError;
     [SerializeField] GameObject resultDone;
     [SerializeField] UILineRenderConection lineRenderConection;
+
+    [Header("TestPatchcordUI")]
+    [SerializeField] GameObject testBackUI;
     
 
     private void Start()
@@ -115,7 +118,7 @@ public class CableTesterUIControl : MonoBehaviour
                 break;
 
             case "scan":
-                if (cableTestChecker.GetIsNfrInSocket() || cableTestChecker.GetIsSearchSocketTermimnation())
+                if (cableTestChecker.GetIsNfrInSocket() || cableTestChecker.GetIsSearchSocketTermimnation()|| cableTestChecker.IsPatchCordTesting())
                 {
                     dontOpenNextWindow = true;
                     break;
@@ -213,7 +216,16 @@ public class CableTesterUIControl : MonoBehaviour
 
     private IEnumerator WaitLoadTestingScreenPatchCord()
     {
+        cableTestChecker.ActiveButtonsOnTool(false);
         yield return new WaitForSeconds(2f);
+
+        lineRenderConection.SetPatchCordMapping(cableTestChecker.GetMainPartIndexes(), cableTestChecker.GetSecondPartIndexes());
+
+        resultDone.SetActive(true);
+        resultWindow.SetActive(true);
+        testingWindow.SetActive(false);
+
+        testBackUI.SetActive(true);
     }
 
     public void ForceReturnBtClick()
@@ -225,5 +237,13 @@ public class CableTesterUIControl : MonoBehaviour
 
         _currentWindowShow = mainWindow;
         _currentWindowShow.SetActive(true);
+    }
+
+    public void TestPatchcordBackBtClick()
+    {
+        ForceReturnBtClick();
+
+        cableTestChecker.EndTestPatchcord();
+        testBackUI.SetActive(false);
     }
 }

@@ -107,11 +107,13 @@ public class BeamFormation : MonoBehaviour
         if(!cableForBeaming.Contains(_currentObj))
         {
             cableForBeaming.Add(_currentObj);
+            _currentPuchok.SelectedOnGroup(true);
             Debug.Log($"Dobavil {_currentObj.name}");
         }
         else
         {
             cableForBeaming.Remove(_currentObj);
+            _currentPuchok.SelectedOnGroup(false);
             Debug.Log($"Ubral {_currentObj.name}");
         }
 
@@ -185,6 +187,12 @@ public class BeamFormation : MonoBehaviour
 
             cableForBeaming[i].GetComponent<InteractivePuchok>().SetNotInteractNewPosition(newPosition);
         }
+
+        foreach (GameObject puchock in cableForBeaming)
+        {
+            puchock.GetComponent<InteractivePuchok>().SelectedOnGroup(false);
+        }
+
         cableForBeaming.Clear();
     }
 
