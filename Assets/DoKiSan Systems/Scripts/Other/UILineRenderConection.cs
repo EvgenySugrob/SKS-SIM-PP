@@ -114,4 +114,9 @@ public class UILineRenderConection : MonoBehaviour
             resultText.text = defaultText;
         }
     }
+
+    public void RepairBtOff()
+    {
+        repairBtGroup.SetActive(false);
+    }
 }

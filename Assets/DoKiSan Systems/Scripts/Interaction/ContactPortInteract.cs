@@ -132,21 +132,35 @@ public class ContactPortInteract : MonoBehaviour
         return point2;
     }
 
-    public void SwapWireSlot(CablePointBezier wireToSwap)
+    public void SwapWireSlot(CablePointBezier wireToSwap,Vector3 startPosition)
     {
-        ContactPortInteract swapPort = wireToSwap.GetPortInteract();
+        if(wireToSwap.GetPortInteract()!=null)
+        {
+            ContactPortInteract swapPort = wireToSwap.GetPortInteract();
 
-        wireToSwap.transform.parent = transform;
-        cablePoint.transform.parent = swapPort.transform;
+            wireToSwap.transform.parent = transform;
+            cablePoint.transform.parent = swapPort.transform;
 
-        wireToSwap.transform.position = pointBeforeDriving.position;
-        cablePoint.transform.position = swapPort.GetPointBeforeDriving().position;
+            wireToSwap.transform.position = pointBeforeDriving.position;
+            cablePoint.transform.position = swapPort.GetPointBeforeDriving().position;
 
-        swapPort.SetCablePoint(cablePoint);
-        SetCablePoint(wireToSwap);
+            swapPort.SetCablePoint(cablePoint);
+            SetCablePoint(wireToSwap);
 
-        cablePoint.SetPort(swapPort);
-        wireToSwap.SetPort(this);
+            cablePoint.SetPort(swapPort);
+            wireToSwap.SetPort(this);
+        }
+        else
+        {
+            cablePoint.transform.position= startPosition;
+            wireToSwap.transform.position = pointBeforeDriving.position;
+
+            cablePoint.SetPort(null);
+
+            SetCablePoint(wireToSwap);
+            wireToSwap.SetPort(this);
+        }
+       
     }
 
     public void CableAfterDriving()

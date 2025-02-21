@@ -61,6 +61,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
     private Vector3 _startPatchCordPosition;
     private Vector3 _startPartInToolPosition;
     private Vector3 _startPartInSocketPosition;
+    private Quaternion _startPartInToolRotation;
+    private Quaternion _startPartInSocketRotation;
 
     [Header("NFS tool working")]
     [SerializeField] float detectionRange = 5;
@@ -124,6 +126,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
         _startPatchCordPosition = patchCord.localPosition;
         _startPartInToolPosition = partInTools.localPosition;
         _startPartInSocketPosition = partInSocket.localPosition;
+        _startPartInToolRotation = partInTools.localRotation;
+        _startPartInSocketRotation= partInSocket.localRotation;
 
         _startNfrPosition = nfrChecker.localPosition;
         _nfrJackStartPosition = nfrJack.localPosition;
@@ -740,6 +744,7 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
            .SetEase(Ease.Linear)
            .Join(partInSocket.DORotateQuaternion(betweenPosition.rotation, 0.5f))
            .Append(partInSocket.DOLocalMove(_startPartInSocketPosition, 0.5f))
+           .Join(partInSocket.DOLocalRotateQuaternion(_startPartInSocketRotation,0.5f))
            .Play()
            .WaitForCompletion();
     }
@@ -755,6 +760,8 @@ public class CableTestChecker : MonoBehaviour, IInteractableObject
             .Append(partInTools.DOPath(rjSlotPath, 1f, PathType.CatmullRom))
             .SetEase(Ease.Linear)
             .Join(partInTools.DORotateQuaternion(pathJackToRJConnect[0].rotation, 0.5f))
+            .Append(partInTools.DOLocalRotateQuaternion(_startPartInToolRotation, 0.3f))
+            .Join(partInTools.DOLocalMove(_startPartInToolPosition,0.3f))
             .Play()
             .WaitForCompletion();
     }

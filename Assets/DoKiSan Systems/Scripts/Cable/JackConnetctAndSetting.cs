@@ -35,6 +35,7 @@ public class JackConnetctAndSetting : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(gameObject.name);
         startOffsetY = contacts.localPosition.y;
 
         contactsAnim = contacts.DOLocalMoveY(offsetY, 1f)

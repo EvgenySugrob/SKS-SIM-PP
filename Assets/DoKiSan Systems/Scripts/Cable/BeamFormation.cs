@@ -194,6 +194,7 @@ public class BeamFormation : MonoBehaviour
         }
 
         cableForBeaming.Clear();
+        backBt.SetActive(true);
     }
 
     public void StartFormationFormationBtClick()

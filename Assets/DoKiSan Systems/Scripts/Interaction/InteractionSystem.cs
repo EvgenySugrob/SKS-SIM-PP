@@ -64,7 +64,8 @@ public class InteractionSystem : MonoBehaviour
                 }
                 else
                 {
-                    _contactInteract.SwapWireSlot(_currentPointBezier);
+                    _contactInteract.SwapWireSlot(_currentPointBezier,_startPosition);
+                    _currentPointBezier.ActiveInteractivePoint(true);
 
                     //_currentPointBezier.transform.position = _startPosition;
                     _currentPointBezier.GetComponent<IDisableColliders>().DisableCollider(true);

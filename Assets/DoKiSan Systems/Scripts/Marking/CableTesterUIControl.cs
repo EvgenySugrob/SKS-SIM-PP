@@ -149,6 +149,7 @@ public class CableTesterUIControl : MonoBehaviour
 
     public void ReturnMenuBtClick()
     {
+        lineRenderConection.RepairBtOff();
         cableTestChecker.ActiveReturnButtons(false);
 
         resultError.SetActive(false);
